@@ -1,0 +1,78 @@
+[gd_scene load_steps=9 format=3 uid="uid://8ctxnv73mn4d"]
+
+[ext_resource type="Script" path="res://Scripts/Settings.gd" id="1_xgrw7"]
+[ext_resource type="Script" path="res://Scripts/Lights.gd" id="2_arw2j"]
+[ext_resource type="Theme" uid="uid://cel18xkchmafq" path="res://Resources/UI_Button.tres" id="3_y8agr"]
+[ext_resource type="Script" path="res://Scripts/Button.gd" id="4_6v8s4"]
+[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/SourceHanSansSC-Bold.otf" id="5_1uahq"]
+[ext_resource type="Texture2D" uid="uid://ds23vbk5lwphi" path="res://Resources/Checkbox_Checked.png" id="6_pbst7"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="6_wlyrg"]
+[ext_resource type="Texture2D" uid="uid://bt5fut6vnv53v" path="res://Resources/Checkbox.png" id="7_kfjg3"]
+
+[node name="Settings" type="Node2D"]
+script = ExtResource("1_xgrw7")
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -10
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="Lights" type="Node2D" parent="."]
+script = ExtResource("2_arw2j")
+metadata/color = Color(0.65098, 0.427451, 0.960784, 1)
+
+[node name="Back" type="Button" parent="."]
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 75.0
+offset_bottom = 75.0
+focus_mode = 0
+theme = ExtResource("3_y8agr")
+script = ExtResource("4_6v8s4")
+
+[node name="Label" type="Label" parent="Back"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 53.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("5_1uahq")
+theme_override_font_sizes/font_size = 50
+text = "↩"
+
+[node name="Texts" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="Texts"]
+offset_left = 126.0
+offset_top = 199.0
+offset_right = 505.0
+offset_bottom = 252.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_wlyrg")
+theme_override_font_sizes/font_size = 36
+text = "disturbing background"
+
+[node name="Inputs" type="Node2D" parent="."]
+
+[node name="disturbing_background" type="CheckBox" parent="Inputs"]
+offset_left = 514.0
+offset_top = 201.0
+offset_right = 557.0
+offset_bottom = 246.0
+focus_mode = 0
+theme_override_icons/checked = ExtResource("6_pbst7")
+theme_override_icons/unchecked = ExtResource("7_kfjg3")
+script = ExtResource("4_6v8s4")
+
+[connection signal="button_down" from="Back" to="Back" method="button_down"]
+[connection signal="button_up" from="Back" to="Back" method="return_normal"]
+[connection signal="mouse_entered" from="Back" to="Back" method="hovered"]
+[connection signal="mouse_exited" from="Back" to="Back" method="return_normal"]
+[connection signal="pressed" from="Back" to="." method="exit_options"]
+[connection signal="button_down" from="Inputs/disturbing_background" to="Inputs/disturbing_background" method="button_down"]
+[connection signal="button_up" from="Inputs/disturbing_background" to="Inputs/disturbing_background" method="released"]
+[connection signal="mouse_entered" from="Inputs/disturbing_background" to="Inputs/disturbing_background" method="hovered"]
+[connection signal="mouse_exited" from="Inputs/disturbing_background" to="Inputs/disturbing_background" method="return_normal"]
+[connection signal="toggled" from="Inputs/disturbing_background" to="." method="update_disturbing_background"]
