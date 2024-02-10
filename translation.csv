@@ -1,0 +1,45 @@
+,en,zh
+
+DISTURBING_BACKGROUND,disturbing background,让人分心的背景
+SUBMIT_HOLD,SUBMIT (HOLD),提交 (长按)
+LEVEL_SOLVED,LEVEL SOLVED!,已解决！
+
+CHAPTER_POSSIBILITY,Chapter 1\nPossibility,第一章   可能性
+CHAPTER_SHOULD,Chapter2 Should,第二章   应该
+CHAPTER_DEFINITION,Chapter3 Definition,第三章   定义
+INTRO,intro,intro
+UNLIKELY,unlikely,小概率
+LOGIC,logic,逻辑
+LOGIC_HARD,logic - HARD🚨,逻辑 · 难🚨
+LIES_GENERALIZED,lies - Generalized,谎言 · 归纳
+LIES,lies,谎言
+LIES_1,lies 1,谎言 1
+LIES_2,lies 2,谎言 2
+LIES_HARD,lies - HARD🚨,谎言 · 难🚨
+
+POSSIBILITY_INTRO_NOTE,"The topic of Chapter 1 is possibility.\nIf the event described below is possible (including events that are bound to happen),\nthen left click the green box to answer ""P"" (Possible);\notherwise, right click to answer ""NP"" (Not Possible).","第一章的主题是可能性。\n如果题目描述的事件是可能发生的（一定发生的也算可能发生），\n则鼠标左键点击绿色框，以回答""P""（Possible）；\n否则右键点击绿色框，以回答""NP""（Not Possible）。"
+POSSIBILITY_INTRO_P1,"1. A standard coin is tossed. After it lands, its head faces up.","1. 掷出一标准硬币，其落地后正面朝上。"
+POSSIBILITY_INTRO_P2,"2. A standard coin is tossed. After it lands, its head or tail faces up.","2. 掷出一标准硬币，其落地后正面或背面朝上。"
+POSSIBILITY_INTRO_P3,"3. A standard coin is tossed. After it lands, its head and tail face up simultaneously.","3. 掷出一标准硬币，其落地后正面和背面同时朝上。"
+POSSIBILITY_UNLIKELY_NOTE,"You will receive a penalty when you submit a wrong answer,\nwhich prevents you from answering this problem in a period of time.\nSubmitting a wrong answer multiple times makes the penalty longer.","若你回答错误，则会受到惩罚，一段时间内无法再次回答此题。\n多次回答错误会使惩罚时间加长。"
+POSSIBILITY_UNLIKELY_P1,"1. You return home, and then find a stranger in the bathroom.","1. 你回家后发现厕所里有个陌生人。"
+POSSIBILITY_UNLIKELY_P2,"2. The worm that you find in restaurant food was dropped out from your own mouth.","2. 你在饭店的菜里吃到的虫子是从自己嘴里掉进去的。"
+POSSIBILITY_UNLIKELY_P3,"3. The one that matches the fingerprint on the murder weapon is not the murderer.","3. 与凶器上指纹相匹配的人不是凶手。"
+POSSIBILITY_LOGIC_P1,"1. I'm holding a red apple that is not red.","1. 我拿着一个非红色的红苹果。"
+POSSIBILITY_LOGIC_P2,"2. There is someone who has experienced their first kiss without ever touching anyone.","2. 有人经历过初吻但是从没碰过别人。"
+POSSIBILITY_LOGIC_P3,"3. A line segment is added inside a convex pentagon, which divides the pentagon into two triangles. (The line segment is extremely thin.)","3. 在一个凸五边形里添加一条线段，此操作使得此五边形被分成两个三角形。（线段极细）"
+POSSIBILITY_LOGIC_P4,"4. A line segment is added inside a concave pentagon, which divides the pentagon into two triangles. (The line segment is extremely thin.)","4. 在一个凹五边形里添加一条线段，此操作使得此五边形被分成两个三角形。（线段极细）"
+POSSIBILITY_LOGIC_HARD_P1,"1. A total of 5 objects are in a bag. Among them, there are 3 squirrels in total, and there are 4 pieces of wood in total.","1. 一个袋子里共有5个物体，其中共有3只松鼠，共有4块木头。"
+POSSIBILITY_LOGIC_HARD_P2,"2. A total of 5 objects are in a bag. Among them, there are 3 pieces of wood in total, and there are 4 balls in total.","2. 一个袋子里共有5个物体，其中共有3块木头，共有4个球体。"
+POSSIBILITY_LOGIC_HARD_P3,"3. A total of 5 objects are in a bag. Among them, there are 3 balls in total, and there are 4 marbles in total.","3. 一个袋子里共有5个物体，其中共有3个球体，共有4个弹珠。"
+LIES_GENERALIZED_P1,"1. An event that someone else claimed to have happened didn't happen actually.","1. 别人说发生了的某件事情其实没有发生。"
+LIES_GENERALIZED_P2,"2. An event that a book claimed to have happened didn't happen actually.","2. 书上说发生了的某件事情其实没有发生。"
+LIES_GENERALIZED_P3,"3. The scene depicted in a photo never happened actually.","3. 某张照片里的画面其实没有发生。"
+LIES_1_P1,"1. Dinosaurs were smaller than ants on average.","1. 恐龙平均比蚂蚁还小。"
+LIES_1_P2,"2. World War I was fought against aliens.","2. 第一次世界大战是跟外星人打的。"
+LIES_1_P3,"3. The so-called ""Newton's laws of motion"" were discovered by Galileo.","3. 《孙子兵法》是孔子写的。"
+LIES_2_P1,"1. 1 + 1 = 3。","1. 1 + 1 = 3。"
+LIES_2_P2,"2. You have never met your biological mother.","2. 你未曾见过你的生母。"
+LIES_2_P3,"3. The day before yesterday, a nuclear war erupted on earth, with a death toll of humans over hundreds of millions.","3. 前天地球上发生了一次核战争，死亡人数上亿。"
+LIES_HARD_P1,"1. Your biological father's wedding day is not the same as your biological mother's wedding day.","1. 你生父与你生母的结婚日不是同一天。"
+LIES_HARD_P2,"2. For these Essenceology problems, one or more of the standard answers that I set are wrong. ("Standard answers" refer to the answer against which your submitted answer is compared by the program.)","2. 在这些本质学题目中，我设置的标准答案有错。（“标准答案”指你的答案提交后，程序与之进行对比的答案）"

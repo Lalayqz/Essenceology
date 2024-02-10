@@ -1,15 +1,15 @@
-extends "Button.gd"
+class_name PossibilityButton extends NeatButton
 
 enum Possibilities {
-	None = 0,
-	P = 1,
-	NP = 2,
+	P,
+	NP,
 }
 
 signal state_changed()
+@export var answer: Possibilities
 @onready var P_SPRITE = $P
 @onready var NP_SPRITE = $NP
-var possibility = Possibilities.None
+var possibility = null
 var is_left_click
 
 # Called when the node enters the scene tree for the first time.
@@ -27,17 +27,18 @@ func button_down():
 func pressed():
 	if is_left_click:
 		if possibility == Possibilities.P:
-			switch_to(Possibilities.None)
+			switch_to(null)
 		else:
 			switch_to(Possibilities.P)
 	else:
 		if possibility == Possibilities.NP:
-			switch_to(Possibilities.None)
+			switch_to(null)
 		else:
 			switch_to(Possibilities.NP)
 
 func switch_to(p):
-	possibility = p as Possibilities  # if not using "as", then possibility may be assigned by an int, which won't work in the next "match" sentence
+	possibility = p as Possibilities if p != null else null # if not using "as", then possibility may be assigned by an int, which won't work in the next "match" sentence
+		
 	for sprite in get_children():
 		sprite.visible = false
 	match possibility:
@@ -48,8 +49,8 @@ func switch_to(p):
 	state_changed.emit()
 			
 func is_not_answered():
-	return possibility == Possibilities.None
+	return possibility == null
 	
 func check_answer():
-	return possibility == Possibilities.get(get_meta("answer"))
+	return possibility == answer
 	

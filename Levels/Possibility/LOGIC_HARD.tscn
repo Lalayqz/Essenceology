@@ -1,0 +1,271 @@
+[gd_scene load_steps=14 format=3 uid="uid://dvqgpd6v15c10"]
+
+[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_0etkf"]
+[ext_resource type="Script" path="res://Scripts/Lights.gd" id="2_j2pyh"]
+[ext_resource type="Theme" uid="uid://cel18xkchmafq" path="res://Resources/UI_Button.tres" id="3_5p5rb"]
+[ext_resource type="Script" path="res://Scripts/NeatButton.gd" id="4_xhoev"]
+[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/SourceHanSansSC-Bold.otf" id="5_jkr5k"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="6_e70dy"]
+[ext_resource type="Theme" uid="uid://cc776rspw52yb" path="res://Resources/Submit_Button.tres" id="7_iayff"]
+[ext_resource type="Script" path="res://Scripts/Submit_Button.gd" id="8_g0b2c"]
+[ext_resource type="PackedScene" uid="uid://c7vy1ltbvt8jk" path="res://Item_Scenes/UI_Text.tscn" id="9_clf0y"]
+[ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://Resources/Possibility_Button.png" id="10_jvera"]
+[ext_resource type="Script" path="res://Scripts/Possibility_Button.gd" id="11_diq1a"]
+[ext_resource type="Texture2D" uid="uid://vl24cl1db66a" path="res://Resources/P.png" id="12_ur600"]
+[ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://Resources/NP.png" id="13_ffsaq"]
+
+[node name="LOGIC_HARD" type="Node2D"]
+script = ExtResource("1_0etkf")
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -10
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.0313726, 0.101961, 0.0313726, 1)
+
+[node name="Lights" type="Node2D" parent="."]
+script = ExtResource("2_j2pyh")
+metadata/color = Color(0.333333, 0.709804, 0.333333, 1)
+
+[node name="UI" type="ReferenceRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Back" type="Button" parent="UI"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 75.0
+offset_bottom = 75.0
+focus_mode = 0
+theme = ExtResource("3_5p5rb")
+script = ExtResource("4_xhoev")
+
+[node name="Label" type="Label" parent="UI/Back"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = -1.0
+offset_right = 53.0
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("5_jkr5k")
+theme_override_font_sizes/font_size = 50
+text = "↩"
+
+[node name="Title" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 100.0
+offset_top = 16.0
+offset_right = 254.0
+offset_bottom = 65.0
+theme_override_colors/font_shadow_color = Color(0.333333, 1, 0.333333, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_e70dy")
+theme_override_font_sizes/font_size = 33
+text = "Level Title"
+
+[node name="Submit" type="Control" parent="UI"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 420.0
+offset_top = 600.0
+offset_right = 860.0
+offset_bottom = 680.0
+
+[node name="Background" type="ColorRect" parent="UI/Submit"]
+layout_mode = 2
+offset_bottom = 80.0
+
+[node name="Submit" type="CenterContainer" parent="UI/Submit"]
+layout_mode = 2
+offset_right = 440.0
+offset_bottom = 80.0
+
+[node name="Submit" type="Button" parent="UI/Submit/Submit"]
+custom_minimum_size = Vector2(440, 80)
+layout_mode = 2
+focus_mode = 0
+theme = ExtResource("7_iayff")
+theme_override_fonts/font = ExtResource("5_jkr5k")
+theme_override_font_sizes/font_size = 36
+text = "SUBMIT_HOLD"
+script = ExtResource("8_g0b2c")
+
+[node name="Solved_Label" parent="UI/Submit/Submit" instance=ExtResource("9_clf0y")]
+visible = false
+layout_mode = 2
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 3
+theme_override_font_sizes/font_size = 50
+text = "LEVEL_SOLVED"
+
+[node name="Text" type="ReferenceRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+
+[node name="Problems" type="CenterContainer" parent="."]
+offset_right = 1280.0
+offset_bottom = 640.0
+mouse_filter = 2
+
+[node name="Problems" type="VBoxContainer" parent="Problems"]
+layout_mode = 2
+
+[node name="Problem1" type="MarginContainer" parent="Problems/Problems"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 30
+
+[node name="Problem1" type="HSplitContainer" parent="Problems/Problems/Problem1"]
+layout_mode = 2
+split_offset = 99999
+dragger_visibility = 2
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/Problem1/Problem1"]
+layout_mode = 2
+theme_override_constants/margin_right = 50
+
+[node name="Text" type="Label" parent="Problems/Problems/Problem1/Problem1/Text" groups=["Texts"]]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_e70dy")
+theme_override_font_sizes/font_size = 33
+text = "POSSIBILITY_LOGIC_HARD_P1"
+
+[node name="Input" type="CenterContainer" parent="Problems/Problems/Problem1/Problem1"]
+layout_mode = 2
+
+[node name="Input" type="TextureButton" parent="Problems/Problems/Problem1/Problem1/Input" groups=["Inputs"]]
+layout_mode = 2
+toggle_mode = true
+button_mask = 3
+texture_normal = ExtResource("10_jvera")
+script = ExtResource("11_diq1a")
+answer = 1
+
+[node name="P" type="Sprite2D" parent="Problems/Problems/Problem1/Problem1/Input/Input"]
+visible = false
+position = Vector2(31, 22)
+scale = Vector2(0.813433, 0.813433)
+texture = ExtResource("12_ur600")
+
+[node name="NP" type="Sprite2D" parent="Problems/Problems/Problem1/Problem1/Input/Input"]
+visible = false
+position = Vector2(28, 31)
+scale = Vector2(0.813433, 0.813433)
+texture = ExtResource("13_ffsaq")
+
+[node name="Problem2" type="MarginContainer" parent="Problems/Problems"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 30
+
+[node name="Problem2" type="HSplitContainer" parent="Problems/Problems/Problem2"]
+layout_mode = 2
+split_offset = 99999
+dragger_visibility = 2
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/Problem2/Problem2"]
+layout_mode = 2
+theme_override_constants/margin_right = 50
+
+[node name="Text" type="Label" parent="Problems/Problems/Problem2/Problem2/Text" groups=["Texts"]]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_e70dy")
+theme_override_font_sizes/font_size = 33
+text = "POSSIBILITY_LOGIC_HARD_P2"
+
+[node name="Input" type="CenterContainer" parent="Problems/Problems/Problem2/Problem2"]
+layout_mode = 2
+
+[node name="Input" type="TextureButton" parent="Problems/Problems/Problem2/Problem2/Input" groups=["Inputs"]]
+layout_mode = 2
+toggle_mode = true
+button_mask = 3
+texture_normal = ExtResource("10_jvera")
+script = ExtResource("11_diq1a")
+
+[node name="P" type="Sprite2D" parent="Problems/Problems/Problem2/Problem2/Input/Input"]
+visible = false
+position = Vector2(31, 22)
+scale = Vector2(0.813433, 0.813433)
+texture = ExtResource("12_ur600")
+
+[node name="NP" type="Sprite2D" parent="Problems/Problems/Problem2/Problem2/Input/Input"]
+visible = false
+position = Vector2(28, 31)
+scale = Vector2(0.813433, 0.813433)
+texture = ExtResource("13_ffsaq")
+
+[node name="Problem3" type="MarginContainer" parent="Problems/Problems"]
+layout_mode = 2
+
+[node name="Problem3" type="HSplitContainer" parent="Problems/Problems/Problem3"]
+layout_mode = 2
+split_offset = 99999
+dragger_visibility = 2
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/Problem3/Problem3"]
+layout_mode = 2
+theme_override_constants/margin_right = 50
+
+[node name="Text" type="Label" parent="Problems/Problems/Problem3/Problem3/Text" groups=["Texts"]]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("6_e70dy")
+theme_override_font_sizes/font_size = 33
+text = "POSSIBILITY_LOGIC_HARD_P3"
+
+[node name="Input" type="CenterContainer" parent="Problems/Problems/Problem3/Problem3"]
+layout_mode = 2
+
+[node name="Input" type="TextureButton" parent="Problems/Problems/Problem3/Problem3/Input" groups=["Inputs"]]
+layout_mode = 2
+toggle_mode = true
+button_mask = 3
+texture_normal = ExtResource("10_jvera")
+script = ExtResource("11_diq1a")
+answer = 1
+
+[node name="P" type="Sprite2D" parent="Problems/Problems/Problem3/Problem3/Input/Input"]
+visible = false
+position = Vector2(31, 22)
+scale = Vector2(0.813433, 0.813433)
+texture = ExtResource("12_ur600")
+
+[node name="NP" type="Sprite2D" parent="Problems/Problems/Problem3/Problem3/Input/Input"]
+visible = false
+position = Vector2(28, 31)
+scale = Vector2(0.813433, 0.813433)
+texture = ExtResource("13_ffsaq")
+
+[connection signal="solve_level" from="." to="UI/Submit/Submit/Submit" method="solve_level"]
+[connection signal="button_down" from="UI/Back" to="UI/Back" method="button_down"]
+[connection signal="button_up" from="UI/Back" to="UI/Back" method="return_normal"]
+[connection signal="mouse_entered" from="UI/Back" to="UI/Back" method="hovered"]
+[connection signal="mouse_exited" from="UI/Back" to="UI/Back" method="return_normal"]
+[connection signal="pressed" from="UI/Back" to="." method="exit_level"]
+[connection signal="button_down" from="UI/Submit/Submit/Submit" to="UI/Submit/Submit/Submit" method="button_down"]
+[connection signal="button_up" from="UI/Submit/Submit/Submit" to="UI/Submit/Submit/Submit" method="return_normal"]
+[connection signal="mouse_entered" from="UI/Submit/Submit/Submit" to="UI/Submit/Submit/Submit" method="hovered"]
+[connection signal="mouse_exited" from="UI/Submit/Submit/Submit" to="UI/Submit/Submit/Submit" method="return_normal"]
+[connection signal="button_down" from="Problems/Problems/Problem1/Problem1/Input/Input" to="Problems/Problems/Problem1/Problem1/Input/Input" method="button_down"]
+[connection signal="button_up" from="Problems/Problems/Problem1/Problem1/Input/Input" to="Problems/Problems/Problem1/Problem1/Input/Input" method="released"]
+[connection signal="mouse_entered" from="Problems/Problems/Problem1/Problem1/Input/Input" to="Problems/Problems/Problem1/Problem1/Input/Input" method="hovered"]
+[connection signal="mouse_exited" from="Problems/Problems/Problem1/Problem1/Input/Input" to="Problems/Problems/Problem1/Problem1/Input/Input" method="return_normal"]
+[connection signal="pressed" from="Problems/Problems/Problem1/Problem1/Input/Input" to="Problems/Problems/Problem1/Problem1/Input/Input" method="pressed"]
+[connection signal="state_changed" from="Problems/Problems/Problem1/Problem1/Input/Input" to="UI/Submit/Submit/Submit" method="check_all_answered"]
+[connection signal="button_down" from="Problems/Problems/Problem2/Problem2/Input/Input" to="Problems/Problems/Problem2/Problem2/Input/Input" method="button_down"]
+[connection signal="button_up" from="Problems/Problems/Problem2/Problem2/Input/Input" to="Problems/Problems/Problem2/Problem2/Input/Input" method="released"]
+[connection signal="mouse_entered" from="Problems/Problems/Problem2/Problem2/Input/Input" to="Problems/Problems/Problem2/Problem2/Input/Input" method="hovered"]
+[connection signal="mouse_exited" from="Problems/Problems/Problem2/Problem2/Input/Input" to="Problems/Problems/Problem2/Problem2/Input/Input" method="return_normal"]
+[connection signal="pressed" from="Problems/Problems/Problem2/Problem2/Input/Input" to="Problems/Problems/Problem2/Problem2/Input/Input" method="pressed"]
+[connection signal="state_changed" from="Problems/Problems/Problem2/Problem2/Input/Input" to="UI/Submit/Submit/Submit" method="check_all_answered"]
+[connection signal="button_down" from="Problems/Problems/Problem3/Problem3/Input/Input" to="Problems/Problems/Problem3/Problem3/Input/Input" method="button_down"]
+[connection signal="button_up" from="Problems/Problems/Problem3/Problem3/Input/Input" to="Problems/Problems/Problem3/Problem3/Input/Input" method="released"]
+[connection signal="mouse_entered" from="Problems/Problems/Problem3/Problem3/Input/Input" to="Problems/Problems/Problem3/Problem3/Input/Input" method="hovered"]
+[connection signal="mouse_exited" from="Problems/Problems/Problem3/Problem3/Input/Input" to="Problems/Problems/Problem3/Problem3/Input/Input" method="return_normal"]
+[connection signal="pressed" from="Problems/Problems/Problem3/Problem3/Input/Input" to="Problems/Problems/Problem3/Problem3/Input/Input" method="pressed"]
+[connection signal="state_changed" from="Problems/Problems/Problem3/Problem3/Input/Input" to="UI/Submit/Submit/Submit" method="check_all_answered"]

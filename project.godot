@@ -19,6 +19,7 @@ config/icon="res://Resources/icon.svg"
 
 Save="*res://Scripts/Save.gd"
 Config="*res://Scripts/Config.gd"
+Global_Variables="*res://Scripts/Global_Variables.gd"
 
 [debug]
 
@@ -38,6 +39,12 @@ left_click={
 ]
 }
 
+[internationalization]
+
+locale/translations=PackedStringArray("res://translation.en.translation", "res://translation.zh.translation")
+locale/include_text_server_data=true
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

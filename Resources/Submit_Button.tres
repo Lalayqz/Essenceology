@@ -10,6 +10,7 @@ texture_margin_right = 6.0
 texture_margin_bottom = 6.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
+draw_center = false
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_27wib"]
 texture = ExtResource("1_667p8")
@@ -19,6 +20,7 @@ texture_margin_right = 6.0
 texture_margin_bottom = 6.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
+draw_center = false
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_47x2g"]
 texture = ExtResource("1_667p8")
@@ -28,6 +30,7 @@ texture_margin_right = 6.0
 texture_margin_bottom = 6.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
+draw_center = false
 
 [resource]
 Button/colors/font_color = Color(1, 1, 1, 1)

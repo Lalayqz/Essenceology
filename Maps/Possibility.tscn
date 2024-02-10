@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://dwfhsutpukx"]
+
+[ext_resource type="Script" path="res://Scripts/Chapter.gd" id="1_pbfxu"]
+[ext_resource type="Script" path="res://Scripts/Lights.gd" id="2_q5wxi"]
+[ext_resource type="Script" path="res://Scripts/Map.gd" id="3_67ppm"]
+
+[node name="Possibility" type="Node2D"]
+script = ExtResource("1_pbfxu")
+
+[node name="Background" type="ColorRect" parent="."]
+z_index = -10
+offset_right = 1280.0
+offset_bottom = 2000.0
+color = Color(0.0313726, 0.101961, 0.0313726, 1)
+
+[node name="Lights" type="Node2D" parent="."]
+script = ExtResource("2_q5wxi")
+metadata/color = Color(0.333333, 0.709804, 0.333333, 1)
+
+[node name="Map" type="Node2D" parent="."]
+script = ExtResource("3_67ppm")
+
+[node name="Chains" type="Node2D" parent="Map"]
+
+[node name="Levels" type="Node2D" parent="Map"]
+
+[node name="INTRO" type="Node2D" parent="Map/Levels"]
+position = Vector2(455, 117)
+
+[node name="UNLIKELY" type="Node2D" parent="Map/Levels"]
+position = Vector2(433, 304)
+
+[node name="LOGIC" type="Node2D" parent="Map/Levels"]
+position = Vector2(473, 496)
+
+[node name="LOGIC_HARD" type="Node2D" parent="Map/Levels"]
+position = Vector2(682, 529)
+
+[node name="LIES_GENERALIZED" type="Node2D" parent="Map/Levels"]
+position = Vector2(458, 762)
+
+[node name="LIES_1" type="Node2D" parent="Map/Levels"]
+position = Vector2(452, 874)
+
+[node name="LIES_2" type="Node2D" parent="Map/Levels"]
+position = Vector2(460, 978)
+
+[node name="LIES_HARD" type="Node2D" parent="Map/Levels"]
+position = Vector2(665, 952)

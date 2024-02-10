@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://t6k288fu6v5i"]
+
+[node name="outer" type="Line2D"]
+default_color = Color(0, 0, 0, 1)
+
+[node name="inner" type="Line2D" parent="."]
+width = 4.0
+default_color = Color(0.811765, 0.811765, 0.811765, 1)
