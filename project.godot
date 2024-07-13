@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Essenceology"
-run/main_scene="res://MainMenu.tscn"
+run/main_scene="res://Scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://Resources/icon.svg"
 
@@ -20,6 +20,7 @@ config/icon="res://Resources/icon.svg"
 Save="*res://Scripts/Save.gd"
 Config="*res://Scripts/Config.gd"
 Global_Variables="*res://Scripts/Global_Variables.gd"
+Lights="*res://Scripts/Lights.gd"
 
 [debug]
 

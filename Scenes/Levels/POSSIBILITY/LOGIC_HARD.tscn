@@ -1,0 +1,184 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvqgpd6v15c10"]
+
+[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_7g04l"]
+[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Level_Structure.tscn" id="2_owi47"]
+[ext_resource type="Script" path="res://Scripts/Possibility_Problem.gd" id="3_wsu1d"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="4_5n5nr"]
+[ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://Resources/Possibility_Button.png" id="5_5cln6"]
+[ext_resource type="Script" path="res://Scripts/Possibility_Button.gd" id="6_4lhtb"]
+[ext_resource type="Texture2D" uid="uid://vl24cl1db66a" path="res://Resources/P.png" id="7_jx1gk"]
+[ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://Resources/NP.png" id="8_vp8f0"]
+
+[node name="LOGIC_HARD" type="Node2D"]
+script = ExtResource("1_7g04l")
+
+[node name="Level_Structure" parent="." instance=ExtResource("2_owi47")]
+
+[node name="Problems" type="CenterContainer" parent="."]
+offset_right = 1280.0
+offset_bottom = 640.0
+mouse_filter = 2
+
+[node name="Problems" type="VBoxContainer" parent="Problems"]
+layout_mode = 2
+
+[node name="BAG_SQUIRREL" type="MarginContainer" parent="Problems/Problems"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 30
+script = ExtResource("3_wsu1d")
+
+[node name="Problem" type="HSplitContainer" parent="Problems/Problems/BAG_SQUIRREL"]
+layout_mode = 2
+split_offset = 99999
+dragger_visibility = 2
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/BAG_SQUIRREL/Problem"]
+layout_mode = 2
+theme_override_constants/margin_right = 50
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/BAG_SQUIRREL/Problem/Text" groups=["Texts"]]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_5n5nr")
+theme_override_font_sizes/normal_font_size = 33
+bbcode_enabled = true
+text = "POSSIBILITY_LOGIC_HARD_BAG_SQUIRREL"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/BAG_SQUIRREL/Problem"]
+layout_mode = 2
+
+[node name="Button" type="TextureButton" parent="Problems/Problems/BAG_SQUIRREL/Problem/Button" groups=["Inputs"]]
+layout_mode = 2
+toggle_mode = true
+button_mask = 3
+texture_normal = ExtResource("5_5cln6")
+script = ExtResource("6_4lhtb")
+answer = 1
+
+[node name="P" type="Sprite2D" parent="Problems/Problems/BAG_SQUIRREL/Problem/Button/Button"]
+visible = false
+position = Vector2(31, 22)
+scale = Vector2(0.813433, 0.813433)
+texture = ExtResource("7_jx1gk")
+
+[node name="NP" type="Sprite2D" parent="Problems/Problems/BAG_SQUIRREL/Problem/Button/Button"]
+visible = false
+position = Vector2(28, 31)
+scale = Vector2(0.813433, 0.813433)
+texture = ExtResource("8_vp8f0")
+
+[node name="BAG_WOOD" type="MarginContainer" parent="Problems/Problems"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 30
+script = ExtResource("3_wsu1d")
+
+[node name="Problem" type="HSplitContainer" parent="Problems/Problems/BAG_WOOD"]
+layout_mode = 2
+split_offset = 99999
+dragger_visibility = 2
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/BAG_WOOD/Problem"]
+layout_mode = 2
+theme_override_constants/margin_right = 50
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/BAG_WOOD/Problem/Text" groups=["Texts"]]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_5n5nr")
+theme_override_font_sizes/normal_font_size = 33
+bbcode_enabled = true
+text = "POSSIBILITY_LOGIC_HARD_BAG_WOOD"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/BAG_WOOD/Problem"]
+layout_mode = 2
+
+[node name="Button" type="TextureButton" parent="Problems/Problems/BAG_WOOD/Problem/Button" groups=["Inputs"]]
+layout_mode = 2
+toggle_mode = true
+button_mask = 3
+texture_normal = ExtResource("5_5cln6")
+script = ExtResource("6_4lhtb")
+
+[node name="P" type="Sprite2D" parent="Problems/Problems/BAG_WOOD/Problem/Button/Button"]
+visible = false
+position = Vector2(31, 22)
+scale = Vector2(0.813433, 0.813433)
+texture = ExtResource("7_jx1gk")
+
+[node name="NP" type="Sprite2D" parent="Problems/Problems/BAG_WOOD/Problem/Button/Button"]
+visible = false
+position = Vector2(28, 31)
+scale = Vector2(0.813433, 0.813433)
+texture = ExtResource("8_vp8f0")
+
+[node name="BAG_MARBLE" type="MarginContainer" parent="Problems/Problems"]
+layout_mode = 2
+script = ExtResource("3_wsu1d")
+
+[node name="Problem" type="HSplitContainer" parent="Problems/Problems/BAG_MARBLE"]
+layout_mode = 2
+split_offset = 99999
+dragger_visibility = 2
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/BAG_MARBLE/Problem"]
+layout_mode = 2
+theme_override_constants/margin_right = 50
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/BAG_MARBLE/Problem/Text" groups=["Texts"]]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_5n5nr")
+theme_override_font_sizes/normal_font_size = 33
+bbcode_enabled = true
+text = "POSSIBILITY_LOGIC_HARD_BAG_MARBLE"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/BAG_MARBLE/Problem"]
+layout_mode = 2
+
+[node name="Button" type="TextureButton" parent="Problems/Problems/BAG_MARBLE/Problem/Button" groups=["Inputs"]]
+layout_mode = 2
+toggle_mode = true
+button_mask = 3
+texture_normal = ExtResource("5_5cln6")
+script = ExtResource("6_4lhtb")
+answer = 1
+
+[node name="P" type="Sprite2D" parent="Problems/Problems/BAG_MARBLE/Problem/Button/Button"]
+visible = false
+position = Vector2(31, 22)
+scale = Vector2(0.813433, 0.813433)
+texture = ExtResource("7_jx1gk")
+
+[node name="NP" type="Sprite2D" parent="Problems/Problems/BAG_MARBLE/Problem/Button/Button"]
+visible = false
+position = Vector2(28, 31)
+scale = Vector2(0.813433, 0.813433)
+texture = ExtResource("8_vp8f0")
+
+[connection signal="button_down" from="Problems/Problems/BAG_SQUIRREL/Problem/Button/Button" to="Problems/Problems/BAG_SQUIRREL/Problem/Button/Button" method="button_down"]
+[connection signal="button_up" from="Problems/Problems/BAG_SQUIRREL/Problem/Button/Button" to="Problems/Problems/BAG_SQUIRREL/Problem/Button/Button" method="released"]
+[connection signal="mouse_entered" from="Problems/Problems/BAG_SQUIRREL/Problem/Button/Button" to="Problems/Problems/BAG_SQUIRREL/Problem/Button/Button" method="hovered"]
+[connection signal="mouse_exited" from="Problems/Problems/BAG_SQUIRREL/Problem/Button/Button" to="Problems/Problems/BAG_SQUIRREL/Problem/Button/Button" method="return_normal"]
+[connection signal="pressed" from="Problems/Problems/BAG_SQUIRREL/Problem/Button/Button" to="Problems/Problems/BAG_SQUIRREL/Problem/Button/Button" method="pressed"]
+[connection signal="button_down" from="Problems/Problems/BAG_WOOD/Problem/Button/Button" to="Problems/Problems/BAG_WOOD/Problem/Button/Button" method="button_down"]
+[connection signal="button_up" from="Problems/Problems/BAG_WOOD/Problem/Button/Button" to="Problems/Problems/BAG_WOOD/Problem/Button/Button" method="released"]
+[connection signal="mouse_entered" from="Problems/Problems/BAG_WOOD/Problem/Button/Button" to="Problems/Problems/BAG_WOOD/Problem/Button/Button" method="hovered"]
+[connection signal="mouse_exited" from="Problems/Problems/BAG_WOOD/Problem/Button/Button" to="Problems/Problems/BAG_WOOD/Problem/Button/Button" method="return_normal"]
+[connection signal="pressed" from="Problems/Problems/BAG_WOOD/Problem/Button/Button" to="Problems/Problems/BAG_WOOD/Problem/Button/Button" method="pressed"]
+[connection signal="button_down" from="Problems/Problems/BAG_MARBLE/Problem/Button/Button" to="Problems/Problems/BAG_MARBLE/Problem/Button/Button" method="button_down"]
+[connection signal="button_up" from="Problems/Problems/BAG_MARBLE/Problem/Button/Button" to="Problems/Problems/BAG_MARBLE/Problem/Button/Button" method="released"]
+[connection signal="mouse_entered" from="Problems/Problems/BAG_MARBLE/Problem/Button/Button" to="Problems/Problems/BAG_MARBLE/Problem/Button/Button" method="hovered"]
+[connection signal="mouse_exited" from="Problems/Problems/BAG_MARBLE/Problem/Button/Button" to="Problems/Problems/BAG_MARBLE/Problem/Button/Button" method="return_normal"]
+[connection signal="pressed" from="Problems/Problems/BAG_MARBLE/Problem/Button/Button" to="Problems/Problems/BAG_MARBLE/Problem/Button/Button" method="pressed"]

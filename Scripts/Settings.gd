@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var config = Config.config
 @onready var language_checkboxes = [$Options/Options/Lanaguages/Lanaguages/Lanaguages/en/en/Checkbox, $Options/Options/Lanaguages/Lanaguages/Lanaguages/zh/zh/Checkbox]
-@onready var lights_node = $Lights
+@onready var lights = Lights
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,7 +31,7 @@ func _notification(notification):
 
 func exit_settings():
 	Config.save_config()
-	get_tree().change_scene_to_file("res://MainMenu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 	
 func update_language_en(is_on):
 	if is_on:
@@ -52,6 +52,6 @@ func update_language_zh(is_on):
 func update_disturbing_background(is_on):
 	Config.set_disturbing_background(is_on)
 	if is_on:
-		lights_node.init_lights()
+		lights.init_lights()
 	else:
-		lights_node.remove_all_lights()
+		lights.remove_all_lights()

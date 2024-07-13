@@ -1,0 +1,182 @@
+[gd_scene load_steps=9 format=3 uid="uid://57isf03mnmxs"]
+
+[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_7djec"]
+[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Level_Structure.tscn" id="2_e1huf"]
+[ext_resource type="Script" path="res://Scripts/Possibility_Problem.gd" id="3_1phov"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="4_mmhka"]
+[ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://Resources/Possibility_Button.png" id="5_ffuil"]
+[ext_resource type="Script" path="res://Scripts/Possibility_Button.gd" id="6_c0kvu"]
+[ext_resource type="Texture2D" uid="uid://vl24cl1db66a" path="res://Resources/P.png" id="7_efimk"]
+[ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://Resources/NP.png" id="8_jt13j"]
+
+[node name="MEMORY_1" type="Node2D"]
+script = ExtResource("1_7djec")
+
+[node name="Level_Structure" parent="." instance=ExtResource("2_e1huf")]
+
+[node name="Problems" type="CenterContainer" parent="."]
+offset_right = 1280.0
+offset_bottom = 640.0
+mouse_filter = 2
+
+[node name="Problems" type="VBoxContainer" parent="Problems"]
+layout_mode = 2
+
+[node name="PIGEON_BIRTH" type="MarginContainer" parent="Problems/Problems"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 30
+script = ExtResource("3_1phov")
+
+[node name="Problem" type="HSplitContainer" parent="Problems/Problems/PIGEON_BIRTH"]
+layout_mode = 2
+split_offset = 99999
+dragger_visibility = 2
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/PIGEON_BIRTH/Problem"]
+layout_mode = 2
+theme_override_constants/margin_right = 50
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/PIGEON_BIRTH/Problem/Text" groups=["Texts"]]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_mmhka")
+theme_override_font_sizes/normal_font_size = 33
+bbcode_enabled = true
+text = "POSSIBILITY_MEMORY_1_PIGEON_BIRTH"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/PIGEON_BIRTH/Problem"]
+layout_mode = 2
+
+[node name="Button" type="TextureButton" parent="Problems/Problems/PIGEON_BIRTH/Problem/Button" groups=["Inputs"]]
+layout_mode = 2
+toggle_mode = true
+button_mask = 3
+texture_normal = ExtResource("5_ffuil")
+script = ExtResource("6_c0kvu")
+
+[node name="P" type="Sprite2D" parent="Problems/Problems/PIGEON_BIRTH/Problem/Button/Button"]
+visible = false
+position = Vector2(31, 22)
+scale = Vector2(0.813433, 0.813433)
+texture = ExtResource("7_efimk")
+
+[node name="NP" type="Sprite2D" parent="Problems/Problems/PIGEON_BIRTH/Problem/Button/Button"]
+visible = false
+position = Vector2(28, 31)
+scale = Vector2(0.813433, 0.813433)
+texture = ExtResource("8_jt13j")
+
+[node name="PIGEON_LAST_MONTH" type="MarginContainer" parent="Problems/Problems"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 30
+script = ExtResource("3_1phov")
+
+[node name="Problem" type="HSplitContainer" parent="Problems/Problems/PIGEON_LAST_MONTH"]
+layout_mode = 2
+split_offset = 99999
+dragger_visibility = 2
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/PIGEON_LAST_MONTH/Problem"]
+layout_mode = 2
+theme_override_constants/margin_right = 50
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/PIGEON_LAST_MONTH/Problem/Text" groups=["Texts"]]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_mmhka")
+theme_override_font_sizes/normal_font_size = 33
+bbcode_enabled = true
+text = "POSSIBILITY_MEMORY_1_PIGEON_LAST_MONTH"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/PIGEON_LAST_MONTH/Problem"]
+layout_mode = 2
+
+[node name="Button" type="TextureButton" parent="Problems/Problems/PIGEON_LAST_MONTH/Problem/Button" groups=["Inputs"]]
+layout_mode = 2
+toggle_mode = true
+button_mask = 3
+texture_normal = ExtResource("5_ffuil")
+script = ExtResource("6_c0kvu")
+
+[node name="P" type="Sprite2D" parent="Problems/Problems/PIGEON_LAST_MONTH/Problem/Button/Button"]
+visible = false
+position = Vector2(31, 22)
+scale = Vector2(0.813433, 0.813433)
+texture = ExtResource("7_efimk")
+
+[node name="NP" type="Sprite2D" parent="Problems/Problems/PIGEON_LAST_MONTH/Problem/Button/Button"]
+visible = false
+position = Vector2(28, 31)
+scale = Vector2(0.813433, 0.813433)
+texture = ExtResource("8_jt13j")
+
+[node name="PIGEON_DREAM" type="MarginContainer" parent="Problems/Problems"]
+layout_mode = 2
+script = ExtResource("3_1phov")
+
+[node name="Problem" type="HSplitContainer" parent="Problems/Problems/PIGEON_DREAM"]
+layout_mode = 2
+split_offset = 99999
+dragger_visibility = 2
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/PIGEON_DREAM/Problem"]
+layout_mode = 2
+theme_override_constants/margin_right = 50
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/PIGEON_DREAM/Problem/Text" groups=["Texts"]]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_mmhka")
+theme_override_font_sizes/normal_font_size = 33
+bbcode_enabled = true
+text = "POSSIBILITY_MEMORY_1_PIGEON_DREAM"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/PIGEON_DREAM/Problem"]
+layout_mode = 2
+
+[node name="Button" type="TextureButton" parent="Problems/Problems/PIGEON_DREAM/Problem/Button" groups=["Inputs"]]
+layout_mode = 2
+toggle_mode = true
+button_mask = 3
+texture_normal = ExtResource("5_ffuil")
+script = ExtResource("6_c0kvu")
+
+[node name="P" type="Sprite2D" parent="Problems/Problems/PIGEON_DREAM/Problem/Button/Button"]
+visible = false
+position = Vector2(31, 22)
+scale = Vector2(0.813433, 0.813433)
+texture = ExtResource("7_efimk")
+
+[node name="NP" type="Sprite2D" parent="Problems/Problems/PIGEON_DREAM/Problem/Button/Button"]
+visible = false
+position = Vector2(28, 31)
+scale = Vector2(0.813433, 0.813433)
+texture = ExtResource("8_jt13j")
+
+[connection signal="button_down" from="Problems/Problems/PIGEON_BIRTH/Problem/Button/Button" to="Problems/Problems/PIGEON_BIRTH/Problem/Button/Button" method="button_down"]
+[connection signal="button_up" from="Problems/Problems/PIGEON_BIRTH/Problem/Button/Button" to="Problems/Problems/PIGEON_BIRTH/Problem/Button/Button" method="released"]
+[connection signal="mouse_entered" from="Problems/Problems/PIGEON_BIRTH/Problem/Button/Button" to="Problems/Problems/PIGEON_BIRTH/Problem/Button/Button" method="hovered"]
+[connection signal="mouse_exited" from="Problems/Problems/PIGEON_BIRTH/Problem/Button/Button" to="Problems/Problems/PIGEON_BIRTH/Problem/Button/Button" method="return_normal"]
+[connection signal="pressed" from="Problems/Problems/PIGEON_BIRTH/Problem/Button/Button" to="Problems/Problems/PIGEON_BIRTH/Problem/Button/Button" method="pressed"]
+[connection signal="button_down" from="Problems/Problems/PIGEON_LAST_MONTH/Problem/Button/Button" to="Problems/Problems/PIGEON_LAST_MONTH/Problem/Button/Button" method="button_down"]
+[connection signal="button_up" from="Problems/Problems/PIGEON_LAST_MONTH/Problem/Button/Button" to="Problems/Problems/PIGEON_LAST_MONTH/Problem/Button/Button" method="released"]
+[connection signal="mouse_entered" from="Problems/Problems/PIGEON_LAST_MONTH/Problem/Button/Button" to="Problems/Problems/PIGEON_LAST_MONTH/Problem/Button/Button" method="hovered"]
+[connection signal="mouse_exited" from="Problems/Problems/PIGEON_LAST_MONTH/Problem/Button/Button" to="Problems/Problems/PIGEON_LAST_MONTH/Problem/Button/Button" method="return_normal"]
+[connection signal="pressed" from="Problems/Problems/PIGEON_LAST_MONTH/Problem/Button/Button" to="Problems/Problems/PIGEON_LAST_MONTH/Problem/Button/Button" method="pressed"]
+[connection signal="button_down" from="Problems/Problems/PIGEON_DREAM/Problem/Button/Button" to="Problems/Problems/PIGEON_DREAM/Problem/Button/Button" method="button_down"]
+[connection signal="button_up" from="Problems/Problems/PIGEON_DREAM/Problem/Button/Button" to="Problems/Problems/PIGEON_DREAM/Problem/Button/Button" method="released"]
+[connection signal="mouse_entered" from="Problems/Problems/PIGEON_DREAM/Problem/Button/Button" to="Problems/Problems/PIGEON_DREAM/Problem/Button/Button" method="hovered"]
+[connection signal="mouse_exited" from="Problems/Problems/PIGEON_DREAM/Problem/Button/Button" to="Problems/Problems/PIGEON_DREAM/Problem/Button/Button" method="return_normal"]
+[connection signal="pressed" from="Problems/Problems/PIGEON_DREAM/Problem/Button/Button" to="Problems/Problems/PIGEON_DREAM/Problem/Button/Button" method="pressed"]

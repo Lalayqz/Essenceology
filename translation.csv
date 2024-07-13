@@ -5,41 +5,69 @@ SUBMIT_HOLD,SUBMIT (HOLD),提交 (长按)
 LEVEL_SOLVED,LEVEL SOLVED!,已解决！
 
 CHAPTER_POSSIBILITY,Chapter 1\nPossibility,第一章   可能性
-CHAPTER_SHOULD,Chapter2 Should,第二章   应该
-CHAPTER_DEFINITION,Chapter3 Definition,第三章   定义
-INTRO,intro,intro
-UNLIKELY,unlikely,小概率
-LOGIC,logic,逻辑
-LOGIC_HARD,logic - HARD🚨,逻辑 · 难🚨
-LIES_GENERALIZED,lies - Generalized,谎言 · 归纳
-LIES,lies,谎言
-LIES_1,lies 1,谎言 1
-LIES_2,lies 2,谎言 2
-LIES_HARD,lies - HARD🚨,谎言 · 难🚨
+CHAPTER_SHOULD,Chapter 2\nShould,第二章   应该
+CHAPTER_DEFINITION,Chapter 3 Definition,第三章   定义
 
-POSSIBILITY_INTRO_NOTE,"The topic of Chapter 1 is possibility.\nIf the event described below is possible (including events that are bound to happen),\nthen left click the green box to answer ""P"" (Possible);\notherwise, right click to answer ""NP"" (Not Possible).","第一章的主题是可能性。\n如果题目描述的事件是可能发生的（一定发生的也算可能发生），\n则鼠标左键点击绿色框，以回答""P""（Possible）；\n否则右键点击绿色框，以回答""NP""（Not Possible）。"
-POSSIBILITY_INTRO_P1,"1. A standard coin is tossed. After it lands, its head faces up.","1. 掷出一标准硬币，其落地后正面朝上。"
-POSSIBILITY_INTRO_P2,"2. A standard coin is tossed. After it lands, its head or tail faces up.","2. 掷出一标准硬币，其落地后正面或背面朝上。"
-POSSIBILITY_INTRO_P3,"3. A standard coin is tossed. After it lands, its head and tail face up simultaneously.","3. 掷出一标准硬币，其落地后正面和背面同时朝上。"
-POSSIBILITY_UNLIKELY_NOTE,"You will receive a penalty when you submit a wrong answer,\nwhich prevents you from answering this problem in a period of time.\nSubmitting a wrong answer multiple times makes the penalty longer.","若你回答错误，则会受到惩罚，一段时间内无法再次回答此题。\n多次回答错误会使惩罚时间加长。"
-POSSIBILITY_UNLIKELY_P1,"1. You return home, and then find a stranger in the bathroom.","1. 你回家后发现厕所里有个陌生人。"
-POSSIBILITY_UNLIKELY_P2,"2. The worm that you find in restaurant food was dropped out from your own mouth.","2. 你在饭店的菜里吃到的虫子是从自己嘴里掉进去的。"
-POSSIBILITY_UNLIKELY_P3,"3. The one that matches the fingerprint on the murder weapon is not the murderer.","3. 与凶器上指纹相匹配的人不是凶手。"
-POSSIBILITY_LOGIC_P1,"1. I'm holding a red apple that is not red.","1. 我拿着一个非红色的红苹果。"
-POSSIBILITY_LOGIC_P2,"2. There is someone who has experienced their first kiss without ever touching anyone.","2. 有人经历过初吻但是从没碰过别人。"
-POSSIBILITY_LOGIC_P3,"3. A line segment is added inside a convex pentagon, which divides the pentagon into two triangles. (The line segment is extremely thin.)","3. 在一个凸五边形里添加一条线段，此操作使得此五边形被分成两个三角形。（线段极细）"
-POSSIBILITY_LOGIC_P4,"4. A line segment is added inside a concave pentagon, which divides the pentagon into two triangles. (The line segment is extremely thin.)","4. 在一个凹五边形里添加一条线段，此操作使得此五边形被分成两个三角形。（线段极细）"
-POSSIBILITY_LOGIC_HARD_P1,"1. A total of 5 objects are in a bag. Among them, there are 3 squirrels in total, and there are 4 pieces of wood in total.","1. 一个袋子里共有5个物体，其中共有3只松鼠，共有4块木头。"
-POSSIBILITY_LOGIC_HARD_P2,"2. A total of 5 objects are in a bag. Among them, there are 3 pieces of wood in total, and there are 4 balls in total.","2. 一个袋子里共有5个物体，其中共有3块木头，共有4个球体。"
-POSSIBILITY_LOGIC_HARD_P3,"3. A total of 5 objects are in a bag. Among them, there are 3 balls in total, and there are 4 marbles in total.","3. 一个袋子里共有5个物体，其中共有3个球体，共有4个弹珠。"
-LIES_GENERALIZED_P1,"1. An event that someone else claimed to have happened didn't happen actually.","1. 别人说发生了的某件事情其实没有发生。"
-LIES_GENERALIZED_P2,"2. An event that a book claimed to have happened didn't happen actually.","2. 书上说发生了的某件事情其实没有发生。"
-LIES_GENERALIZED_P3,"3. The scene depicted in a photo never happened actually.","3. 某张照片里的画面其实没有发生。"
-LIES_1_P1,"1. Dinosaurs were smaller than ants on average.","1. 恐龙平均比蚂蚁还小。"
-LIES_1_P2,"2. World War I was fought against aliens.","2. 第一次世界大战是跟外星人打的。"
-LIES_1_P3,"3. The so-called ""Newton's laws of motion"" were discovered by Galileo.","3. 《孙子兵法》是孔子写的。"
-LIES_2_P1,"1. 1 + 1 = 3。","1. 1 + 1 = 3。"
-LIES_2_P2,"2. You have never met your biological mother.","2. 你未曾见过你的生母。"
-LIES_2_P3,"3. The day before yesterday, a nuclear war erupted on earth, with a death toll of humans over hundreds of millions.","3. 前天地球上发生了一次核战争，死亡人数上亿。"
-LIES_HARD_P1,"1. Your biological father's wedding day is not the same as your biological mother's wedding day.","1. 你生父与你生母的结婚日不是同一天。"
-LIES_HARD_P2,"2. For these Essenceology problems, one or more of the standard answers that I set are wrong. ("Standard answers" refer to the answer against which your submitted answer is compared by the program.)","2. 在这些本质学题目中，我设置的标准答案有错。（“标准答案”指你的答案提交后，程序与之进行对比的答案）"
+INTRO,Intro,引言
+UNLIKELY,Unlikely,小概率
+LOGIC,Logic,逻辑
+LOGIC_HARD,Logic - HARD🚨,逻辑 · 难🚨
+LIES_GENERALIZED,Lies - Generalized,谎言 · 归纳
+LIES,Lies,谎言
+LIES_1,Lies 1,谎言 1
+LIES_2,Lies 2,谎言 2
+LIES_HARD,Lies - HARD🚨,谎言 · 难🚨
+MEMORY_1,Memory 1,记忆 1
+MEMORY_2,Memory 2,记忆 2
+MEMORY_GENERALIZED,Memory - Generalized,记忆 · 归纳
+MEMORY_HARD,Memory - HARD🚨,记忆 · 难🚨
+PATTERNS_1,Patterns 1,规律 1
+PATTERNS_2,Patterns 2,规律 2
+PATTERNS_3,Patterns 3,规律 3
+FINALE,Finale,章终
+
+POSSIBILITY_INTRO_NOTE,"[center]The topic of Chapter 1 is possibility.\nIf the event described below is possible (including events that are bound to happen)\n[b]according to your knowledge[/b],\nthen left click the green box to answer ""P"" (Possible);\notherwise, right click to answer ""NP"" (Not Possible).[/center]","[center]第一章的主题是可能性。\n如果题目描述的事件[b]据你所知[/b]是可能发生的（一定发生的也算可能发生），\n则鼠标左键点击绿色框，以回答 ""P""（Possible）；\n否则右键点击绿色框，以回答 ""NP""（Not Possible）。[/center]"
+POSSIBILITY_INTRO_TOSS,"1. A standard coin is tossed. After it lands, its head faces up (and still is a standard coin).","1. 掷出一标准硬币，其落地后正面朝上（落地后仍为标准硬币）。"
+POSSIBILITY_INTRO_TOSS_OR,"2. A standard coin is tossed. After it lands, its head or tail faces up (and still is a standard coin).","2. 掷出一标准硬币，其落地后正面或背面朝上（落地后仍为标准硬币）。"
+POSSIBILITY_INTRO_TOSS_BOTH,"3. A standard coin is tossed. After it lands, its head and tail face up simultaneously.","3. 掷出一标准硬币，其落地后正面和背面同时朝上。"
+POSSIBILITY_UNLIKELY_NOTE,"You will receive a penalty when you submit a wrong answer,\nwhich prevents you from answering this problem for a while.\nSubmitting a wrong answer multiple times makes the penalty for this problem longer.","若你回答错误，则会受到惩罚，一段时间内无法再次回答此题。\n多次回答错误会使本题惩罚时间加长。"
+POSSIBILITY_UNLIKELY_WORM,"1. The worm that you find in restaurant food was dropped out of your own mouth.","1. 你在饭店的菜里吃到的虫子是从自己嘴里掉进去的。"
+POSSIBILITY_UNLIKELY_MURDER,"2. The one that matches the fingerprint on the murder weapon is not the murderer.","2. 与凶器上指纹相匹配的人不是凶手。"
+POSSIBILITY_UNLIKELY_STRANGER,"3. You return home, and then find a stranger in your bathroom.","3. 你回家后发现厕所里有个陌生人。"
+POSSIBILITY_LOGIC_NOTE,"Hover over a piece of yellow text and don't move your cursor\nfor extra clarifications for the text.","鼠标移动到黄色文字上保持不动，以显示对这段文字的进一步阐释。"
+POSSIBILITY_LOGIC_APPLE,"1. Someone is holding a red apple that is not red.","1. 有人拿着一个非红色的红苹果。"
+POSSIBILITY_LOGIC_KISS,"2. Someone has experienced their first kiss without ever touching anyone.","2. 有人经历过初吻但是从没碰过别人。"
+POSSIBILITY_LOGIC_PETAGON_CONVEX,"3. A [color=yellow][hint=extremely thin]line segment[/hint][/color] is added inside a convex pentagon, which divides the pentagon into two triangles.","3. 在一个凸五边形里添加一条[color=yellow][hint=极细]线段[/hint][/color]，此操作使得此五边形被分成两个三角形。"
+POSSIBILITY_LOGIC_PETAGON_CONCONCAVE,"4. A [color=yellow][hint=extremely thin]line segment[/hint][/color] is added inside a concave pentagon, which divides the pentagon into two triangles.","4. 在一个凹五边形里添加一条[color=yellow][hint=极细]线段[/hint][/color]，此操作使得此五边形被分成两个三角形。"
+POSSIBILITY_LOGIC_HARD_BAG_SQUIRREL,"1. A total of 5 objects are in a bag. Among the 5 objects, there are a total of 3 squirrels, and a total of 4 pieces of wood.","1. 一个袋子里共有5个物体，这5个物体中共有3只松鼠，共有4块木头。"
+POSSIBILITY_LOGIC_HARD_BAG_WOOD,"2. A total of 5 objects are in a bag. Among the 5 objects, there are a total of 3 pieces of wood, and a total of 4 balls.","2. 一个袋子里共有5个物体，这5个物体中共有3块木头，共有4个球体。"
+POSSIBILITY_LOGIC_HARD_BAG_MARBLE,"3. A total of 5 objects are in a bag. Among the 5 objects, there are a total of 3 balls, and a total of 4 marbles.","3. 一个袋子里共有5个物体，这5个物体中共有3个球体，共有4个弹珠。"
+POSSIBILITY_LIES_GENERALIZED_SPEECH,"1. An event that someone else claimed to have happened didn't actually happen.","1. 别人说发生了的某件事情其实没有发生。"
+POSSIBILITY_LIES_GENERALIZED_BOOK,"2. An event that a book claimed to have happened didn't actually happen.","2. 书上说发生了的某件事情其实没有发生。"
+POSSIBILITY_LIES_GENERALIZED_IMAGE,"3. The scene depicted in an image didn't actually happen.","3. 某张图片里描绘的场景其实没有发生。"
+POSSIBILITY_LIES_1_DINOSAUR,"1. Dinosaurs did not exist.","1. 恐龙不存在。"
+POSSIBILITY_LIES_1_WORLD_WAR,"2. World War I was fought against aliens.","2. 第一次世界大战是跟外星人打的。"
+POSSIBILITY_LIES_1_SUN_TZU,"3. The so-called ""Newton's laws of motion"" were discovered by Galileo Galilei.","3. 《孙子兵法》是孔子写的。"
+POSSIBILITY_LIES_2_MATH,"1. 1 + 1 = 3.","1. 1 + 1 = 3。"
+POSSIBILITY_LIES_2_MOTHER,"2. You have never met your biological mother.","2. 你未曾见过你的生母。"
+POSSIBILITY_LIES_2_NUCLEAR_WAR,"3. The day before yesterday, a nuclear war erupted on earth, with a death toll of over a hundred million people.","3. 前天地球上发生了一次核战争，死亡人数上亿。"
+POSSIBILITY_LIES_HARD_WEDDING,"1. Your biological father's [color=yellow][hint=could be more than one date due to divorce]wedding date(s)[/hint][/color] and your biological mother's wedding date(s) do not share a same date.","1. [color=yellow][hint=可以是多个日期，由于存在离婚]你生父的结婚日期[/hint][/color]与你生母的结婚日期不包含同一天。"
+POSSIBILITY_MEMORY_1_PIGEON_BIRTH,"1. When you were born, you saw a blue pigeon flying by.","1. 你出生时看见了一只蓝鸽子飞过。"
+POSSIBILITY_MEMORY_1_PIGEON_LAST_MONTH,"2. Last month, you saw a blue pigeon flying by.","2. 你上个月看见了一只蓝鸽子飞过。"
+POSSIBILITY_MEMORY_1_PIGEON_DREAM,"3. Last time you slept, you dreamed of a blue pigeon flying by.","3. 你上次睡觉时梦见了一只蓝鸽子飞过。"
+POSSIBILITY_MEMORY_2_NOTE,"[center]More specifically, the rule for answering ""P"" is:\n[b]When you are reading the problem[/b],\nthe event described below is possible according to your knowledge.[/center]","[center]详细来说，回答""P""的规则是：\n[b]当你阅读题目时[/b]，题目描述的事件据你所知是可能发生的。[/center]"
+POSSIBILITY_MEMORY_2_PUNCH,"1. I just gave you a punch within the past 10 minutes.","1. 你在刚刚的十分钟内被我打了一拳。"
+POSSIBILITY_MEMORY_2_TITLE,"2. Before you entered this level this time, the title of this level shown in the map was not ""Memory 2"". It was your name and your ID number instead.","2. 你这次点进本关之前，本关在地图上的标题不是“记忆 2”，而是你的姓名和你的身份证号。"
+POSSIBILITY_MEMORY_2_INPUT_OLD,"3. ","3. 本关里一个[color=yellow][hint=选择P或NP的那种框]输入框[/hint][/color]都没有。"
+POSSIBILITY_MEMORY_2_WORD,"3. This page does not contain a single word.","3. 本页面里一个字都没有。"
+POSSIBILITY_MEMORY_GENERALIZED_FORGET,"1. When you try to recall a perception that you experienced in the past, you couldn't recall the same perception.","1. 当你尝试回忆自己曾经历的某一感知时，却无法回忆起同样的感知。"
+POSSIBILITY_MEMORY_GENERALIZED_FORGET_OLD,"1. ","1. 你对以前某个时间的你的感知的记忆不存在，或与你那时的感知不一致。"
+POSSIBILITY_MEMORY_GENERALIZED_CURRENT,"2. Your current perception does not exist.","2. 你当前的感知不存在。"
+POSSIBILITY_MEMORY_HARD_WIPE,"1. You once went to a toilet to poop and then walked away and forgot to wipe.","1. 你曾经有一次去厕所拉完屎忘记擦就走了。"
+POSSIBILITY_PATTERNS_1_SPACE_MATTER,"1. A cloud of matter is floating in space. It has flashed a hundred million times of green light consecutively. However, for the next time, it will flash red light.","1. 宇宙中漂浮着一团物质，它已经连续闪烁了一亿次绿光。但是它下一次将闪烁红光。"
+POSSIBILITY_PATTERNS_2_NEWTON,"1. [color=yellow][hint=as known as F=ma, a law that describes the motion of objects]Newton's Second Law of Motion[/hint][/color] does not hold true for some situations.","1. [color=yellow][hint=即F=ma，是描述物体运动规律的定律]牛顿第二运动定律[/hint][/color]对某些情况不成立。"
+POSSIBILITY_PATTERNS_2_TELEPORT,"2. A substance appears out of nowhere.","2. 一个物质凭空出现了。"
+POSSIBILITY_PATTERNS_2_NOT_OBJECT,"3. There is a thing that looks the same as an opaque solid cube, but when an object moves into it, the object clips through it, and neither receives resistance from the other.","3. 有一个东西，它看上去和一个不透明固体立方体一样，但另一物体向它移动时将穿过它，且双方不受对方给的阻力。"
+POSSIBILITY_PATTERNS_3_DEATH,"1. After your body dies, you will continue to perceive indefinitely.","1. 在你的身体死亡后，你仍会继续感知，永无止境。"
+POSSIBILITY_PATTERNS_3_SENTIMENTAL,"2. All the people in the world other than you [color=yellow][hint=like you are playing a single-player game]do not have perception[/hint][/color] all along.","2. 世界上除你以外的其他人一直都是[color=yellow][hint=就像你在玩单机游戏]没有感知[/hint][/color]的。"
+POSSIBILITY_FINALE_REFERENCE_ANSWER,"1. Among the Essenceology problems that I released or will release, one or more of the [color=yellow][hint=the answer against which your submitted answer is compared by the program]reference answers[/hint][/color] that I set are wrong.","1. 在我公布的本质学题目中，我设置的[color=yellow][hint=指你的答案提交后，程序与之进行对比的答案]参考答案[/hint][/color]有错。"

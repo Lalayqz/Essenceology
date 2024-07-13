@@ -1,7 +1,6 @@
 extends Node2D
 
 @onready var config = get_node("/root/Config").config
-@onready var LIGHT_COLOR = get_meta("color")
 var LIGHT_TEXTURE = preload("res://Resources/Light.png")
 var SHIFT_TIME = 10
 var START_SCALE = 1
@@ -12,7 +11,11 @@ var MOVING_SPEED = 0.15
 var SMALL_LIGHT_ALPHA = 0.4
 var NEW_LIGHT_INTERVAL = 15
 var LIGHT_FADE_DELAY = 5
+var LIGHT_COLORS = {"SETTINGS": 0xa66df5ff, "POSSIBILITY": 0x55b555ff, "SHOULD": 0xffb012ff}
+var COLOR_SHIFT_SPEED = 5
 
+var color = Color(LIGHT_COLORS["POSSIBILITY"])
+var target_color = color
 var is_light_on
 var view_size
 var light_count
@@ -23,7 +26,7 @@ var small_light_counter = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	is_light_on = config.get_value("Config", "disturbing_background")
-	view_size = get_node("../Background").get_size()
+	view_size = get_viewport().size
 	light_count = view_size.x * view_size.y / 130000
 	if is_light_on:
 		init_lights()
@@ -38,6 +41,15 @@ func _process(delta):
 			add_light(true)
 		for light in get_children():
 			update_light(light, delta)
+			
+		# Shift color
+		color.r = color.r + (target_color.r - color.r) * COLOR_SHIFT_SPEED * delta
+		color.g = color.g + (target_color.g - color.g) * COLOR_SHIFT_SPEED * delta
+		color.b = color.b + (target_color.b - color.b) * COLOR_SHIFT_SPEED * delta
+		for light in get_children():
+			light.modulate.r = color.r
+			light.modulate.g = color.g
+			light.modulate.b = color.b
 		
 func init_lights():
 	for i in range(light_count):
@@ -48,7 +60,7 @@ func add_light(is_growing):
 	light.texture = LIGHT_TEXTURE
 	light.position = Vector2(rng.randi_range(0, view_size.x), rng.randi_range(0, view_size.y))
 	
-	light.modulate = LIGHT_COLOR
+	light.modulate = color
 	var max_alpha
 	small_light_counter += 1
 	if (small_light_counter == 2):
@@ -108,3 +120,6 @@ func remove_all_lights():
 	for light in get_children():
 		remove_child(light)
 		light.queue_free()
+		
+func update_color_to_chapter_color(chapter):
+	target_color = Color(LIGHT_COLORS[chapter])

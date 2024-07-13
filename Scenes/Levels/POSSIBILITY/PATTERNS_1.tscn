@@ -1,0 +1,76 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkkvui2thx3ow"]
+
+[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_7gaoe"]
+[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Level_Structure.tscn" id="2_gfxbo"]
+[ext_resource type="Script" path="res://Scripts/Possibility_Problem.gd" id="3_1ibl3"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="4_1c2bt"]
+[ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://Resources/Possibility_Button.png" id="5_hh4ls"]
+[ext_resource type="Script" path="res://Scripts/Possibility_Button.gd" id="6_ll1qc"]
+[ext_resource type="Texture2D" uid="uid://vl24cl1db66a" path="res://Resources/P.png" id="7_q7b7t"]
+[ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://Resources/NP.png" id="8_lnf4l"]
+
+[node name="PATTERNS_1" type="Node2D"]
+script = ExtResource("1_7gaoe")
+
+[node name="Level_Structure" parent="." instance=ExtResource("2_gfxbo")]
+
+[node name="Problems" type="CenterContainer" parent="."]
+offset_right = 1280.0
+offset_bottom = 640.0
+mouse_filter = 2
+
+[node name="Problems" type="VBoxContainer" parent="Problems"]
+layout_mode = 2
+
+[node name="SPACE_MATTER" type="MarginContainer" parent="Problems/Problems"]
+layout_mode = 2
+script = ExtResource("3_1ibl3")
+
+[node name="Problem" type="HSplitContainer" parent="Problems/Problems/SPACE_MATTER"]
+layout_mode = 2
+split_offset = 99999
+dragger_visibility = 2
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/SPACE_MATTER/Problem"]
+layout_mode = 2
+theme_override_constants/margin_right = 50
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/SPACE_MATTER/Problem/Text" groups=["Texts"]]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_1c2bt")
+theme_override_font_sizes/normal_font_size = 33
+bbcode_enabled = true
+text = "POSSIBILITY_PATTERNS_1_SPACE_MATTER"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/SPACE_MATTER/Problem"]
+layout_mode = 2
+
+[node name="Button" type="TextureButton" parent="Problems/Problems/SPACE_MATTER/Problem/Button" groups=["Inputs"]]
+layout_mode = 2
+toggle_mode = true
+button_mask = 3
+texture_normal = ExtResource("5_hh4ls")
+script = ExtResource("6_ll1qc")
+
+[node name="P" type="Sprite2D" parent="Problems/Problems/SPACE_MATTER/Problem/Button/Button"]
+visible = false
+position = Vector2(31, 22)
+scale = Vector2(0.813433, 0.813433)
+texture = ExtResource("7_q7b7t")
+
+[node name="NP" type="Sprite2D" parent="Problems/Problems/SPACE_MATTER/Problem/Button/Button"]
+visible = false
+position = Vector2(28, 31)
+scale = Vector2(0.813433, 0.813433)
+texture = ExtResource("8_lnf4l")
+
+[connection signal="button_down" from="Problems/Problems/SPACE_MATTER/Problem/Button/Button" to="Problems/Problems/SPACE_MATTER/Problem/Button/Button" method="button_down"]
+[connection signal="button_up" from="Problems/Problems/SPACE_MATTER/Problem/Button/Button" to="Problems/Problems/SPACE_MATTER/Problem/Button/Button" method="released"]
+[connection signal="mouse_entered" from="Problems/Problems/SPACE_MATTER/Problem/Button/Button" to="Problems/Problems/SPACE_MATTER/Problem/Button/Button" method="hovered"]
+[connection signal="mouse_exited" from="Problems/Problems/SPACE_MATTER/Problem/Button/Button" to="Problems/Problems/SPACE_MATTER/Problem/Button/Button" method="return_normal"]
+[connection signal="pressed" from="Problems/Problems/SPACE_MATTER/Problem/Button/Button" to="Problems/Problems/SPACE_MATTER/Problem/Button/Button" method="pressed"]

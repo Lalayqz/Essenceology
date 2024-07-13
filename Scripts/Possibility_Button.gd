@@ -47,10 +47,4 @@ func switch_to(p):
 		Possibilities.NP:
 			NP_SPRITE.visible = true
 	state_changed.emit()
-			
-func is_not_answered():
-	return possibility == null
-	
-func check_answer():
-	return possibility == answer
 	

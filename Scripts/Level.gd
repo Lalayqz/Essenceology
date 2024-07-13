@@ -1,19 +1,36 @@
 extends Node2D
 
 @onready var CHAPTER = Global_Variables.current_chapter
+@onready var LEVEL_NAME = self.name
+@onready var LEVEL_STRUCTURE = get_node("Level_Structure")
+@onready var TITLE = LEVEL_STRUCTURE.get_node("UI/Title")
+@onready var SUBMIT_BUTTON = LEVEL_STRUCTURE.get_node("UI/Submit_Button")
+@onready var SOLVED_LABEL = LEVEL_STRUCTURE.get_node("UI/Solved_Label/Label/Label")
+@onready var AUDIO_PLAYER = LEVEL_STRUCTURE.get_node("Audio_Player")
 @onready var TEXTS = get_tree().get_nodes_in_group("Texts")
-@onready var PROBLEMS = get_node("Problems/Problems")
+@onready var PROBLEMS_CONTAINER = get_node("Problems/Problems")
+@onready var PROBLEMS = PROBLEMS_CONTAINER.get_children()
+var WRONG_ANSWER_SOUND = preload("res://Resources/Sounds/Wrong_Answer.mp3")
 var TEXT_FONT = preload("res://Resources/SourceHanSansSC-Normal.otf")
 var TEXT_FONT_SIZE = 33
 var TEXT_FONT_SIZE_SMALL = 30
 var MAX_TEXT_WIDTH = 1000
 var MAX_TEXT_HEIGHT = 500
-signal solve_level()
+var PENALTIES = [1, 3, 6, 10]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$UI/Title.text = self.name
-	# text layout (according to localization)
+	# connect children's signals
+	SUBMIT_BUTTON.submit.connect(submit_answers)
+	SUBMIT_BUTTON.set_level_name(LEVEL_NAME)
+	var back_button =  LEVEL_STRUCTURE.get_node("UI/Back_Button")
+	back_button.pressed.connect(exit_level)
+	for problem in PROBLEMS:
+		problem.connect_signal_update_submit_button_visibility(update_submit_button_visibility)
+	load_answers()
+	
+	TITLE.text = LEVEL_NAME
+	# set text layout (according to localization)
 	var word_warp = false
 	for text in TEXTS:
 		if TEXT_FONT.get_string_size(TranslationServer.translate(text.text), 0, -1, TEXT_FONT_SIZE).x > MAX_TEXT_WIDTH:
@@ -24,19 +41,18 @@ func _ready():
 			text.set_autowrap_mode(TextServer.AUTOWRAP_WORD)
 			text.set_custom_minimum_size(Vector2(MAX_TEXT_WIDTH, 0))
 	call_deferred("check_and_shrink_font")
-	# saved inputs
-	var saved_inputs = Save.get_level_inputs(CHAPTER, self.name)
-	if saved_inputs != null:
-		var input_nodes = get_tree().get_nodes_in_group("Inputs")
-		var length = min(len(saved_inputs), len(input_nodes))
-		for i in range(length):
-			input_nodes[i].switch_to(saved_inputs[i])
-	# solved
-	if Save.get_level_solved(CHAPTER, self.name):
-		solve_level.emit()
+	
+	# set solved
+	# It's possible that I update the problems and the inputs for an already solved level is not longer correct.
+	# If this happens, just make the content in level appears as unsolved. Don't remove this level from solved levels in save.
+	if Save.get_level_solved(CHAPTER, LEVEL_NAME) and is_all_correct():
+		solve_level()
+	# set submit button
+	update_submit_button_visibility()
+	SUBMIT_BUTTON.load_penalty_from_save()
 	
 func check_and_shrink_font():
-	var size = PROBLEMS.get_minimum_size()
+	var size = PROBLEMS_CONTAINER.get_minimum_size()
 	if size.y > MAX_TEXT_HEIGHT:
 		for text in TEXTS:
 			text.set("theme_override_font_sizes/font_size", TEXT_FONT_SIZE_SMALL)
@@ -53,13 +69,63 @@ func _notification(notification):
 	if notification == NOTIFICATION_WM_CLOSE_REQUEST:
 		exit_level()
 
-func save_inputs():
-	var inputs = []
-	for input in get_tree().get_nodes_in_group("Inputs"):
-		inputs.append(input.possibility)
-	Save.set_level_inputs(CHAPTER, self.name, inputs)
+func is_all_answered():
+	var all_answered = true
+	for problem in PROBLEMS:
+		if not problem.is_answered():
+			all_answered = false
+			break
+	return all_answered
+	
+func update_submit_button_visibility():
+	SUBMIT_BUTTON.visible = is_all_answered()
+
+# Just check. Doesn't trigger anything.
+func is_all_correct():
+	for problem in PROBLEMS:
+		if not problem.is_correct():
+			return false
+	return true
+
+func update_submit_button_penalty():
+	var penalty = Save.get_level_penalty(CHAPTER, LEVEL_NAME)
+	SUBMIT_BUTTON.set_penalty(penalty)
+
+# Check and trigger corresponding things.
+func submit_answers():
+	if is_all_correct():
+		# correct answer!
+		solve_level()
+	else:
+		# wrong answer!
+		SUBMIT_BUTTON.disable()
+		var fail = Save.get_level_fail(CHAPTER, LEVEL_NAME)
+		var penalty = PENALTIES[fail] * 60 if fail < len(PENALTIES) else PENALTIES[-1] * 60
+		Save.save_level_fail(CHAPTER, LEVEL_NAME, fail + 1)
+		Save.save_level_penalty(CHAPTER, LEVEL_NAME, penalty)
+		AUDIO_PLAYER.stream = WRONG_ANSWER_SOUND
+		AUDIO_PLAYER.play()
+	
+func solve_level():
+	Save.save_level_solved(CHAPTER, LEVEL_NAME)
+	if Global_Variables.is_finale(CHAPTER, LEVEL_NAME):
+		Save.save_chapter_solved(CHAPTER)
+	save_answers()
+	for problem in PROBLEMS:
+		problem.disable()
+	SUBMIT_BUTTON.make_hidden()
+	SOLVED_LABEL.set("theme_override_colors/font_shadow_color", Global_Variables.current_chapter_color)
+	SOLVED_LABEL.visible = true
+	
+func load_answers():
+	for problem in PROBLEMS:
+		problem.load_answer(CHAPTER, LEVEL_NAME)
+	
+func save_answers():
+	for problem in PROBLEMS:
+		problem.save_answer(CHAPTER, LEVEL_NAME)
 	Save.save_game()
 
 func exit_level():
-	save_inputs()
-	get_tree().change_scene_to_file("res://MainMenu.tscn")
+	save_answers()
+	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")

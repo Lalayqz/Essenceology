@@ -1,7 +1,7 @@
 class_name ChapterButton extends NeatButton
 
 @onready var MAINMENU = get_node("../..")
-@export var chapter: Global_Variables.Chapters
+@export var chapter : String
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

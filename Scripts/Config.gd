@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 var CONFIG_PATH = "user://config.cfg"
 var config

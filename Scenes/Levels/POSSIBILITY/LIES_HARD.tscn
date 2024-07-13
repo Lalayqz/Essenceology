@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://difh8cks1kmix"]
+
+[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_oqr6h"]
+[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Level_Structure.tscn" id="2_5wjr0"]
+[ext_resource type="Script" path="res://Scripts/Possibility_Problem.gd" id="3_voipm"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="4_3unjt"]
+[ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://Resources/Possibility_Button.png" id="5_ocacl"]
+[ext_resource type="Script" path="res://Scripts/Possibility_Button.gd" id="6_224n6"]
+[ext_resource type="Texture2D" uid="uid://vl24cl1db66a" path="res://Resources/P.png" id="7_bhm86"]
+[ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://Resources/NP.png" id="8_cbdt3"]
+
+[node name="LIES_HARD" type="Node2D"]
+script = ExtResource("1_oqr6h")
+
+[node name="Level_Structure" parent="." instance=ExtResource("2_5wjr0")]
+
+[node name="Problems" type="CenterContainer" parent="."]
+offset_right = 1280.0
+offset_bottom = 640.0
+mouse_filter = 2
+
+[node name="Problems" type="VBoxContainer" parent="Problems"]
+layout_mode = 2
+
+[node name="WEDDING" type="MarginContainer" parent="Problems/Problems"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 30
+script = ExtResource("3_voipm")
+
+[node name="Problem" type="HSplitContainer" parent="Problems/Problems/WEDDING"]
+layout_mode = 2
+split_offset = 99999
+dragger_visibility = 2
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/WEDDING/Problem"]
+layout_mode = 2
+theme_override_constants/margin_right = 50
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/WEDDING/Problem/Text" groups=["Texts"]]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_3unjt")
+theme_override_font_sizes/normal_font_size = 33
+bbcode_enabled = true
+text = "POSSIBILITY_LIES_HARD_WEDDING"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/WEDDING/Problem"]
+layout_mode = 2
+
+[node name="Button" type="TextureButton" parent="Problems/Problems/WEDDING/Problem/Button" groups=["Inputs"]]
+layout_mode = 2
+toggle_mode = true
+button_mask = 3
+texture_normal = ExtResource("5_ocacl")
+script = ExtResource("6_224n6")
+
+[node name="P" type="Sprite2D" parent="Problems/Problems/WEDDING/Problem/Button/Button"]
+visible = false
+position = Vector2(31, 22)
+scale = Vector2(0.813433, 0.813433)
+texture = ExtResource("7_bhm86")
+
+[node name="NP" type="Sprite2D" parent="Problems/Problems/WEDDING/Problem/Button/Button"]
+visible = false
+position = Vector2(28, 31)
+scale = Vector2(0.813433, 0.813433)
+texture = ExtResource("8_cbdt3")
+
+[connection signal="button_down" from="Problems/Problems/WEDDING/Problem/Button/Button" to="Problems/Problems/WEDDING/Problem/Button/Button" method="button_down"]
+[connection signal="button_up" from="Problems/Problems/WEDDING/Problem/Button/Button" to="Problems/Problems/WEDDING/Problem/Button/Button" method="released"]
+[connection signal="mouse_entered" from="Problems/Problems/WEDDING/Problem/Button/Button" to="Problems/Problems/WEDDING/Problem/Button/Button" method="hovered"]
+[connection signal="mouse_exited" from="Problems/Problems/WEDDING/Problem/Button/Button" to="Problems/Problems/WEDDING/Problem/Button/Button" method="return_normal"]
+[connection signal="pressed" from="Problems/Problems/WEDDING/Problem/Button/Button" to="Problems/Problems/WEDDING/Problem/Button/Button" method="pressed"]
