@@ -5,8 +5,8 @@ enum Possibilities {
 	NP,
 }
 
-signal state_changed()
-@export var answer: Possibilities
+signal answer_changed()
+@export var REFERENCE_ANSWER: Possibilities
 @onready var P_SPRITE = $P
 @onready var NP_SPRITE = $NP
 var possibility = null
@@ -37,6 +37,7 @@ func pressed():
 			switch_to(Possibilities.NP)
 
 func switch_to(p):
+	var p_old = possibility
 	possibility = p as Possibilities if p != null else null # if not using "as", then possibility may be assigned by an int, which won't work in the next "match" sentence
 		
 	for sprite in get_children():
@@ -46,5 +47,7 @@ func switch_to(p):
 			P_SPRITE.visible = true
 		Possibilities.NP:
 			NP_SPRITE.visible = true
-	state_changed.emit()
+	
+	if p != p_old:
+		answer_changed.emit()
 	

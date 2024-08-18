@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://jh04bnjx5lb3"]
 
-[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_oqyga"]
-[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Level_Structure.tscn" id="2_xjx7u"]
+[ext_resource type="Script" path="res://Possibility_Level.gd" id="1_vshp2"]
+[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_xjx7u"]
 [ext_resource type="Script" path="res://Scripts/Possibility_Problem.gd" id="3_wsjj0"]
 [ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="4_ji22p"]
 [ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://Resources/Possibility_Button.png" id="5_8xhdt"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://Resources/NP.png" id="8_dinnd"]
 
 [node name="LIES_2" type="Node2D"]
-script = ExtResource("1_oqyga")
+script = ExtResource("1_vshp2")
 
 [node name="Level_Structure" parent="." instance=ExtResource("2_xjx7u")]
 
@@ -36,7 +36,7 @@ dragger_visibility = 2
 layout_mode = 2
 theme_override_constants/margin_right = 50
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/MATH/Problem/Text" groups=["Texts"]]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/MATH/Problem/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -57,7 +57,7 @@ toggle_mode = true
 button_mask = 3
 texture_normal = ExtResource("5_8xhdt")
 script = ExtResource("6_3jfd0")
-answer = 1
+REFERENCE_ANSWER = 1
 
 [node name="P" type="Sprite2D" parent="Problems/Problems/MATH/Problem/Button/Button"]
 visible = false
@@ -85,7 +85,7 @@ dragger_visibility = 2
 layout_mode = 2
 theme_override_constants/margin_right = 50
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/MOTHER/Problem/Text" groups=["Texts"]]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/MOTHER/Problem/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -132,7 +132,7 @@ dragger_visibility = 2
 layout_mode = 2
 theme_override_constants/margin_right = 50
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/NUCLEAR_WAR/Problem/Text" groups=["Texts"]]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/NUCLEAR_WAR/Problem/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2

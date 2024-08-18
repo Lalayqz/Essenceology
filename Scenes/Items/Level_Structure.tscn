@@ -6,7 +6,7 @@
 [ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="4_bxfsp"]
 [ext_resource type="Theme" uid="uid://cc776rspw52yb" path="res://Resources/Submit_Button.tres" id="5_ry4bc"]
 [ext_resource type="Script" path="res://Scripts/Submit_Button.gd" id="6_kg7cb"]
-[ext_resource type="PackedScene" uid="uid://c7vy1ltbvt8jk" path="res://Scenes/UI_Text.tscn" id="7_7o3i1"]
+[ext_resource type="PackedScene" uid="uid://c7vy1ltbvt8jk" path="res://Scenes/Items/UI_Text.tscn" id="7_7o3i1"]
 
 [node name="Level_Structure" type="ReferenceRect"]
 offset_right = 1280.0

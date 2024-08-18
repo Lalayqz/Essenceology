@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://b3ldglqopbq4o"]
 
-[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_rkh8d"]
-[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Level_Structure.tscn" id="2_giu0t"]
+[ext_resource type="Script" path="res://Possibility_Level.gd" id="1_163hi"]
+[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_giu0t"]
 [ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="3_tkptu"]
 [ext_resource type="Script" path="res://Scripts/Possibility_Problem.gd" id="4_dtnck"]
 [ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://Resources/Possibility_Button.png" id="5_jlvur"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://Resources/NP.png" id="8_80yr8"]
 
 [node name="LOGIC" type="Node2D"]
-script = ExtResource("1_rkh8d")
+script = ExtResource("1_163hi")
 
 [node name="Level_Structure" parent="." instance=ExtResource("2_giu0t")]
 
@@ -54,7 +54,7 @@ dragger_visibility = 2
 layout_mode = 2
 theme_override_constants/margin_right = 50
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/APPLE/Problem/Text" groups=["Texts"]]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/APPLE/Problem/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -75,7 +75,7 @@ toggle_mode = true
 button_mask = 3
 texture_normal = ExtResource("5_jlvur")
 script = ExtResource("6_oc50g")
-answer = 1
+REFERENCE_ANSWER = 1
 
 [node name="P" type="Sprite2D" parent="Problems/Problems/APPLE/Problem/Button/Button"]
 visible = false
@@ -103,7 +103,7 @@ dragger_visibility = 2
 layout_mode = 2
 theme_override_constants/margin_right = 50
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/KISS/Problem/Text" groups=["Texts"]]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/KISS/Problem/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -124,7 +124,7 @@ toggle_mode = true
 button_mask = 3
 texture_normal = ExtResource("5_jlvur")
 script = ExtResource("6_oc50g")
-answer = 1
+REFERENCE_ANSWER = 1
 
 [node name="P" type="Sprite2D" parent="Problems/Problems/KISS/Problem/Button/Button"]
 visible = false
@@ -152,7 +152,7 @@ dragger_visibility = 2
 layout_mode = 2
 theme_override_constants/margin_right = 50
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/PETAGON_CONVEX/Problem/Text" groups=["Texts"]]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/PETAGON_CONVEX/Problem/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -173,7 +173,7 @@ toggle_mode = true
 button_mask = 3
 texture_normal = ExtResource("5_jlvur")
 script = ExtResource("6_oc50g")
-answer = 1
+REFERENCE_ANSWER = 1
 
 [node name="P" type="Sprite2D" parent="Problems/Problems/PETAGON_CONVEX/Problem/Button/Button"]
 visible = false
@@ -200,7 +200,7 @@ dragger_visibility = 2
 layout_mode = 2
 theme_override_constants/margin_right = 50
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/PETAGON_CONCONCAVE/Problem/Text" groups=["Texts"]]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/PETAGON_CONCONCAVE/Problem/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2

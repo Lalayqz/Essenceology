@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://br533mgiyvjj7"]
 
-[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_ag0sm"]
-[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Level_Structure.tscn" id="2_6shpe"]
+[ext_resource type="Script" path="res://Possibility_Level.gd" id="1_wox6o"]
+[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_6shpe"]
 [ext_resource type="Script" path="res://Scripts/Possibility_Problem.gd" id="3_ft8xb"]
 [ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="4_pbrsm"]
 [ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://Resources/Possibility_Button.png" id="5_oitmh"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://Resources/NP.png" id="8_e4xxx"]
 
 [node name="MEMORY_GENERALIZED" type="Node2D"]
-script = ExtResource("1_ag0sm")
+script = ExtResource("1_wox6o")
 
 [node name="Level_Structure" parent="." instance=ExtResource("2_6shpe")]
 
@@ -36,7 +36,7 @@ dragger_visibility = 2
 layout_mode = 2
 theme_override_constants/margin_right = 50
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/FORGET/Problem/Text" groups=["Texts"]]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/FORGET/Problem/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -83,7 +83,7 @@ dragger_visibility = 2
 layout_mode = 2
 theme_override_constants/margin_right = 50
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/CURRENT/Problem/Text" groups=["Texts"]]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/CURRENT/Problem/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -104,7 +104,7 @@ toggle_mode = true
 button_mask = 3
 texture_normal = ExtResource("5_oitmh")
 script = ExtResource("6_ev3oa")
-answer = 1
+REFERENCE_ANSWER = 1
 
 [node name="P" type="Sprite2D" parent="Problems/Problems/CURRENT/Problem/Button/Button"]
 visible = false

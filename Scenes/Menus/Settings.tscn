@@ -1,15 +1,15 @@
 [gd_scene load_steps=8 format=3 uid="uid://8ctxnv73mn4d"]
 
-[ext_resource type="Script" path="res://Scripts/Settings.gd" id="1_u6bax"]
-[ext_resource type="Theme" uid="uid://cel18xkchmafq" path="res://Resources/UI_Button.tres" id="2_gu6lm"]
-[ext_resource type="Script" path="res://Scripts/NeatButton.gd" id="3_ny6mp"]
-[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/SourceHanSansSC-Bold.otf" id="4_88nbb"]
-[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="5_ya0vp"]
-[ext_resource type="Texture2D" uid="uid://ds23vbk5lwphi" path="res://Resources/Checkbox_Checked.png" id="6_fd87p"]
-[ext_resource type="Texture2D" uid="uid://bt5fut6vnv53v" path="res://Resources/Checkbox.png" id="7_avcqi"]
+[ext_resource type="Script" path="res://Scripts/Settings.gd" id="1_bdgw5"]
+[ext_resource type="Theme" uid="uid://cel18xkchmafq" path="res://Resources/UI_Button.tres" id="2_4ecso"]
+[ext_resource type="Script" path="res://Scripts/NeatButton.gd" id="3_o6yun"]
+[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/SourceHanSansSC-Bold.otf" id="4_pp0o4"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="5_lm2a6"]
+[ext_resource type="Texture2D" uid="uid://ds23vbk5lwphi" path="res://Resources/Checkbox_Checked.png" id="6_r82t4"]
+[ext_resource type="Texture2D" uid="uid://bt5fut6vnv53v" path="res://Resources/Checkbox.png" id="7_y80li"]
 
 [node name="Settings" type="Node2D"]
-script = ExtResource("1_u6bax")
+script = ExtResource("1_bdgw5")
 
 [node name="Background" type="ColorRect" parent="."]
 z_index = -10
@@ -23,8 +23,8 @@ offset_top = 10.0
 offset_right = 75.0
 offset_bottom = 75.0
 focus_mode = 0
-theme = ExtResource("2_gu6lm")
-script = ExtResource("3_ny6mp")
+theme = ExtResource("2_4ecso")
+script = ExtResource("3_o6yun")
 
 [node name="Label" type="Label" parent="Back"]
 layout_mode = 0
@@ -32,7 +32,7 @@ offset_left = 10.0
 offset_top = -1.0
 offset_right = 53.0
 offset_bottom = 72.0
-theme_override_fonts/font = ExtResource("4_88nbb")
+theme_override_fonts/font = ExtResource("4_pp0o4")
 theme_override_font_sizes/font_size = 50
 text = "↩"
 
@@ -70,16 +70,16 @@ theme_override_constants/margin_right = 30
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("5_ya0vp")
+theme_override_fonts/font = ExtResource("5_lm2a6")
 theme_override_font_sizes/font_size = 33
 text = "English"
 
 [node name="Checkbox" type="CheckBox" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages/en/en"]
 layout_mode = 2
 focus_mode = 0
-theme_override_icons/checked = ExtResource("6_fd87p")
-theme_override_icons/unchecked = ExtResource("7_avcqi")
-script = ExtResource("3_ny6mp")
+theme_override_icons/checked = ExtResource("6_r82t4")
+theme_override_icons/unchecked = ExtResource("7_y80li")
+script = ExtResource("3_o6yun")
 
 [node name="zh" type="MarginContainer" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages"]
 layout_mode = 2
@@ -96,16 +96,16 @@ theme_override_constants/margin_right = 30
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("5_ya0vp")
+theme_override_fonts/font = ExtResource("5_lm2a6")
 theme_override_font_sizes/font_size = 33
 text = "中文"
 
 [node name="Checkbox" type="CheckBox" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages/zh/zh"]
 layout_mode = 2
 focus_mode = 0
-theme_override_icons/checked = ExtResource("6_fd87p")
-theme_override_icons/unchecked = ExtResource("7_avcqi")
-script = ExtResource("3_ny6mp")
+theme_override_icons/checked = ExtResource("6_r82t4")
+theme_override_icons/unchecked = ExtResource("7_y80li")
+script = ExtResource("3_o6yun")
 
 [node name="Disturbing_Background" type="CenterContainer" parent="Options/Options"]
 layout_mode = 2
@@ -122,16 +122,16 @@ theme_override_constants/margin_right = 30
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("5_ya0vp")
+theme_override_fonts/font = ExtResource("5_lm2a6")
 theme_override_font_sizes/font_size = 33
 text = "DISTURBING_BACKGROUND"
 
 [node name="Checkbox" type="CheckBox" parent="Options/Options/Disturbing_Background/Disturbing_Background"]
 layout_mode = 2
 focus_mode = 0
-theme_override_icons/checked = ExtResource("6_fd87p")
-theme_override_icons/unchecked = ExtResource("7_avcqi")
-script = ExtResource("3_ny6mp")
+theme_override_icons/checked = ExtResource("6_r82t4")
+theme_override_icons/unchecked = ExtResource("7_y80li")
+script = ExtResource("3_o6yun")
 
 [connection signal="button_down" from="Back" to="Back" method="button_down"]
 [connection signal="button_up" from="Back" to="Back" method="return_normal"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://btvpixagx48jt"]
 
-[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_w32j2"]
-[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Level_Structure.tscn" id="2_2wifn"]
+[ext_resource type="Script" path="res://Possibility_Level.gd" id="1_bj8rm"]
+[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_2wifn"]
 [ext_resource type="Script" path="res://Scripts/Possibility_Problem.gd" id="3_wj0k1"]
 [ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="4_ntawk"]
 [ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://Resources/Possibility_Button.png" id="5_t4mwe"]
@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://Resources/NP.png" id="8_sifr7"]
 
 [node name="LIES_GENERALIZED" type="Node2D"]
-script = ExtResource("1_w32j2")
+script = ExtResource("1_bj8rm")
 
 [node name="Level_Structure" parent="." instance=ExtResource("2_2wifn")]
 
@@ -36,7 +36,7 @@ dragger_visibility = 2
 layout_mode = 2
 theme_override_constants/margin_right = 50
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/SPEECH/Problem/Text" groups=["Texts"]]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/SPEECH/Problem/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -84,7 +84,7 @@ dragger_visibility = 2
 layout_mode = 2
 theme_override_constants/margin_right = 50
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/BOOK/Problem/Text" groups=["Texts"]]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/BOOK/Problem/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -131,7 +131,7 @@ dragger_visibility = 2
 layout_mode = 2
 theme_override_constants/margin_right = 50
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/IMAGE/Problem/Text" groups=["Texts"]]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/IMAGE/Problem/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dniy7v63wotuc"
-path="res://.godot/imported/Possibility_Input1.png-40d088a0c9222ae0fb965a01640f4fa2.ctex"
+uid="uid://d11v0n0uo8t0o"
+path="res://.godot/imported/Possibility_Input1.png-dafdc0719ef237ab63d53db9ca993b51.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Possibility_Input1.png"
-dest_files=["res://.godot/imported/Possibility_Input1.png-40d088a0c9222ae0fb965a01640f4fa2.ctex"]
+source_file="res://DUMP/Possibility_Input1.png"
+dest_files=["res://.godot/imported/Possibility_Input1.png-dafdc0719ef237ab63d53db9ca993b51.ctex"]
 
 [params]
 

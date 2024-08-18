@@ -26,10 +26,10 @@ PATTERNS_2,Patterns 2,规律 2
 PATTERNS_3,Patterns 3,规律 3
 FINALE,Finale,章终
 
-POSSIBILITY_INTRO_NOTE,"[center]The topic of Chapter 1 is possibility.\nIf the event described below is possible (including events that are bound to happen)\n[b]according to your knowledge[/b],\nthen left click the green box to answer ""P"" (Possible);\notherwise, right click to answer ""NP"" (Not Possible).[/center]","[center]第一章的主题是可能性。\n如果题目描述的事件[b]据你所知[/b]是可能发生的（一定发生的也算可能发生），\n则鼠标左键点击绿色框，以回答 ""P""（Possible）；\n否则右键点击绿色框，以回答 ""NP""（Not Possible）。[/center]"
-POSSIBILITY_INTRO_TOSS,"1. A standard coin is tossed. After it lands, its head faces up (and still is a standard coin).","1. 掷出一标准硬币，其落地后正面朝上（落地后仍为标准硬币）。"
-POSSIBILITY_INTRO_TOSS_OR,"2. A standard coin is tossed. After it lands, its head or tail faces up (and still is a standard coin).","2. 掷出一标准硬币，其落地后正面或背面朝上（落地后仍为标准硬币）。"
-POSSIBILITY_INTRO_TOSS_BOTH,"3. A standard coin is tossed. After it lands, its head and tail face up simultaneously.","3. 掷出一标准硬币，其落地后正面和背面同时朝上。"
+POSSIBILITY_INTRO_NOTE,"[center]The topic of Chapter 1 is possibility.\nIf the event described below is [b]possible[/b] (including events that are bound to happen)\n[b]according to your knowledge[/b],\nthen left click the green box to answer ""P"" (Possible);\notherwise, right click to answer ""NP"" (Not Possible).[/center]","[center]第一章的主题是可能性。\n如果题目描述的事件[b]据你所知[/b]是[b]可能[/b]发生的（一定发生的也算可能发生），\n则鼠标左键点击绿色框，以回答 ""P""（Possible）；\n否则右键点击绿色框，以回答 ""NP""（Not Possible）。[/center]"
+POSSIBILITY_INTRO_TOSS,"1. A standard coin is tossed. After it lands, its head faces up (it's still a standard coin).","1. 掷出一标准硬币，其落地后正面朝上（落地后仍为标准硬币）。"
+POSSIBILITY_INTRO_TOSS_OR,"2. A standard coin is tossed. After it lands, its head or tail faces up (it's still a standard coin).","2. 掷出一标准硬币，其落地后正面或背面朝上（落地后仍为标准硬币）。"
+POSSIBILITY_INTRO_TOSS_BOTH,"3. A standard coin is tossed. After it lands, its head and tail face up simultaneously (it's still a standard coin).","3. 掷出一标准硬币，其落地后正面和背面同时朝上（落地后仍为标准硬币）。"
 POSSIBILITY_UNLIKELY_NOTE,"You will receive a penalty when you submit a wrong answer,\nwhich prevents you from answering this problem for a while.\nSubmitting a wrong answer multiple times makes the penalty for this problem longer.","若你回答错误，则会受到惩罚，一段时间内无法再次回答此题。\n多次回答错误会使本题惩罚时间加长。"
 POSSIBILITY_UNLIKELY_WORM,"1. The worm that you find in restaurant food was dropped out of your own mouth.","1. 你在饭店的菜里吃到的虫子是从自己嘴里掉进去的。"
 POSSIBILITY_UNLIKELY_MURDER,"2. The one that matches the fingerprint on the murder weapon is not the murderer.","2. 与凶器上指纹相匹配的人不是凶手。"
@@ -51,7 +51,7 @@ POSSIBILITY_LIES_1_SUN_TZU,"3. The so-called ""Newton's laws of motion"" were di
 POSSIBILITY_LIES_2_MATH,"1. 1 + 1 = 3.","1. 1 + 1 = 3。"
 POSSIBILITY_LIES_2_MOTHER,"2. You have never met your biological mother.","2. 你未曾见过你的生母。"
 POSSIBILITY_LIES_2_NUCLEAR_WAR,"3. The day before yesterday, a nuclear war erupted on earth, with a death toll of over a hundred million people.","3. 前天地球上发生了一次核战争，死亡人数上亿。"
-POSSIBILITY_LIES_HARD_WEDDING,"1. Your biological father's [color=yellow][hint=could be more than one date due to divorce]wedding date(s)[/hint][/color] and your biological mother's wedding date(s) do not share a same date.","1. [color=yellow][hint=可以是多个日期，由于存在离婚]你生父的结婚日期[/hint][/color]与你生母的结婚日期不包含同一天。"
+POSSIBILITY_LIES_HARD_WEDDING,"1. Your biological father's [color=yellow][hint=could be more than one date due to divorce]wedding date(s)[/hint][/color] and your biological mother's wedding date(s) do not share a same date.","1. [color=yellow][hint=由于存在离婚，可以是多个日期]你生父的结婚日期[/hint][/color]与你生母的结婚日期不包含同一天。"
 POSSIBILITY_MEMORY_1_PIGEON_BIRTH,"1. When you were born, you saw a blue pigeon flying by.","1. 你出生时看见了一只蓝鸽子飞过。"
 POSSIBILITY_MEMORY_1_PIGEON_LAST_MONTH,"2. Last month, you saw a blue pigeon flying by.","2. 你上个月看见了一只蓝鸽子飞过。"
 POSSIBILITY_MEMORY_1_PIGEON_DREAM,"3. Last time you slept, you dreamed of a blue pigeon flying by.","3. 你上次睡觉时梦见了一只蓝鸽子飞过。"
@@ -64,6 +64,7 @@ POSSIBILITY_MEMORY_GENERALIZED_FORGET,"1. When you try to recall a perception th
 POSSIBILITY_MEMORY_GENERALIZED_FORGET_OLD,"1. ","1. 你对以前某个时间的你的感知的记忆不存在，或与你那时的感知不一致。"
 POSSIBILITY_MEMORY_GENERALIZED_CURRENT,"2. Your current perception does not exist.","2. 你当前的感知不存在。"
 POSSIBILITY_MEMORY_HARD_WIPE,"1. You once went to a toilet to poop and then walked away and forgot to wipe.","1. 你曾经有一次去厕所拉完屎忘记擦就走了。"
+POSSIBILITY_MEMORY_HARD_TIME_DIMENSION,"2. The time dimension does not exist.","2. 时间维度不存在。"
 POSSIBILITY_PATTERNS_1_SPACE_MATTER,"1. A cloud of matter is floating in space. It has flashed a hundred million times of green light consecutively. However, for the next time, it will flash red light.","1. 宇宙中漂浮着一团物质，它已经连续闪烁了一亿次绿光。但是它下一次将闪烁红光。"
 POSSIBILITY_PATTERNS_2_NEWTON,"1. [color=yellow][hint=as known as F=ma, a law that describes the motion of objects]Newton's Second Law of Motion[/hint][/color] does not hold true for some situations.","1. [color=yellow][hint=即F=ma，是描述物体运动规律的定律]牛顿第二运动定律[/hint][/color]对某些情况不成立。"
 POSSIBILITY_PATTERNS_2_TELEPORT,"2. A substance appears out of nowhere.","2. 一个物质凭空出现了。"
@@ -71,3 +72,8 @@ POSSIBILITY_PATTERNS_2_NOT_OBJECT,"3. There is a thing that looks the same as an
 POSSIBILITY_PATTERNS_3_DEATH,"1. After your body dies, you will continue to perceive indefinitely.","1. 在你的身体死亡后，你仍会继续感知，永无止境。"
 POSSIBILITY_PATTERNS_3_SENTIMENTAL,"2. All the people in the world other than you [color=yellow][hint=like you are playing a single-player game]do not have perception[/hint][/color] all along.","2. 世界上除你以外的其他人一直都是[color=yellow][hint=就像你在玩单机游戏]没有感知[/hint][/color]的。"
 POSSIBILITY_FINALE_REFERENCE_ANSWER,"1. Among the Essenceology problems that I released or will release, one or more of the [color=yellow][hint=the answer against which your submitted answer is compared by the program]reference answers[/hint][/color] that I set are wrong.","1. 在我公布的本质学题目中，我设置的[color=yellow][hint=指你的答案提交后，程序与之进行对比的答案]参考答案[/hint][/color]有错。"
+
+SHOULD_INTRO_NOTE,"[center]ph[/center]","[center]在这一部分里，每一道题会给出某一情境下的多个选择，你需要选出其中[b]应该[/b]做出的选择。\n其中，“应该做出某选择”的[b]定义[/b]为：\n在这些选择中，做出该选择的条件下所有生物利益值的[color=yellow][hint=以发生概率为权重的平均值]期望[/hint][/color]最大。[/center]"
+SHOULD_INTRO_TROLLEY,"A runaway train is heading towards a switch track. Each of the two leading tracks has some people tied to it. Beside you is a level that controls the switch. If you do nothing, the train will run over a total of  5  people. If you pull the level, the train will run over only  1  people. You should...","一辆失控的列车正冲向一个道岔，道岔通向的两个线路上各绑着一些人，而你手边有一个控制该道岔的拉杆。此时，若你什么都不做，那么列车会碾过共5人；若你拉下拉杆，那么列车会驶入另一条线路，碾过仅1人。你应该..."
+SHOULD_INTRO_TROLLEY_DO_NOTHING,"Do nothing","什么也不做"
+SHOULD_INTRO_TROLLEY_PULL,"Pull the level","拉下拉杆"

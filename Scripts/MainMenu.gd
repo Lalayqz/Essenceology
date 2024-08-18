@@ -1,14 +1,26 @@
 extends Node2D
 
+@onready var WINDOW_SIZE = get_viewport().size
 @onready var CHAPTER_BAR = get_node("Chapters_Bar")
-var current_chapter = null
-var chapter_node = null
+var map_node = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if not Save.is_any_chapter_solved():
 		CHAPTER_BAR.visible = false
-	load_chapter("POSSIBILITY")
+	load_chapter(Global_Variables.current_chapter)
+	
+	# set map position
+	var drag_position = Global_Variables.get_map_drag_pos()
+	if drag_position != null:
+		map_node.position = drag_position
+	else: # set view to focus point
+		var chapter_bar_width = CHAPTER_BAR.size.x if CHAPTER_BAR.visible else 0
+		var map_window_size = WINDOW_SIZE
+		map_window_size.x = map_window_size.x - chapter_bar_width
+		var pos = Vector2(map_window_size / 2) - map_node.FOCUS_POSITION + Vector2(chapter_bar_width, 0)
+		map_node.set_pos(pos)
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -24,19 +36,17 @@ func _notification(notification):
 		get_tree().quit()
 
 func load_chapter(chapter):
-	if (current_chapter == chapter):
-		return
-	if (chapter_node != null):
-		remove_child(chapter_node)
+	if (map_node != null):
+		remove_child(map_node)
 	
 	Global_Variables.set_chapter(chapter)
 	Lights.update_color_to_chapter_color(chapter)
 	
-	chapter_node = load("res://Scenes/Maps/" + chapter + ".tscn").instantiate()
-	add_child(chapter_node)
-	move_child(chapter_node, 0)
-	current_chapter = chapter
+	map_node = load("res://Scenes/Maps/" + chapter + ".tscn").instantiate()
+	add_child(map_node)
+	move_child(map_node, 0)
+	Global_Variables.current_chapter = chapter
 
 func to_settings():
-	get_tree().change_scene_to_file("res://Scenes/Settings.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Menus/Settings.tscn")
 	Lights.update_color_to_chapter_color("SETTINGS")

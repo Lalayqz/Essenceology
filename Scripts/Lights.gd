@@ -52,6 +52,8 @@ func _process(delta):
 			light.modulate.b = color.b
 		
 func init_lights():
+	is_light_on = true
+	color = target_color
 	for i in range(light_count):
 		add_light(false)
 	
@@ -116,7 +118,8 @@ func fade_first_light():
 			light.set_meta("fading_countdown", LIGHT_FADE_DELAY)
 			return
 			
-func remove_all_lights():
+func turn_off_lights():
+	is_light_on = false
 	for light in get_children():
 		remove_child(light)
 		light.queue_free()

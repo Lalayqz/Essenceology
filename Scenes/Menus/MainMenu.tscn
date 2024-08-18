@@ -1,32 +1,32 @@
 [gd_scene load_steps=9 format=3 uid="uid://x6p37p0j7jpe"]
 
-[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_gsdof"]
-[ext_resource type="Theme" uid="uid://l0jnr6n2irgg" path="res://Resources/Chapters_Bar.tres" id="2_luh48"]
-[ext_resource type="Theme" uid="uid://cy8a2j5ro3j6s" path="res://Resources/Possibility_Chapter_Button.tres" id="3_h00wq"]
-[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/SourceHanSansSC-Bold.otf" id="4_sgj6b"]
-[ext_resource type="Script" path="res://Scripts/Chapter_Button.gd" id="5_qfyxm"]
-[ext_resource type="Theme" uid="uid://b00jlw57ckgn7" path="res://Resources/Should_Chapter_Button.tres" id="6_e73we"]
-[ext_resource type="Theme" uid="uid://cel18xkchmafq" path="res://Resources/UI_Button.tres" id="7_ain38"]
-[ext_resource type="Script" path="res://Scripts/NeatButton.gd" id="8_1lve7"]
+[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_ey0xr"]
+[ext_resource type="Theme" uid="uid://l0jnr6n2irgg" path="res://Resources/Chapters_Bar.tres" id="2_j7u1q"]
+[ext_resource type="Theme" uid="uid://cy8a2j5ro3j6s" path="res://Resources/Possibility_Chapter_Button.tres" id="3_yembw"]
+[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/SourceHanSansSC-Bold.otf" id="4_6ku48"]
+[ext_resource type="Script" path="res://Scripts/Chapter_Button.gd" id="5_rebf4"]
+[ext_resource type="Theme" uid="uid://b00jlw57ckgn7" path="res://Resources/Should_Chapter_Button.tres" id="6_t4a5n"]
+[ext_resource type="Theme" uid="uid://cel18xkchmafq" path="res://Resources/UI_Button.tres" id="7_d1us8"]
+[ext_resource type="Script" path="res://Scripts/NeatButton.gd" id="8_jg2qc"]
 
 [node name="MainMenu" type="Node2D"]
-script = ExtResource("1_gsdof")
+script = ExtResource("1_ey0xr")
 
 [node name="Chapters_Bar" type="Panel" parent="."]
 offset_right = 200.0
 offset_bottom = 720.0
-theme = ExtResource("2_luh48")
+theme = ExtResource("2_j7u1q")
 
 [node name="Possibility" type="Button" parent="Chapters_Bar"]
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 100.0
 focus_mode = 0
-theme = ExtResource("3_h00wq")
-theme_override_fonts/font = ExtResource("4_sgj6b")
+theme = ExtResource("3_yembw")
+theme_override_fonts/font = ExtResource("4_6ku48")
 theme_override_font_sizes/font_size = 22
 text = "CHAPTER_POSSIBILITY"
-script = ExtResource("5_qfyxm")
+script = ExtResource("5_rebf4")
 chapter = "POSSIBILITY"
 
 [node name="Should" type="Button" parent="Chapters_Bar"]
@@ -35,11 +35,11 @@ offset_top = 100.0
 offset_right = 200.0
 offset_bottom = 200.0
 focus_mode = 0
-theme = ExtResource("6_e73we")
-theme_override_fonts/font = ExtResource("4_sgj6b")
+theme = ExtResource("6_t4a5n")
+theme_override_fonts/font = ExtResource("4_6ku48")
 theme_override_font_sizes/font_size = 22
 text = "CHAPTER_SHOULD"
-script = ExtResource("5_qfyxm")
+script = ExtResource("5_rebf4")
 chapter = "SHOULD"
 
 [node name="Definition" type="Button" parent="Chapters_Bar"]
@@ -49,11 +49,11 @@ offset_top = 200.0
 offset_right = 200.0
 offset_bottom = 300.0
 focus_mode = 0
-theme = ExtResource("3_h00wq")
-theme_override_fonts/font = ExtResource("4_sgj6b")
+theme = ExtResource("3_yembw")
+theme_override_fonts/font = ExtResource("4_6ku48")
 theme_override_font_sizes/font_size = 22
 text = "第三章   定义"
-script = ExtResource("5_qfyxm")
+script = ExtResource("5_rebf4")
 chapter = "DEFINITION"
 
 [node name="Settings" type="Button" parent="."]
@@ -62,8 +62,8 @@ offset_top = 10.0
 offset_right = 1270.0
 offset_bottom = 75.0
 focus_mode = 0
-theme = ExtResource("7_ain38")
-script = ExtResource("8_1lve7")
+theme = ExtResource("7_d1us8")
+script = ExtResource("8_jg2qc")
 
 [node name="Label" type="Label" parent="Settings"]
 layout_mode = 0
@@ -71,7 +71,7 @@ offset_left = 8.0
 offset_top = -2.0
 offset_right = 58.0
 offset_bottom = 71.0
-theme_override_fonts/font = ExtResource("4_sgj6b")
+theme_override_fonts/font = ExtResource("4_6ku48")
 theme_override_font_sizes/font_size = 50
 text = "⛭"
 

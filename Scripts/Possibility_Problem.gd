@@ -15,7 +15,7 @@ func is_answered():
 	return BUTTON.possibility != null
 	
 func is_correct():
-	return BUTTON.possibility == BUTTON.answer
+	return BUTTON.possibility == BUTTON.REFERENCE_ANSWER
 
 func disable():
 	BUTTON.disabled = true
@@ -30,4 +30,4 @@ func load_answer(chapter, level_name):
 	
 # connect the signal to update_submit_button_visibility() in level
 func connect_signal_update_submit_button_visibility(update_submit_button_visibility):
-	BUTTON.state_changed.connect(update_submit_button_visibility)
+	BUTTON.answer_changed.connect(update_submit_button_visibility)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://bp4dm50jyqks8"]
 
-[ext_resource type="Script" path="res://Scripts/Level.gd" id="1_sjy8j"]
-[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Level_Structure.tscn" id="2_pagnq"]
+[ext_resource type="Script" path="res://Possibility_Level.gd" id="1_nfa02"]
+[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_pagnq"]
 [ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="3_da4f6"]
 [ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/SourceHanSansSC-Bold.otf" id="4_ect8f"]
 [ext_resource type="Script" path="res://Scripts/Possibility_Problem.gd" id="5_rb66t"]
@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://Resources/NP.png" id="9_rlfso"]
 
 [node name="MEMORY_2" type="Node2D"]
-script = ExtResource("1_sjy8j")
+script = ExtResource("1_nfa02")
 
 [node name="Level_Structure" parent="." instance=ExtResource("2_pagnq")]
 
@@ -57,7 +57,7 @@ dragger_visibility = 2
 layout_mode = 2
 theme_override_constants/margin_right = 50
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/PUNCH/Problem/Text" groups=["Texts"]]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/PUNCH/Problem/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -105,7 +105,7 @@ dragger_visibility = 2
 layout_mode = 2
 theme_override_constants/margin_right = 50
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/TITLE/Problem/Text" groups=["Texts"]]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/TITLE/Problem/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -152,7 +152,7 @@ dragger_visibility = 2
 layout_mode = 2
 theme_override_constants/margin_right = 50
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/INPUT/Problem/Text" groups=["Texts"]]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/INPUT/Problem/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -173,7 +173,7 @@ toggle_mode = true
 button_mask = 3
 texture_normal = ExtResource("6_1vq8v")
 script = ExtResource("7_tl6kx")
-answer = 1
+REFERENCE_ANSWER = 1
 
 [node name="P" type="Sprite2D" parent="Problems/Problems/INPUT/Problem/Button/Button"]
 visible = false

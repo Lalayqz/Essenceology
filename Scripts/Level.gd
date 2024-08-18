@@ -1,4 +1,4 @@
-extends Node2D
+class_name Level extends Node2D
 
 @onready var CHAPTER = Global_Variables.current_chapter
 @onready var LEVEL_NAME = self.name
@@ -7,15 +7,11 @@ extends Node2D
 @onready var SUBMIT_BUTTON = LEVEL_STRUCTURE.get_node("UI/Submit_Button")
 @onready var SOLVED_LABEL = LEVEL_STRUCTURE.get_node("UI/Solved_Label/Label/Label")
 @onready var AUDIO_PLAYER = LEVEL_STRUCTURE.get_node("Audio_Player")
-@onready var TEXTS = get_tree().get_nodes_in_group("Texts")
 @onready var PROBLEMS_CONTAINER = get_node("Problems/Problems")
 @onready var PROBLEMS = PROBLEMS_CONTAINER.get_children()
 var WRONG_ANSWER_SOUND = preload("res://Resources/Sounds/Wrong_Answer.mp3")
 var TEXT_FONT = preload("res://Resources/SourceHanSansSC-Normal.otf")
 var TEXT_FONT_SIZE = 33
-var TEXT_FONT_SIZE_SMALL = 30
-var MAX_TEXT_WIDTH = 1000
-var MAX_TEXT_HEIGHT = 500
 var PENALTIES = [1, 3, 6, 10]
 
 # Called when the node enters the scene tree for the first time.
@@ -29,18 +25,11 @@ func _ready():
 		problem.connect_signal_update_submit_button_visibility(update_submit_button_visibility)
 	load_answers()
 	
+	# set level structure appearance according to current chapter
+	LEVEL_STRUCTURE.get_node("Background").color = Global_Variables.current_chapter_background_color
+	LEVEL_STRUCTURE.get_node("UI/Title").set("theme_override_colors/font_shadow_color", Global_Variables.current_chapter_color)
+	
 	TITLE.text = LEVEL_NAME
-	# set text layout (according to localization)
-	var word_warp = false
-	for text in TEXTS:
-		if TEXT_FONT.get_string_size(TranslationServer.translate(text.text), 0, -1, TEXT_FONT_SIZE).x > MAX_TEXT_WIDTH:
-			word_warp = true
-			break
-	if word_warp:
-		for text in TEXTS:
-			text.set_autowrap_mode(TextServer.AUTOWRAP_WORD)
-			text.set_custom_minimum_size(Vector2(MAX_TEXT_WIDTH, 0))
-	call_deferred("check_and_shrink_font")
 	
 	# set solved
 	# It's possible that I update the problems and the inputs for an already solved level is not longer correct.
@@ -50,12 +39,11 @@ func _ready():
 	# set submit button
 	update_submit_button_visibility()
 	SUBMIT_BUTTON.load_penalty_from_save()
-	
-func check_and_shrink_font():
-	var size = PROBLEMS_CONTAINER.get_minimum_size()
-	if size.y > MAX_TEXT_HEIGHT:
-		for text in TEXTS:
-			text.set("theme_override_font_sizes/font_size", TEXT_FONT_SIZE_SMALL)
+
+func strip_bbcode(string):
+	var regex = RegEx.new()
+	regex.compile("\\[.+?\\]")
+	return regex.sub(string, "", true)
 						
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -128,4 +116,4 @@ func save_answers():
 
 func exit_level():
 	save_answers()
-	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Menus/MainMenu.tscn")

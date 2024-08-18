@@ -31,7 +31,7 @@ func _notification(notification):
 
 func exit_settings():
 	Config.save_config()
-	get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/Menus/MainMenu.tscn")
 	
 func update_language_en(is_on):
 	if is_on:
@@ -54,4 +54,4 @@ func update_disturbing_background(is_on):
 	if is_on:
 		lights.init_lights()
 	else:
-		lights.remove_all_lights()
+		lights.turn_off_lights()
