@@ -1,6 +1,5 @@
 extends Node2D
 
-@onready var WINDOW_SIZE = get_viewport().size
 @onready var CHAPTER_SIZE = $Background.size
 @onready var CHAPTER = Global_Variables.current_chapter
 @onready var CHAINS = $Chains
@@ -13,6 +12,8 @@ var SOLVED_LEVEL_TEXTURE = preload("res://Resources/Solved_Level.png")
 var UNSOLVED_FINALE_TEXTURE = preload("res://Resources/Unsolved_Finale.png")
 var SOLVED_FINALE_TEXTURE = preload("res://Resources/Solved_Finale.png")
 var LEVEL_LABEL_FONT = preload("res://Resources/SourceHanSansSC-Normal.otf")
+var WINDOW_POS
+var WINDOW_SIZE
 var ENTER_LEVEL_DRAG_MAX = 18
 var LABEL_FONT_SIZE = 23
 var LABEL_OFFSET_Y = -3
@@ -73,6 +74,10 @@ func _ready():
 	
 	$Background.color = Global_Variables.current_chapter_background_color
 
+func set_window_info(pos, size):
+	WINDOW_POS = pos
+	WINDOW_SIZE = size
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
@@ -108,10 +113,10 @@ func _input(event):
 		drag_start = event.position
 		
 func set_pos(pos):
-	self.position.x = max(pos.x, WINDOW_SIZE.x - CHAPTER_SIZE.x)  # lower limit
-	self.position.x = min(self.position.x, 0)  # upper limit
-	self.position.y = max(pos.y, WINDOW_SIZE.y - CHAPTER_SIZE.y)
-	self.position.y = min(self.position.y, 0)
+	self.position.x = max(pos.x, WINDOW_SIZE.x + WINDOW_POS.x - CHAPTER_SIZE.x)  # lower limit
+	self.position.x = min(self.position.x, WINDOW_POS.x)  # upper limit
+	self.position.y = max(pos.y, WINDOW_SIZE.y + WINDOW_POS.y - CHAPTER_SIZE.y)
+	self.position.y = min(self.position.y, WINDOW_POS.y)
 	
 func _exit_tree():
 	Global_Variables.set_map_drag_pos(self.position)

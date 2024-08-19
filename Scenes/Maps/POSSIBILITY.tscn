@@ -7,8 +7,8 @@ script = ExtResource("2_vlxkl")
 
 [node name="Background" type="ColorRect" parent="."]
 z_index = -10
-offset_right = 1635.0
-offset_bottom = 2190.0
+offset_right = 1478.0
+offset_bottom = 2243.0
 color = Color(0.0313726, 0.101961, 0.0313726, 1)
 
 [node name="Chains" type="Node2D" parent="."]
@@ -16,52 +16,52 @@ color = Color(0.0313726, 0.101961, 0.0313726, 1)
 [node name="Levels" type="Node2D" parent="."]
 
 [node name="INTRO" type="Node2D" parent="Levels"]
-position = Vector2(455, 117)
+position = Vector2(640, 159)
 
 [node name="UNLIKELY" type="Node2D" parent="Levels"]
-position = Vector2(428, 320)
+position = Vector2(743, 394)
 
 [node name="LOGIC" type="Node2D" parent="Levels"]
-position = Vector2(497, 509)
+position = Vector2(670, 612)
 
 [node name="LOGIC_HARD" type="Node2D" parent="Levels"]
-position = Vector2(653, 557)
+position = Vector2(873, 578)
 
 [node name="LIES_GENERALIZED" type="Node2D" parent="Levels"]
-position = Vector2(458, 762)
+position = Vector2(449, 869)
 
 [node name="LIES_1" type="Node2D" parent="Levels"]
-position = Vector2(452, 874)
+position = Vector2(453, 991)
 
 [node name="LIES_2" type="Node2D" parent="Levels"]
-position = Vector2(460, 978)
+position = Vector2(530, 1073)
 
 [node name="LIES_HARD" type="Node2D" parent="Levels"]
-position = Vector2(302, 942)
+position = Vector2(321, 1022)
 
 [node name="MEMORY_1" type="Node2D" parent="Levels"]
-position = Vector2(722, 1134)
+position = Vector2(880, 1155)
 
 [node name="MEMORY_2" type="Node2D" parent="Levels"]
-position = Vector2(824, 1198)
+position = Vector2(1037, 1244)
 
 [node name="MEMORY_GENERALIZED" type="Node2D" parent="Levels"]
-position = Vector2(907, 1296)
+position = Vector2(1093, 1389)
 
 [node name="MEMORY_HARD" type="Node2D" parent="Levels"]
-position = Vector2(1030, 1175)
+position = Vector2(1229, 1270)
 
 [node name="PATTERNS_1" type="Node2D" parent="Levels"]
-position = Vector2(1151, 1410)
+position = Vector2(925, 1626)
 
 [node name="PATTERNS_2" type="Node2D" parent="Levels"]
-position = Vector2(1115, 1529)
+position = Vector2(809, 1729)
 
 [node name="PATTERNS_3" type="Node2D" parent="Levels"]
-position = Vector2(1162, 1655)
+position = Vector2(640, 1770)
 
 [node name="FINALE" type="Node2D" parent="Levels"]
-position = Vector2(467, 2088)
+position = Vector2(640, 2102)
 
 [node name="Focus" type="Node2D" parent="."]
-position = Vector2(665, 312)
+position = Vector2(640, 353)

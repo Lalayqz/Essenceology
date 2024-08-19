@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://b3ldglqopbq4o"]
 
-[ext_resource type="Script" path="res://Possibility_Level.gd" id="1_163hi"]
+[ext_resource type="Script" path="res://Scripts/Possibility_Level.gd" id="1_163hi"]
 [ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_giu0t"]
 [ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="3_tkptu"]
 [ext_resource type="Script" path="res://Scripts/Possibility_Problem.gd" id="4_dtnck"]
