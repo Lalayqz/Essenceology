@@ -31,7 +31,7 @@ func check_and_shrink_font():
 	var size = PROBLEMS_CONTAINER.get_minimum_size()
 	if size.y > MAX_TEXT_HEIGHT:
 		for text in TEXTS:
-			text.set("theme_override_font_sizes/font_size", TEXT_FONT_SIZE_SMALL)
+			text.set("theme_override_font_sizes/normal_font_size", TEXT_FONT_SIZE_SMALL)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

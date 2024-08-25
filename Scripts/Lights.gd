@@ -76,7 +76,7 @@ func add_light(is_growing):
 	light.scale = Vector2(max_scale, max_scale)
 	
 	light.set_meta("is_fading", false)
-	if (rng.randi_range(0, 1) > 0):
+	if (rng.randi_range(0, 2) == 0):
 		light.set_meta("speed", MOVING_SPEED)
 		var angle = rng.randf_range(-PI, PI)
 		light.set_meta("direction", Vector2(cos(angle), sin(angle)))

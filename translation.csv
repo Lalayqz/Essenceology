@@ -4,9 +4,9 @@ DISTURBING_BACKGROUND,disturbing background,让人分心的背景
 SUBMIT_HOLD,SUBMIT (HOLD),提交 (长按)
 LEVEL_SOLVED,LEVEL SOLVED!,已解决！
 
-CHAPTER_POSSIBILITY,Chapter 1\nPossibility,第一章   可能性
-CHAPTER_SHOULD,Chapter 2\nShould,第二章   应该
-CHAPTER_DEFINITION,Chapter 3 Definition,第三章   定义
+POSSIBILITY,Chapter 1\nPossibility,第一章   可能性
+SHOULD,Chapter 2\nShould,第二章   应该
+DEFINITION,Chapter 3 Definition,第三章   定义
 
 INTRO,Intro,引言
 UNLIKELY,Unlikely,小概率
@@ -73,7 +73,37 @@ POSSIBILITY_PATTERNS_3_DEATH,"1. After your body dies, you will continue to perc
 POSSIBILITY_PATTERNS_3_SENTIMENTAL,"2. All the people in the world other than you [color=yellow][hint=like you are playing a single-player game]do not have perception[/hint][/color] all along.","2. 世界上除你以外的其他人一直都是[color=yellow][hint=就像你在玩单机游戏]没有感知[/hint][/color]的。"
 POSSIBILITY_FINALE_REFERENCE_ANSWER,"1. Among the Essenceology problems that I released or will release, one or more of the [color=yellow][hint=the answer against which your submitted answer is compared by the program]reference answers[/hint][/color] that I set are wrong.","1. 在我公布的本质学题目中，我设置的[color=yellow][hint=指你的答案提交后，程序与之进行对比的答案]参考答案[/hint][/color]有错。"
 
+ALL_LIVES,All Lives,全体
+CALCULATION,Calculation,计算
+PROBABILITY,Probability,概率
+INDIVIDUAL,Individual,个体
+ANALYSIS,Analysis,分析
+
 SHOULD_INTRO_NOTE,"[center]ph[/center]","[center]在这一部分里，每一道题会给出某一情境下的多个选择，你需要选出其中[b]应该[/b]做出的选择。\n其中，“应该做出某选择”的[b]定义[/b]为：\n在这些选择中，做出该选择的条件下所有生物利益值的[color=yellow][hint=以发生概率为权重的平均值]期望[/hint][/color]最大。[/center]"
 SHOULD_INTRO_TROLLEY,"A runaway train is heading towards a switch track. Each of the two leading tracks has some people tied to it. Beside you is a level that controls the switch. If you do nothing, the train will run over a total of  5  people. If you pull the level, the train will run over only  1  people. You should...","一辆失控的列车正冲向一个道岔，道岔通向的两个线路上各绑着一些人，而你手边有一个控制该道岔的拉杆。此时，若你什么都不做，那么列车会碾过共5人；若你拉下拉杆，那么列车会驶入另一条线路，碾过仅1人。你应该..."
 SHOULD_INTRO_TROLLEY_DO_NOTHING,"Do nothing","什么也不做"
 SHOULD_INTRO_TROLLEY_PULL,"Pull the level","拉下拉杆"
+SHOULD_ALL_LIVES_BAD_PUNCH,"","你和另一个人在吵架。如果你打他一拳，那么你会获得值为5的愉悦，他会获得值为10的痛苦。你应该..."
+SHOULD_ALL_LIVES_BAD_PUNCH_PUNCH,"","打他一拳"
+SHOULD_ALL_LIVES_BAD_PUNCH_DO_NOTHING,"Do nothing","什么也不做"
+SHOULD_ALL_LIVES_GOOD_PUNCH,"","你和另一个人在吵架。如果你打他一拳，那么你会获得值为50的愉悦，他会获得值为10的痛苦。你应该..."
+SHOULD_ALL_LIVES_GOOD_PUNCH_PUNCH,"","打他一拳"
+SHOULD_ALL_LIVES_GOOD_PUNCH_DO_NOTHING,"Do nothing","什么也不做"
+SHOULD_CALCULATION_BUTTON,"In front of you is a red button. If you press it, you have a 60% chance to experience a pleasure with a  value of 5, and another 40% chance to experience a pain with a value of 10. You should...","你面前有一个红色按钮。若你按下它，那么你有60%的概率获得值为5的愉悦，以及另外40%的概率获得值为10的痛苦。你应该..."
+SHOULD_CALCULATION_BUTTON_DO_NOTHING,"Do nothing","什么也不做"
+SHOULD_CALCULATION_BUTTON_PRESS,"Press the button"," 按下此按钮"
+SHOULD_CALCULATION_CARDS,"There is a stack of three poker cards with values of 5, 7, and 9 respectively. After a period of time, someone will randomly draw one card from this stack, and you will experience a pleasure equal to the value of the drawn card. Now you should... remove the card with a value of 5 from the stack, do nothing, or add a card with a value of 3 to the stack","有一叠扑克牌，共3张，其点数分别为5、7、9。一段时间后，将会有一个人从这叠扑克牌中随机抽取一张，然后你会获得与所抽点数等值的愉悦。你现在应该..."
+SHOULD_CALCULATION_CARDS_REMOVE,"","从这叠扑克牌中移除点数为5的一张"
+SHOULD_CALCULATION_CARDS_DO_NOTHING,"","什么都不做"
+SHOULD_CALCULATION_CARDS_ADD,"","向这叠扑克牌中加入点数为3的一张"
+SHOULD_PROBABILITY_RANDOM
+SHOULD_PROBABILITY_PATTERN
+SHOULD_INDIVIDUAL_TROLLEY
+SHOULD_INDIVIDUAL_?
+SHOULD_ANALYSIS_?
+SHOULD_ANALYSIS_GRID,"As shown in the diagram, you are on a platform with 12 locations at the upper surface of the platform distributed in a grid pattern. Each two adjacent locations have a horizontal distance of 20 meters, a vertical distance of 10 meters. You are at point A, and you need to visit each location once. You should...","如图，你在一个平台上，平台上表面处有12个网格状分布的地点，相邻两点横向间距20米，纵向间距10米。你在A点处，你需要到达每个地点各一次。你应该..."
+SHOULD_ANALYSIS_GRID_HORIZONTAL_FIRST,"Traverse directly in the order of ABCDHGFEIJKL","以ABCDHGFEIJKL的顺序依次径直遍历"
+SHOULD_ANALYSIS_GRID_VERTICAL_FIRST,"Traverse directly in the order of AEIBFJCGKDHL","以AEIBFJCGKDHL的顺序依次径直遍历"
+SHOULD_ANALYSIS_WIPE,"","你需要擦嘴上的油和屁股上的汗，但你只有一张抽纸。你应该..."
+SHOULD_ANALYSIS_WIPE_MOUTH_FIRST,"","先擦嘴，折一下抽纸，再擦屁股"
+SHOULD_ANALYSIS_WIPE_ASS_FIRST,"","先擦屁股，折一下抽纸，再擦嘴"

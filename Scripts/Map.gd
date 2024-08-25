@@ -1,7 +1,8 @@
-extends Node2D
+extends ReferenceRect
 
-@onready var CHAPTER_SIZE = $Background.size
+@onready var CHAPTER_SIZE = self.size
 @onready var CHAPTER = Global_Variables.current_chapter
+@onready var BACKGROUND = $Background
 @onready var CHAINS = $Chains
 @onready var LEVELS = $Levels
 @onready var FOCUS_POSITION = $Focus.position
@@ -72,7 +73,7 @@ func _ready():
 		level.add_child(level_label)
 		level.set_meta("Radius", radius)
 	
-	$Background.color = Global_Variables.current_chapter_background_color
+	BACKGROUND.color = Global_Variables.current_chapter_background_color
 
 func set_window_info(pos, size):
 	WINDOW_POS = pos
@@ -82,7 +83,8 @@ func set_window_info(pos, size):
 func _process(delta):
 	pass
 	
-func _input(event):
+func _unhandled_input(event):  # use "unhandled" because I want the chapter bar to block map interactions.
+	# Also, remember to set all control nodes' mouse filter (excluding charpter bar, but including the map itself) so the mouse action is unhandled when interacting with the map.
 	var is_motion = event is InputEventMouseMotion
 	var is_press = event is InputEventMouseButton and event.is_pressed() and event.button_index == MOUSE_BUTTON_LEFT
 	var is_release = event is InputEventMouseButton and event.is_released() and event.button_index == MOUSE_BUTTON_LEFT

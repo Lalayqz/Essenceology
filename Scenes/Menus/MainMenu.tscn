@@ -25,7 +25,7 @@ focus_mode = 0
 theme = ExtResource("3_yembw")
 theme_override_fonts/font = ExtResource("4_6ku48")
 theme_override_font_sizes/font_size = 22
-text = "CHAPTER_POSSIBILITY"
+text = "POSSIBILITY"
 script = ExtResource("5_rebf4")
 chapter = "POSSIBILITY"
 
@@ -38,7 +38,7 @@ focus_mode = 0
 theme = ExtResource("6_t4a5n")
 theme_override_fonts/font = ExtResource("4_6ku48")
 theme_override_font_sizes/font_size = 22
-text = "CHAPTER_SHOULD"
+text = "SHOULD"
 script = ExtResource("5_rebf4")
 chapter = "SHOULD"
 

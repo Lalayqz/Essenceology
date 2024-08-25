@@ -13,6 +13,10 @@ var WRONG_ANSWER_SOUND = preload("res://Resources/Sounds/Wrong_Answer.mp3")
 var TEXT_FONT = preload("res://Resources/SourceHanSansSC-Normal.otf")
 var TEXT_FONT_SIZE = 33
 var PENALTIES = [1, 3, 6, 10]
+# If the locale codename makes the "Problems" center container's width exceed the screen width,
+# then 1) Type in screen width into the center container's size.x;
+# 2) Type in the locale codename and now the center container's size.x shows a value that's larger than the screen width;
+# 3) DO NOT EDIT THE CENTER CONTAINER'S SIZE AFTER STEP 2 or its width will always be that value even after the gam starts and the locale with smaller width gets loaded.
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
