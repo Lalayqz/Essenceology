@@ -3,16 +3,16 @@
 [ext_resource type="Script" path="res://Scripts/Map.gd" id="2_yamsi"]
 
 [node name="Should" type="ReferenceRect"]
-offset_right = 1291.0
-offset_bottom = 734.0
+offset_right = 1500.0
+offset_bottom = 2000.0
 mouse_filter = 2
 script = ExtResource("2_yamsi")
 
 [node name="Background" type="ColorRect" parent="."]
 z_index = -10
 layout_mode = 0
-offset_right = 1498.0
-offset_bottom = 1728.0
+offset_right = 1500.0
+offset_bottom = 2000.0
 mouse_filter = 2
 color = Color(0.0980392, 0.0588235, 0, 1)
 
@@ -25,6 +25,24 @@ position = Vector2(438, 216)
 
 [node name="ALL_LIVES" type="Node2D" parent="Levels"]
 position = Vector2(705, 222)
+
+[node name="CALCULATION" type="Node2D" parent="Levels"]
+position = Vector2(735, 443)
+
+[node name="PROBABILITY_1" type="Node2D" parent="Levels"]
+position = Vector2(963, 412)
+
+[node name="PROBABILITY_2" type="Node2D" parent="Levels"]
+position = Vector2(1154, 349)
+
+[node name="INDIVIDUAL" type="Node2D" parent="Levels"]
+position = Vector2(736, 752)
+
+[node name="ANALYSIS_1" type="Node2D" parent="Levels"]
+position = Vector2(1472, 1504)
+
+[node name="ANALYSIS_2" type="Node2D" parent="Levels"]
+position = Vector2(2944, 3008)
 
 [node name="Focus" type="Node2D" parent="."]
 position = Vector2(449, 226)

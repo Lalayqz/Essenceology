@@ -7,7 +7,7 @@ extends ReferenceRect
 @onready var LEVELS = $Levels
 @onready var FOCUS_POSITION = $Focus.position
 var LEVEL_CHAINS = {"POSSIBILITY":[["INTRO", "UNLIKELY"], ["UNLIKELY", "LOGIC"], ["LOGIC", "LOGIC_HARD"], ["LOGIC", "LIES_GENERALIZED"], ["LIES_GENERALIZED", "LIES_1"], ["LIES_1", "LIES_2"], ["LIES_2", "LIES_HARD"], ["LIES_2", "MEMORY_1"], ["MEMORY_1", "MEMORY_2"], ["MEMORY_2", "MEMORY_GENERALIZED"], ["MEMORY_GENERALIZED", "MEMORY_HARD"], ["MEMORY_GENERALIZED", "PATTERNS_1"], ["PATTERNS_1", "PATTERNS_2"], ["PATTERNS_2", "PATTERNS_3"], ["PATTERNS_3", "FINALE"]],
-"SHOULD":[]}
+"SHOULD":[["INTRO", "ALL_LIVES"], ["ALL_LIVES", "CALCULATION"], ["CALCULATION", "PROBABILITY_1"], ["PROBABILITY_1", "PROBABILITY_2"], ["CALCULATION", "INDIVIDUAL"]]}
 var UNSOLVED_LEVEL_TEXTURE = preload("res://Resources/Unsolved_Level.png")
 var SOLVED_LEVEL_TEXTURE = preload("res://Resources/Solved_Level.png")
 var UNSOLVED_FINALE_TEXTURE = preload("res://Resources/Unsolved_Finale.png")

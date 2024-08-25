@@ -62,7 +62,7 @@ layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/normal_font = ExtResource("3_sc7gx")
-theme_override_font_sizes/normal_font_size = 33
+theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "SHOULD_INTRO_TROLLEY"
 fit_content = true
@@ -73,33 +73,6 @@ autowrap_mode = 0
 layout_mode = 2
 alignment = 1
 
-[node name="DO_NOTHING" type="VSplitContainer" parent="Problems/Problems/TROLLEY/Problem/Options"]
-layout_mode = 2
-size_flags_horizontal = 3
-dragger_visibility = 2
-script = ExtResource("6_h3dh0")
-
-[node name="Text" type="CenterContainer" parent="Problems/Problems/TROLLEY/Problem/Options/DO_NOTHING"]
-layout_mode = 2
-
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/TROLLEY/Problem/Options/DO_NOTHING/Text"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("3_sc7gx")
-theme_override_font_sizes/normal_font_size = 33
-bbcode_enabled = true
-text = "SHOULD_INTRO_TROLLEY_DO_NOTHING"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
-[node name="Button" type="CenterContainer" parent="Problems/Problems/TROLLEY/Problem/Options/DO_NOTHING"]
-layout_mode = 2
-
-[node name="Button" parent="Problems/Problems/TROLLEY/Problem/Options/DO_NOTHING/Button" instance=ExtResource("7_4xnew")]
-layout_mode = 2
-
 [node name="PULL" type="VSplitContainer" parent="Problems/Problems/TROLLEY/Problem/Options"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -107,15 +80,19 @@ dragger_visibility = 2
 script = ExtResource("6_h3dh0")
 REFERENCE_ANSWER = true
 
-[node name="Text" type="CenterContainer" parent="Problems/Problems/TROLLEY/Problem/Options/PULL"]
+[node name="Text" type="MarginContainer" parent="Problems/Problems/TROLLEY/Problem/Options/PULL"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/TROLLEY/Problem/Options/PULL/Text"]
 layout_mode = 2
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/TROLLEY/Problem/Options/PULL/Text"]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/TROLLEY/Problem/Options/PULL/Text/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/normal_font = ExtResource("3_sc7gx")
-theme_override_font_sizes/normal_font_size = 33
+theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "SHOULD_INTRO_TROLLEY_PULL"
 fit_content = true
@@ -126,4 +103,35 @@ autowrap_mode = 0
 layout_mode = 2
 
 [node name="Button" parent="Problems/Problems/TROLLEY/Problem/Options/PULL/Button" instance=ExtResource("7_4xnew")]
+layout_mode = 2
+
+[node name="DO_NOTHING" type="VSplitContainer" parent="Problems/Problems/TROLLEY/Problem/Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+dragger_visibility = 2
+script = ExtResource("6_h3dh0")
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/TROLLEY/Problem/Options/DO_NOTHING"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/TROLLEY/Problem/Options/DO_NOTHING/Text"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/TROLLEY/Problem/Options/DO_NOTHING/Text/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("3_sc7gx")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "SHOULD_DO_NOTHING"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/TROLLEY/Problem/Options/DO_NOTHING"]
+layout_mode = 2
+
+[node name="Button" parent="Problems/Problems/TROLLEY/Problem/Options/DO_NOTHING/Button" instance=ExtResource("7_4xnew")]
 layout_mode = 2

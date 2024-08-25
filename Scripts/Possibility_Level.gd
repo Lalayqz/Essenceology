@@ -3,6 +3,7 @@ extends Level
 var TEXTS = []
 var MAX_TEXT_WIDTH = 1000
 var MAX_TEXT_HEIGHT = 500
+var TEXT_FONT_SIZE = 33
 var TEXT_FONT_SIZE_SMALL = 30
 
 # Called when the node enters the scene tree for the first time.

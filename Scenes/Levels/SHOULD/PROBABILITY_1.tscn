@@ -1,0 +1,218 @@
+[gd_scene load_steps=7 format=3 uid="uid://dt817bivhvn0d"]
+
+[ext_resource type="Script" path="res://Scripts/Should_level.gd" id="1_8nh5n"]
+[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_ka3in"]
+[ext_resource type="Script" path="res://Scripts/Should_Problem.gd" id="3_u4xli"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="4_ervnu"]
+[ext_resource type="Script" path="res://Scripts/Should_Option.gd" id="5_l3m6s"]
+[ext_resource type="PackedScene" uid="uid://f0n60dmxi4ve" path="res://Scenes/Items/Should_Button.tscn" id="6_8ud7t"]
+
+[node name="PROBABILITY_1" type="Node2D"]
+script = ExtResource("1_8nh5n")
+
+[node name="Level_Structure" parent="." instance=ExtResource("2_ka3in")]
+
+[node name="Problems" type="CenterContainer" parent="."]
+offset_right = 1280.0
+offset_bottom = 640.0
+mouse_filter = 2
+
+[node name="Problems" type="VBoxContainer" parent="Problems"]
+layout_mode = 2
+
+[node name="RANDOM" type="MarginContainer" parent="Problems/Problems"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 25
+script = ExtResource("3_u4xli")
+
+[node name="Problem" type="VSplitContainer" parent="Problems/Problems/RANDOM"]
+layout_mode = 2
+dragger_visibility = 2
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/RANDOM/Problem"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 25
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/RANDOM/Problem/Text"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/RANDOM/Problem/Text/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_ervnu")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "SHOULD_PROBABILITY_1_RANDOM"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Options" type="HBoxContainer" parent="Problems/Problems/RANDOM/Problem"]
+layout_mode = 2
+alignment = 1
+
+[node name="BUILD_AT_A" type="VSplitContainer" parent="Problems/Problems/RANDOM/Problem/Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+dragger_visibility = 2
+script = ExtResource("5_l3m6s")
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/RANDOM/Problem/Options/BUILD_AT_A"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/RANDOM/Problem/Options/BUILD_AT_A/Text"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/RANDOM/Problem/Options/BUILD_AT_A/Text/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_ervnu")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "SHOULD_PROBABILITY_1_BUILD_AT_A"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/RANDOM/Problem/Options/BUILD_AT_A"]
+layout_mode = 2
+
+[node name="Button" parent="Problems/Problems/RANDOM/Problem/Options/BUILD_AT_A/Button" instance=ExtResource("6_8ud7t")]
+layout_mode = 2
+
+[node name="BUILD_AT_B" type="VSplitContainer" parent="Problems/Problems/RANDOM/Problem/Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+dragger_visibility = 2
+script = ExtResource("5_l3m6s")
+REFERENCE_ANSWER = true
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/RANDOM/Problem/Options/BUILD_AT_B"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/RANDOM/Problem/Options/BUILD_AT_B/Text"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/RANDOM/Problem/Options/BUILD_AT_B/Text/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_ervnu")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "SHOULD_PROBABILITY_1_BUILD_AT_B"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/RANDOM/Problem/Options/BUILD_AT_B"]
+layout_mode = 2
+
+[node name="Button" parent="Problems/Problems/RANDOM/Problem/Options/BUILD_AT_B/Button" instance=ExtResource("6_8ud7t")]
+layout_mode = 2
+
+[node name="Line" type="CenterContainer" parent="Problems/Problems"]
+layout_mode = 2
+
+[node name="Line" type="ColorRect" parent="Problems/Problems/Line"]
+custom_minimum_size = Vector2(1100, 1)
+layout_mode = 2
+
+[node name="PATTERN" type="MarginContainer" parent="Problems/Problems"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+script = ExtResource("3_u4xli")
+
+[node name="Problem" type="VSplitContainer" parent="Problems/Problems/PATTERN"]
+layout_mode = 2
+dragger_visibility = 2
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/PATTERN/Problem"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 25
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/PATTERN/Problem/Text"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/PATTERN/Problem/Text/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_ervnu")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "SHOULD_PROBABILITY_1_PATTERN"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Options" type="HBoxContainer" parent="Problems/Problems/PATTERN/Problem"]
+layout_mode = 2
+alignment = 1
+
+[node name="BUILD_AT_A" type="VSplitContainer" parent="Problems/Problems/PATTERN/Problem/Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+dragger_visibility = 2
+script = ExtResource("5_l3m6s")
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/PATTERN/Problem/Options/BUILD_AT_A"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/PATTERN/Problem/Options/BUILD_AT_A/Text"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/PATTERN/Problem/Options/BUILD_AT_A/Text/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_ervnu")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "SHOULD_PROBABILITY_1_BUILD_AT_A"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/PATTERN/Problem/Options/BUILD_AT_A"]
+layout_mode = 2
+
+[node name="Button" parent="Problems/Problems/PATTERN/Problem/Options/BUILD_AT_A/Button" instance=ExtResource("6_8ud7t")]
+layout_mode = 2
+
+[node name="BUILD_AT_B" type="VSplitContainer" parent="Problems/Problems/PATTERN/Problem/Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+dragger_visibility = 2
+script = ExtResource("5_l3m6s")
+REFERENCE_ANSWER = true
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/PATTERN/Problem/Options/BUILD_AT_B"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/PATTERN/Problem/Options/BUILD_AT_B/Text"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/PATTERN/Problem/Options/BUILD_AT_B/Text/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_ervnu")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "SHOULD_PROBABILITY_1_BUILD_AT_B"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/PATTERN/Problem/Options/BUILD_AT_B"]
+layout_mode = 2
+
+[node name="Button" parent="Problems/Problems/PATTERN/Problem/Options/BUILD_AT_B/Button" instance=ExtResource("6_8ud7t")]
+layout_mode = 2

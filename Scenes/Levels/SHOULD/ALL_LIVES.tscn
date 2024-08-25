@@ -22,7 +22,7 @@ layout_mode = 2
 
 [node name="BAD_PUNCH" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
-theme_override_constants/margin_bottom = 50
+theme_override_constants/margin_bottom = 25
 script = ExtResource("5_403ki")
 
 [node name="Problem" type="VSplitContainer" parent="Problems/Problems/BAD_PUNCH"]
@@ -31,7 +31,7 @@ dragger_visibility = 2
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/BAD_PUNCH/Problem"]
 layout_mode = 2
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_bottom = 25
 
 [node name="Text" type="CenterContainer" parent="Problems/Problems/BAD_PUNCH/Problem/Text"]
 layout_mode = 2
@@ -41,7 +41,7 @@ layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/normal_font = ExtResource("3_usxsg")
-theme_override_font_sizes/normal_font_size = 33
+theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "SHOULD_ALL_LIVES_BAD_PUNCH"
 fit_content = true
@@ -52,23 +52,59 @@ autowrap_mode = 0
 layout_mode = 2
 alignment = 1
 
-[node name="DO_NOTHING" type="VSplitContainer" parent="Problems/Problems/BAD_PUNCH/Problem/Options"]
+[node name="PUNCH" type="VSplitContainer" parent="Problems/Problems/BAD_PUNCH/Problem/Options"]
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
 script = ExtResource("6_7jdrs")
 
-[node name="Text" type="CenterContainer" parent="Problems/Problems/BAD_PUNCH/Problem/Options/DO_NOTHING"]
+[node name="Text" type="MarginContainer" parent="Problems/Problems/BAD_PUNCH/Problem/Options/PUNCH"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/BAD_PUNCH/Problem/Options/PUNCH/Text"]
 layout_mode = 2
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/BAD_PUNCH/Problem/Options/DO_NOTHING/Text"]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/BAD_PUNCH/Problem/Options/PUNCH/Text/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/normal_font = ExtResource("3_usxsg")
-theme_override_font_sizes/normal_font_size = 33
+theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
-text = "SHOULD_ALL_LIVES_BAD_PUNCH_PUNCH"
+text = "SHOULD_ALL_LIVES_PUNCH"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/BAD_PUNCH/Problem/Options/PUNCH"]
+layout_mode = 2
+
+[node name="Button" parent="Problems/Problems/BAD_PUNCH/Problem/Options/PUNCH/Button" instance=ExtResource("7_6fgh5")]
+layout_mode = 2
+
+[node name="DO_NOTHING" type="VSplitContainer" parent="Problems/Problems/BAD_PUNCH/Problem/Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+dragger_visibility = 2
+script = ExtResource("6_7jdrs")
+REFERENCE_ANSWER = true
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/BAD_PUNCH/Problem/Options/DO_NOTHING"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/BAD_PUNCH/Problem/Options/DO_NOTHING/Text"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/BAD_PUNCH/Problem/Options/DO_NOTHING/Text/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("3_usxsg")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "SHOULD_DO_NOTHING"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -79,37 +115,16 @@ layout_mode = 2
 [node name="Button" parent="Problems/Problems/BAD_PUNCH/Problem/Options/DO_NOTHING/Button" instance=ExtResource("7_6fgh5")]
 layout_mode = 2
 
-[node name="PULL" type="VSplitContainer" parent="Problems/Problems/BAD_PUNCH/Problem/Options"]
-layout_mode = 2
-size_flags_horizontal = 3
-dragger_visibility = 2
-script = ExtResource("6_7jdrs")
-REFERENCE_ANSWER = true
-
-[node name="Text" type="CenterContainer" parent="Problems/Problems/BAD_PUNCH/Problem/Options/PULL"]
+[node name="Line" type="CenterContainer" parent="Problems/Problems"]
 layout_mode = 2
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/BAD_PUNCH/Problem/Options/PULL/Text"]
+[node name="Line" type="ColorRect" parent="Problems/Problems/Line"]
+custom_minimum_size = Vector2(1100, 1)
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("3_usxsg")
-theme_override_font_sizes/normal_font_size = 33
-bbcode_enabled = true
-text = "SHOULD_ALL_LIVES_BAD_PUNCH_DO_NOTHING"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
-[node name="Button" type="CenterContainer" parent="Problems/Problems/BAD_PUNCH/Problem/Options/PULL"]
-layout_mode = 2
-
-[node name="Button" parent="Problems/Problems/BAD_PUNCH/Problem/Options/PULL/Button" instance=ExtResource("7_6fgh5")]
-layout_mode = 2
-REFERENCE_ANSWER = true
 
 [node name="GOOD_PUNCH" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
+theme_override_constants/margin_top = 25
 script = ExtResource("5_403ki")
 
 [node name="Problem" type="VSplitContainer" parent="Problems/Problems/GOOD_PUNCH"]
@@ -118,7 +133,7 @@ dragger_visibility = 2
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/GOOD_PUNCH/Problem"]
 layout_mode = 2
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_bottom = 25
 
 [node name="Text" type="CenterContainer" parent="Problems/Problems/GOOD_PUNCH/Problem/Text"]
 layout_mode = 2
@@ -128,7 +143,7 @@ layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/normal_font = ExtResource("3_usxsg")
-theme_override_font_sizes/normal_font_size = 33
+theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "SHOULD_ALL_LIVES_GOOD_PUNCH"
 fit_content = true
@@ -139,23 +154,59 @@ autowrap_mode = 0
 layout_mode = 2
 alignment = 1
 
+[node name="PUNCH" type="VSplitContainer" parent="Problems/Problems/GOOD_PUNCH/Problem/Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+dragger_visibility = 2
+script = ExtResource("6_7jdrs")
+REFERENCE_ANSWER = true
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/PUNCH"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/PUNCH/Text"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/PUNCH/Text/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("3_usxsg")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "SHOULD_ALL_LIVES_PUNCH"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/PUNCH"]
+layout_mode = 2
+
+[node name="Button" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/PUNCH/Button" instance=ExtResource("7_6fgh5")]
+layout_mode = 2
+
 [node name="DO_NOTHING" type="VSplitContainer" parent="Problems/Problems/GOOD_PUNCH/Problem/Options"]
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
 script = ExtResource("6_7jdrs")
 
-[node name="Text" type="CenterContainer" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/DO_NOTHING"]
+[node name="Text" type="MarginContainer" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/DO_NOTHING"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/DO_NOTHING/Text"]
 layout_mode = 2
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/DO_NOTHING/Text"]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/DO_NOTHING/Text/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/normal_font = ExtResource("3_usxsg")
-theme_override_font_sizes/normal_font_size = 33
+theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
-text = "SHOULD_ALL_LIVES_BAD_PUNCH_PUNCH"
+text = "SHOULD_DO_NOTHING"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -164,33 +215,4 @@ autowrap_mode = 0
 layout_mode = 2
 
 [node name="Button" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/DO_NOTHING/Button" instance=ExtResource("7_6fgh5")]
-layout_mode = 2
-REFERENCE_ANSWER = true
-
-[node name="PULL" type="VSplitContainer" parent="Problems/Problems/GOOD_PUNCH/Problem/Options"]
-layout_mode = 2
-size_flags_horizontal = 3
-dragger_visibility = 2
-script = ExtResource("6_7jdrs")
-REFERENCE_ANSWER = true
-
-[node name="Text" type="CenterContainer" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/PULL"]
-layout_mode = 2
-
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/PULL/Text"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("3_usxsg")
-theme_override_font_sizes/normal_font_size = 33
-bbcode_enabled = true
-text = "SHOULD_ALL_LIVES_GOOD_PUNCH_DO_NOTHING"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
-[node name="Button" type="CenterContainer" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/PULL"]
-layout_mode = 2
-
-[node name="Button" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/PULL/Button" instance=ExtResource("7_6fgh5")]
 layout_mode = 2

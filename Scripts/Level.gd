@@ -8,10 +8,9 @@ class_name Level extends Node2D
 @onready var SOLVED_LABEL = LEVEL_STRUCTURE.get_node("UI/Solved_Label/Label/Label")
 @onready var AUDIO_PLAYER = LEVEL_STRUCTURE.get_node("Audio_Player")
 @onready var PROBLEMS_CONTAINER = get_node("Problems/Problems")
-@onready var PROBLEMS = PROBLEMS_CONTAINER.get_children()
+var PROBLEMS
 var WRONG_ANSWER_SOUND = preload("res://Resources/Sounds/Wrong_Answer.mp3")
 var TEXT_FONT = preload("res://Resources/SourceHanSansSC-Normal.otf")
-var TEXT_FONT_SIZE = 33
 var PENALTIES = [1, 3, 6, 10]
 # If the locale codename makes the "Problems" center container's width exceed the screen width,
 # then 1) Type in screen width into the center container's size.x;
@@ -25,6 +24,12 @@ func _ready():
 	SUBMIT_BUTTON.set_level_name(LEVEL_NAME)
 	var back_button =  LEVEL_STRUCTURE.get_node("UI/Back_Button")
 	back_button.pressed.connect(exit_level)
+	
+	PROBLEMS = []
+	var problems_and_lines = PROBLEMS_CONTAINER.get_children()
+	for problem_or_line in problems_and_lines:
+		if problem_or_line is MarginContainer:
+			PROBLEMS.append(problem_or_line)
 	for problem in PROBLEMS:
 		problem.connect_signal_update_submit_button_visibility(update_submit_button_visibility)
 	load_answers()

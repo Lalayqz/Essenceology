@@ -75,32 +75,31 @@ POSSIBILITY_FINALE_REFERENCE_ANSWER,"1. Among the Essenceology problems that I r
 
 ALL_LIVES,All Lives,全体
 CALCULATION,Calculation,计算
-PROBABILITY,Probability,概率
+PROBABILITY_1,Probability 1,概率 1
+PROBABILITY_2,Probability 2,概率 2
 INDIVIDUAL,Individual,个体
 ANALYSIS,Analysis,分析
 
 SHOULD_INTRO_NOTE,"[center]ph[/center]","[center]在这一部分里，每一道题会给出某一情境下的多个选择，你需要选出其中[b]应该[/b]做出的选择。\n其中，“应该做出某选择”的[b]定义[/b]为：\n在这些选择中，做出该选择的条件下所有生物利益值的[color=yellow][hint=以发生概率为权重的平均值]期望[/hint][/color]最大。[/center]"
 SHOULD_INTRO_TROLLEY,"A runaway train is heading towards a switch track. Each of the two leading tracks has some people tied to it. Beside you is a level that controls the switch. If you do nothing, the train will run over a total of  5  people. If you pull the level, the train will run over only  1  people. You should...","一辆失控的列车正冲向一个道岔，道岔通向的两个线路上各绑着一些人，而你手边有一个控制该道岔的拉杆。此时，若你什么都不做，那么列车会碾过共5人；若你拉下拉杆，那么列车会驶入另一条线路，碾过仅1人。你应该..."
-SHOULD_INTRO_TROLLEY_DO_NOTHING,"Do nothing","什么也不做"
+SHOULD_DO_NOTHING,"Do nothing","什么也不做"
 SHOULD_INTRO_TROLLEY_PULL,"Pull the level","拉下拉杆"
-SHOULD_ALL_LIVES_BAD_PUNCH,"","你和另一个人在吵架。如果你打他一拳，那么你会获得值为5的愉悦，他会获得值为10的痛苦。你应该..."
-SHOULD_ALL_LIVES_BAD_PUNCH_PUNCH,"","打他一拳"
-SHOULD_ALL_LIVES_BAD_PUNCH_DO_NOTHING,"Do nothing","什么也不做"
-SHOULD_ALL_LIVES_GOOD_PUNCH,"","你和另一个人在吵架。如果你打他一拳，那么你会获得值为50的愉悦，他会获得值为10的痛苦。你应该..."
-SHOULD_ALL_LIVES_GOOD_PUNCH_PUNCH,"","打他一拳"
-SHOULD_ALL_LIVES_GOOD_PUNCH_DO_NOTHING,"Do nothing","什么也不做"
+SHOULD_ALL_LIVES_BAD_PUNCH,"You are quarrelling with another person. If you punch him, you will experience a pleasure of value 5, and he will experience a pain of value 10. You should...","你和另一个人在吵架。如果你打他一拳，那么你会获得值为5的愉悦，他会获得值为10的痛苦。你应该..."
+SHOULD_ALL_LIVES_PUNCH,"","打他一拳"
+SHOULD_ALL_LIVES_GOOD_PUNCH,"You are quarrelling with another person. If you punch him, you will experience a pleasure of value 50, and he will experience a pain of value 10. You should...","你和另一个人在吵架。如果你打他一拳，那么你会获得值为50的愉悦，他会获得值为10的痛苦。你应该..."
 SHOULD_CALCULATION_BUTTON,"In front of you is a red button. If you press it, you have a 60% chance to experience a pleasure with a  value of 5, and another 40% chance to experience a pain with a value of 10. You should...","你面前有一个红色按钮。若你按下它，那么你有60%的概率获得值为5的愉悦，以及另外40%的概率获得值为10的痛苦。你应该..."
-SHOULD_CALCULATION_BUTTON_DO_NOTHING,"Do nothing","什么也不做"
 SHOULD_CALCULATION_BUTTON_PRESS,"Press the button"," 按下此按钮"
 SHOULD_CALCULATION_CARDS,"There is a stack of three poker cards with values of 5, 7, and 9 respectively. After a period of time, someone will randomly draw one card from this stack, and you will experience a pleasure equal to the value of the drawn card. Now you should... remove the card with a value of 5 from the stack, do nothing, or add a card with a value of 3 to the stack","有一叠扑克牌，共3张，其点数分别为5、7、9。一段时间后，将会有一个人从这叠扑克牌中随机抽取一张，然后你会获得与所抽点数等值的愉悦。你现在应该..."
-SHOULD_CALCULATION_CARDS_REMOVE,"","从这叠扑克牌中移除点数为5的一张"
-SHOULD_CALCULATION_CARDS_DO_NOTHING,"","什么都不做"
-SHOULD_CALCULATION_CARDS_ADD,"","向这叠扑克牌中加入点数为3的一张"
-SHOULD_PROBABILITY_RANDOM
-SHOULD_PROBABILITY_PATTERN
-SHOULD_INDIVIDUAL_TROLLEY
-SHOULD_INDIVIDUAL_?
-SHOULD_ANALYSIS_?
+SHOULD_CALCULATION_CARDS_REMOVE,"Remove the card with a value of 5 from the stack","从这叠扑克牌中移除点数为5的一张"
+SHOULD_CALCULATION_CARDS_ADD,"Add a card with a value of 3 to the stack","向这叠扑克牌中加入点数为3的一张"
+SHOULD_PROBABILITY_1_RANDOM,"","A地近8年来，每年的地震情况以时间先后顺序排列是：无无无有有有有有；B地近8年来，每年的地震情况以时间先后顺序排列是：无有有无有无无有。现在你需要建造你的家，你应该..."
+SHOULD_PROBABILITY_1_BUILD_AT_A,"","在A地建家"
+SHOULD_PROBABILITY_1_BUILD_AT_B,"","在B地建家"
+SHOULD_PROBABILITY_1_PATTERN,"","A地近8年来，每年的地震情况以时间先后顺序排列是：无无无有有有有有；B地近8年来，每年的地震情况以时间先后顺序排列是：有有有无有无无有。现在你需要建造你的家，你应该..."
+SHOULD_PROBABILITY_2,"",""
+SHOULD_INDIVIDUAL_TROLLEY,"",""
+SHOULD_INDIVIDUAL_?,"",""
+SHOULD_ANALYSIS_?,"",""
 SHOULD_ANALYSIS_GRID,"As shown in the diagram, you are on a platform with 12 locations at the upper surface of the platform distributed in a grid pattern. Each two adjacent locations have a horizontal distance of 20 meters, a vertical distance of 10 meters. You are at point A, and you need to visit each location once. You should...","如图，你在一个平台上，平台上表面处有12个网格状分布的地点，相邻两点横向间距20米，纵向间距10米。你在A点处，你需要到达每个地点各一次。你应该..."
 SHOULD_ANALYSIS_GRID_HORIZONTAL_FIRST,"Traverse directly in the order of ABCDHGFEIJKL","以ABCDHGFEIJKL的顺序依次径直遍历"
 SHOULD_ANALYSIS_GRID_VERTICAL_FIRST,"Traverse directly in the order of AEIBFJCGKDHL","以AEIBFJCGKDHL的顺序依次径直遍历"

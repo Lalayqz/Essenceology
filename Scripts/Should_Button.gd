@@ -2,7 +2,6 @@ class_name ShouldButton extends NeatButton
 
 signal answer_changed()
 signal answer_set_to_should()
-@export var REFERENCE_ANSWER: bool
 @onready var SHOULD_SPRITE = $Should
 var should = false
 

@@ -4,8 +4,9 @@ extends Level
 var PROBLEM_TEXTS = []
 var TEXTS = []
 var MAX_TEXT_WIDTH = 1000
-var MAX_TEXT_HEIGHT = 450
-var TEXT_FONT_SIZE_SMALL = 26
+var MAX_TEXT_HEIGHT = 525
+var TEXT_FONT_SIZE = 26
+var TEXT_FONT_SIZE_SMALL = 24
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,7 +18,7 @@ func _ready():
 		PROBLEM_TEXTS.append(problem_text)
 		TEXTS.append(problem_text)
 		for option in options:
-			var option_text = option.get_node("Text/Text")
+			var option_text = option.get_node("Text/Text/Text")
 			TEXTS.append(option_text)
 	
 	update_word_warp()

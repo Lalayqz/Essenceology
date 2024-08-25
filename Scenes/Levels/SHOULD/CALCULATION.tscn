@@ -1,0 +1,249 @@
+[gd_scene load_steps=7 format=3 uid="uid://22te7kr8jq4"]
+
+[ext_resource type="Script" path="res://Scripts/Should_level.gd" id="1_focjm"]
+[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_j5lgx"]
+[ext_resource type="Script" path="res://Scripts/Should_Problem.gd" id="3_5r7xw"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="4_cdsa7"]
+[ext_resource type="Script" path="res://Scripts/Should_Option.gd" id="5_mll8v"]
+[ext_resource type="PackedScene" uid="uid://f0n60dmxi4ve" path="res://Scenes/Items/Should_Button.tscn" id="6_qyvem"]
+
+[node name="CALCULATION" type="Node2D"]
+script = ExtResource("1_focjm")
+
+[node name="Level_Structure" parent="." instance=ExtResource("2_j5lgx")]
+
+[node name="Problems" type="CenterContainer" parent="."]
+offset_right = 1280.0
+offset_bottom = 640.0
+mouse_filter = 2
+
+[node name="Problems" type="VBoxContainer" parent="Problems"]
+layout_mode = 2
+
+[node name="BUTTON" type="MarginContainer" parent="Problems/Problems"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 25
+script = ExtResource("3_5r7xw")
+
+[node name="Problem" type="VSplitContainer" parent="Problems/Problems/BUTTON"]
+layout_mode = 2
+dragger_visibility = 2
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/BUTTON/Problem"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 25
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/BUTTON/Problem/Text"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/BUTTON/Problem/Text/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_cdsa7")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "SHOULD_CALCULATION_BUTTON"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Options" type="HBoxContainer" parent="Problems/Problems/BUTTON/Problem"]
+layout_mode = 2
+alignment = 1
+
+[node name="PRESS" type="VSplitContainer" parent="Problems/Problems/BUTTON/Problem/Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+dragger_visibility = 2
+script = ExtResource("5_mll8v")
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/BUTTON/Problem/Options/PRESS"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/BUTTON/Problem/Options/PRESS/Text"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/BUTTON/Problem/Options/PRESS/Text/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_cdsa7")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "SHOULD_CALCULATION_BUTTON_PRESS"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/BUTTON/Problem/Options/PRESS"]
+layout_mode = 2
+
+[node name="Button" parent="Problems/Problems/BUTTON/Problem/Options/PRESS/Button" instance=ExtResource("6_qyvem")]
+layout_mode = 2
+
+[node name="DO_NOTHING" type="VSplitContainer" parent="Problems/Problems/BUTTON/Problem/Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+dragger_visibility = 2
+script = ExtResource("5_mll8v")
+REFERENCE_ANSWER = true
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/BUTTON/Problem/Options/DO_NOTHING"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/BUTTON/Problem/Options/DO_NOTHING/Text"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/BUTTON/Problem/Options/DO_NOTHING/Text/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_cdsa7")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "SHOULD_DO_NOTHING"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/BUTTON/Problem/Options/DO_NOTHING"]
+layout_mode = 2
+
+[node name="Button" parent="Problems/Problems/BUTTON/Problem/Options/DO_NOTHING/Button" instance=ExtResource("6_qyvem")]
+layout_mode = 2
+
+[node name="Line" type="CenterContainer" parent="Problems/Problems"]
+layout_mode = 2
+
+[node name="Line" type="ColorRect" parent="Problems/Problems/Line"]
+custom_minimum_size = Vector2(1100, 1)
+layout_mode = 2
+
+[node name="CARDS" type="MarginContainer" parent="Problems/Problems"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
+script = ExtResource("3_5r7xw")
+
+[node name="Problem" type="VSplitContainer" parent="Problems/Problems/CARDS"]
+layout_mode = 2
+dragger_visibility = 2
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/CARDS/Problem"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 25
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/CARDS/Problem/Text"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/CARDS/Problem/Text/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_cdsa7")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "SHOULD_CALCULATION_CARDS"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Options" type="HBoxContainer" parent="Problems/Problems/CARDS/Problem"]
+layout_mode = 2
+alignment = 1
+
+[node name="REMOVE" type="VSplitContainer" parent="Problems/Problems/CARDS/Problem/Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+dragger_visibility = 2
+script = ExtResource("5_mll8v")
+REFERENCE_ANSWER = true
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/CARDS/Problem/Options/REMOVE"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/CARDS/Problem/Options/REMOVE/Text"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/CARDS/Problem/Options/REMOVE/Text/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_cdsa7")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "SHOULD_CALCULATION_CARDS_REMOVE"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/CARDS/Problem/Options/REMOVE"]
+layout_mode = 2
+
+[node name="Button" parent="Problems/Problems/CARDS/Problem/Options/REMOVE/Button" instance=ExtResource("6_qyvem")]
+layout_mode = 2
+
+[node name="DO_NOTHING" type="VSplitContainer" parent="Problems/Problems/CARDS/Problem/Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+dragger_visibility = 2
+script = ExtResource("5_mll8v")
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/CARDS/Problem/Options/DO_NOTHING"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/CARDS/Problem/Options/DO_NOTHING/Text"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/CARDS/Problem/Options/DO_NOTHING/Text/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_cdsa7")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "SHOULD_DO_NOTHING"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/CARDS/Problem/Options/DO_NOTHING"]
+layout_mode = 2
+
+[node name="Button" parent="Problems/Problems/CARDS/Problem/Options/DO_NOTHING/Button" instance=ExtResource("6_qyvem")]
+layout_mode = 2
+
+[node name="ADD" type="VSplitContainer" parent="Problems/Problems/CARDS/Problem/Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+dragger_visibility = 2
+script = ExtResource("5_mll8v")
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/CARDS/Problem/Options/ADD"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/CARDS/Problem/Options/ADD/Text"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/CARDS/Problem/Options/ADD/Text/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_cdsa7")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "SHOULD_CALCULATION_CARDS_ADD"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/CARDS/Problem/Options/ADD"]
+layout_mode = 2
+
+[node name="Button" parent="Problems/Problems/CARDS/Problem/Options/ADD/Button" instance=ExtResource("6_qyvem")]
+layout_mode = 2
