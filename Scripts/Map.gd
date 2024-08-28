@@ -5,9 +5,10 @@ extends ReferenceRect
 @onready var BACKGROUND = $Background
 @onready var CHAINS = $Chains
 @onready var LEVELS = $Levels
+var VISIBLE_LEVELS = []
 @onready var FOCUS_POSITION = $Focus.position
 var LEVEL_CHAINS = {"POSSIBILITY":[["INTRO", "UNLIKELY"], ["UNLIKELY", "LOGIC"], ["LOGIC", "LOGIC_HARD"], ["LOGIC", "LIES_GENERALIZED"], ["LIES_GENERALIZED", "LIES_1"], ["LIES_1", "LIES_2"], ["LIES_2", "LIES_HARD"], ["LIES_2", "MEMORY_1"], ["MEMORY_1", "MEMORY_2"], ["MEMORY_2", "MEMORY_GENERALIZED"], ["MEMORY_GENERALIZED", "MEMORY_HARD"], ["MEMORY_GENERALIZED", "PATTERNS_1"], ["PATTERNS_1", "PATTERNS_2"], ["PATTERNS_2", "PATTERNS_3"], ["PATTERNS_3", "FINALE"]],
-"SHOULD":[["INTRO", "ALL_LIVES"], ["ALL_LIVES", "CALCULATION"], ["CALCULATION", "PROBABILITY_1"], ["PROBABILITY_1", "PROBABILITY_2"], ["CALCULATION", "INDIVIDUAL"]]}
+"SHOULD":[["INTRO", "ALL_LIVES"], ["INTRO", "INDIVIDUAL"], ["INTRO", "CALCULATION"], ["CALCULATION", "PROBABILITY_1"], ["PROBABILITY_1", "PROBABILITY_2"], ["ALL_LIVES", "ANALYSIS_1"], ["INDIVIDUAL", "ANALYSIS_1"], ["CALCULATION", "ANALYSIS_1"], ["ANALYSIS_1", "ANALYSIS_2"], ["ANALYSIS_1", "SCALES"]]}
 var UNSOLVED_LEVEL_TEXTURE = preload("res://Resources/Unsolved_Level.png")
 var SOLVED_LEVEL_TEXTURE = preload("res://Resources/Solved_Level.png")
 var UNSOLVED_FINALE_TEXTURE = preload("res://Resources/Unsolved_Finale.png")
@@ -26,6 +27,8 @@ func _ready():
 	# calculate levels_unlocked and chains_not_unlocked (only "key" of the dict is used)
 	var chains_unlocked = {}
 	var levels_not_unlocked = {}
+	var visible_level_names = []
+	
 	for chain in LEVEL_CHAINS[CHAPTER]:
 		if Save.get_level_solved(CHAPTER, chain[0]):
 			chains_unlocked[chain] = 1
@@ -41,9 +44,14 @@ func _ready():
 			levels_unlocked_in_not_unlocked.append(level)
 	for level in levels_unlocked_in_not_unlocked:
 		levels_not_unlocked.erase(level)
-	# remove not-unlocked levels
-	for level in levels_not_unlocked:
-		LEVELS.remove_child(LEVELS.get_node(level))
+	# hide not-unlocked levels
+	for level in LEVELS.get_children():
+		if levels_not_unlocked.has(level.name):
+			level.visible = false
+		else:
+			VISIBLE_LEVELS.append(level)
+			visible_level_names.append(level.name)
+		# LEVELS.remove_child(LEVELS.get_node(level))
 	# add chains
 	for chain in chains_unlocked:
 		var level_start = LEVELS.get_node(chain[0])
@@ -51,12 +59,17 @@ func _ready():
 			continue
 		var level_end = LEVELS.get_node(chain[1])
 		var points = PackedVector2Array([level_start.position, level_end.position])
-		var chain_node = load("res://Scenes/Items/Chain.tscn").instantiate()
+		var chain_node
+		
+		if visible_level_names.has(chain[1]):
+			chain_node = load("res://Scenes/Items/Chain.tscn").instantiate()
+		else:
+			chain_node = load("res://Scenes/Items/Dashed_Chain.tscn").instantiate()
+		
 		chain_node.points = points
-		chain_node.get_child(0).points = points
 		CHAINS.add_child(chain_node)
 	# add level icons
-	for level in LEVELS.get_children():
+	for level in VISIBLE_LEVELS:
 		var level_sprite = Sprite2D.new()
 		if level.name in Global_Variables.FINALES[CHAPTER]:
 			level_sprite.texture = SOLVED_FINALE_TEXTURE if Save.get_level_solved(CHAPTER, level.name) else UNSOLVED_FINALE_TEXTURE
@@ -102,13 +115,13 @@ func _unhandled_input(event):  # use "unhandled" because I want the chapter bar 
 			
 	# enter level
 	if (is_motion):
-		for level in LEVELS.get_children():
+		for level in VISIBLE_LEVELS:
 			if (event.position.distance_to(level.global_position) <= level.get_meta("Radius")):
 				level.get_child(0).modulate = Color.GRAY
 			else:
 				level.get_child(0).modulate = Color.WHITE
 	elif (is_release and event.position.distance_to(drag_start) <= ENTER_LEVEL_DRAG_MAX):
-		for level in LEVELS.get_children():
+		for level in VISIBLE_LEVELS:
 			if (event.position.distance_to(level.global_position) <= level.get_meta("Radius")):
 				get_tree().change_scene_to_file("res://Scenes/Levels/" + CHAPTER + "/" + level.get_name() + ".tscn")
 	elif (is_press):

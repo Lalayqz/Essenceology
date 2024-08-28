@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx360pw24f384"]
+
+[ext_resource type="Texture2D" uid="uid://bhcch8pf4gh68" path="res://Resources/Dashed_Chain.png" id="1_lo4hq"]
+
+[node name="dashed_chain" type="Line2D"]
+texture_repeat = 2
+texture = ExtResource("1_lo4hq")
+texture_mode = 1

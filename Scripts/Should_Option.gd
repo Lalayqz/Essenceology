@@ -8,6 +8,7 @@ signal answer_set_to_should(option_name)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	SHOULD_BUTTON.answer_set_to_should.connect(emit_signal_answer_set_to_should)
+	set_answer(false)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

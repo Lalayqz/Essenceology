@@ -12,6 +12,8 @@ func _ready():
 		var language = config.get_value("Config", "language")
 		if language != null:
 			TranslationServer.set_locale(language)
+			
+	get_window().set_ime_active(true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

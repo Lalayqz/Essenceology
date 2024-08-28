@@ -1,0 +1,76 @@
+[gd_scene load_steps=6 format=3 uid="uid://gkui274dtw80"]
+
+[ext_resource type="Script" path="res://Scripts/Scales_Level.gd" id="1_xgp57"]
+[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_jnqit"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="3_lkv3a"]
+[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/SourceHanSansSC-Bold.otf" id="4_cdfnv"]
+[ext_resource type="Script" path="res://Scripts/Scales_Problem.gd" id="4_npe82"]
+
+[node name="SCALES" type="Node2D"]
+script = ExtResource("1_xgp57")
+
+[node name="Level_Structure" parent="." instance=ExtResource("2_jnqit")]
+
+[node name="Note" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_lkv3a")
+theme_override_font_sizes/font_size = 23
+horizontal_alignment = 1
+autowrap_mode = 2
+clip_text = true
+
+[node name="Problem" type="CenterContainer" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+
+[node name="Problem" type="VBoxContainer" parent="Problem"]
+layout_mode = 2
+script = ExtResource("4_npe82")
+
+[node name="Input" type="CenterContainer" parent="Problem/Problem"]
+layout_mode = 2
+
+[node name="Input" type="RichTextLabel" parent="Problem/Problem/Input"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_cdfnv")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Line" type="CenterContainer" parent="Problem/Problem"]
+layout_mode = 2
+
+[node name="Line" type="ColorRect" parent="Problem/Problem/Line"]
+custom_minimum_size = Vector2(800, 1)
+layout_mode = 2
+
+[node name="Scales" type="HBoxContainer" parent="Problem/Problem"]
+layout_mode = 2
+alignment = 1
+
+[node name="Good_Aspects" type="VBoxContainer" parent="Problem/Problem/Scales"]
+layout_mode = 2
+
+[node name="Line" type="CenterContainer" parent="Problem/Problem/Scales"]
+layout_mode = 2
+
+[node name="Line" type="ColorRect" parent="Problem/Problem/Scales/Line"]
+custom_minimum_size = Vector2(1, 600)
+layout_mode = 2
+
+[node name="Bad_Aspects" type="VBoxContainer" parent="Problem/Problem/Scales"]
+layout_mode = 2

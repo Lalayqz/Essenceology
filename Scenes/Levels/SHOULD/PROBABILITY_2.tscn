@@ -1,16 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://dt817bivhvn0d"]
+[gd_scene load_steps=7 format=3 uid="uid://d0ol8wyewpn7t"]
 
-[ext_resource type="Script" path="res://Scripts/Should_level.gd" id="1_8nh5n"]
-[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_ka3in"]
-[ext_resource type="Script" path="res://Scripts/Should_Problem.gd" id="3_u4xli"]
-[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="4_ervnu"]
-[ext_resource type="Script" path="res://Scripts/Should_Option.gd" id="5_l3m6s"]
-[ext_resource type="PackedScene" uid="uid://f0n60dmxi4ve" path="res://Scenes/Items/Should_Button.tscn" id="6_8ud7t"]
+[ext_resource type="Script" path="res://Scripts/Should_level.gd" id="1_25nch"]
+[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_smh0q"]
+[ext_resource type="Script" path="res://Scripts/Should_Problem.gd" id="3_olwg1"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="4_ws1ro"]
+[ext_resource type="Script" path="res://Scripts/Should_Option.gd" id="5_724pf"]
+[ext_resource type="PackedScene" uid="uid://f0n60dmxi4ve" path="res://Scenes/Items/Should_Button.tscn" id="6_08cvs"]
 
-[node name="PROBABILITY_1" type="Node2D"]
-script = ExtResource("1_8nh5n")
+[node name="PROBABILITY_2" type="Node2D"]
+script = ExtResource("1_25nch")
 
-[node name="Level_Structure" parent="." instance=ExtResource("2_ka3in")]
+[node name="Level_Structure" parent="." instance=ExtResource("2_smh0q")]
 
 [node name="Problems" type="CenterContainer" parent="."]
 offset_right = 1280.0
@@ -23,7 +23,7 @@ layout_mode = 2
 [node name="GOLF_1" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 25
-script = ExtResource("3_u4xli")
+script = ExtResource("3_olwg1")
 
 [node name="Problem" type="VSplitContainer" parent="Problems/Problems/GOLF_1"]
 layout_mode = 2
@@ -40,10 +40,10 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_ervnu")
+theme_override_fonts/normal_font = ExtResource("4_ws1ro")
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
-text = "SHOULD_PROBABILITY_1_GOLF_1"
+text = "SHOULD_PROBABILITY_2_GOLF_1"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -56,7 +56,8 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
-script = ExtResource("5_l3m6s")
+script = ExtResource("5_724pf")
+REFERENCE_ANSWER = true
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/GOLF_1/Problem/Options/PLAY_AT_A"]
 layout_mode = 2
@@ -69,7 +70,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_ervnu")
+theme_override_fonts/normal_font = ExtResource("4_ws1ro")
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "SHOULD_PLAY_AT_A"
@@ -80,15 +81,14 @@ autowrap_mode = 0
 [node name="Button" type="CenterContainer" parent="Problems/Problems/GOLF_1/Problem/Options/PLAY_AT_A"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/GOLF_1/Problem/Options/PLAY_AT_A/Button" instance=ExtResource("6_8ud7t")]
+[node name="Button" parent="Problems/Problems/GOLF_1/Problem/Options/PLAY_AT_A/Button" instance=ExtResource("6_08cvs")]
 layout_mode = 2
 
 [node name="PLAY_AT_B" type="VSplitContainer" parent="Problems/Problems/GOLF_1/Problem/Options"]
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
-script = ExtResource("5_l3m6s")
-REFERENCE_ANSWER = true
+script = ExtResource("5_724pf")
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/GOLF_1/Problem/Options/PLAY_AT_B"]
 layout_mode = 2
@@ -101,7 +101,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_ervnu")
+theme_override_fonts/normal_font = ExtResource("4_ws1ro")
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "SHOULD_PLAY_AT_B"
@@ -112,7 +112,7 @@ autowrap_mode = 0
 [node name="Button" type="CenterContainer" parent="Problems/Problems/GOLF_1/Problem/Options/PLAY_AT_B"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/GOLF_1/Problem/Options/PLAY_AT_B/Button" instance=ExtResource("6_8ud7t")]
+[node name="Button" parent="Problems/Problems/GOLF_1/Problem/Options/PLAY_AT_B/Button" instance=ExtResource("6_08cvs")]
 layout_mode = 2
 
 [node name="Line" type="CenterContainer" parent="Problems/Problems"]
@@ -125,7 +125,7 @@ layout_mode = 2
 [node name="GOLF_2" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
 theme_override_constants/margin_top = 25
-script = ExtResource("3_u4xli")
+script = ExtResource("3_olwg1")
 
 [node name="Problem" type="VSplitContainer" parent="Problems/Problems/GOLF_2"]
 layout_mode = 2
@@ -142,10 +142,10 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_ervnu")
+theme_override_fonts/normal_font = ExtResource("4_ws1ro")
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
-text = "SHOULD_PROBABILITY_1_GOLF_2"
+text = "SHOULD_PROBABILITY_2_GOLF_2"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -158,7 +158,8 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
-script = ExtResource("5_l3m6s")
+script = ExtResource("5_724pf")
+REFERENCE_ANSWER = true
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/GOLF_2/Problem/Options/PLAY_AT_A"]
 layout_mode = 2
@@ -171,7 +172,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_ervnu")
+theme_override_fonts/normal_font = ExtResource("4_ws1ro")
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "SHOULD_PLAY_AT_A"
@@ -182,15 +183,14 @@ autowrap_mode = 0
 [node name="Button" type="CenterContainer" parent="Problems/Problems/GOLF_2/Problem/Options/PLAY_AT_A"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/GOLF_2/Problem/Options/PLAY_AT_A/Button" instance=ExtResource("6_8ud7t")]
+[node name="Button" parent="Problems/Problems/GOLF_2/Problem/Options/PLAY_AT_A/Button" instance=ExtResource("6_08cvs")]
 layout_mode = 2
 
 [node name="PLAY_AT_B" type="VSplitContainer" parent="Problems/Problems/GOLF_2/Problem/Options"]
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
-script = ExtResource("5_l3m6s")
-REFERENCE_ANSWER = true
+script = ExtResource("5_724pf")
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/GOLF_2/Problem/Options/PLAY_AT_B"]
 layout_mode = 2
@@ -203,7 +203,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_ervnu")
+theme_override_fonts/normal_font = ExtResource("4_ws1ro")
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
 text = "SHOULD_PLAY_AT_B"
@@ -214,5 +214,5 @@ autowrap_mode = 0
 [node name="Button" type="CenterContainer" parent="Problems/Problems/GOLF_2/Problem/Options/PLAY_AT_B"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/GOLF_2/Problem/Options/PLAY_AT_B/Button" instance=ExtResource("6_8ud7t")]
+[node name="Button" parent="Problems/Problems/GOLF_2/Problem/Options/PLAY_AT_B/Button" instance=ExtResource("6_08cvs")]
 layout_mode = 2

@@ -21,28 +21,31 @@ color = Color(0.0980392, 0.0588235, 0, 1)
 [node name="Levels" type="Node2D" parent="."]
 
 [node name="INTRO" type="Node2D" parent="Levels"]
-position = Vector2(438, 216)
+position = Vector2(550, 130)
 
 [node name="ALL_LIVES" type="Node2D" parent="Levels"]
-position = Vector2(705, 222)
+position = Vector2(285, 395)
 
 [node name="CALCULATION" type="Node2D" parent="Levels"]
-position = Vector2(735, 443)
+position = Vector2(815, 395)
 
 [node name="PROBABILITY_1" type="Node2D" parent="Levels"]
-position = Vector2(963, 412)
+position = Vector2(1172, 232)
 
 [node name="PROBABILITY_2" type="Node2D" parent="Levels"]
-position = Vector2(1154, 349)
+position = Vector2(1335, 130)
 
 [node name="INDIVIDUAL" type="Node2D" parent="Levels"]
-position = Vector2(736, 752)
+position = Vector2(550, 395)
 
 [node name="ANALYSIS_1" type="Node2D" parent="Levels"]
-position = Vector2(1472, 1504)
+position = Vector2(550, 840)
 
 [node name="ANALYSIS_2" type="Node2D" parent="Levels"]
-position = Vector2(2944, 3008)
+position = Vector2(760, 887)
+
+[node name="SCALES" type="Node2D" parent="Levels"]
+position = Vector2(786, 1177)
 
 [node name="Focus" type="Node2D" parent="."]
-position = Vector2(449, 226)
+position = Vector2(550, 130)

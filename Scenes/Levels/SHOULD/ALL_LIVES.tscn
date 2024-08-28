@@ -20,52 +20,52 @@ mouse_filter = 2
 [node name="Problems" type="VBoxContainer" parent="Problems"]
 layout_mode = 2
 
-[node name="BAD_PUNCH" type="MarginContainer" parent="Problems/Problems"]
+[node name="PUNCH_1" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 25
 script = ExtResource("5_403ki")
 
-[node name="Problem" type="VSplitContainer" parent="Problems/Problems/BAD_PUNCH"]
+[node name="Problem" type="VSplitContainer" parent="Problems/Problems/PUNCH_1"]
 layout_mode = 2
 dragger_visibility = 2
 
-[node name="Text" type="MarginContainer" parent="Problems/Problems/BAD_PUNCH/Problem"]
+[node name="Text" type="MarginContainer" parent="Problems/Problems/PUNCH_1/Problem"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 25
 
-[node name="Text" type="CenterContainer" parent="Problems/Problems/BAD_PUNCH/Problem/Text"]
+[node name="Text" type="CenterContainer" parent="Problems/Problems/PUNCH_1/Problem/Text"]
 layout_mode = 2
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/BAD_PUNCH/Problem/Text/Text"]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/PUNCH_1/Problem/Text/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/normal_font = ExtResource("3_usxsg")
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
-text = "SHOULD_ALL_LIVES_BAD_PUNCH"
+text = "SHOULD_ALL_LIVES_PUNCH_1"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="Options" type="HBoxContainer" parent="Problems/Problems/BAD_PUNCH/Problem"]
+[node name="Options" type="HBoxContainer" parent="Problems/Problems/PUNCH_1/Problem"]
 layout_mode = 2
 alignment = 1
 
-[node name="PUNCH" type="VSplitContainer" parent="Problems/Problems/BAD_PUNCH/Problem/Options"]
+[node name="PUNCH" type="VSplitContainer" parent="Problems/Problems/PUNCH_1/Problem/Options"]
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
 script = ExtResource("6_7jdrs")
 
-[node name="Text" type="MarginContainer" parent="Problems/Problems/BAD_PUNCH/Problem/Options/PUNCH"]
+[node name="Text" type="MarginContainer" parent="Problems/Problems/PUNCH_1/Problem/Options/PUNCH"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 5
 
-[node name="Text" type="CenterContainer" parent="Problems/Problems/BAD_PUNCH/Problem/Options/PUNCH/Text"]
+[node name="Text" type="CenterContainer" parent="Problems/Problems/PUNCH_1/Problem/Options/PUNCH/Text"]
 layout_mode = 2
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/BAD_PUNCH/Problem/Options/PUNCH/Text/Text"]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/PUNCH_1/Problem/Options/PUNCH/Text/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -77,27 +77,27 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="Button" type="CenterContainer" parent="Problems/Problems/BAD_PUNCH/Problem/Options/PUNCH"]
+[node name="Button" type="CenterContainer" parent="Problems/Problems/PUNCH_1/Problem/Options/PUNCH"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/BAD_PUNCH/Problem/Options/PUNCH/Button" instance=ExtResource("7_6fgh5")]
+[node name="Button" parent="Problems/Problems/PUNCH_1/Problem/Options/PUNCH/Button" instance=ExtResource("7_6fgh5")]
 layout_mode = 2
 
-[node name="DO_NOTHING" type="VSplitContainer" parent="Problems/Problems/BAD_PUNCH/Problem/Options"]
+[node name="DO_NOTHING" type="VSplitContainer" parent="Problems/Problems/PUNCH_1/Problem/Options"]
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
 script = ExtResource("6_7jdrs")
 REFERENCE_ANSWER = true
 
-[node name="Text" type="MarginContainer" parent="Problems/Problems/BAD_PUNCH/Problem/Options/DO_NOTHING"]
+[node name="Text" type="MarginContainer" parent="Problems/Problems/PUNCH_1/Problem/Options/DO_NOTHING"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 5
 
-[node name="Text" type="CenterContainer" parent="Problems/Problems/BAD_PUNCH/Problem/Options/DO_NOTHING/Text"]
+[node name="Text" type="CenterContainer" parent="Problems/Problems/PUNCH_1/Problem/Options/DO_NOTHING/Text"]
 layout_mode = 2
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/BAD_PUNCH/Problem/Options/DO_NOTHING/Text/Text"]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/PUNCH_1/Problem/Options/DO_NOTHING/Text/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -109,10 +109,10 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="Button" type="CenterContainer" parent="Problems/Problems/BAD_PUNCH/Problem/Options/DO_NOTHING"]
+[node name="Button" type="CenterContainer" parent="Problems/Problems/PUNCH_1/Problem/Options/DO_NOTHING"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/BAD_PUNCH/Problem/Options/DO_NOTHING/Button" instance=ExtResource("7_6fgh5")]
+[node name="Button" parent="Problems/Problems/PUNCH_1/Problem/Options/DO_NOTHING/Button" instance=ExtResource("7_6fgh5")]
 layout_mode = 2
 
 [node name="Line" type="CenterContainer" parent="Problems/Problems"]
@@ -122,53 +122,53 @@ layout_mode = 2
 custom_minimum_size = Vector2(1100, 1)
 layout_mode = 2
 
-[node name="GOOD_PUNCH" type="MarginContainer" parent="Problems/Problems"]
+[node name="PUNCH_2" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
 theme_override_constants/margin_top = 25
 script = ExtResource("5_403ki")
 
-[node name="Problem" type="VSplitContainer" parent="Problems/Problems/GOOD_PUNCH"]
+[node name="Problem" type="VSplitContainer" parent="Problems/Problems/PUNCH_2"]
 layout_mode = 2
 dragger_visibility = 2
 
-[node name="Text" type="MarginContainer" parent="Problems/Problems/GOOD_PUNCH/Problem"]
+[node name="Text" type="MarginContainer" parent="Problems/Problems/PUNCH_2/Problem"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 25
 
-[node name="Text" type="CenterContainer" parent="Problems/Problems/GOOD_PUNCH/Problem/Text"]
+[node name="Text" type="CenterContainer" parent="Problems/Problems/PUNCH_2/Problem/Text"]
 layout_mode = 2
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/GOOD_PUNCH/Problem/Text/Text"]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/PUNCH_2/Problem/Text/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/normal_font = ExtResource("3_usxsg")
 theme_override_font_sizes/normal_font_size = 26
 bbcode_enabled = true
-text = "SHOULD_ALL_LIVES_GOOD_PUNCH"
+text = "SHOULD_ALL_LIVES_PUNCH_2"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="Options" type="HBoxContainer" parent="Problems/Problems/GOOD_PUNCH/Problem"]
+[node name="Options" type="HBoxContainer" parent="Problems/Problems/PUNCH_2/Problem"]
 layout_mode = 2
 alignment = 1
 
-[node name="PUNCH" type="VSplitContainer" parent="Problems/Problems/GOOD_PUNCH/Problem/Options"]
+[node name="PUNCH" type="VSplitContainer" parent="Problems/Problems/PUNCH_2/Problem/Options"]
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
 script = ExtResource("6_7jdrs")
 REFERENCE_ANSWER = true
 
-[node name="Text" type="MarginContainer" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/PUNCH"]
+[node name="Text" type="MarginContainer" parent="Problems/Problems/PUNCH_2/Problem/Options/PUNCH"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 5
 
-[node name="Text" type="CenterContainer" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/PUNCH/Text"]
+[node name="Text" type="CenterContainer" parent="Problems/Problems/PUNCH_2/Problem/Options/PUNCH/Text"]
 layout_mode = 2
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/PUNCH/Text/Text"]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/PUNCH_2/Problem/Options/PUNCH/Text/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -180,26 +180,26 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="Button" type="CenterContainer" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/PUNCH"]
+[node name="Button" type="CenterContainer" parent="Problems/Problems/PUNCH_2/Problem/Options/PUNCH"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/PUNCH/Button" instance=ExtResource("7_6fgh5")]
+[node name="Button" parent="Problems/Problems/PUNCH_2/Problem/Options/PUNCH/Button" instance=ExtResource("7_6fgh5")]
 layout_mode = 2
 
-[node name="DO_NOTHING" type="VSplitContainer" parent="Problems/Problems/GOOD_PUNCH/Problem/Options"]
+[node name="DO_NOTHING" type="VSplitContainer" parent="Problems/Problems/PUNCH_2/Problem/Options"]
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
 script = ExtResource("6_7jdrs")
 
-[node name="Text" type="MarginContainer" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/DO_NOTHING"]
+[node name="Text" type="MarginContainer" parent="Problems/Problems/PUNCH_2/Problem/Options/DO_NOTHING"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 5
 
-[node name="Text" type="CenterContainer" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/DO_NOTHING/Text"]
+[node name="Text" type="CenterContainer" parent="Problems/Problems/PUNCH_2/Problem/Options/DO_NOTHING/Text"]
 layout_mode = 2
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/DO_NOTHING/Text/Text"]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/PUNCH_2/Problem/Options/DO_NOTHING/Text/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
@@ -211,8 +211,8 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="Button" type="CenterContainer" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/DO_NOTHING"]
+[node name="Button" type="CenterContainer" parent="Problems/Problems/PUNCH_2/Problem/Options/DO_NOTHING"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/GOOD_PUNCH/Problem/Options/DO_NOTHING/Button" instance=ExtResource("7_6fgh5")]
+[node name="Button" parent="Problems/Problems/PUNCH_2/Problem/Options/DO_NOTHING/Button" instance=ExtResource("7_6fgh5")]
 layout_mode = 2

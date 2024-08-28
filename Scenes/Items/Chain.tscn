@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://t6k288fu6v5i"]
+[gd_scene load_steps=2 format=3 uid="uid://t6k288fu6v5i"]
 
-[node name="outer" type="Line2D"]
-default_color = Color(0, 0, 0, 1)
+[ext_resource type="Texture2D" uid="uid://io3ueipd2nvc" path="res://Resources/Chain.png" id="1_6hfea"]
 
-[node name="inner" type="Line2D" parent="."]
-width = 4.0
-default_color = Color(0.811765, 0.811765, 0.811765, 1)
+[node name="chain" type="Line2D"]
+texture_repeat = 2
+texture = ExtResource("1_6hfea")
+texture_mode = 1
