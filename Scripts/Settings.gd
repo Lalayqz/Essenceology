@@ -6,7 +6,6 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var t =TranslationServer.get_locale()
 	match TranslationServer.get_locale():
 		"en":
 			language_checkboxes[0].set_pressed_no_signal(true)

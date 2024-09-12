@@ -1,12 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://gkui274dtw80"]
+[gd_scene load_steps=10 format=3 uid="uid://gkui274dtw80"]
 
 [ext_resource type="Script" path="res://Scripts/Scales_Level.gd" id="1_xgp57"]
 [ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_jnqit"]
 [ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="3_lkv3a"]
 [ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/SourceHanSansSC-Bold.otf" id="4_cdfnv"]
 [ext_resource type="Script" path="res://Scripts/Scales_Problem.gd" id="4_npe82"]
+[ext_resource type="Script" path="res://Scripts/Scales_Aspect.gd" id="6_ybdak"]
+[ext_resource type="StyleBox" uid="uid://cygff77fpp05p" path="res://Resources/Styles/Good_Aspect_border.tres" id="7_xdksk"]
+[ext_resource type="StyleBox" uid="uid://dru1v2d435avn" path="res://Resources/Styles/Bad_Aspect_border.tres" id="8_k0c2a"]
+[ext_resource type="FontVariation" uid="uid://dv35f3w6abrft" path="res://Resources/Styles/No_Extra_Spacing_Font_Variation.tres" id="8_m65pl"]
 
-[node name="SCALES" type="Node2D"]
+[node name="LANGUAGE" type="Node2D"]
 script = ExtResource("1_xgp57")
 
 [node name="Level_Structure" parent="." instance=ExtResource("2_jnqit")]
@@ -35,13 +39,19 @@ mouse_filter = 2
 
 [node name="Problem" type="VBoxContainer" parent="Problem"]
 layout_mode = 2
+mouse_filter = 2
 script = ExtResource("4_npe82")
+MAX_INPUT_LENGTH_EN = 10
+MAX_INPUT_LENGTH_ZH_CN = 2
 
 [node name="Input" type="CenterContainer" parent="Problem/Problem"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="Input" type="RichTextLabel" parent="Problem/Problem/Input"]
+custom_minimum_size = Vector2(0, 73)
 layout_mode = 2
+mouse_filter = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_fonts/normal_font = ExtResource("4_cdfnv")
@@ -51,26 +61,92 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
+[node name="Text" type="CenterContainer" parent="Problem/Problem"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Problem/Problem/Text"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("3_lkv3a")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "SHOULD_LANGUAGE"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
 [node name="Line" type="CenterContainer" parent="Problem/Problem"]
 layout_mode = 2
 
 [node name="Line" type="ColorRect" parent="Problem/Problem/Line"]
-custom_minimum_size = Vector2(800, 1)
+custom_minimum_size = Vector2(1100, 1)
 layout_mode = 2
 
 [node name="Scales" type="HBoxContainer" parent="Problem/Problem"]
 layout_mode = 2
 alignment = 1
 
-[node name="Good_Aspects" type="VBoxContainer" parent="Problem/Problem/Scales"]
+[node name="Bad_Aspects" type="VBoxContainer" parent="Problem/Problem/Scales"]
 layout_mode = 2
+
+[node name="Bad_Aspects" type="MarginContainer" parent="Problem/Problem/Scales/Bad_Aspects"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+
+[node name="JOY" type="CenterContainer" parent="Problem/Problem/Scales/Bad_Aspects/Bad_Aspects"]
+layout_mode = 2
+script = ExtResource("6_ybdak")
+
+[node name="Rect" type="ColorRect" parent="Problem/Problem/Scales/Bad_Aspects/Bad_Aspects/JOY"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Border" type="Panel" parent="Problem/Problem/Scales/Bad_Aspects/Bad_Aspects/JOY"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("7_xdksk")
+
+[node name="?" type="Label" parent="Problem/Problem/Scales/Bad_Aspects/Bad_Aspects/JOY"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_m65pl")
+theme_override_font_sizes/font_size = 80
+text = "?"
 
 [node name="Line" type="CenterContainer" parent="Problem/Problem/Scales"]
 layout_mode = 2
 
 [node name="Line" type="ColorRect" parent="Problem/Problem/Scales/Line"]
-custom_minimum_size = Vector2(1, 600)
+custom_minimum_size = Vector2(1, 500)
 layout_mode = 2
 
-[node name="Bad_Aspects" type="VBoxContainer" parent="Problem/Problem/Scales"]
+[node name="Good_Aspects" type="VBoxContainer" parent="Problem/Problem/Scales"]
 layout_mode = 2
+
+[node name="Good_Aspects" type="MarginContainer" parent="Problem/Problem/Scales/Good_Aspects"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+
+[node name="JOY" type="CenterContainer" parent="Problem/Problem/Scales/Good_Aspects/Good_Aspects"]
+layout_mode = 2
+script = ExtResource("6_ybdak")
+
+[node name="Rect" type="ColorRect" parent="Problem/Problem/Scales/Good_Aspects/Good_Aspects/JOY"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Border" type="Panel" parent="Problem/Problem/Scales/Good_Aspects/Good_Aspects/JOY"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("8_k0c2a")
+
+[node name="?" type="Label" parent="Problem/Problem/Scales/Good_Aspects/Good_Aspects/JOY"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_m65pl")
+theme_override_font_sizes/font_size = 80
+text = "?"

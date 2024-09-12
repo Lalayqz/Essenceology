@@ -11,11 +11,13 @@ var MOVING_SPEED = 0.15
 var SMALL_LIGHT_ALPHA = 0.4
 var NEW_LIGHT_INTERVAL = 15
 var LIGHT_FADE_DELAY = 5
-var LIGHT_COLORS = {"SETTINGS": 0xa66df5ff, "POSSIBILITY": 0x55b555ff, "SHOULD": 0xffb012ff}
-var COLOR_SHIFT_SPEED = 5
+var LIGHT_COLORS = {"SETTINGS": 0xa66df5ff, "CORRECT_ANSWER":0x00ff00ff, "WRONG_ANSWER":0xff0000ff, "POSSIBILITY": 0x55b555ff, "SHOULD": 0xffb012ff}
+var COLOR_SHIFT_SPEED_FAST = 5
+var COLOR_SHIFT_SPEED_SLOW = 1
 
-var color = Color(LIGHT_COLORS["POSSIBILITY"])
+var color = Color(LIGHT_COLORS["POSSIBILITY"]) # controls colors of all lights!
 var target_color = color
+var color_shift_speed
 var is_light_on
 var view_size
 var light_count
@@ -43,13 +45,10 @@ func _process(delta):
 			update_light(light, delta)
 			
 		# Shift color
-		color.r = color.r + (target_color.r - color.r) * COLOR_SHIFT_SPEED * delta
-		color.g = color.g + (target_color.g - color.g) * COLOR_SHIFT_SPEED * delta
-		color.b = color.b + (target_color.b - color.b) * COLOR_SHIFT_SPEED * delta
-		for light in get_children():
-			light.modulate.r = color.r
-			light.modulate.g = color.g
-			light.modulate.b = color.b
+		color.r = color.r + (target_color.r - color.r) * color_shift_speed * delta
+		color.g = color.g + (target_color.g - color.g) * color_shift_speed * delta
+		color.b = color.b + (target_color.b - color.b) * color_shift_speed * delta
+		set_light_color(color)
 		
 func init_lights():
 	is_light_on = true
@@ -124,5 +123,21 @@ func turn_off_lights():
 		remove_child(light)
 		light.queue_free()
 		
+func set_light_color(c):
+	color = c
+	for light in get_children():
+		light.modulate.r = color.r
+		light.modulate.g = color.g
+		light.modulate.b = color.b
+		
 func update_color_to_chapter_color(chapter):
 	target_color = Color(LIGHT_COLORS[chapter])
+	color_shift_speed = COLOR_SHIFT_SPEED_FAST
+
+func color_flash(chapter, color_code):
+	# set current color to wrong answer color
+	color = Color(LIGHT_COLORS[color_code])
+	set_light_color(color)
+	# set target color to chapter color
+	target_color = Color(LIGHT_COLORS[chapter])
+	color_shift_speed = COLOR_SHIFT_SPEED_SLOW

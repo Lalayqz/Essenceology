@@ -11,7 +11,8 @@ class_name Level extends Node2D
 var PROBLEMS
 var WRONG_ANSWER_SOUND = preload("res://Resources/Sounds/Wrong_Answer.mp3")
 var TEXT_FONT = preload("res://Resources/SourceHanSansSC-Normal.otf")
-var PENALTIES = [1, 3, 6, 10]
+#var PENALTIES = [1, 3, 6, 10]
+var PENALTIES = [0.1]
 # If the locale codename makes the "Problems" center container's width exceed the screen width,
 # then 1) Type in screen width into the center container's size.x;
 # 2) Type in the locale codename and now the center container's size.x shows a value that's larger than the screen width;
@@ -93,6 +94,9 @@ func submit_answers():
 	if is_all_correct():
 		# correct answer!
 		solve_level()
+		
+		# set light color
+		Lights.color_flash(CHAPTER, "CORRECT_ANSWER")
 	else:
 		# wrong answer!
 		SUBMIT_BUTTON.disable()
@@ -100,8 +104,12 @@ func submit_answers():
 		var penalty = PENALTIES[fail] * 60 if fail < len(PENALTIES) else PENALTIES[-1] * 60
 		Save.save_level_fail(CHAPTER, LEVEL_NAME, fail + 1)
 		Save.save_level_penalty(CHAPTER, LEVEL_NAME, penalty)
+		
+		# play audio
 		AUDIO_PLAYER.stream = WRONG_ANSWER_SOUND
 		AUDIO_PLAYER.play()
+		# set light color
+		Lights.color_flash(CHAPTER, "WRONG_ANSWER")
 	
 func solve_level():
 	Save.save_level_solved(CHAPTER, LEVEL_NAME)
