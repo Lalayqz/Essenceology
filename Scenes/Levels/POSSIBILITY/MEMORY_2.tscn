@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bp4dm50jyqks8"]
+[gd_scene load_steps=11 format=3 uid="uid://bp4dm50jyqks8"]
 
 [ext_resource type="Script" path="res://Scripts/Possibility_Level.gd" id="1_nfa02"]
 [ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_pagnq"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/SourceHanSansSC-Bold.otf" id="4_ect8f"]
 [ext_resource type="Script" path="res://Scripts/Possibility_Problem.gd" id="5_rb66t"]
 [ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://Resources/Possibility_Button.png" id="6_1vq8v"]
+[ext_resource type="Theme" uid="uid://dabpdi6pbaric" path="res://Resources/Styles/Problem_Text_Normal.tres" id="6_w7npt"]
 [ext_resource type="Script" path="res://Scripts/Possibility_Button.gd" id="7_tl6kx"]
 [ext_resource type="Texture2D" uid="uid://vl24cl1db66a" path="res://Resources/P.png" id="8_eqe2c"]
 [ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://Resources/NP.png" id="9_rlfso"]
@@ -24,8 +25,8 @@ offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/normal_font = ExtResource("3_da4f6")
 theme_override_fonts/bold_font = ExtResource("4_ect8f")
@@ -59,10 +60,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/PUNCH/Problem/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("3_da4f6")
-theme_override_font_sizes/normal_font_size = 33
+theme = ExtResource("6_w7npt")
 bbcode_enabled = true
 text = "POSSIBILITY_MEMORY_2_PUNCH"
 fit_content = true
@@ -107,10 +105,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TITLE/Problem/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("3_da4f6")
-theme_override_font_sizes/normal_font_size = 33
+theme = ExtResource("6_w7npt")
 bbcode_enabled = true
 text = "POSSIBILITY_MEMORY_2_TITLE"
 fit_content = true
@@ -154,10 +149,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/INPUT/Problem/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("3_da4f6")
-theme_override_font_sizes/normal_font_size = 33
+theme = ExtResource("6_w7npt")
 bbcode_enabled = true
 text = "POSSIBILITY_MEMORY_2_WORD"
 fit_content = true

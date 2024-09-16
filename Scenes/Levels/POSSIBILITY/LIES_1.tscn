@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Possibility_Level.gd" id="1_crwoj"]
 [ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_itcor"]
 [ext_resource type="Script" path="res://Scripts/Possibility_Problem.gd" id="3_fc8x7"]
-[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="4_tukcb"]
+[ext_resource type="Theme" uid="uid://dabpdi6pbaric" path="res://Resources/Styles/Problem_Text_Normal.tres" id="4_atujl"]
 [ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://Resources/Possibility_Button.png" id="5_keuyj"]
 [ext_resource type="Script" path="res://Scripts/Possibility_Button.gd" id="6_7h0w8"]
 [ext_resource type="Texture2D" uid="uid://vl24cl1db66a" path="res://Resources/P.png" id="7_mcnvt"]
@@ -38,10 +38,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/DINOSAUR/Problem/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_tukcb")
-theme_override_font_sizes/normal_font_size = 33
+theme = ExtResource("4_atujl")
 bbcode_enabled = true
 text = "POSSIBILITY_LIES_1_DINOSAUR"
 fit_content = true
@@ -86,10 +83,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/WORLD_WAR/Problem/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_tukcb")
-theme_override_font_sizes/normal_font_size = 33
+theme = ExtResource("4_atujl")
 bbcode_enabled = true
 text = "POSSIBILITY_LIES_1_WORLD_WAR"
 fit_content = true
@@ -133,10 +127,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/SUN_TZU/Problem/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_tukcb")
-theme_override_font_sizes/normal_font_size = 33
+theme = ExtResource("4_atujl")
 bbcode_enabled = true
 text = "POSSIBILITY_LIES_1_SUN_TZU"
 fit_content = true

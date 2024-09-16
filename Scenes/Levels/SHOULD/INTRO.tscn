@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://b6aokvv1vpn35"]
+[gd_scene load_steps=9 format=3 uid="uid://b6aokvv1vpn35"]
 
 [ext_resource type="Script" path="res://Scripts/Should_Level.gd" id="1_tk2ux"]
 [ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_nut3p"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/SourceHanSansSC-Bold.otf" id="4_cm005"]
 [ext_resource type="Script" path="res://Scripts/Should_Problem.gd" id="5_2ev5n"]
 [ext_resource type="Script" path="res://Scripts/Should_Option.gd" id="6_h3dh0"]
+[ext_resource type="Theme" uid="uid://jcowhqm3oiam" path="res://Resources/Styles/Problem_Text_Small.tres" id="6_qtk28"]
 [ext_resource type="PackedScene" uid="uid://f0n60dmxi4ve" path="res://Scenes/Items/Should_Button.tscn" id="7_4xnew"]
 
 [node name="INTRO" type="Node2D"]
@@ -23,8 +24,8 @@ offset_bottom = 164.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/normal_font = ExtResource("3_sc7gx")
 theme_override_fonts/bold_font = ExtResource("4_cm005")
@@ -59,10 +60,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TROLLEY/Problem/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("3_sc7gx")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("6_qtk28")
 bbcode_enabled = true
 text = "SHOULD_INTRO_TROLLEY"
 fit_content = true
@@ -89,10 +87,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TROLLEY/Problem/Options/PULL/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("3_sc7gx")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("6_qtk28")
 bbcode_enabled = true
 text = "SHOULD_PULL_LEVEL"
 fit_content = true
@@ -120,10 +115,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TROLLEY/Problem/Options/DO_NOTHING/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("3_sc7gx")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("6_qtk28")
 bbcode_enabled = true
 text = "SHOULD_DO_NOTHING"
 fit_content = true

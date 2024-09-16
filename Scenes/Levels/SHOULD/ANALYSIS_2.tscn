@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Should_Level.gd" id="1_q16ao"]
 [ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_x3ut3"]
 [ext_resource type="Script" path="res://Scripts/Should_Problem.gd" id="3_8qm8k"]
-[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="4_awici"]
+[ext_resource type="Theme" uid="uid://jcowhqm3oiam" path="res://Resources/Styles/Problem_Text_Small.tres" id="4_kppcl"]
 [ext_resource type="Script" path="res://Scripts/Should_Option.gd" id="5_31ycr"]
 [ext_resource type="PackedScene" uid="uid://f0n60dmxi4ve" path="res://Scenes/Items/Should_Button.tscn" id="6_878ok"]
 
@@ -20,9 +20,102 @@ mouse_filter = 2
 [node name="Problems" type="VBoxContainer" parent="Problems"]
 layout_mode = 2
 
-[node name="MILITARY_TRAINING" type="MarginContainer" parent="Problems/Problems"]
+[node name="GRID" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 25
+script = ExtResource("3_8qm8k")
+
+[node name="Problem" type="VSplitContainer" parent="Problems/Problems/GRID"]
+layout_mode = 2
+dragger_visibility = 2
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/GRID/Problem"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 25
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/GRID/Problem/Text"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/GRID/Problem/Text/Text"]
+layout_mode = 2
+theme = ExtResource("4_kppcl")
+bbcode_enabled = true
+text = "SHOULD_ANALYSIS_2_CLOTHES"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Options" type="HBoxContainer" parent="Problems/Problems/GRID/Problem"]
+layout_mode = 2
+alignment = 1
+
+[node name="LIGHT_FIRST" type="VSplitContainer" parent="Problems/Problems/GRID/Problem/Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+dragger_visibility = 2
+script = ExtResource("5_31ycr")
+REFERENCE_ANSWER = true
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/GRID/Problem/Options/LIGHT_FIRST"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/GRID/Problem/Options/LIGHT_FIRST/Text"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/GRID/Problem/Options/LIGHT_FIRST/Text/Text"]
+layout_mode = 2
+theme = ExtResource("4_kppcl")
+bbcode_enabled = true
+text = "SHOULD_ANALYSIS_2_CLOTHES_LIGHT_FIRST"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/GRID/Problem/Options/LIGHT_FIRST"]
+layout_mode = 2
+
+[node name="Button" parent="Problems/Problems/GRID/Problem/Options/LIGHT_FIRST/Button" instance=ExtResource("6_878ok")]
+layout_mode = 2
+
+[node name="HEAVY_FIRST" type="VSplitContainer" parent="Problems/Problems/GRID/Problem/Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+dragger_visibility = 2
+script = ExtResource("5_31ycr")
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/GRID/Problem/Options/HEAVY_FIRST"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/GRID/Problem/Options/HEAVY_FIRST/Text"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/GRID/Problem/Options/HEAVY_FIRST/Text/Text"]
+layout_mode = 2
+theme = ExtResource("4_kppcl")
+bbcode_enabled = true
+text = "SHOULD_ANALYSIS_2_CLOTHES_HEAVY_FIRST"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/GRID/Problem/Options/HEAVY_FIRST"]
+layout_mode = 2
+
+[node name="Button" parent="Problems/Problems/GRID/Problem/Options/HEAVY_FIRST/Button" instance=ExtResource("6_878ok")]
+layout_mode = 2
+
+[node name="Line" type="CenterContainer" parent="Problems/Problems"]
+layout_mode = 2
+
+[node name="Line" type="ColorRect" parent="Problems/Problems/Line"]
+custom_minimum_size = Vector2(1100, 1)
+layout_mode = 2
+
+[node name="MILITARY_TRAINING" type="MarginContainer" parent="Problems/Problems"]
+layout_mode = 2
+theme_override_constants/margin_top = 25
 script = ExtResource("3_8qm8k")
 
 [node name="Problem" type="VSplitContainer" parent="Problems/Problems/MILITARY_TRAINING"]
@@ -38,10 +131,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/MILITARY_TRAINING/Problem/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_awici")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_kppcl")
 bbcode_enabled = true
 text = "SHOULD_ANALYSIS_2_MILITARY_TRAINING"
 fit_content = true
@@ -68,10 +158,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/ABOLISH/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_awici")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_kppcl")
 bbcode_enabled = true
 text = "SHOULD_ANALYSIS_2_MILITARY_TRAINING_ABOLISH"
 fit_content = true
@@ -99,10 +186,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/KEEP/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_awici")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_kppcl")
 bbcode_enabled = true
 text = "SHOULD_ANALYSIS_2_MILITARY_TRAINING_KEEP"
 fit_content = true
@@ -113,106 +197,4 @@ autowrap_mode = 0
 layout_mode = 2
 
 [node name="Button" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/KEEP/Button" instance=ExtResource("6_878ok")]
-layout_mode = 2
-
-[node name="Line" type="CenterContainer" parent="Problems/Problems"]
-layout_mode = 2
-
-[node name="Line" type="ColorRect" parent="Problems/Problems/Line"]
-custom_minimum_size = Vector2(1100, 1)
-layout_mode = 2
-
-[node name="GRID" type="MarginContainer" parent="Problems/Problems"]
-layout_mode = 2
-theme_override_constants/margin_top = 25
-script = ExtResource("3_8qm8k")
-
-[node name="Problem" type="VSplitContainer" parent="Problems/Problems/GRID"]
-layout_mode = 2
-dragger_visibility = 2
-
-[node name="Text" type="MarginContainer" parent="Problems/Problems/GRID/Problem"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 25
-
-[node name="Text" type="CenterContainer" parent="Problems/Problems/GRID/Problem/Text"]
-layout_mode = 2
-
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/GRID/Problem/Text/Text"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_awici")
-theme_override_font_sizes/normal_font_size = 26
-bbcode_enabled = true
-text = "SHOULD_ANALYSIS_2_"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
-[node name="Options" type="HBoxContainer" parent="Problems/Problems/GRID/Problem"]
-layout_mode = 2
-alignment = 1
-
-[node name="HORIZONTAL_FIRST" type="VSplitContainer" parent="Problems/Problems/GRID/Problem/Options"]
-layout_mode = 2
-size_flags_horizontal = 3
-dragger_visibility = 2
-script = ExtResource("5_31ycr")
-
-[node name="Text" type="MarginContainer" parent="Problems/Problems/GRID/Problem/Options/HORIZONTAL_FIRST"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 5
-
-[node name="Text" type="CenterContainer" parent="Problems/Problems/GRID/Problem/Options/HORIZONTAL_FIRST/Text"]
-layout_mode = 2
-
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/GRID/Problem/Options/HORIZONTAL_FIRST/Text/Text"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_awici")
-theme_override_font_sizes/normal_font_size = 26
-bbcode_enabled = true
-text = "SHOULD_ANALYSIS_2_"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
-[node name="Button" type="CenterContainer" parent="Problems/Problems/GRID/Problem/Options/HORIZONTAL_FIRST"]
-layout_mode = 2
-
-[node name="Button" parent="Problems/Problems/GRID/Problem/Options/HORIZONTAL_FIRST/Button" instance=ExtResource("6_878ok")]
-layout_mode = 2
-
-[node name="VERTICAL_FIRST" type="VSplitContainer" parent="Problems/Problems/GRID/Problem/Options"]
-layout_mode = 2
-size_flags_horizontal = 3
-dragger_visibility = 2
-script = ExtResource("5_31ycr")
-REFERENCE_ANSWER = true
-
-[node name="Text" type="MarginContainer" parent="Problems/Problems/GRID/Problem/Options/VERTICAL_FIRST"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 5
-
-[node name="Text" type="CenterContainer" parent="Problems/Problems/GRID/Problem/Options/VERTICAL_FIRST/Text"]
-layout_mode = 2
-
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/GRID/Problem/Options/VERTICAL_FIRST/Text/Text"]
-layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_awici")
-theme_override_font_sizes/normal_font_size = 26
-bbcode_enabled = true
-text = "SHOULD_ANALYSIS_2_"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
-[node name="Button" type="CenterContainer" parent="Problems/Problems/GRID/Problem/Options/VERTICAL_FIRST"]
-layout_mode = 2
-
-[node name="Button" parent="Problems/Problems/GRID/Problem/Options/VERTICAL_FIRST/Button" instance=ExtResource("6_878ok")]
 layout_mode = 2

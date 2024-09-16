@@ -8,7 +8,7 @@ extends ReferenceRect
 var VISIBLE_LEVELS = []
 @onready var FOCUS_POSITION = $Focus.position
 var LEVEL_CHAINS = {"POSSIBILITY":[["INTRO", "UNLIKELY"], ["UNLIKELY", "LOGIC"], ["LOGIC", "LOGIC_HARD"], ["LOGIC", "LIES_GENERALIZED"], ["LIES_GENERALIZED", "LIES_1"], ["LIES_1", "LIES_2"], ["LIES_2", "LIES_HARD"], ["LIES_2", "MEMORY_1"], ["MEMORY_1", "MEMORY_2"], ["MEMORY_2", "MEMORY_GENERALIZED"], ["MEMORY_GENERALIZED", "MEMORY_HARD"], ["MEMORY_GENERALIZED", "PATTERNS_1"], ["PATTERNS_1", "PATTERNS_2"], ["PATTERNS_2", "PATTERNS_3"], ["PATTERNS_3", "FINALE"]],
-"SHOULD":[["INTRO", "ALL_LIVES"], ["INTRO", "INDIVIDUAL"], ["INTRO", "CALCULATION"], ["CALCULATION", "PROBABILITY_1"], ["PROBABILITY_1", "PROBABILITY_2"], ["ALL_LIVES", "ANALYSIS_1"], ["INDIVIDUAL", "ANALYSIS_1"], ["CALCULATION", "ANALYSIS_1"], ["ANALYSIS_1", "ANALYSIS_2"], ["ANALYSIS_1", "SCALES"]]}
+"SHOULD":[["INTRO", "ALL_LIVES"], ["INTRO", "INDIVIDUAL"], ["INTRO", "CALCULATION"], ["CALCULATION", "PROBABILITY_1"], ["PROBABILITY_1", "PROBABILITY_2"], ["ALL_LIVES", "ANALYSIS_1"], ["INDIVIDUAL", "ANALYSIS_1"], ["CALCULATION", "ANALYSIS_1"], ["ANALYSIS_1", "ANALYSIS_2"], ["ANALYSIS_2", "LIE"]]}
 var UNSOLVED_LEVEL_TEXTURE = preload("res://Resources/Unsolved_Level.png")
 var SOLVED_LEVEL_TEXTURE = preload("res://Resources/Solved_Level.png")
 var UNSOLVED_FINALE_TEXTURE = preload("res://Resources/Unsolved_Finale.png")
@@ -82,6 +82,7 @@ func _ready():
 		level_label.text = level.name
 		level_label.position.y -= (radius + label_size.y / 2 + LABEL_OFFSET_Y)
 		level_label.set("theme_override_font_sizes/font_size", LABEL_FONT_SIZE)
+		level_label.set("theme_override_colors/font_outline_color", Color.WHITE)
 		level_label.set("theme_override_colors/font_shadow_color", Global_Variables.current_chapter_color)
 		level.add_child(level_label)
 		level.set_meta("Radius", radius)

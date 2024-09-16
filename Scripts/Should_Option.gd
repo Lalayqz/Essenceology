@@ -18,8 +18,6 @@ func is_selected():
 	return SHOULD_BUTTON.should
 	
 func is_correct():
-	var test = REFERENCE_ANSWER
-	var bo = SHOULD_BUTTON.should == REFERENCE_ANSWER
 	return SHOULD_BUTTON.should == REFERENCE_ANSWER
 
 func disable():

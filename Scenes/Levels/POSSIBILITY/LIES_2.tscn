@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Possibility_Level.gd" id="1_vshp2"]
 [ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_xjx7u"]
 [ext_resource type="Script" path="res://Scripts/Possibility_Problem.gd" id="3_wsjj0"]
-[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="4_ji22p"]
+[ext_resource type="Theme" uid="uid://dabpdi6pbaric" path="res://Resources/Styles/Problem_Text_Normal.tres" id="4_cu5gj"]
 [ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://Resources/Possibility_Button.png" id="5_8xhdt"]
 [ext_resource type="Script" path="res://Scripts/Possibility_Button.gd" id="6_3jfd0"]
 [ext_resource type="Texture2D" uid="uid://vl24cl1db66a" path="res://Resources/P.png" id="7_nnolw"]
@@ -38,10 +38,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/MATH/Problem/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_ji22p")
-theme_override_font_sizes/normal_font_size = 33
+theme = ExtResource("4_cu5gj")
 bbcode_enabled = true
 text = "POSSIBILITY_LIES_2_MATH"
 fit_content = true
@@ -87,10 +84,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/MOTHER/Problem/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_ji22p")
-theme_override_font_sizes/normal_font_size = 33
+theme = ExtResource("4_cu5gj")
 bbcode_enabled = true
 text = "POSSIBILITY_LIES_2_MOTHER"
 fit_content = true
@@ -134,10 +128,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/NUCLEAR_WAR/Problem/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_ji22p")
-theme_override_font_sizes/normal_font_size = 33
+theme = ExtResource("4_cu5gj")
 bbcode_enabled = true
 text = "POSSIBILITY_LIES_2_NUCLEAR_WAR"
 fit_content = true

@@ -1,5 +1,6 @@
 extends Node
  
+signal new_aspect_answered
 @onready var PROBLEM_NAME = self.name
 @onready var LANGUAGE = Config.get_language()
 @onready var INPUT = $Input/Input
@@ -10,9 +11,9 @@ var ASPECTS = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for aspect in $Scales/Good_Aspects/Good_Aspects.get_children():
+	for aspect in $Aspects/Good_Aspects/Good_Aspects.get_children():
 		ASPECTS.append(aspect)
-	for aspect in $Scales/Bad_Aspects/Bad_Aspects.get_children():
+	for aspect in $Aspects/Bad_Aspects/Bad_Aspects.get_children():
 		ASPECTS.append(aspect)
 		
 func _input(event):
@@ -45,19 +46,22 @@ func _input(event):
 
 func check_match_aspects():
 	for aspect in ASPECTS:
-		aspect.check_match(INPUT.text, LANGUAGE)
+		if aspect.check_match(INPUT.text, LANGUAGE):
+			aspect.solve()
+			new_aspect_answered.emit()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 	
-func is_correct():
-	pass
-	
 func save_answer(chapter, level_name):
-	pass
+	var answers = []
+	for aspect in ASPECTS:
+		aspect.save_answer(answers)
+	Save.save_problem_answer(chapter, level_name, PROBLEM_NAME, answers)
 	
 func load_answer(chapter, level_name):
-	var answer = Save.get_problem_answer(chapter, level_name, PROBLEM_NAME)
-	if answer != null:
-		pass
+	var answers = Save.get_problem_answer(chapter, level_name, PROBLEM_NAME)
+	if answers != null:
+		for aspect in ASPECTS:
+			aspect.load_answer(answers)

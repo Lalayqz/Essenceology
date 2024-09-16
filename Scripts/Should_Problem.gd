@@ -4,15 +4,10 @@ extends Node
 @onready var PROBLEM_NAME = self.name
 @export var ALLOW_MULTIPLE_ANSWERS: bool
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	if not ALLOW_MULTIPLE_ANSWERS:
 		for option in OPTIONS:
 			option.answer_set_to_should.connect(remove_other_answers)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func is_answered():
 	for option in OPTIONS:

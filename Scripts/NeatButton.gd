@@ -23,4 +23,3 @@ func released():
 		hovered()
 	else:
 		return_normal()
-

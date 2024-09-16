@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Should_Level.gd" id="1_m36ow"]
 [ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_15s7m"]
 [ext_resource type="Script" path="res://Scripts/Should_Problem.gd" id="3_hscon"]
-[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="4_3wjav"]
+[ext_resource type="Theme" uid="uid://jcowhqm3oiam" path="res://Resources/Styles/Problem_Text_Small.tres" id="4_xkxrs"]
 [ext_resource type="Script" path="res://Scripts/Should_Option.gd" id="5_3emcj"]
 [ext_resource type="PackedScene" uid="uid://f0n60dmxi4ve" path="res://Scenes/Items/Should_Button.tscn" id="6_556bw"]
 
@@ -38,10 +38,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/WIPE/Problem/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_3wjav")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_xkxrs")
 bbcode_enabled = true
 text = "SHOULD_ANALYSIS_1_WIPE"
 fit_content = true
@@ -68,10 +65,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/WIPE/Problem/Options/MOUTH_FIRST/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_3wjav")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_xkxrs")
 bbcode_enabled = true
 text = "SHOULD_ANALYSIS_1_WIPE_MOUTH_FIRST"
 fit_content = true
@@ -99,10 +93,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/WIPE/Problem/Options/BUTT_FIRST/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_3wjav")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_xkxrs")
 bbcode_enabled = true
 text = "SHOULD_ANALYSIS_1_WIPE_BUTT_FIRST"
 fit_content = true
@@ -140,10 +131,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/GRID/Problem/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_3wjav")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_xkxrs")
 bbcode_enabled = true
 text = "SHOULD_ANALYSIS_1_GRID"
 fit_content = true
@@ -169,10 +157,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/GRID/Problem/Options/HORIZONTAL_FIRST/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_3wjav")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_xkxrs")
 bbcode_enabled = true
 text = "SHOULD_ANALYSIS_1_GRID_HORIZONTAL_FIRST"
 fit_content = true
@@ -201,10 +186,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/GRID/Problem/Options/VERTICAL_FIRST/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_3wjav")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_xkxrs")
 bbcode_enabled = true
 text = "SHOULD_ANALYSIS_1_GRID_VERTICAL_FIRST"
 fit_content = true

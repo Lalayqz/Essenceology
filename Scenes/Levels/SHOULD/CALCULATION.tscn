@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Should_Level.gd" id="1_focjm"]
 [ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_j5lgx"]
 [ext_resource type="Script" path="res://Scripts/Should_Problem.gd" id="3_5r7xw"]
-[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="4_cdsa7"]
+[ext_resource type="Theme" uid="uid://jcowhqm3oiam" path="res://Resources/Styles/Problem_Text_Small.tres" id="4_1ymy2"]
 [ext_resource type="Script" path="res://Scripts/Should_Option.gd" id="5_mll8v"]
 [ext_resource type="PackedScene" uid="uid://f0n60dmxi4ve" path="res://Scenes/Items/Should_Button.tscn" id="6_qyvem"]
 
@@ -38,10 +38,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/BUTTON/Problem/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_cdsa7")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_1ymy2")
 bbcode_enabled = true
 text = "SHOULD_CALCULATION_BUTTON"
 fit_content = true
@@ -67,10 +64,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/BUTTON/Problem/Options/PRESS/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_cdsa7")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_1ymy2")
 bbcode_enabled = true
 text = "SHOULD_CALCULATION_BUTTON_PRESS"
 fit_content = true
@@ -99,10 +93,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/BUTTON/Problem/Options/DO_NOTHING/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_cdsa7")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_1ymy2")
 bbcode_enabled = true
 text = "SHOULD_DO_NOTHING"
 fit_content = true
@@ -140,10 +131,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/CARDS/Problem/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_cdsa7")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_1ymy2")
 bbcode_enabled = true
 text = "SHOULD_CALCULATION_CARDS"
 fit_content = true
@@ -170,10 +158,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/CARDS/Problem/Options/REMOVE/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_cdsa7")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_1ymy2")
 bbcode_enabled = true
 text = "SHOULD_CALCULATION_CARDS_REMOVE"
 fit_content = true
@@ -201,10 +186,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/CARDS/Problem/Options/DO_NOTHING/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_cdsa7")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_1ymy2")
 bbcode_enabled = true
 text = "SHOULD_DO_NOTHING"
 fit_content = true
@@ -232,10 +214,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/CARDS/Problem/Options/ADD/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_cdsa7")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_1ymy2")
 bbcode_enabled = true
 text = "SHOULD_CALCULATION_CARDS_ADD"
 fit_content = true

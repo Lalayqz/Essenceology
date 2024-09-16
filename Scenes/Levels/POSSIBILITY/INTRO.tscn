@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b1w1v42dqlbfp"]
+[gd_scene load_steps=11 format=3 uid="uid://b1w1v42dqlbfp"]
 
 [ext_resource type="Script" path="res://Scripts/Possibility_Level.gd" id="1_gmm65"]
 [ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_luvmd"]
 [ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="3_sxmr3"]
 [ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/SourceHanSansSC-Bold.otf" id="4_e31gf"]
 [ext_resource type="Script" path="res://Scripts/Possibility_Problem.gd" id="5_o0ud4"]
+[ext_resource type="Theme" uid="uid://dabpdi6pbaric" path="res://Resources/Styles/Problem_Text_Normal.tres" id="6_2gdg7"]
 [ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://Resources/Possibility_Button.png" id="6_hwuna"]
 [ext_resource type="Script" path="res://Scripts/Possibility_Button.gd" id="7_t70d0"]
 [ext_resource type="Texture2D" uid="uid://vl24cl1db66a" path="res://Resources/P.png" id="8_x1x8x"]
@@ -24,8 +25,8 @@ offset_bottom = 720.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/normal_font = ExtResource("3_sxmr3")
 theme_override_fonts/bold_font = ExtResource("4_e31gf")
@@ -59,10 +60,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TOSS/Problem/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("3_sxmr3")
-theme_override_font_sizes/normal_font_size = 33
+theme = ExtResource("6_2gdg7")
 bbcode_enabled = true
 text = "POSSIBILITY_INTRO_TOSS"
 fit_content = true
@@ -107,10 +105,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TOSS_OR/Problem/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("3_sxmr3")
-theme_override_font_sizes/normal_font_size = 33
+theme = ExtResource("6_2gdg7")
 bbcode_enabled = true
 text = "POSSIBILITY_INTRO_TOSS_OR"
 fit_content = true
@@ -154,10 +149,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TOSS_BOTH/Problem/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("3_sxmr3")
-theme_override_font_sizes/normal_font_size = 33
+theme = ExtResource("6_2gdg7")
 bbcode_enabled = true
 text = "POSSIBILITY_INTRO_TOSS_BOTH"
 fit_content = true

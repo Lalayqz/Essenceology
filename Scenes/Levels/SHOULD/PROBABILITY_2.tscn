@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Should_Level.gd" id="1_25nch"]
 [ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_smh0q"]
 [ext_resource type="Script" path="res://Scripts/Should_Problem.gd" id="3_olwg1"]
-[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="4_ws1ro"]
+[ext_resource type="Theme" uid="uid://jcowhqm3oiam" path="res://Resources/Styles/Problem_Text_Small.tres" id="4_y6t40"]
 [ext_resource type="Script" path="res://Scripts/Should_Option.gd" id="5_724pf"]
 [ext_resource type="PackedScene" uid="uid://f0n60dmxi4ve" path="res://Scenes/Items/Should_Button.tscn" id="6_08cvs"]
 
@@ -38,10 +38,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/GOLF_1/Problem/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_ws1ro")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_y6t40")
 bbcode_enabled = true
 text = "SHOULD_PROBABILITY_2_GOLF_1"
 fit_content = true
@@ -68,10 +65,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/GOLF_1/Problem/Options/PLAY_AT_A/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_ws1ro")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_y6t40")
 bbcode_enabled = true
 text = "SHOULD_PLAY_AT_A"
 fit_content = true
@@ -99,10 +93,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/GOLF_1/Problem/Options/PLAY_AT_B/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_ws1ro")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_y6t40")
 bbcode_enabled = true
 text = "SHOULD_PLAY_AT_B"
 fit_content = true
@@ -140,10 +131,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/GOLF_2/Problem/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_ws1ro")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_y6t40")
 bbcode_enabled = true
 text = "SHOULD_PROBABILITY_2_GOLF_2"
 fit_content = true
@@ -170,10 +158,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/GOLF_2/Problem/Options/PLAY_AT_A/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_ws1ro")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_y6t40")
 bbcode_enabled = true
 text = "SHOULD_PLAY_AT_A"
 fit_content = true
@@ -201,10 +186,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/GOLF_2/Problem/Options/PLAY_AT_B/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_ws1ro")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_y6t40")
 bbcode_enabled = true
 text = "SHOULD_PLAY_AT_B"
 fit_content = true

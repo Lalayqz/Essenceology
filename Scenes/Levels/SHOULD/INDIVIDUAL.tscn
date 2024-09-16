@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Should_Level.gd" id="1_3enw0"]
 [ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_0w75i"]
 [ext_resource type="Script" path="res://Scripts/Should_Problem.gd" id="3_laj21"]
-[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="4_f2fe0"]
+[ext_resource type="Theme" uid="uid://jcowhqm3oiam" path="res://Resources/Styles/Problem_Text_Small.tres" id="4_oeg8n"]
 [ext_resource type="Script" path="res://Scripts/Should_Option.gd" id="5_i7eog"]
 [ext_resource type="PackedScene" uid="uid://f0n60dmxi4ve" path="res://Scenes/Items/Should_Button.tscn" id="6_laxxm"]
 
@@ -38,10 +38,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TROLLEY_1/Problem/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_f2fe0")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_oeg8n")
 bbcode_enabled = true
 text = "SHOULD_INDIVIDUAL_TROLLEY_1"
 fit_content = true
@@ -67,10 +64,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TROLLEY_1/Problem/Options/PULL_LEVEL/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_f2fe0")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_oeg8n")
 bbcode_enabled = true
 text = "SHOULD_PULL_LEVEL"
 fit_content = true
@@ -99,10 +93,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TROLLEY_1/Problem/Options/DO_NOTHING/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_f2fe0")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_oeg8n")
 bbcode_enabled = true
 text = "SHOULD_DO_NOTHING"
 fit_content = true
@@ -140,10 +131,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TROLLEY_2/Problem/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_f2fe0")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_oeg8n")
 bbcode_enabled = true
 text = "SHOULD_INDIVIDUAL_TROLLEY_2"
 fit_content = true
@@ -169,10 +157,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TROLLEY_2/Problem/Options/PULL_LEVEL/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_f2fe0")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_oeg8n")
 bbcode_enabled = true
 text = "SHOULD_PULL_LEVEL"
 fit_content = true
@@ -201,10 +186,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TROLLEY_2/Problem/Options/DO_NOTHING/Text/Text"]
 layout_mode = 2
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 2
-theme_override_fonts/normal_font = ExtResource("4_f2fe0")
-theme_override_font_sizes/normal_font_size = 26
+theme = ExtResource("4_oeg8n")
 bbcode_enabled = true
 text = "SHOULD_DO_NOTHING"
 fit_content = true
