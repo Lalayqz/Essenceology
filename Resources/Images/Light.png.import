@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhcch8pf4gh68"
-path="res://.godot/imported/Dashed_Chain.png-df7e483f0890c1c6ff0ba6f2694ff50e.ctex"
+uid="uid://b7mtt5hdsvjqj"
+path="res://.godot/imported/Light.png-a9215682f11fac7820a7fcf122f44f8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Dashed_Chain.png"
-dest_files=["res://.godot/imported/Dashed_Chain.png-df7e483f0890c1c6ff0ba6f2694ff50e.ctex"]
+source_file="res://Resources/Images/Light.png"
+dest_files=["res://.godot/imported/Light.png-a9215682f11fac7820a7fcf122f44f8e.ctex"]
 
 [params]
 

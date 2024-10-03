@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c7vy1ltbvt8jk"]
 
-[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="1_u2jwo"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/Fonts/SourceHanSansSC-Normal.otf" id="1_u2jwo"]
 
 [node name="Label" type="Label"]
 anchors_preset = 8

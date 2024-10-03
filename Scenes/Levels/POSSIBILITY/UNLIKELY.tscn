@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://Scripts/Possibility_Level.gd" id="1_7fvm7"]
 [ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_rfk6u"]
-[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="3_wt4ni"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/Fonts/SourceHanSansSC-Normal.otf" id="3_wt4ni"]
 [ext_resource type="Script" path="res://Scripts/Possibility_Problem.gd" id="4_xyhvt"]
 [ext_resource type="Theme" uid="uid://dabpdi6pbaric" path="res://Resources/Styles/Problem_Text_Normal.tres" id="5_oh6tj"]
-[ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://Resources/Possibility_Button.png" id="5_v7re6"]
+[ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://Resources/Images/Possibility_Button.png" id="5_v7re6"]
 [ext_resource type="Script" path="res://Scripts/Possibility_Button.gd" id="6_2x5bb"]
-[ext_resource type="Texture2D" uid="uid://vl24cl1db66a" path="res://Resources/P.png" id="7_1785p"]
-[ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://Resources/NP.png" id="8_qng2p"]
+[ext_resource type="Texture2D" uid="uid://vl24cl1db66a" path="res://Resources/Images/P.png" id="7_1785p"]
+[ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://Resources/Images/NP.png" id="8_qng2p"]
 
 [node name="UNLIKELY" type="Node2D"]
 script = ExtResource("1_7fvm7")

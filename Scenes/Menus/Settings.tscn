@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://8ctxnv73mn4d"]
 
 [ext_resource type="Script" path="res://Scripts/Settings.gd" id="1_bdgw5"]
-[ext_resource type="Theme" uid="uid://cel18xkchmafq" path="res://Resources/UI_Button.tres" id="2_4ecso"]
+[ext_resource type="Theme" uid="uid://cel18xkchmafq" path="res://Resources/Styles/UI_Button.tres" id="2_4ecso"]
 [ext_resource type="Script" path="res://Scripts/NeatButton.gd" id="3_o6yun"]
-[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/SourceHanSansSC-Bold.otf" id="4_pp0o4"]
-[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="5_lm2a6"]
-[ext_resource type="Texture2D" uid="uid://ds23vbk5lwphi" path="res://Resources/Checkbox_Checked.png" id="6_r82t4"]
-[ext_resource type="Texture2D" uid="uid://bt5fut6vnv53v" path="res://Resources/Checkbox.png" id="7_y80li"]
+[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/Fonts/SourceHanSansSC-Bold.otf" id="4_pp0o4"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/Fonts/SourceHanSansSC-Normal.otf" id="5_lm2a6"]
+[ext_resource type="Texture2D" uid="uid://ds23vbk5lwphi" path="res://Resources/Images/Checkbox_Checked.png" id="6_r82t4"]
+[ext_resource type="Texture2D" uid="uid://bt5fut6vnv53v" path="res://Resources/Images/Checkbox.png" id="7_y80li"]
 
 [node name="Settings" type="Node2D"]
 script = ExtResource("1_bdgw5")

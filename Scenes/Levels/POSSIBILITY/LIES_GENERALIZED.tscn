@@ -4,10 +4,10 @@
 [ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_2wifn"]
 [ext_resource type="Script" path="res://Scripts/Possibility_Problem.gd" id="3_wj0k1"]
 [ext_resource type="Theme" uid="uid://dabpdi6pbaric" path="res://Resources/Styles/Problem_Text_Normal.tres" id="4_ul5gw"]
-[ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://Resources/Possibility_Button.png" id="5_t4mwe"]
+[ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://Resources/Images/Possibility_Button.png" id="5_t4mwe"]
 [ext_resource type="Script" path="res://Scripts/Possibility_Button.gd" id="6_ft2ap"]
-[ext_resource type="Texture2D" uid="uid://vl24cl1db66a" path="res://Resources/P.png" id="7_enemx"]
-[ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://Resources/NP.png" id="8_sifr7"]
+[ext_resource type="Texture2D" uid="uid://vl24cl1db66a" path="res://Resources/Images/P.png" id="7_enemx"]
+[ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://Resources/Images/NP.png" id="8_sifr7"]
 
 [node name="LIES_GENERALIZED" type="Node2D"]
 script = ExtResource("1_bj8rm")

@@ -4,10 +4,12 @@ signal new_aspect_answered
 @onready var PROBLEM_NAME = self.name
 @onready var LANGUAGE = Config.get_language()
 @onready var INPUT = $Input/Input
-var ASPECTS = []
 @export var ASPECT_GOAL: int
 @export var MAX_INPUT_LENGTH_EN: int
 @export var MAX_INPUT_LENGTH_ZH_CN: int
+var ASPECTS = []
+var INPUT_CORRECT_COLOR = Color.GREEN
+var INPUT_WRONG_COLOR = Color.RED
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,20 +20,26 @@ func _ready():
 		
 func _input(event):
 	if event is InputEventKey and event.is_pressed():
+		var is_max_length
+		var inputed = false
 		# Character input
 		if event.unicode != 0:
 			match LANGUAGE:
 				"en":
-					if INPUT.text.length() < MAX_INPUT_LENGTH_EN and event.keycode >= KEY_A and event.keycode <= KEY_Z:
+					is_max_length = INPUT.text.length() >= MAX_INPUT_LENGTH_EN
+					if not is_max_length and event.keycode >= KEY_A and event.keycode <= KEY_Z:
 						if INPUT.text.length() == 0:
-							INPUT.text += event.as_text()
+							INPUT.text += OS.get_keycode_string(event.keycode)
 						else:
-							INPUT.text += event.as_text().to_lower()
-						check_match_aspects()
+							INPUT.text += OS.get_keycode_string(event.keycode).to_lower()
+						inputed = true
+						is_max_length = INPUT.text.length() == MAX_INPUT_LENGTH_EN
 				"zh_CN":
-					if INPUT.text.length() < MAX_INPUT_LENGTH_ZH_CN and event.unicode >= 0x4E00 and event.unicode <= 0x9FFF:
+					is_max_length = INPUT.text.length() == MAX_INPUT_LENGTH_ZH_CN
+					if not is_max_length and event.unicode >= 0x4E00 and event.unicode <= 0x9FFF:
 						INPUT.text += char(event.unicode)
-						check_match_aspects()
+						inputed = true
+						is_max_length = INPUT.text.length() == MAX_INPUT_LENGTH_EN
 		
 		# Backspace
 		elif event.keycode == KEY_BACKSPACE:
@@ -39,16 +47,32 @@ func _input(event):
 				INPUT.text = ""
 			else:
 				INPUT.text = INPUT.text.erase(INPUT.text.length() - 1, 1)
+			inputed = true
 			
 		# Delete
 		elif event.keycode == KEY_DELETE:
-			INPUT.text = ""	
+			INPUT.text = ""
+			inputed = true
+			
+		if inputed:
+			check_match_aspects(is_max_length)
 
-func check_match_aspects():
+func check_match_aspects(is_max_length):
+	var matched = false
+	
 	for aspect in ASPECTS:
 		if aspect.check_match(INPUT.text, LANGUAGE):
+			matched = true
 			aspect.solve()
-			new_aspect_answered.emit()
+			
+	if matched:
+		new_aspect_answered.emit()
+		INPUT.modulate = INPUT_CORRECT_COLOR
+	else:
+		if is_max_length:
+			INPUT.modulate = INPUT_WRONG_COLOR
+		else:
+			INPUT.modulate = Color.WHITE
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

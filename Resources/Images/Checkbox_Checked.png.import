@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8pt4liq6xt27"
-path="res://.godot/imported/Unsolved_Level.png-54d22f1518d92a5693e4bf0c35ebf4f8.ctex"
+uid="uid://ds23vbk5lwphi"
+path="res://.godot/imported/Checkbox_Checked.png-3ef0d21d0b6999bcb7d196330e951d8d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Unsolved_Level.png"
-dest_files=["res://.godot/imported/Unsolved_Level.png-54d22f1518d92a5693e4bf0c35ebf4f8.ctex"]
+source_file="res://Resources/Images/Checkbox_Checked.png"
+dest_files=["res://.godot/imported/Checkbox_Checked.png-3ef0d21d0b6999bcb7d196330e951d8d.ctex"]
 
 [params]
 

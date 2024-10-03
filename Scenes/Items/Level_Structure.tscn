@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://cwqwiug01koat"]
 
-[ext_resource type="Theme" uid="uid://cel18xkchmafq" path="res://Resources/UI_Button.tres" id="1_lbt43"]
+[ext_resource type="Theme" uid="uid://cel18xkchmafq" path="res://Resources/Styles/UI_Button.tres" id="1_lbt43"]
 [ext_resource type="Script" path="res://Scripts/NeatButton.gd" id="2_nl7uw"]
-[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/SourceHanSansSC-Bold.otf" id="3_uyaf5"]
-[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="4_bxfsp"]
-[ext_resource type="Theme" uid="uid://cc776rspw52yb" path="res://Resources/Submit_Button.tres" id="5_ry4bc"]
+[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/Fonts/SourceHanSansSC-Bold.otf" id="3_uyaf5"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/Fonts/SourceHanSansSC-Normal.otf" id="4_bxfsp"]
+[ext_resource type="Theme" uid="uid://cc776rspw52yb" path="res://Resources/Styles/Submit_Button.tres" id="5_ry4bc"]
 [ext_resource type="Script" path="res://Scripts/Submit_Button.gd" id="6_kg7cb"]
 [ext_resource type="PackedScene" uid="uid://c7vy1ltbvt8jk" path="res://Scenes/Items/UI_Text.tscn" id="7_7o3i1"]
 

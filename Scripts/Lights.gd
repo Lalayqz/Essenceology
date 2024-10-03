@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var config = get_node("/root/Config").config
-var LIGHT_TEXTURE = preload("res://Resources/Light.png")
+var LIGHT_TEXTURE = preload("res://Resources/Images/Light.png")
 var SHIFT_TIME = 10
 var START_SCALE = 1
 var MAX_END_SCALE = 2
@@ -44,10 +44,9 @@ func _process(delta):
 		for light in get_children():
 			update_light(light, delta)
 			
-		# Shift color
 		color.r = color.r + (target_color.r - color.r) * color_shift_speed * delta
 		color.g = color.g + (target_color.g - color.g) * color_shift_speed * delta
-		color.b = color.b + (target_color.b - color.b) * color_shift_speed * delta
+		color.b = color.b + (target_color.b - color.b) * color_shift_speed * delta	
 		set_light_color(color)
 		
 func init_lights():

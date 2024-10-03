@@ -1,33 +1,33 @@
-[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dij8dc62ahsey"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://cc776rspw52yb"]
 
-[ext_resource type="Texture2D" uid="uid://btlqsn6d3rggg" path="res://Resources/Should_Button.png" id="1_ud2ca"]
+[ext_resource type="Texture2D" uid="uid://dta82gv8wlkgp" path="res://Resources/Images/Submit_button.png" id="1_667p8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nt8yc"]
-texture = ExtResource("1_ud2ca")
-texture_margin_left = 10.0
-texture_margin_top = 10.0
-texture_margin_right = 10.0
-texture_margin_bottom = 10.0
+texture = ExtResource("1_667p8")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 draw_center = false
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_27wib"]
-texture = ExtResource("1_ud2ca")
-texture_margin_left = 10.0
-texture_margin_top = 10.0
-texture_margin_right = 10.0
-texture_margin_bottom = 10.0
+texture = ExtResource("1_667p8")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 draw_center = false
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_47x2g"]
-texture = ExtResource("1_ud2ca")
-texture_margin_left = 10.0
-texture_margin_top = 10.0
-texture_margin_right = 10.0
-texture_margin_bottom = 10.0
+texture = ExtResource("1_667p8")
+texture_margin_left = 6.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
 axis_stretch_horizontal = 1
 axis_stretch_vertical = 1
 draw_center = false

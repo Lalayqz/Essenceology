@@ -50,7 +50,7 @@ position = Vector2(503, 1000)
 [node name="ZERO_SUM_2" type="Node2D" parent="Levels"]
 position = Vector2(226, 840)
 
-[node name="LIE" type="Node2D" parent="Levels"]
+[node name="MILITARY_TRAINING" type="Node2D" parent="Levels"]
 position = Vector2(1057, 1320)
 
 [node name="SCALES_?" type="Node2D" parent="Levels"]

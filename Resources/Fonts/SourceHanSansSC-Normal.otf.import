@@ -3,18 +3,19 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dinddkudv7mfy"
-path="res://.godot/imported/SourceHanSansSC-Normal.otf-6c054ed730ecaf426eb4149031f93153.fontdata"
+path="res://.godot/imported/SourceHanSansSC-Normal.otf-bd2d1f39db5bc84a1b8d72056ff76923.fontdata"
 
 [deps]
 
-source_file="res://Resources/SourceHanSansSC-Normal.otf"
-dest_files=["res://.godot/imported/SourceHanSansSC-Normal.otf-6c054ed730ecaf426eb4149031f93153.fontdata"]
+source_file="res://Resources/Fonts/SourceHanSansSC-Normal.otf"
+dest_files=["res://.godot/imported/SourceHanSansSC-Normal.otf-bd2d1f39db5bc84a1b8d72056ff76923.fontdata"]
 
 [params]
 
 Rendering=null
 antialiasing=1
 generate_mipmaps=false
+disable_embedded_bitmaps=true
 multichannel_signed_distance_field=false
 msdf_pixel_range=8
 msdf_size=48

@@ -1,12 +1,12 @@
 [gd_scene load_steps=9 format=3 uid="uid://x6p37p0j7jpe"]
 
 [ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_ey0xr"]
-[ext_resource type="Theme" uid="uid://l0jnr6n2irgg" path="res://Resources/Chapters_Bar.tres" id="2_j7u1q"]
-[ext_resource type="Theme" uid="uid://cy8a2j5ro3j6s" path="res://Resources/Possibility_Chapter_Button.tres" id="3_yembw"]
-[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/SourceHanSansSC-Bold.otf" id="4_6ku48"]
+[ext_resource type="Theme" uid="uid://l0jnr6n2irgg" path="res://Resources/Styles/Chapters_Bar.tres" id="2_j7u1q"]
+[ext_resource type="Theme" uid="uid://cy8a2j5ro3j6s" path="res://Resources/Styles/Possibility_Chapter_Button.tres" id="3_yembw"]
+[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/Fonts/SourceHanSansSC-Bold.otf" id="4_6ku48"]
 [ext_resource type="Script" path="res://Scripts/Chapter_Button.gd" id="5_rebf4"]
-[ext_resource type="Theme" uid="uid://b00jlw57ckgn7" path="res://Resources/Should_Chapter_Button.tres" id="6_t4a5n"]
-[ext_resource type="Theme" uid="uid://cel18xkchmafq" path="res://Resources/UI_Button.tres" id="7_d1us8"]
+[ext_resource type="Theme" uid="uid://b00jlw57ckgn7" path="res://Resources/Styles/Should_Chapter_Button.tres" id="6_t4a5n"]
+[ext_resource type="Theme" uid="uid://cel18xkchmafq" path="res://Resources/Styles/UI_Button.tres" id="7_d1us8"]
 [ext_resource type="Script" path="res://Scripts/NeatButton.gd" id="8_jg2qc"]
 
 [node name="MainMenu" type="Node2D"]
@@ -27,7 +27,7 @@ theme_override_fonts/font = ExtResource("4_6ku48")
 theme_override_font_sizes/font_size = 22
 text = "POSSIBILITY"
 script = ExtResource("5_rebf4")
-chapter = "POSSIBILITY"
+CHAPTER = "POSSIBILITY"
 
 [node name="Should" type="Button" parent="Chapters_Bar"]
 layout_mode = 0
@@ -40,7 +40,7 @@ theme_override_fonts/font = ExtResource("4_6ku48")
 theme_override_font_sizes/font_size = 22
 text = "SHOULD"
 script = ExtResource("5_rebf4")
-chapter = "SHOULD"
+CHAPTER = "SHOULD"
 
 [node name="Definition" type="Button" parent="Chapters_Bar"]
 visible = false
@@ -54,7 +54,7 @@ theme_override_fonts/font = ExtResource("4_6ku48")
 theme_override_font_sizes/font_size = 22
 text = "第三章   定义"
 script = ExtResource("5_rebf4")
-chapter = "DEFINITION"
+CHAPTER = "DEFINITION"
 
 [node name="Settings" type="Button" parent="."]
 offset_left = 1205.0

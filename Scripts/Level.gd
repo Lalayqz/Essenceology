@@ -10,7 +10,7 @@ class_name Level extends Node2D
 @onready var PROBLEMS_CONTAINER = get_node("Problems/Problems")
 var PROBLEMS
 var WRONG_ANSWER_SOUND = preload("res://Resources/Sounds/Wrong_Answer.mp3")
-var TEXT_FONT = preload("res://Resources/SourceHanSansSC-Normal.otf")
+var TEXT_FONT = preload("res://Resources/Fonts/SourceHanSansSC-Normal.otf")
 #var PENALTIES = [1, 3, 6, 10]
 var PENALTIES = [0.1]
 # If the locale codename makes the "Problems" center container's width exceed the screen width,

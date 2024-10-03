@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6fvcw1ihpml1"
-path="res://.godot/imported/Solved_Finale.png-be45c6aeda8b8f01ee0ddcb9fce9fff3.ctex"
+uid="uid://c7b11plyw0dki"
+path="res://.godot/imported/Should.png-665f8524ba52d0f3a792a1c9b96b788a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Solved_Finale.png"
-dest_files=["res://.godot/imported/Solved_Finale.png-be45c6aeda8b8f01ee0ddcb9fce9fff3.ctex"]
+source_file="res://Resources/Images/Should.png"
+dest_files=["res://.godot/imported/Should.png-665f8524ba52d0f3a792a1c9b96b788a.ctex"]
 
 [params]
 

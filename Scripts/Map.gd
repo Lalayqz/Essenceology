@@ -8,12 +8,12 @@ extends ReferenceRect
 var VISIBLE_LEVELS = []
 @onready var FOCUS_POSITION = $Focus.position
 var LEVEL_CHAINS = {"POSSIBILITY":[["INTRO", "UNLIKELY"], ["UNLIKELY", "LOGIC"], ["LOGIC", "LOGIC_HARD"], ["LOGIC", "LIES_GENERALIZED"], ["LIES_GENERALIZED", "LIES_1"], ["LIES_1", "LIES_2"], ["LIES_2", "LIES_HARD"], ["LIES_2", "MEMORY_1"], ["MEMORY_1", "MEMORY_2"], ["MEMORY_2", "MEMORY_GENERALIZED"], ["MEMORY_GENERALIZED", "MEMORY_HARD"], ["MEMORY_GENERALIZED", "PATTERNS_1"], ["PATTERNS_1", "PATTERNS_2"], ["PATTERNS_2", "PATTERNS_3"], ["PATTERNS_3", "FINALE"]],
-"SHOULD":[["INTRO", "ALL_LIVES"], ["INTRO", "INDIVIDUAL"], ["INTRO", "CALCULATION"], ["CALCULATION", "PROBABILITY_1"], ["PROBABILITY_1", "PROBABILITY_2"], ["ALL_LIVES", "ANALYSIS_1"], ["INDIVIDUAL", "ANALYSIS_1"], ["CALCULATION", "ANALYSIS_1"], ["ANALYSIS_1", "ANALYSIS_2"], ["ANALYSIS_2", "LIE"]]}
-var UNSOLVED_LEVEL_TEXTURE = preload("res://Resources/Unsolved_Level.png")
-var SOLVED_LEVEL_TEXTURE = preload("res://Resources/Solved_Level.png")
-var UNSOLVED_FINALE_TEXTURE = preload("res://Resources/Unsolved_Finale.png")
-var SOLVED_FINALE_TEXTURE = preload("res://Resources/Solved_Finale.png")
-var LEVEL_LABEL_FONT = preload("res://Resources/SourceHanSansSC-Normal.otf")
+"SHOULD":[["INTRO", "ALL_LIVES"], ["INTRO", "INDIVIDUAL"], ["INTRO", "CALCULATION"], ["CALCULATION", "PROBABILITY_1"], ["PROBABILITY_1", "PROBABILITY_2"], ["ALL_LIVES", "ANALYSIS_1"], ["INDIVIDUAL", "ANALYSIS_1"], ["CALCULATION", "ANALYSIS_1"], ["ANALYSIS_1", "ANALYSIS_2"], ["ANALYSIS_2", "MILITARY_TRAINING"]]}
+var UNSOLVED_LEVEL_TEXTURE = preload("res://Resources/Images/Unsolved_Level.png")
+var SOLVED_LEVEL_TEXTURE = preload("res://Resources/Images/Solved_Level.png")
+var UNSOLVED_FINALE_TEXTURE = preload("res://Resources/Images/Unsolved_Finale.png")
+var SOLVED_FINALE_TEXTURE = preload("res://Resources/Images/Solved_Finale.png")
+var LEVEL_LABEL_FONT = preload("res://Resources/Fonts/SourceHanSansSC-Normal.otf")
 var WINDOW_POS
 var WINDOW_SIZE
 var ENTER_LEVEL_DRAG_MAX = 18

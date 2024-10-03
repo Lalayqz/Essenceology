@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://dabpdi6pbaric"]
 
-[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="1_2u4jb"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/Fonts/SourceHanSansSC-Normal.otf" id="1_2u4jb"]
 
 [resource]
 RichTextLabel/colors/font_outline_color = Color(1, 1, 1, 1)

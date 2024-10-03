@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scripts/Should_Level.gd" id="1_tk2ux"]
 [ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_nut3p"]
-[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/SourceHanSansSC-Normal.otf" id="3_sc7gx"]
-[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/SourceHanSansSC-Bold.otf" id="4_cm005"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/Fonts/SourceHanSansSC-Normal.otf" id="3_sc7gx"]
+[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/Fonts/SourceHanSansSC-Bold.otf" id="4_cm005"]
 [ext_resource type="Script" path="res://Scripts/Should_Problem.gd" id="5_2ev5n"]
 [ext_resource type="Script" path="res://Scripts/Should_Option.gd" id="6_h3dh0"]
 [ext_resource type="Theme" uid="uid://jcowhqm3oiam" path="res://Resources/Styles/Problem_Text_Small.tres" id="6_qtk28"]
