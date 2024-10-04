@@ -39,7 +39,7 @@ func _input(event):
 					if not is_max_length and event.unicode >= 0x4E00 and event.unicode <= 0x9FFF:
 						INPUT.text += char(event.unicode)
 						inputed = true
-						is_max_length = INPUT.text.length() == MAX_INPUT_LENGTH_EN
+						is_max_length = INPUT.text.length() == MAX_INPUT_LENGTH_ZH_CN
 		
 		# Backspace
 		elif event.keycode == KEY_BACKSPACE:
