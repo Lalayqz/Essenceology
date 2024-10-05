@@ -1,20 +1,20 @@
 [gd_scene load_steps=11 format=3 uid="uid://bp4dm50jyqks8"]
 
-[ext_resource type="Script" path="res://Scripts/Possibility_Level.gd" id="1_nfa02"]
-[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_pagnq"]
-[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/Fonts/SourceHanSansSC-Normal.otf" id="3_da4f6"]
-[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/Fonts/SourceHanSansSC-Bold.otf" id="4_ect8f"]
-[ext_resource type="Script" path="res://Scripts/Possibility_Problem.gd" id="5_rb66t"]
-[ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://Resources/Images/Possibility_Button.png" id="6_1vq8v"]
-[ext_resource type="Theme" uid="uid://dabpdi6pbaric" path="res://Resources/Styles/Problem_Text_Normal.tres" id="6_w7npt"]
-[ext_resource type="Script" path="res://Scripts/Possibility_Button.gd" id="7_tl6kx"]
-[ext_resource type="Texture2D" uid="uid://vl24cl1db66a" path="res://Resources/Images/P.png" id="8_eqe2c"]
-[ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://Resources/Images/NP.png" id="9_rlfso"]
+[ext_resource type="Script" path="res://scripts/possibility_level.gd" id="1_vm6di"]
+[ext_resource type="PackedScene" uid="uid://dkv24d6g3wr2v" path="res://scenes/items/level_structure_with_submit_button.tscn" id="2_1omjq"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://resources/fonts/SourceHanSansSC-Normal.otf" id="3_vix7s"]
+[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://resources/fonts/SourceHanSansSC-Bold.otf" id="4_gwdf6"]
+[ext_resource type="Script" path="res://scripts/possibility_problem.gd" id="5_ikbsx"]
+[ext_resource type="Theme" uid="uid://dabpdi6pbaric" path="res://resources/styles/problem_text_normal.tres" id="6_7uj5t"]
+[ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://resources/images/possibility_button.png" id="7_udgtp"]
+[ext_resource type="Script" path="res://scripts/possibility_button.gd" id="8_pf7eg"]
+[ext_resource type="Texture2D" uid="uid://vl24cl1db66a" path="res://resources/images/p.png" id="9_dgxgm"]
+[ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://resources/images/np.png" id="10_71ho4"]
 
 [node name="MEMORY_2" type="Node2D"]
-script = ExtResource("1_nfa02")
+script = ExtResource("1_vm6di")
 
-[node name="Level_Structure" parent="." instance=ExtResource("2_pagnq")]
+[node name="LevelStructure" parent="." instance=ExtResource("2_1omjq")]
 
 [node name="Note" type="RichTextLabel" parent="."]
 anchors_preset = 15
@@ -28,8 +28,8 @@ mouse_filter = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_fonts/normal_font = ExtResource("3_da4f6")
-theme_override_fonts/bold_font = ExtResource("4_ect8f")
+theme_override_fonts/normal_font = ExtResource("3_vix7s")
+theme_override_fonts/bold_font = ExtResource("4_gwdf6")
 theme_override_font_sizes/normal_font_size = 23
 theme_override_font_sizes/bold_font_size = 23
 bbcode_enabled = true
@@ -47,7 +47,7 @@ layout_mode = 2
 [node name="PUNCH" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 30
-script = ExtResource("5_rb66t")
+script = ExtResource("5_ikbsx")
 
 [node name="Problem" type="HSplitContainer" parent="Problems/Problems/PUNCH"]
 layout_mode = 2
@@ -60,7 +60,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/PUNCH/Problem/Text"]
 layout_mode = 2
-theme = ExtResource("6_w7npt")
+theme = ExtResource("6_7uj5t")
 bbcode_enabled = true
 text = "POSSIBILITY_MEMORY_2_PUNCH"
 fit_content = true
@@ -74,25 +74,25 @@ layout_mode = 2
 layout_mode = 2
 toggle_mode = true
 button_mask = 3
-texture_normal = ExtResource("6_1vq8v")
-script = ExtResource("7_tl6kx")
+texture_normal = ExtResource("7_udgtp")
+script = ExtResource("8_pf7eg")
 
 [node name="P" type="Sprite2D" parent="Problems/Problems/PUNCH/Problem/Button/Button"]
 visible = false
 position = Vector2(31, 22)
 scale = Vector2(0.813433, 0.813433)
-texture = ExtResource("8_eqe2c")
+texture = ExtResource("9_dgxgm")
 
 [node name="NP" type="Sprite2D" parent="Problems/Problems/PUNCH/Problem/Button/Button"]
 visible = false
 position = Vector2(28, 31)
 scale = Vector2(0.813433, 0.813433)
-texture = ExtResource("9_rlfso")
+texture = ExtResource("10_71ho4")
 
 [node name="TITLE" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 30
-script = ExtResource("5_rb66t")
+script = ExtResource("5_ikbsx")
 
 [node name="Problem" type="HSplitContainer" parent="Problems/Problems/TITLE"]
 layout_mode = 2
@@ -105,7 +105,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TITLE/Problem/Text"]
 layout_mode = 2
-theme = ExtResource("6_w7npt")
+theme = ExtResource("6_7uj5t")
 bbcode_enabled = true
 text = "POSSIBILITY_MEMORY_2_TITLE"
 fit_content = true
@@ -119,24 +119,24 @@ layout_mode = 2
 layout_mode = 2
 toggle_mode = true
 button_mask = 3
-texture_normal = ExtResource("6_1vq8v")
-script = ExtResource("7_tl6kx")
+texture_normal = ExtResource("7_udgtp")
+script = ExtResource("8_pf7eg")
 
 [node name="P" type="Sprite2D" parent="Problems/Problems/TITLE/Problem/Button/Button"]
 visible = false
 position = Vector2(31, 22)
 scale = Vector2(0.813433, 0.813433)
-texture = ExtResource("8_eqe2c")
+texture = ExtResource("9_dgxgm")
 
 [node name="NP" type="Sprite2D" parent="Problems/Problems/TITLE/Problem/Button/Button"]
 visible = false
 position = Vector2(28, 31)
 scale = Vector2(0.813433, 0.813433)
-texture = ExtResource("9_rlfso")
+texture = ExtResource("10_71ho4")
 
 [node name="INPUT" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
-script = ExtResource("5_rb66t")
+script = ExtResource("5_ikbsx")
 
 [node name="Problem" type="HSplitContainer" parent="Problems/Problems/INPUT"]
 layout_mode = 2
@@ -149,7 +149,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/INPUT/Problem/Text"]
 layout_mode = 2
-theme = ExtResource("6_w7npt")
+theme = ExtResource("6_7uj5t")
 bbcode_enabled = true
 text = "POSSIBILITY_MEMORY_2_WORD"
 fit_content = true
@@ -163,21 +163,21 @@ layout_mode = 2
 layout_mode = 2
 toggle_mode = true
 button_mask = 3
-texture_normal = ExtResource("6_1vq8v")
-script = ExtResource("7_tl6kx")
-REFERENCE_ANSWER = 1
+texture_normal = ExtResource("7_udgtp")
+script = ExtResource("8_pf7eg")
+reference_answer = 1
 
 [node name="P" type="Sprite2D" parent="Problems/Problems/INPUT/Problem/Button/Button"]
 visible = false
 position = Vector2(31, 22)
 scale = Vector2(0.813433, 0.813433)
-texture = ExtResource("8_eqe2c")
+texture = ExtResource("9_dgxgm")
 
 [node name="NP" type="Sprite2D" parent="Problems/Problems/INPUT/Problem/Button/Button"]
 visible = false
 position = Vector2(28, 31)
 scale = Vector2(0.813433, 0.813433)
-texture = ExtResource("9_rlfso")
+texture = ExtResource("10_71ho4")
 
 [connection signal="button_down" from="Problems/Problems/PUNCH/Problem/Button/Button" to="Problems/Problems/PUNCH/Problem/Button/Button" method="button_down"]
 [connection signal="button_up" from="Problems/Problems/PUNCH/Problem/Button/Button" to="Problems/Problems/PUNCH/Problem/Button/Button" method="released"]

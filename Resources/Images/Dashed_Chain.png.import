@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bhcch8pf4gh68"
-path="res://.godot/imported/Dashed_Chain.png-b56fa8119381ef608dc20ba013d712ad.ctex"
+path="res://.godot/imported/dashed_chain.png-ff9760b714a7f8e9c90a7d32c7ee5a1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Images/Dashed_Chain.png"
-dest_files=["res://.godot/imported/Dashed_Chain.png-b56fa8119381ef608dc20ba013d712ad.ctex"]
+source_file="res://resources/images/dashed_chain.png"
+dest_files=["res://.godot/imported/dashed_chain.png-ff9760b714a7f8e9c90a7d32c7ee5a1c.ctex"]
 
 [params]
 

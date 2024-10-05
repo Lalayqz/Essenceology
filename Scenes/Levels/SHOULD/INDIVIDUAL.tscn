@@ -1,16 +1,16 @@
 [gd_scene load_steps=7 format=3 uid="uid://dr26t8i2shni4"]
 
-[ext_resource type="Script" path="res://Scripts/Should_Level.gd" id="1_3enw0"]
-[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_0w75i"]
-[ext_resource type="Script" path="res://Scripts/Should_Problem.gd" id="3_laj21"]
-[ext_resource type="Theme" uid="uid://jcowhqm3oiam" path="res://Resources/Styles/Problem_Text_Small.tres" id="4_oeg8n"]
-[ext_resource type="Script" path="res://Scripts/Should_Option.gd" id="5_i7eog"]
-[ext_resource type="PackedScene" uid="uid://f0n60dmxi4ve" path="res://Scenes/Items/Should_Button.tscn" id="6_laxxm"]
+[ext_resource type="Script" path="res://scripts/should_level.gd" id="1_f3i2c"]
+[ext_resource type="PackedScene" uid="uid://dkv24d6g3wr2v" path="res://scenes/items/level_structure_with_submit_button.tscn" id="2_wq2r3"]
+[ext_resource type="Script" path="res://scripts/should_problem.gd" id="3_37f85"]
+[ext_resource type="Theme" uid="uid://jcowhqm3oiam" path="res://resources/styles/problem_text_small.tres" id="4_78al4"]
+[ext_resource type="Script" path="res://scripts/should_option.gd" id="5_wgjl7"]
+[ext_resource type="PackedScene" uid="uid://f0n60dmxi4ve" path="res://scenes/items/should_button.tscn" id="6_56twx"]
 
 [node name="INDIVIDUAL" type="Node2D"]
-script = ExtResource("1_3enw0")
+script = ExtResource("1_f3i2c")
 
-[node name="Level_Structure" parent="." instance=ExtResource("2_0w75i")]
+[node name="LevelStructure" parent="." instance=ExtResource("2_wq2r3")]
 
 [node name="Problems" type="CenterContainer" parent="."]
 offset_right = 1280.0
@@ -23,7 +23,7 @@ layout_mode = 2
 [node name="TROLLEY_1" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 25
-script = ExtResource("3_laj21")
+script = ExtResource("3_37f85")
 
 [node name="Problem" type="VSplitContainer" parent="Problems/Problems/TROLLEY_1"]
 layout_mode = 2
@@ -38,7 +38,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TROLLEY_1/Problem/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_oeg8n")
+theme = ExtResource("4_78al4")
 bbcode_enabled = true
 text = "SHOULD_INDIVIDUAL_TROLLEY_1"
 fit_content = true
@@ -53,7 +53,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
-script = ExtResource("5_i7eog")
+script = ExtResource("5_wgjl7")
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/TROLLEY_1/Problem/Options/PULL_LEVEL"]
 layout_mode = 2
@@ -64,7 +64,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TROLLEY_1/Problem/Options/PULL_LEVEL/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_oeg8n")
+theme = ExtResource("4_78al4")
 bbcode_enabled = true
 text = "SHOULD_PULL_LEVEL"
 fit_content = true
@@ -74,15 +74,15 @@ autowrap_mode = 0
 [node name="Button" type="CenterContainer" parent="Problems/Problems/TROLLEY_1/Problem/Options/PULL_LEVEL"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/TROLLEY_1/Problem/Options/PULL_LEVEL/Button" instance=ExtResource("6_laxxm")]
+[node name="Button" parent="Problems/Problems/TROLLEY_1/Problem/Options/PULL_LEVEL/Button" instance=ExtResource("6_56twx")]
 layout_mode = 2
 
 [node name="DO_NOTHING" type="VSplitContainer" parent="Problems/Problems/TROLLEY_1/Problem/Options"]
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
-script = ExtResource("5_i7eog")
-REFERENCE_ANSWER = true
+script = ExtResource("5_wgjl7")
+reference_answer = true
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/TROLLEY_1/Problem/Options/DO_NOTHING"]
 layout_mode = 2
@@ -93,7 +93,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TROLLEY_1/Problem/Options/DO_NOTHING/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_oeg8n")
+theme = ExtResource("4_78al4")
 bbcode_enabled = true
 text = "SHOULD_DO_NOTHING"
 fit_content = true
@@ -103,7 +103,7 @@ autowrap_mode = 0
 [node name="Button" type="CenterContainer" parent="Problems/Problems/TROLLEY_1/Problem/Options/DO_NOTHING"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/TROLLEY_1/Problem/Options/DO_NOTHING/Button" instance=ExtResource("6_laxxm")]
+[node name="Button" parent="Problems/Problems/TROLLEY_1/Problem/Options/DO_NOTHING/Button" instance=ExtResource("6_56twx")]
 layout_mode = 2
 
 [node name="Line" type="CenterContainer" parent="Problems/Problems"]
@@ -116,7 +116,7 @@ layout_mode = 2
 [node name="TROLLEY_2" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
 theme_override_constants/margin_top = 25
-script = ExtResource("3_laj21")
+script = ExtResource("3_37f85")
 
 [node name="Problem" type="VSplitContainer" parent="Problems/Problems/TROLLEY_2"]
 layout_mode = 2
@@ -131,7 +131,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TROLLEY_2/Problem/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_oeg8n")
+theme = ExtResource("4_78al4")
 bbcode_enabled = true
 text = "SHOULD_INDIVIDUAL_TROLLEY_2"
 fit_content = true
@@ -146,7 +146,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
-script = ExtResource("5_i7eog")
+script = ExtResource("5_wgjl7")
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/TROLLEY_2/Problem/Options/PULL_LEVEL"]
 layout_mode = 2
@@ -157,7 +157,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TROLLEY_2/Problem/Options/PULL_LEVEL/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_oeg8n")
+theme = ExtResource("4_78al4")
 bbcode_enabled = true
 text = "SHOULD_PULL_LEVEL"
 fit_content = true
@@ -167,15 +167,15 @@ autowrap_mode = 0
 [node name="Button" type="CenterContainer" parent="Problems/Problems/TROLLEY_2/Problem/Options/PULL_LEVEL"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/TROLLEY_2/Problem/Options/PULL_LEVEL/Button" instance=ExtResource("6_laxxm")]
+[node name="Button" parent="Problems/Problems/TROLLEY_2/Problem/Options/PULL_LEVEL/Button" instance=ExtResource("6_56twx")]
 layout_mode = 2
 
 [node name="DO_NOTHING" type="VSplitContainer" parent="Problems/Problems/TROLLEY_2/Problem/Options"]
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
-script = ExtResource("5_i7eog")
-REFERENCE_ANSWER = true
+script = ExtResource("5_wgjl7")
+reference_answer = true
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/TROLLEY_2/Problem/Options/DO_NOTHING"]
 layout_mode = 2
@@ -186,7 +186,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TROLLEY_2/Problem/Options/DO_NOTHING/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_oeg8n")
+theme = ExtResource("4_78al4")
 bbcode_enabled = true
 text = "SHOULD_DO_NOTHING"
 fit_content = true
@@ -196,5 +196,5 @@ autowrap_mode = 0
 [node name="Button" type="CenterContainer" parent="Problems/Problems/TROLLEY_2/Problem/Options/DO_NOTHING"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/TROLLEY_2/Problem/Options/DO_NOTHING/Button" instance=ExtResource("6_laxxm")]
+[node name="Button" parent="Problems/Problems/TROLLEY_2/Problem/Options/DO_NOTHING/Button" instance=ExtResource("6_56twx")]
 layout_mode = 2

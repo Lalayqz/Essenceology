@@ -1,16 +1,8 @@
 class_name ChapterButton extends NeatButton
 
-@onready var MAINMENU = get_node("../..")
-@export var CHAPTER : String
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+@export var chapter : String
+@onready var main_menu = get_node("../..")
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
 func _pressed():
-	MAINMENU.load_chapter(CHAPTER)
+	main_menu.load_chapter(chapter)

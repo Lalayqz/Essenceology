@@ -1,20 +1,19 @@
 extends Node2D
 
-@onready var config = get_node("/root/Config").config
-var LIGHT_TEXTURE = preload("res://Resources/Images/Light.png")
-var SHIFT_TIME = 10
-var START_SCALE = 1
-var MAX_END_SCALE = 2
-var SCALE_SHIFT_SPEED = float(MAX_END_SCALE - START_SCALE) / SHIFT_TIME
-var ALPHA_SHIFT_SPEED = 1. / SHIFT_TIME
-var MOVING_SPEED = 0.15
-var SMALL_LIGHT_ALPHA = 0.4
-var NEW_LIGHT_INTERVAL = 15
-var LIGHT_FADE_DELAY = 5
-var LIGHT_COLORS = {"SETTINGS": 0xa66df5ff, "CORRECT_ANSWER":0x00ff00ff, "WRONG_ANSWER":0xff0000ff, "POSSIBILITY": 0x55b555ff, "SHOULD": 0xffb012ff}
-var COLOR_SHIFT_SPEED_FAST = 5
-var COLOR_SHIFT_SPEED_SLOW = 1
+const SHIFT_TIME = 10
+const START_SCALE = 1
+const MAX_END_SCALE = 2
+const SCALE_SHIFT_SPEED = float(MAX_END_SCALE - START_SCALE) / SHIFT_TIME
+const ALPHA_SHIFT_SPEED = 1. / SHIFT_TIME
+const MOVING_SPEED = 0.15
+const SMALL_LIGHT_ALPHA = 0.4
+const NEW_LIGHT_INTERVAL = 15
+const LIGHT_FADE_DELAY = 5
+const LIGHT_COLORS = {"SETTINGS": 0xa66df5ff, "CORRECT_ANSWER":0x00ff00ff, "WRONG_ANSWER":0xff0000ff, "POSSIBILITY": 0x55b555ff, "SHOULD": 0xffb012ff}
+const COLOR_SHIFT_SPEED_FAST = 5
+const COLOR_SHIFT_SPEED_SLOW = 1
 
+var light_texture = preload("res://resources/images/light.png")
 var color = Color(LIGHT_COLORS["POSSIBILITY"]) # controls colors of all lights!
 var target_color = color
 var color_shift_speed
@@ -25,15 +24,15 @@ var rng = RandomNumberGenerator.new()
 var new_light_counter = 0
 var small_light_counter = 0
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	is_light_on = config.get_value("Config", "disturbing_background")
+	is_light_on = Config.get_disturbing_background()
 	view_size = get_viewport().size
 	light_count = view_size.x * view_size.y / 130000
 	if is_light_on:
 		init_lights()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	if is_light_on:
 		new_light_counter = new_light_counter + delta
@@ -48,16 +47,18 @@ func _process(delta):
 		color.g = color.g + (target_color.g - color.g) * color_shift_speed * delta
 		color.b = color.b + (target_color.b - color.b) * color_shift_speed * delta	
 		set_light_color(color)
-		
+
+
 func init_lights():
 	is_light_on = true
 	color = target_color
 	for i in range(light_count):
 		add_light(false)
-	
+
+
 func add_light(is_growing):
 	var light = Sprite2D.new()
-	light.texture = LIGHT_TEXTURE
+	light.texture = light_texture
 	light.position = Vector2(rng.randi_range(0, view_size.x), rng.randi_range(0, view_size.y))
 	
 	light.modulate = color
@@ -81,7 +82,8 @@ func add_light(is_growing):
 	else:
 		light.set_meta("speed", 0)
 	add_child(light)
-		
+
+
 func update_light(light, delta):
 	var scale = light.get_scale().x
 	var alpha = light.modulate.a
@@ -108,30 +110,35 @@ func update_light(light, delta):
 	if (speed > 0):
 		var direction =  light.get_meta("direction")
 		light.position += speed * direction
-			
+
+
 func fade_first_light():
 	for light in get_children():
 		if not light.get_meta("is_fading"):
 			light.set_meta("is_fading", true)
 			light.set_meta("fading_countdown", LIGHT_FADE_DELAY)
 			return
-			
+
+
 func turn_off_lights():
 	is_light_on = false
 	for light in get_children():
 		remove_child(light)
 		light.queue_free()
-		
+
+
 func set_light_color(c):
 	color = c
 	for light in get_children():
 		light.modulate.r = color.r
 		light.modulate.g = color.g
 		light.modulate.b = color.b
-		
+
+
 func update_color_to_chapter_color(chapter):
 	target_color = Color(LIGHT_COLORS[chapter])
 	color_shift_speed = COLOR_SHIFT_SPEED_FAST
+
 
 func color_flash(chapter, color_code):
 	# set current color to wrong answer color

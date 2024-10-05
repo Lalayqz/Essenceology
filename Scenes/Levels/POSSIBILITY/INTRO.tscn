@@ -1,20 +1,20 @@
 [gd_scene load_steps=11 format=3 uid="uid://b1w1v42dqlbfp"]
 
-[ext_resource type="Script" path="res://Scripts/Possibility_Level.gd" id="1_gmm65"]
-[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_luvmd"]
-[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/Fonts/SourceHanSansSC-Normal.otf" id="3_sxmr3"]
-[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/Fonts/SourceHanSansSC-Bold.otf" id="4_e31gf"]
-[ext_resource type="Script" path="res://Scripts/Possibility_Problem.gd" id="5_o0ud4"]
-[ext_resource type="Theme" uid="uid://dabpdi6pbaric" path="res://Resources/Styles/Problem_Text_Normal.tres" id="6_2gdg7"]
-[ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://Resources/Images/Possibility_Button.png" id="6_hwuna"]
-[ext_resource type="Script" path="res://Scripts/Possibility_Button.gd" id="7_t70d0"]
-[ext_resource type="Texture2D" uid="uid://vl24cl1db66a" path="res://Resources/Images/P.png" id="8_x1x8x"]
-[ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://Resources/Images/NP.png" id="9_wimmd"]
+[ext_resource type="Script" path="res://scripts/possibility_level.gd" id="1_gs5d6"]
+[ext_resource type="PackedScene" uid="uid://dkv24d6g3wr2v" path="res://scenes/items/level_structure_with_submit_button.tscn" id="2_xtjiw"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://resources/fonts/SourceHanSansSC-Normal.otf" id="3_2ugjn"]
+[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://resources/fonts/SourceHanSansSC-Bold.otf" id="4_qt77s"]
+[ext_resource type="Script" path="res://scripts/possibility_problem.gd" id="5_awfrm"]
+[ext_resource type="Theme" uid="uid://dabpdi6pbaric" path="res://resources/styles/problem_text_normal.tres" id="6_sufyp"]
+[ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://resources/images/possibility_button.png" id="7_w6qyr"]
+[ext_resource type="Script" path="res://scripts/possibility_button.gd" id="8_j5dpa"]
+[ext_resource type="Texture2D" uid="uid://vl24cl1db66a" path="res://resources/images/p.png" id="9_tecyt"]
+[ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://resources/images/np.png" id="10_6ihcx"]
 
 [node name="INTRO" type="Node2D"]
-script = ExtResource("1_gmm65")
+script = ExtResource("1_gs5d6")
 
-[node name="Level_Structure" parent="." instance=ExtResource("2_luvmd")]
+[node name="LevelStructure" parent="." instance=ExtResource("2_xtjiw")]
 
 [node name="Note" type="RichTextLabel" parent="."]
 anchors_preset = 15
@@ -28,8 +28,8 @@ mouse_filter = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_fonts/normal_font = ExtResource("3_sxmr3")
-theme_override_fonts/bold_font = ExtResource("4_e31gf")
+theme_override_fonts/normal_font = ExtResource("3_2ugjn")
+theme_override_fonts/bold_font = ExtResource("4_qt77s")
 theme_override_font_sizes/normal_font_size = 23
 theme_override_font_sizes/bold_font_size = 23
 bbcode_enabled = true
@@ -47,7 +47,7 @@ layout_mode = 2
 [node name="TOSS" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 30
-script = ExtResource("5_o0ud4")
+script = ExtResource("5_awfrm")
 
 [node name="Problem" type="HSplitContainer" parent="Problems/Problems/TOSS"]
 layout_mode = 2
@@ -60,7 +60,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TOSS/Problem/Text"]
 layout_mode = 2
-theme = ExtResource("6_2gdg7")
+theme = ExtResource("6_sufyp")
 bbcode_enabled = true
 text = "POSSIBILITY_INTRO_TOSS"
 fit_content = true
@@ -74,25 +74,25 @@ layout_mode = 2
 layout_mode = 2
 toggle_mode = true
 button_mask = 3
-texture_normal = ExtResource("6_hwuna")
-script = ExtResource("7_t70d0")
+texture_normal = ExtResource("7_w6qyr")
+script = ExtResource("8_j5dpa")
 
 [node name="P" type="Sprite2D" parent="Problems/Problems/TOSS/Problem/Button/Button"]
 visible = false
 position = Vector2(31, 22)
 scale = Vector2(0.813433, 0.813433)
-texture = ExtResource("8_x1x8x")
+texture = ExtResource("9_tecyt")
 
 [node name="NP" type="Sprite2D" parent="Problems/Problems/TOSS/Problem/Button/Button"]
 visible = false
 position = Vector2(28, 31)
 scale = Vector2(0.813433, 0.813433)
-texture = ExtResource("9_wimmd")
+texture = ExtResource("10_6ihcx")
 
 [node name="TOSS_OR" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 30
-script = ExtResource("5_o0ud4")
+script = ExtResource("5_awfrm")
 
 [node name="Problem" type="HSplitContainer" parent="Problems/Problems/TOSS_OR"]
 layout_mode = 2
@@ -105,7 +105,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TOSS_OR/Problem/Text"]
 layout_mode = 2
-theme = ExtResource("6_2gdg7")
+theme = ExtResource("6_sufyp")
 bbcode_enabled = true
 text = "POSSIBILITY_INTRO_TOSS_OR"
 fit_content = true
@@ -119,24 +119,24 @@ layout_mode = 2
 layout_mode = 2
 toggle_mode = true
 button_mask = 3
-texture_normal = ExtResource("6_hwuna")
-script = ExtResource("7_t70d0")
+texture_normal = ExtResource("7_w6qyr")
+script = ExtResource("8_j5dpa")
 
 [node name="P" type="Sprite2D" parent="Problems/Problems/TOSS_OR/Problem/Button/Button"]
 visible = false
 position = Vector2(31, 22)
 scale = Vector2(0.813433, 0.813433)
-texture = ExtResource("8_x1x8x")
+texture = ExtResource("9_tecyt")
 
 [node name="NP" type="Sprite2D" parent="Problems/Problems/TOSS_OR/Problem/Button/Button"]
 visible = false
 position = Vector2(28, 31)
 scale = Vector2(0.813433, 0.813433)
-texture = ExtResource("9_wimmd")
+texture = ExtResource("10_6ihcx")
 
 [node name="TOSS_BOTH" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
-script = ExtResource("5_o0ud4")
+script = ExtResource("5_awfrm")
 
 [node name="Problem" type="HSplitContainer" parent="Problems/Problems/TOSS_BOTH"]
 layout_mode = 2
@@ -149,7 +149,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/TOSS_BOTH/Problem/Text"]
 layout_mode = 2
-theme = ExtResource("6_2gdg7")
+theme = ExtResource("6_sufyp")
 bbcode_enabled = true
 text = "POSSIBILITY_INTRO_TOSS_BOTH"
 fit_content = true
@@ -163,21 +163,21 @@ layout_mode = 2
 layout_mode = 2
 toggle_mode = true
 button_mask = 3
-texture_normal = ExtResource("6_hwuna")
-script = ExtResource("7_t70d0")
-REFERENCE_ANSWER = 1
+texture_normal = ExtResource("7_w6qyr")
+script = ExtResource("8_j5dpa")
+reference_answer = 1
 
 [node name="P" type="Sprite2D" parent="Problems/Problems/TOSS_BOTH/Problem/Button/Button"]
 visible = false
 position = Vector2(31, 22)
 scale = Vector2(0.813433, 0.813433)
-texture = ExtResource("8_x1x8x")
+texture = ExtResource("9_tecyt")
 
 [node name="NP" type="Sprite2D" parent="Problems/Problems/TOSS_BOTH/Problem/Button/Button"]
 visible = false
 position = Vector2(28, 31)
 scale = Vector2(0.813433, 0.813433)
-texture = ExtResource("9_wimmd")
+texture = ExtResource("10_6ihcx")
 
 [connection signal="button_down" from="Problems/Problems/TOSS/Problem/Button/Button" to="Problems/Problems/TOSS/Problem/Button/Button" method="button_down"]
 [connection signal="button_up" from="Problems/Problems/TOSS/Problem/Button/Button" to="Problems/Problems/TOSS/Problem/Button/Button" method="released"]

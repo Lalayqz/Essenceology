@@ -1,16 +1,16 @@
 [gd_scene load_steps=7 format=3 uid="uid://22te7kr8jq4"]
 
-[ext_resource type="Script" path="res://Scripts/Should_Level.gd" id="1_focjm"]
-[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_j5lgx"]
-[ext_resource type="Script" path="res://Scripts/Should_Problem.gd" id="3_5r7xw"]
-[ext_resource type="Theme" uid="uid://jcowhqm3oiam" path="res://Resources/Styles/Problem_Text_Small.tres" id="4_1ymy2"]
-[ext_resource type="Script" path="res://Scripts/Should_Option.gd" id="5_mll8v"]
-[ext_resource type="PackedScene" uid="uid://f0n60dmxi4ve" path="res://Scenes/Items/Should_Button.tscn" id="6_qyvem"]
+[ext_resource type="Script" path="res://scripts/should_level.gd" id="1_dbq0v"]
+[ext_resource type="PackedScene" uid="uid://dkv24d6g3wr2v" path="res://scenes/items/level_structure_with_submit_button.tscn" id="2_ww84s"]
+[ext_resource type="Script" path="res://scripts/should_problem.gd" id="3_4m1nl"]
+[ext_resource type="Theme" uid="uid://jcowhqm3oiam" path="res://resources/styles/problem_text_small.tres" id="4_ebsvp"]
+[ext_resource type="Script" path="res://scripts/should_option.gd" id="5_gr7bj"]
+[ext_resource type="PackedScene" uid="uid://f0n60dmxi4ve" path="res://scenes/items/should_button.tscn" id="6_jubk4"]
 
 [node name="CALCULATION" type="Node2D"]
-script = ExtResource("1_focjm")
+script = ExtResource("1_dbq0v")
 
-[node name="Level_Structure" parent="." instance=ExtResource("2_j5lgx")]
+[node name="LevelStructure" parent="." instance=ExtResource("2_ww84s")]
 
 [node name="Problems" type="CenterContainer" parent="."]
 offset_right = 1280.0
@@ -23,7 +23,7 @@ layout_mode = 2
 [node name="BUTTON" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 25
-script = ExtResource("3_5r7xw")
+script = ExtResource("3_4m1nl")
 
 [node name="Problem" type="VSplitContainer" parent="Problems/Problems/BUTTON"]
 layout_mode = 2
@@ -38,7 +38,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/BUTTON/Problem/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_1ymy2")
+theme = ExtResource("4_ebsvp")
 bbcode_enabled = true
 text = "SHOULD_CALCULATION_BUTTON"
 fit_content = true
@@ -53,7 +53,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
-script = ExtResource("5_mll8v")
+script = ExtResource("5_gr7bj")
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/BUTTON/Problem/Options/PRESS"]
 layout_mode = 2
@@ -64,7 +64,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/BUTTON/Problem/Options/PRESS/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_1ymy2")
+theme = ExtResource("4_ebsvp")
 bbcode_enabled = true
 text = "SHOULD_CALCULATION_BUTTON_PRESS"
 fit_content = true
@@ -74,15 +74,15 @@ autowrap_mode = 0
 [node name="Button" type="CenterContainer" parent="Problems/Problems/BUTTON/Problem/Options/PRESS"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/BUTTON/Problem/Options/PRESS/Button" instance=ExtResource("6_qyvem")]
+[node name="Button" parent="Problems/Problems/BUTTON/Problem/Options/PRESS/Button" instance=ExtResource("6_jubk4")]
 layout_mode = 2
 
 [node name="DO_NOTHING" type="VSplitContainer" parent="Problems/Problems/BUTTON/Problem/Options"]
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
-script = ExtResource("5_mll8v")
-REFERENCE_ANSWER = true
+script = ExtResource("5_gr7bj")
+reference_answer = true
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/BUTTON/Problem/Options/DO_NOTHING"]
 layout_mode = 2
@@ -93,7 +93,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/BUTTON/Problem/Options/DO_NOTHING/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_1ymy2")
+theme = ExtResource("4_ebsvp")
 bbcode_enabled = true
 text = "SHOULD_DO_NOTHING"
 fit_content = true
@@ -103,7 +103,7 @@ autowrap_mode = 0
 [node name="Button" type="CenterContainer" parent="Problems/Problems/BUTTON/Problem/Options/DO_NOTHING"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/BUTTON/Problem/Options/DO_NOTHING/Button" instance=ExtResource("6_qyvem")]
+[node name="Button" parent="Problems/Problems/BUTTON/Problem/Options/DO_NOTHING/Button" instance=ExtResource("6_jubk4")]
 layout_mode = 2
 
 [node name="Line" type="CenterContainer" parent="Problems/Problems"]
@@ -116,7 +116,7 @@ layout_mode = 2
 [node name="CARDS" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
 theme_override_constants/margin_top = 25
-script = ExtResource("3_5r7xw")
+script = ExtResource("3_4m1nl")
 
 [node name="Problem" type="VSplitContainer" parent="Problems/Problems/CARDS"]
 layout_mode = 2
@@ -131,7 +131,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/CARDS/Problem/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_1ymy2")
+theme = ExtResource("4_ebsvp")
 bbcode_enabled = true
 text = "SHOULD_CALCULATION_CARDS"
 fit_content = true
@@ -146,8 +146,8 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
-script = ExtResource("5_mll8v")
-REFERENCE_ANSWER = true
+script = ExtResource("5_gr7bj")
+reference_answer = true
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/CARDS/Problem/Options/REMOVE"]
 layout_mode = 2
@@ -158,7 +158,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/CARDS/Problem/Options/REMOVE/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_1ymy2")
+theme = ExtResource("4_ebsvp")
 bbcode_enabled = true
 text = "SHOULD_CALCULATION_CARDS_REMOVE"
 fit_content = true
@@ -168,14 +168,14 @@ autowrap_mode = 0
 [node name="Button" type="CenterContainer" parent="Problems/Problems/CARDS/Problem/Options/REMOVE"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/CARDS/Problem/Options/REMOVE/Button" instance=ExtResource("6_qyvem")]
+[node name="Button" parent="Problems/Problems/CARDS/Problem/Options/REMOVE/Button" instance=ExtResource("6_jubk4")]
 layout_mode = 2
 
 [node name="DO_NOTHING" type="VSplitContainer" parent="Problems/Problems/CARDS/Problem/Options"]
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
-script = ExtResource("5_mll8v")
+script = ExtResource("5_gr7bj")
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/CARDS/Problem/Options/DO_NOTHING"]
 layout_mode = 2
@@ -186,7 +186,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/CARDS/Problem/Options/DO_NOTHING/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_1ymy2")
+theme = ExtResource("4_ebsvp")
 bbcode_enabled = true
 text = "SHOULD_DO_NOTHING"
 fit_content = true
@@ -196,14 +196,14 @@ autowrap_mode = 0
 [node name="Button" type="CenterContainer" parent="Problems/Problems/CARDS/Problem/Options/DO_NOTHING"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/CARDS/Problem/Options/DO_NOTHING/Button" instance=ExtResource("6_qyvem")]
+[node name="Button" parent="Problems/Problems/CARDS/Problem/Options/DO_NOTHING/Button" instance=ExtResource("6_jubk4")]
 layout_mode = 2
 
 [node name="ADD" type="VSplitContainer" parent="Problems/Problems/CARDS/Problem/Options"]
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
-script = ExtResource("5_mll8v")
+script = ExtResource("5_gr7bj")
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/CARDS/Problem/Options/ADD"]
 layout_mode = 2
@@ -214,7 +214,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/CARDS/Problem/Options/ADD/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_1ymy2")
+theme = ExtResource("4_ebsvp")
 bbcode_enabled = true
 text = "SHOULD_CALCULATION_CARDS_ADD"
 fit_content = true
@@ -224,5 +224,5 @@ autowrap_mode = 0
 [node name="Button" type="CenterContainer" parent="Problems/Problems/CARDS/Problem/Options/ADD"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/CARDS/Problem/Options/ADD/Button" instance=ExtResource("6_qyvem")]
+[node name="Button" parent="Problems/Problems/CARDS/Problem/Options/ADD/Button" instance=ExtResource("6_jubk4")]
 layout_mode = 2

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://ckx8q8702xcs7"
-path="res://.godot/imported/Wrong_Answer.mp3-976107e7c8465d6218632219b91c29ad.mp3str"
+path="res://.godot/imported/wrong_answer.mp3-63ce54e8f451b547e6fbb9005be2e2fa.mp3str"
 
 [deps]
 
-source_file="res://Resources/Sounds/Wrong_Answer.mp3"
-dest_files=["res://.godot/imported/Wrong_Answer.mp3-976107e7c8465d6218632219b91c29ad.mp3str"]
+source_file="res://resources/sounds/wrong_answer.mp3"
+dest_files=["res://.godot/imported/wrong_answer.mp3-63ce54e8f451b547e6fbb9005be2e2fa.mp3str"]
 
 [params]
 

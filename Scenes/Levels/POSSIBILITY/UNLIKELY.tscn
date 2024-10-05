@@ -1,19 +1,19 @@
 [gd_scene load_steps=10 format=3 uid="uid://bqe6mcq6vpeyc"]
 
-[ext_resource type="Script" path="res://Scripts/Possibility_Level.gd" id="1_7fvm7"]
-[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_rfk6u"]
-[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/Fonts/SourceHanSansSC-Normal.otf" id="3_wt4ni"]
-[ext_resource type="Script" path="res://Scripts/Possibility_Problem.gd" id="4_xyhvt"]
-[ext_resource type="Theme" uid="uid://dabpdi6pbaric" path="res://Resources/Styles/Problem_Text_Normal.tres" id="5_oh6tj"]
-[ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://Resources/Images/Possibility_Button.png" id="5_v7re6"]
-[ext_resource type="Script" path="res://Scripts/Possibility_Button.gd" id="6_2x5bb"]
-[ext_resource type="Texture2D" uid="uid://vl24cl1db66a" path="res://Resources/Images/P.png" id="7_1785p"]
-[ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://Resources/Images/NP.png" id="8_qng2p"]
+[ext_resource type="Script" path="res://scripts/possibility_level.gd" id="1_riv2d"]
+[ext_resource type="PackedScene" uid="uid://dkv24d6g3wr2v" path="res://scenes/items/level_structure_with_submit_button.tscn" id="2_y3yod"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://resources/fonts/SourceHanSansSC-Normal.otf" id="3_hxgxk"]
+[ext_resource type="Script" path="res://scripts/possibility_problem.gd" id="4_wrgon"]
+[ext_resource type="Theme" uid="uid://dabpdi6pbaric" path="res://resources/styles/problem_text_normal.tres" id="5_krksc"]
+[ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://resources/images/possibility_button.png" id="6_8r754"]
+[ext_resource type="Script" path="res://scripts/possibility_button.gd" id="7_pawf7"]
+[ext_resource type="Texture2D" uid="uid://vl24cl1db66a" path="res://resources/images/p.png" id="8_bh5ik"]
+[ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://resources/images/np.png" id="9_27i4d"]
 
 [node name="UNLIKELY" type="Node2D"]
-script = ExtResource("1_7fvm7")
+script = ExtResource("1_riv2d")
 
-[node name="Level_Structure" parent="." instance=ExtResource("2_rfk6u")]
+[node name="LevelStructure" parent="." instance=ExtResource("2_y3yod")]
 
 [node name="Note" type="Label" parent="."]
 anchors_preset = 15
@@ -26,7 +26,7 @@ grow_vertical = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
-theme_override_fonts/font = ExtResource("3_wt4ni")
+theme_override_fonts/font = ExtResource("3_hxgxk")
 theme_override_font_sizes/font_size = 23
 text = "POSSIBILITY_UNLIKELY_NOTE"
 horizontal_alignment = 1
@@ -44,7 +44,7 @@ layout_mode = 2
 [node name="WORM" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 30
-script = ExtResource("4_xyhvt")
+script = ExtResource("4_wrgon")
 
 [node name="Problem" type="HSplitContainer" parent="Problems/Problems/WORM"]
 custom_minimum_size = Vector2(200, 0)
@@ -58,7 +58,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/WORM/Problem/Text"]
 layout_mode = 2
-theme = ExtResource("5_oh6tj")
+theme = ExtResource("5_krksc")
 bbcode_enabled = true
 text = "POSSIBILITY_UNLIKELY_WORM"
 fit_content = true
@@ -72,25 +72,25 @@ layout_mode = 2
 layout_mode = 2
 toggle_mode = true
 button_mask = 3
-texture_normal = ExtResource("5_v7re6")
-script = ExtResource("6_2x5bb")
+texture_normal = ExtResource("6_8r754")
+script = ExtResource("7_pawf7")
 
 [node name="P" type="Sprite2D" parent="Problems/Problems/WORM/Problem/Button/Button"]
 visible = false
 position = Vector2(31, 22)
 scale = Vector2(0.813433, 0.813433)
-texture = ExtResource("7_1785p")
+texture = ExtResource("8_bh5ik")
 
 [node name="NP" type="Sprite2D" parent="Problems/Problems/WORM/Problem/Button/Button"]
 visible = false
 position = Vector2(28, 31)
 scale = Vector2(0.813433, 0.813433)
-texture = ExtResource("8_qng2p")
+texture = ExtResource("9_27i4d")
 
 [node name="MURDER" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 30
-script = ExtResource("4_xyhvt")
+script = ExtResource("4_wrgon")
 
 [node name="Problem" type="HSplitContainer" parent="Problems/Problems/MURDER"]
 layout_mode = 2
@@ -103,7 +103,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/MURDER/Problem/Text"]
 layout_mode = 2
-theme = ExtResource("5_oh6tj")
+theme = ExtResource("5_krksc")
 bbcode_enabled = true
 text = "POSSIBILITY_UNLIKELY_MURDER"
 fit_content = true
@@ -117,24 +117,24 @@ layout_mode = 2
 layout_mode = 2
 toggle_mode = true
 button_mask = 3
-texture_normal = ExtResource("5_v7re6")
-script = ExtResource("6_2x5bb")
+texture_normal = ExtResource("6_8r754")
+script = ExtResource("7_pawf7")
 
 [node name="P" type="Sprite2D" parent="Problems/Problems/MURDER/Problem/Button/Button"]
 visible = false
 position = Vector2(31, 22)
 scale = Vector2(0.813433, 0.813433)
-texture = ExtResource("7_1785p")
+texture = ExtResource("8_bh5ik")
 
 [node name="NP" type="Sprite2D" parent="Problems/Problems/MURDER/Problem/Button/Button"]
 visible = false
 position = Vector2(28, 31)
 scale = Vector2(0.813433, 0.813433)
-texture = ExtResource("8_qng2p")
+texture = ExtResource("9_27i4d")
 
 [node name="STRANGER" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
-script = ExtResource("4_xyhvt")
+script = ExtResource("4_wrgon")
 
 [node name="Problem" type="HSplitContainer" parent="Problems/Problems/STRANGER"]
 layout_mode = 2
@@ -147,7 +147,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/STRANGER/Problem/Text"]
 layout_mode = 2
-theme = ExtResource("5_oh6tj")
+theme = ExtResource("5_krksc")
 bbcode_enabled = true
 text = "POSSIBILITY_UNLIKELY_STRANGER"
 fit_content = true
@@ -161,20 +161,20 @@ layout_mode = 2
 layout_mode = 2
 toggle_mode = true
 button_mask = 3
-texture_normal = ExtResource("5_v7re6")
-script = ExtResource("6_2x5bb")
+texture_normal = ExtResource("6_8r754")
+script = ExtResource("7_pawf7")
 
 [node name="P" type="Sprite2D" parent="Problems/Problems/STRANGER/Problem/Button/Button"]
 visible = false
 position = Vector2(31, 22)
 scale = Vector2(0.813433, 0.813433)
-texture = ExtResource("7_1785p")
+texture = ExtResource("8_bh5ik")
 
 [node name="NP" type="Sprite2D" parent="Problems/Problems/STRANGER/Problem/Button/Button"]
 visible = false
 position = Vector2(28, 31)
 scale = Vector2(0.813433, 0.813433)
-texture = ExtResource("8_qng2p")
+texture = ExtResource("9_27i4d")
 
 [connection signal="button_down" from="Problems/Problems/WORM/Problem/Button/Button" to="Problems/Problems/WORM/Problem/Button/Button" method="button_down"]
 [connection signal="button_up" from="Problems/Problems/WORM/Problem/Button/Button" to="Problems/Problems/WORM/Problem/Button/Button" method="released"]

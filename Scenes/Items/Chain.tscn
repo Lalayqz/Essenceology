@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://t6k288fu6v5i"]
 
-[ext_resource type="Texture2D" uid="uid://io3ueipd2nvc" path="res://Resources/Images/Chain.png" id="1_6hfea"]
+[ext_resource type="Texture2D" uid="uid://io3ueipd2nvc" path="res://resources/images/chain.png" id="1_do5o3"]
 
-[node name="chain" type="Line2D"]
+[node name="Chain" type="Line2D"]
 texture_repeat = 2
-texture = ExtResource("1_6hfea")
+texture = ExtResource("1_do5o3")
 texture_mode = 1

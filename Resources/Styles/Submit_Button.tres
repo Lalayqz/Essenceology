@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=5 format=3 uid="uid://cc776rspw52yb"]
 
-[ext_resource type="Texture2D" uid="uid://dta82gv8wlkgp" path="res://Resources/Images/Submit_button.png" id="1_667p8"]
+[ext_resource type="Texture2D" uid="uid://dta82gv8wlkgp" path="res://resources/images/submit_button.png" id="1_667p8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nt8yc"]
 texture = ExtResource("1_667p8")

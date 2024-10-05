@@ -1,16 +1,16 @@
 [gd_scene load_steps=7 format=3 uid="uid://76hk0j1a3n5k"]
 
-[ext_resource type="Script" path="res://Scripts/Should_Level.gd" id="1_m36ow"]
-[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_15s7m"]
-[ext_resource type="Script" path="res://Scripts/Should_Problem.gd" id="3_hscon"]
-[ext_resource type="Theme" uid="uid://jcowhqm3oiam" path="res://Resources/Styles/Problem_Text_Small.tres" id="4_xkxrs"]
-[ext_resource type="Script" path="res://Scripts/Should_Option.gd" id="5_3emcj"]
-[ext_resource type="PackedScene" uid="uid://f0n60dmxi4ve" path="res://Scenes/Items/Should_Button.tscn" id="6_556bw"]
+[ext_resource type="Script" path="res://scripts/should_level.gd" id="1_0xtot"]
+[ext_resource type="PackedScene" uid="uid://dkv24d6g3wr2v" path="res://scenes/items/level_structure_with_submit_button.tscn" id="2_u8oxm"]
+[ext_resource type="Script" path="res://scripts/should_problem.gd" id="3_sf7w1"]
+[ext_resource type="Theme" uid="uid://jcowhqm3oiam" path="res://resources/styles/problem_text_small.tres" id="4_j6wxa"]
+[ext_resource type="Script" path="res://scripts/should_option.gd" id="5_e3kg1"]
+[ext_resource type="PackedScene" uid="uid://f0n60dmxi4ve" path="res://scenes/items/should_button.tscn" id="6_j5aay"]
 
 [node name="ANALYSIS_1" type="Node2D"]
-script = ExtResource("1_m36ow")
+script = ExtResource("1_0xtot")
 
-[node name="Level_Structure" parent="." instance=ExtResource("2_15s7m")]
+[node name="LevelStructure" parent="." instance=ExtResource("2_u8oxm")]
 
 [node name="Problems" type="CenterContainer" parent="."]
 offset_right = 1280.0
@@ -23,7 +23,7 @@ layout_mode = 2
 [node name="WIPE" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 25
-script = ExtResource("3_hscon")
+script = ExtResource("3_sf7w1")
 
 [node name="Problem" type="VSplitContainer" parent="Problems/Problems/WIPE"]
 layout_mode = 2
@@ -38,7 +38,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/WIPE/Problem/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_xkxrs")
+theme = ExtResource("4_j6wxa")
 bbcode_enabled = true
 text = "SHOULD_ANALYSIS_1_WIPE"
 fit_content = true
@@ -53,8 +53,8 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
-script = ExtResource("5_3emcj")
-REFERENCE_ANSWER = true
+script = ExtResource("5_e3kg1")
+reference_answer = true
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/WIPE/Problem/Options/MOUTH_FIRST"]
 layout_mode = 2
@@ -65,7 +65,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/WIPE/Problem/Options/MOUTH_FIRST/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_xkxrs")
+theme = ExtResource("4_j6wxa")
 bbcode_enabled = true
 text = "SHOULD_ANALYSIS_1_WIPE_MOUTH_FIRST"
 fit_content = true
@@ -75,14 +75,14 @@ autowrap_mode = 0
 [node name="Button" type="CenterContainer" parent="Problems/Problems/WIPE/Problem/Options/MOUTH_FIRST"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/WIPE/Problem/Options/MOUTH_FIRST/Button" instance=ExtResource("6_556bw")]
+[node name="Button" parent="Problems/Problems/WIPE/Problem/Options/MOUTH_FIRST/Button" instance=ExtResource("6_j5aay")]
 layout_mode = 2
 
 [node name="BUTT_FIRST" type="VSplitContainer" parent="Problems/Problems/WIPE/Problem/Options"]
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
-script = ExtResource("5_3emcj")
+script = ExtResource("5_e3kg1")
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/WIPE/Problem/Options/BUTT_FIRST"]
 layout_mode = 2
@@ -93,7 +93,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/WIPE/Problem/Options/BUTT_FIRST/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_xkxrs")
+theme = ExtResource("4_j6wxa")
 bbcode_enabled = true
 text = "SHOULD_ANALYSIS_1_WIPE_BUTT_FIRST"
 fit_content = true
@@ -103,7 +103,7 @@ autowrap_mode = 0
 [node name="Button" type="CenterContainer" parent="Problems/Problems/WIPE/Problem/Options/BUTT_FIRST"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/WIPE/Problem/Options/BUTT_FIRST/Button" instance=ExtResource("6_556bw")]
+[node name="Button" parent="Problems/Problems/WIPE/Problem/Options/BUTT_FIRST/Button" instance=ExtResource("6_j5aay")]
 layout_mode = 2
 
 [node name="Line" type="CenterContainer" parent="Problems/Problems"]
@@ -116,7 +116,7 @@ layout_mode = 2
 [node name="GRID" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
 theme_override_constants/margin_top = 25
-script = ExtResource("3_hscon")
+script = ExtResource("3_sf7w1")
 
 [node name="Problem" type="VSplitContainer" parent="Problems/Problems/GRID"]
 layout_mode = 2
@@ -131,7 +131,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/GRID/Problem/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_xkxrs")
+theme = ExtResource("4_j6wxa")
 bbcode_enabled = true
 text = "SHOULD_ANALYSIS_1_GRID"
 fit_content = true
@@ -146,7 +146,7 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
-script = ExtResource("5_3emcj")
+script = ExtResource("5_e3kg1")
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/GRID/Problem/Options/HORIZONTAL_FIRST"]
 layout_mode = 2
@@ -157,7 +157,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/GRID/Problem/Options/HORIZONTAL_FIRST/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_xkxrs")
+theme = ExtResource("4_j6wxa")
 bbcode_enabled = true
 text = "SHOULD_ANALYSIS_1_GRID_HORIZONTAL_FIRST"
 fit_content = true
@@ -167,15 +167,15 @@ autowrap_mode = 0
 [node name="Button" type="CenterContainer" parent="Problems/Problems/GRID/Problem/Options/HORIZONTAL_FIRST"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/GRID/Problem/Options/HORIZONTAL_FIRST/Button" instance=ExtResource("6_556bw")]
+[node name="Button" parent="Problems/Problems/GRID/Problem/Options/HORIZONTAL_FIRST/Button" instance=ExtResource("6_j5aay")]
 layout_mode = 2
 
 [node name="VERTICAL_FIRST" type="VSplitContainer" parent="Problems/Problems/GRID/Problem/Options"]
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
-script = ExtResource("5_3emcj")
-REFERENCE_ANSWER = true
+script = ExtResource("5_e3kg1")
+reference_answer = true
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/GRID/Problem/Options/VERTICAL_FIRST"]
 layout_mode = 2
@@ -186,7 +186,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/GRID/Problem/Options/VERTICAL_FIRST/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_xkxrs")
+theme = ExtResource("4_j6wxa")
 bbcode_enabled = true
 text = "SHOULD_ANALYSIS_1_GRID_VERTICAL_FIRST"
 fit_content = true
@@ -196,5 +196,5 @@ autowrap_mode = 0
 [node name="Button" type="CenterContainer" parent="Problems/Problems/GRID/Problem/Options/VERTICAL_FIRST"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/GRID/Problem/Options/VERTICAL_FIRST/Button" instance=ExtResource("6_556bw")]
+[node name="Button" parent="Problems/Problems/GRID/Problem/Options/VERTICAL_FIRST/Button" instance=ExtResource("6_j5aay")]
 layout_mode = 2

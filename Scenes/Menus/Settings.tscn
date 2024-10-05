@@ -1,15 +1,15 @@
 [gd_scene load_steps=8 format=3 uid="uid://8ctxnv73mn4d"]
 
-[ext_resource type="Script" path="res://Scripts/Settings.gd" id="1_bdgw5"]
-[ext_resource type="Theme" uid="uid://cel18xkchmafq" path="res://Resources/Styles/UI_Button.tres" id="2_4ecso"]
-[ext_resource type="Script" path="res://Scripts/NeatButton.gd" id="3_o6yun"]
-[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/Fonts/SourceHanSansSC-Bold.otf" id="4_pp0o4"]
-[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/Fonts/SourceHanSansSC-Normal.otf" id="5_lm2a6"]
-[ext_resource type="Texture2D" uid="uid://ds23vbk5lwphi" path="res://Resources/Images/Checkbox_Checked.png" id="6_r82t4"]
-[ext_resource type="Texture2D" uid="uid://bt5fut6vnv53v" path="res://Resources/Images/Checkbox.png" id="7_y80li"]
+[ext_resource type="Script" path="res://scripts/settings.gd" id="1_2rugq"]
+[ext_resource type="Theme" uid="uid://cel18xkchmafq" path="res://resources/styles/ui_button.tres" id="2_bodgn"]
+[ext_resource type="Script" path="res://scripts/neat_button.gd" id="3_agyi1"]
+[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://resources/fonts/SourceHanSansSC-Bold.otf" id="4_86txp"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://resources/fonts/SourceHanSansSC-Normal.otf" id="5_khjl2"]
+[ext_resource type="Texture2D" uid="uid://ds23vbk5lwphi" path="res://resources/images/checkbox_checked.png" id="6_dbmk4"]
+[ext_resource type="Texture2D" uid="uid://bt5fut6vnv53v" path="res://resources/images/checkbox.png" id="7_ce04u"]
 
 [node name="Settings" type="Node2D"]
-script = ExtResource("1_bdgw5")
+script = ExtResource("1_2rugq")
 
 [node name="Background" type="ColorRect" parent="."]
 z_index = -10
@@ -23,8 +23,8 @@ offset_top = 10.0
 offset_right = 75.0
 offset_bottom = 75.0
 focus_mode = 0
-theme = ExtResource("2_4ecso")
-script = ExtResource("3_o6yun")
+theme = ExtResource("2_bodgn")
+script = ExtResource("3_agyi1")
 
 [node name="Label" type="Label" parent="Back"]
 layout_mode = 0
@@ -32,7 +32,7 @@ offset_left = 10.0
 offset_top = -1.0
 offset_right = 53.0
 offset_bottom = 72.0
-theme_override_fonts/font = ExtResource("4_pp0o4")
+theme_override_fonts/font = ExtResource("4_86txp")
 theme_override_font_sizes/font_size = 50
 text = "↩"
 
@@ -54,102 +54,102 @@ layout_mode = 2
 [node name="Lanaguages" type="HBoxContainer" parent="Options/Options/Lanaguages/Lanaguages"]
 layout_mode = 2
 
-[node name="en" type="MarginContainer" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages"]
+[node name="En" type="MarginContainer" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages"]
 layout_mode = 2
 theme_override_constants/margin_right = 100
 
-[node name="en" type="HSplitContainer" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages/en"]
+[node name="En" type="HSplitContainer" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages/En"]
 layout_mode = 2
 dragger_visibility = 2
 
-[node name="Text" type="MarginContainer" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages/en/en"]
+[node name="Text" type="MarginContainer" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages/En/En"]
 layout_mode = 2
 theme_override_constants/margin_right = 30
 
-[node name="Text" type="Label" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages/en/en/Text"]
+[node name="Text" type="Label" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages/En/En/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("5_lm2a6")
+theme_override_fonts/font = ExtResource("5_khjl2")
 theme_override_font_sizes/font_size = 33
 text = "English"
 
-[node name="Checkbox" type="CheckBox" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages/en/en"]
+[node name="Checkbox" type="CheckBox" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages/En/En"]
 layout_mode = 2
 focus_mode = 0
-theme_override_icons/checked = ExtResource("6_r82t4")
-theme_override_icons/unchecked = ExtResource("7_y80li")
-script = ExtResource("3_o6yun")
+theme_override_icons/checked = ExtResource("6_dbmk4")
+theme_override_icons/unchecked = ExtResource("7_ce04u")
+script = ExtResource("3_agyi1")
 
-[node name="zh" type="MarginContainer" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages"]
+[node name="Zh" type="MarginContainer" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages"]
 layout_mode = 2
 
-[node name="zh" type="HSplitContainer" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages/zh"]
+[node name="Zh" type="HSplitContainer" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages/Zh"]
 layout_mode = 2
 dragger_visibility = 2
 
-[node name="Text" type="MarginContainer" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages/zh/zh"]
+[node name="Text" type="MarginContainer" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages/Zh/Zh"]
 layout_mode = 2
 theme_override_constants/margin_right = 30
 
-[node name="Text" type="Label" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages/zh/zh/Text"]
+[node name="Text" type="Label" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages/Zh/Zh/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("5_lm2a6")
+theme_override_fonts/font = ExtResource("5_khjl2")
 theme_override_font_sizes/font_size = 33
 text = "中文"
 
-[node name="Checkbox" type="CheckBox" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages/zh/zh"]
+[node name="Checkbox" type="CheckBox" parent="Options/Options/Lanaguages/Lanaguages/Lanaguages/Zh/Zh"]
 layout_mode = 2
 focus_mode = 0
-theme_override_icons/checked = ExtResource("6_r82t4")
-theme_override_icons/unchecked = ExtResource("7_y80li")
-script = ExtResource("3_o6yun")
+theme_override_icons/checked = ExtResource("6_dbmk4")
+theme_override_icons/unchecked = ExtResource("7_ce04u")
+script = ExtResource("3_agyi1")
 
-[node name="Disturbing_Background" type="CenterContainer" parent="Options/Options"]
+[node name="DisturbingBackground" type="CenterContainer" parent="Options/Options"]
 layout_mode = 2
 
-[node name="Disturbing_Background" type="HSplitContainer" parent="Options/Options/Disturbing_Background"]
+[node name="DisturbingBackground" type="HSplitContainer" parent="Options/Options/DisturbingBackground"]
 layout_mode = 2
 dragger_visibility = 2
 
-[node name="Text" type="MarginContainer" parent="Options/Options/Disturbing_Background/Disturbing_Background"]
+[node name="Text" type="MarginContainer" parent="Options/Options/DisturbingBackground/DisturbingBackground"]
 layout_mode = 2
 theme_override_constants/margin_right = 30
 
-[node name="Text" type="Label" parent="Options/Options/Disturbing_Background/Disturbing_Background/Text"]
+[node name="Text" type="Label" parent="Options/Options/DisturbingBackground/DisturbingBackground/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
-theme_override_fonts/font = ExtResource("5_lm2a6")
+theme_override_fonts/font = ExtResource("5_khjl2")
 theme_override_font_sizes/font_size = 33
 text = "DISTURBING_BACKGROUND"
 
-[node name="Checkbox" type="CheckBox" parent="Options/Options/Disturbing_Background/Disturbing_Background"]
+[node name="Checkbox" type="CheckBox" parent="Options/Options/DisturbingBackground/DisturbingBackground"]
 layout_mode = 2
 focus_mode = 0
-theme_override_icons/checked = ExtResource("6_r82t4")
-theme_override_icons/unchecked = ExtResource("7_y80li")
-script = ExtResource("3_o6yun")
+theme_override_icons/checked = ExtResource("6_dbmk4")
+theme_override_icons/unchecked = ExtResource("7_ce04u")
+script = ExtResource("3_agyi1")
 
 [connection signal="button_down" from="Back" to="Back" method="button_down"]
 [connection signal="button_up" from="Back" to="Back" method="return_normal"]
 [connection signal="mouse_entered" from="Back" to="Back" method="hovered"]
 [connection signal="mouse_exited" from="Back" to="Back" method="return_normal"]
 [connection signal="pressed" from="Back" to="." method="exit_settings"]
-[connection signal="button_down" from="Options/Options/Lanaguages/Lanaguages/Lanaguages/en/en/Checkbox" to="Options/Options/Lanaguages/Lanaguages/Lanaguages/en/en/Checkbox" method="button_down"]
-[connection signal="button_up" from="Options/Options/Lanaguages/Lanaguages/Lanaguages/en/en/Checkbox" to="Options/Options/Lanaguages/Lanaguages/Lanaguages/en/en/Checkbox" method="released"]
-[connection signal="mouse_entered" from="Options/Options/Lanaguages/Lanaguages/Lanaguages/en/en/Checkbox" to="Options/Options/Lanaguages/Lanaguages/Lanaguages/en/en/Checkbox" method="hovered"]
-[connection signal="mouse_exited" from="Options/Options/Lanaguages/Lanaguages/Lanaguages/en/en/Checkbox" to="Options/Options/Lanaguages/Lanaguages/Lanaguages/en/en/Checkbox" method="return_normal"]
-[connection signal="toggled" from="Options/Options/Lanaguages/Lanaguages/Lanaguages/en/en/Checkbox" to="." method="update_language_en"]
-[connection signal="button_down" from="Options/Options/Lanaguages/Lanaguages/Lanaguages/zh/zh/Checkbox" to="Options/Options/Lanaguages/Lanaguages/Lanaguages/zh/zh/Checkbox" method="button_down"]
-[connection signal="button_up" from="Options/Options/Lanaguages/Lanaguages/Lanaguages/zh/zh/Checkbox" to="Options/Options/Lanaguages/Lanaguages/Lanaguages/zh/zh/Checkbox" method="released"]
-[connection signal="mouse_entered" from="Options/Options/Lanaguages/Lanaguages/Lanaguages/zh/zh/Checkbox" to="Options/Options/Lanaguages/Lanaguages/Lanaguages/zh/zh/Checkbox" method="hovered"]
-[connection signal="mouse_exited" from="Options/Options/Lanaguages/Lanaguages/Lanaguages/zh/zh/Checkbox" to="Options/Options/Lanaguages/Lanaguages/Lanaguages/zh/zh/Checkbox" method="return_normal"]
-[connection signal="toggled" from="Options/Options/Lanaguages/Lanaguages/Lanaguages/zh/zh/Checkbox" to="." method="update_language_zh"]
-[connection signal="button_down" from="Options/Options/Disturbing_Background/Disturbing_Background/Checkbox" to="Options/Options/Disturbing_Background/Disturbing_Background/Checkbox" method="button_down"]
-[connection signal="button_up" from="Options/Options/Disturbing_Background/Disturbing_Background/Checkbox" to="Options/Options/Disturbing_Background/Disturbing_Background/Checkbox" method="released"]
-[connection signal="mouse_entered" from="Options/Options/Disturbing_Background/Disturbing_Background/Checkbox" to="Options/Options/Disturbing_Background/Disturbing_Background/Checkbox" method="hovered"]
-[connection signal="mouse_exited" from="Options/Options/Disturbing_Background/Disturbing_Background/Checkbox" to="Options/Options/Disturbing_Background/Disturbing_Background/Checkbox" method="return_normal"]
-[connection signal="toggled" from="Options/Options/Disturbing_Background/Disturbing_Background/Checkbox" to="." method="update_disturbing_background"]
+[connection signal="button_down" from="Options/Options/Lanaguages/Lanaguages/Lanaguages/En/En/Checkbox" to="Options/Options/Lanaguages/Lanaguages/Lanaguages/En/En/Checkbox" method="button_down"]
+[connection signal="button_up" from="Options/Options/Lanaguages/Lanaguages/Lanaguages/En/En/Checkbox" to="Options/Options/Lanaguages/Lanaguages/Lanaguages/En/En/Checkbox" method="released"]
+[connection signal="mouse_entered" from="Options/Options/Lanaguages/Lanaguages/Lanaguages/En/En/Checkbox" to="Options/Options/Lanaguages/Lanaguages/Lanaguages/En/En/Checkbox" method="hovered"]
+[connection signal="mouse_exited" from="Options/Options/Lanaguages/Lanaguages/Lanaguages/En/En/Checkbox" to="Options/Options/Lanaguages/Lanaguages/Lanaguages/En/En/Checkbox" method="return_normal"]
+[connection signal="toggled" from="Options/Options/Lanaguages/Lanaguages/Lanaguages/En/En/Checkbox" to="." method="update_language_en"]
+[connection signal="button_down" from="Options/Options/Lanaguages/Lanaguages/Lanaguages/Zh/Zh/Checkbox" to="Options/Options/Lanaguages/Lanaguages/Lanaguages/Zh/Zh/Checkbox" method="button_down"]
+[connection signal="button_up" from="Options/Options/Lanaguages/Lanaguages/Lanaguages/Zh/Zh/Checkbox" to="Options/Options/Lanaguages/Lanaguages/Lanaguages/Zh/Zh/Checkbox" method="released"]
+[connection signal="mouse_entered" from="Options/Options/Lanaguages/Lanaguages/Lanaguages/Zh/Zh/Checkbox" to="Options/Options/Lanaguages/Lanaguages/Lanaguages/Zh/Zh/Checkbox" method="hovered"]
+[connection signal="mouse_exited" from="Options/Options/Lanaguages/Lanaguages/Lanaguages/Zh/Zh/Checkbox" to="Options/Options/Lanaguages/Lanaguages/Lanaguages/Zh/Zh/Checkbox" method="return_normal"]
+[connection signal="toggled" from="Options/Options/Lanaguages/Lanaguages/Lanaguages/Zh/Zh/Checkbox" to="." method="update_language_zh"]
+[connection signal="button_down" from="Options/Options/DisturbingBackground/DisturbingBackground/Checkbox" to="Options/Options/DisturbingBackground/DisturbingBackground/Checkbox" method="button_down"]
+[connection signal="button_up" from="Options/Options/DisturbingBackground/DisturbingBackground/Checkbox" to="Options/Options/DisturbingBackground/DisturbingBackground/Checkbox" method="released"]
+[connection signal="mouse_entered" from="Options/Options/DisturbingBackground/DisturbingBackground/Checkbox" to="Options/Options/DisturbingBackground/DisturbingBackground/Checkbox" method="hovered"]
+[connection signal="mouse_exited" from="Options/Options/DisturbingBackground/DisturbingBackground/Checkbox" to="Options/Options/DisturbingBackground/DisturbingBackground/Checkbox" method="return_normal"]
+[connection signal="toggled" from="Options/Options/DisturbingBackground/DisturbingBackground/Checkbox" to="." method="update_disturbing_background"]

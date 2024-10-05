@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6fvcw1ihpml1"
-path="res://.godot/imported/Solved_Finale.png-e12e4414de1117adfbcd1e2d48db6121.ctex"
+path="res://.godot/imported/solved_finale.png-3bb39e3dbdff83be43d70b8297244add.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Images/Solved_Finale.png"
-dest_files=["res://.godot/imported/Solved_Finale.png-e12e4414de1117adfbcd1e2d48db6121.ctex"]
+source_file="res://resources/images/solved_finale.png"
+dest_files=["res://.godot/imported/solved_finale.png-3bb39e3dbdff83be43d70b8297244add.ctex"]
 
 [params]
 

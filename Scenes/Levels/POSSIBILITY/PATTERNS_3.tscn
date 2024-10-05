@@ -1,18 +1,18 @@
 [gd_scene load_steps=9 format=3 uid="uid://cksmlhk0xx13j"]
 
-[ext_resource type="Script" path="res://Scripts/Possibility_Level.gd" id="1_dkma1"]
-[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_shw4c"]
-[ext_resource type="Script" path="res://Scripts/Possibility_Problem.gd" id="3_fywfg"]
-[ext_resource type="Theme" uid="uid://dabpdi6pbaric" path="res://Resources/Styles/Problem_Text_Normal.tres" id="4_hhw28"]
-[ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://Resources/Images/Possibility_Button.png" id="5_kjp0i"]
-[ext_resource type="Script" path="res://Scripts/Possibility_Button.gd" id="6_p7en4"]
-[ext_resource type="Texture2D" uid="uid://vl24cl1db66a" path="res://Resources/Images/P.png" id="7_x5j00"]
-[ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://Resources/Images/NP.png" id="8_6rdd5"]
+[ext_resource type="Script" path="res://scripts/possibility_level.gd" id="1_ap7i0"]
+[ext_resource type="PackedScene" uid="uid://dkv24d6g3wr2v" path="res://scenes/items/level_structure_with_submit_button.tscn" id="2_20oko"]
+[ext_resource type="Script" path="res://scripts/possibility_problem.gd" id="3_pht0b"]
+[ext_resource type="Theme" uid="uid://dabpdi6pbaric" path="res://resources/styles/problem_text_normal.tres" id="4_ornam"]
+[ext_resource type="Texture2D" uid="uid://7pcb5yav0168" path="res://resources/images/possibility_button.png" id="5_w8hif"]
+[ext_resource type="Script" path="res://scripts/possibility_button.gd" id="6_kqs6c"]
+[ext_resource type="Texture2D" uid="uid://vl24cl1db66a" path="res://resources/images/p.png" id="7_71xvf"]
+[ext_resource type="Texture2D" uid="uid://cmfw1tk1fdd8k" path="res://resources/images/np.png" id="8_6wtw7"]
 
 [node name="PATTERNS_3" type="Node2D"]
-script = ExtResource("1_dkma1")
+script = ExtResource("1_ap7i0")
 
-[node name="Level_Structure" parent="." instance=ExtResource("2_shw4c")]
+[node name="LevelStructure" parent="." instance=ExtResource("2_20oko")]
 
 [node name="Problems" type="CenterContainer" parent="."]
 offset_right = 1280.0
@@ -25,7 +25,7 @@ layout_mode = 2
 [node name="DEATH" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 30
-script = ExtResource("3_fywfg")
+script = ExtResource("3_pht0b")
 
 [node name="Problem" type="HSplitContainer" parent="Problems/Problems/DEATH"]
 layout_mode = 2
@@ -38,7 +38,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/DEATH/Problem/Text"]
 layout_mode = 2
-theme = ExtResource("4_hhw28")
+theme = ExtResource("4_ornam")
 bbcode_enabled = true
 text = "POSSIBILITY_PATTERNS_3_DEATH"
 fit_content = true
@@ -52,24 +52,24 @@ layout_mode = 2
 layout_mode = 2
 toggle_mode = true
 button_mask = 3
-texture_normal = ExtResource("5_kjp0i")
-script = ExtResource("6_p7en4")
+texture_normal = ExtResource("5_w8hif")
+script = ExtResource("6_kqs6c")
 
 [node name="P" type="Sprite2D" parent="Problems/Problems/DEATH/Problem/Button/Button"]
 visible = false
 position = Vector2(31, 22)
 scale = Vector2(0.813433, 0.813433)
-texture = ExtResource("7_x5j00")
+texture = ExtResource("7_71xvf")
 
 [node name="NP" type="Sprite2D" parent="Problems/Problems/DEATH/Problem/Button/Button"]
 visible = false
 position = Vector2(28, 31)
 scale = Vector2(0.813433, 0.813433)
-texture = ExtResource("8_6rdd5")
+texture = ExtResource("8_6wtw7")
 
 [node name="SENTIMENTAL" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
-script = ExtResource("3_fywfg")
+script = ExtResource("3_pht0b")
 
 [node name="Problem" type="HSplitContainer" parent="Problems/Problems/SENTIMENTAL"]
 layout_mode = 2
@@ -82,7 +82,7 @@ theme_override_constants/margin_right = 50
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/SENTIMENTAL/Problem/Text"]
 layout_mode = 2
-theme = ExtResource("4_hhw28")
+theme = ExtResource("4_ornam")
 bbcode_enabled = true
 text = "POSSIBILITY_PATTERNS_3_SENTIMENTAL"
 fit_content = true
@@ -96,20 +96,20 @@ layout_mode = 2
 layout_mode = 2
 toggle_mode = true
 button_mask = 3
-texture_normal = ExtResource("5_kjp0i")
-script = ExtResource("6_p7en4")
+texture_normal = ExtResource("5_w8hif")
+script = ExtResource("6_kqs6c")
 
 [node name="P" type="Sprite2D" parent="Problems/Problems/SENTIMENTAL/Problem/Button/Button"]
 visible = false
 position = Vector2(31, 22)
 scale = Vector2(0.813433, 0.813433)
-texture = ExtResource("7_x5j00")
+texture = ExtResource("7_71xvf")
 
 [node name="NP" type="Sprite2D" parent="Problems/Problems/SENTIMENTAL/Problem/Button/Button"]
 visible = false
 position = Vector2(28, 31)
 scale = Vector2(0.813433, 0.813433)
-texture = ExtResource("8_6rdd5")
+texture = ExtResource("8_6wtw7")
 
 [connection signal="button_down" from="Problems/Problems/DEATH/Problem/Button/Button" to="Problems/Problems/DEATH/Problem/Button/Button" method="button_down"]
 [connection signal="button_up" from="Problems/Problems/DEATH/Problem/Button/Button" to="Problems/Problems/DEATH/Problem/Button/Button" method="released"]

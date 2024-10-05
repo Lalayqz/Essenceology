@@ -6,11 +6,11 @@ enum Possibilities {
 }
 
 signal answer_changed()
-@export var REFERENCE_ANSWER: Possibilities
-@onready var P_SPRITE = $P
-@onready var NP_SPRITE = $NP
 var possibility = null
 var is_left_click
+@export var reference_answer: Possibilities
+@onready var p_sprite = $P
+@onready var np_sprite = $NP
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -44,9 +44,9 @@ func switch_to(p):
 		sprite.visible = false
 	match possibility:
 		Possibilities.P:
-			P_SPRITE.visible = true
+			p_sprite.visible = true
 		Possibilities.NP:
-			NP_SPRITE.visible = true
+			np_sprite.visible = true
 	
 	if p != p_old:
 		answer_changed.emit()

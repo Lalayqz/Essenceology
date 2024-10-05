@@ -11,16 +11,16 @@ config_version=5
 [application]
 
 config/name="Essenceology"
-run/main_scene="res://Scenes/Menus/MainMenu.tscn"
+run/main_scene="res://scenes/menus/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://Resources/Images/icon.svg"
+config/icon="res://resources/images/icon.svg"
 
 [autoload]
 
-Save="*res://Scripts/Save.gd"
-Config="*res://Scripts/Config.gd"
-Global_Variables="*res://Scripts/Global_Variables.gd"
-Lights="*res://Scripts/Lights.gd"
+Save="*res://scripts/save.gd"
+Config="*res://scripts/config.gd"
+Global_Variables="*res://scripts/global_variables.gd"
+Lights="*res://scripts/lights.gd"
 
 [debug]
 

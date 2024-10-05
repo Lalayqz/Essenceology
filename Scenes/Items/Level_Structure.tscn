@@ -1,18 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://cwqwiug01koat"]
+[gd_scene load_steps=6 format=3 uid="uid://cwqwiug01koat"]
 
-[ext_resource type="Theme" uid="uid://cel18xkchmafq" path="res://Resources/Styles/UI_Button.tres" id="1_lbt43"]
-[ext_resource type="Script" path="res://Scripts/NeatButton.gd" id="2_nl7uw"]
-[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://Resources/Fonts/SourceHanSansSC-Bold.otf" id="3_uyaf5"]
-[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://Resources/Fonts/SourceHanSansSC-Normal.otf" id="4_bxfsp"]
-[ext_resource type="Theme" uid="uid://cc776rspw52yb" path="res://Resources/Styles/Submit_Button.tres" id="5_ry4bc"]
-[ext_resource type="Script" path="res://Scripts/Submit_Button.gd" id="6_kg7cb"]
-[ext_resource type="PackedScene" uid="uid://c7vy1ltbvt8jk" path="res://Scenes/Items/UI_Text.tscn" id="7_7o3i1"]
+[ext_resource type="Theme" uid="uid://cel18xkchmafq" path="res://resources/styles/ui_button.tres" id="1_lbt43"]
+[ext_resource type="Script" path="res://scripts/neat_button.gd" id="2_nl7uw"]
+[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://resources/fonts/SourceHanSansSC-Bold.otf" id="3_uyaf5"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://resources/fonts/SourceHanSansSC-Normal.otf" id="4_bxfsp"]
+[ext_resource type="PackedScene" uid="uid://c7vy1ltbvt8jk" path="res://scenes/items/ui_text.tscn" id="7_7o3i1"]
 
-[node name="Level_Structure" type="ReferenceRect"]
+[node name="LevelStructure" type="ReferenceRect"]
 offset_right = 1280.0
 offset_bottom = 720.0
 
-[node name="Audio_Player" type="AudioStreamPlayer" parent="."]
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
 
 [node name="Background" type="ColorRect" parent="."]
 z_index = -10
@@ -21,9 +19,9 @@ offset_right = 1280.0
 offset_bottom = 720.0
 color = Color(0.0313726, 0.101961, 0.0313726, 1)
 
-[node name="UI" type="Node2D" parent="."]
+[node name="Ui" type="Node2D" parent="."]
 
-[node name="Back_Button" type="Button" parent="UI"]
+[node name="BackButton" type="Button" parent="Ui"]
 offset_left = 10.0
 offset_top = 10.0
 offset_right = 75.0
@@ -32,7 +30,7 @@ focus_mode = 0
 theme = ExtResource("1_lbt43")
 script = ExtResource("2_nl7uw")
 
-[node name="Label" type="Label" parent="UI/Back_Button"]
+[node name="Label" type="Label" parent="Ui/BackButton"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = -1.0
@@ -42,7 +40,7 @@ theme_override_fonts/font = ExtResource("3_uyaf5")
 theme_override_font_sizes/font_size = 50
 text = "↩"
 
-[node name="Title" type="Label" parent="UI"]
+[node name="Title" type="Label" parent="Ui"]
 offset_left = 100.0
 offset_top = 16.0
 offset_right = 254.0
@@ -54,41 +52,15 @@ theme_override_fonts/font = ExtResource("4_bxfsp")
 theme_override_font_sizes/font_size = 33
 text = "Level Title"
 
-[node name="Submit_Button" type="Node2D" parent="UI"]
+[node name="SolvedLabel" type="Node2D" parent="Ui"]
 position = Vector2(420, 600)
-script = ExtResource("6_kg7cb")
 
-[node name="Background" type="ColorRect" parent="UI/Submit_Button"]
-offset_bottom = 80.0
-mouse_filter = 2
-
-[node name="Button" type="CenterContainer" parent="UI/Submit_Button"]
+[node name="Label" type="CenterContainer" parent="Ui/SolvedLabel"]
 offset_right = 440.0
 offset_bottom = 80.0
 mouse_filter = 2
 
-[node name="Button" type="Button" parent="UI/Submit_Button/Button"]
-custom_minimum_size = Vector2(440, 80)
-layout_mode = 2
-focus_mode = 0
-theme = ExtResource("5_ry4bc")
-theme_override_fonts/font = ExtResource("3_uyaf5")
-theme_override_font_sizes/font_size = 36
-text = "SUBMIT_HOLD"
-script = ExtResource("2_nl7uw")
-
-[node name="Audio_Player" type="AudioStreamPlayer" parent="UI/Submit_Button"]
-volume_db = -5.0
-
-[node name="Solved_Label" type="Node2D" parent="UI"]
-position = Vector2(420, 600)
-
-[node name="Label" type="CenterContainer" parent="UI/Solved_Label"]
-offset_right = 440.0
-offset_bottom = 80.0
-mouse_filter = 2
-
-[node name="Label" parent="UI/Solved_Label/Label" instance=ExtResource("7_7o3i1")]
+[node name="Label" parent="Ui/SolvedLabel/Label" instance=ExtResource("7_7o3i1")]
 visible = false
 layout_mode = 2
 theme_override_constants/shadow_offset_x = 3
@@ -96,11 +68,7 @@ theme_override_constants/shadow_offset_y = 3
 theme_override_font_sizes/font_size = 50
 text = "LEVEL_SOLVED"
 
-[connection signal="button_down" from="UI/Back_Button" to="UI/Back_Button" method="button_down"]
-[connection signal="button_up" from="UI/Back_Button" to="UI/Back_Button" method="return_normal"]
-[connection signal="mouse_entered" from="UI/Back_Button" to="UI/Back_Button" method="hovered"]
-[connection signal="mouse_exited" from="UI/Back_Button" to="UI/Back_Button" method="return_normal"]
-[connection signal="button_down" from="UI/Submit_Button/Button/Button" to="UI/Submit_Button" method="button_down"]
-[connection signal="button_up" from="UI/Submit_Button/Button/Button" to="UI/Submit_Button" method="return_normal"]
-[connection signal="mouse_entered" from="UI/Submit_Button/Button/Button" to="UI/Submit_Button/Button/Button" method="hovered"]
-[connection signal="mouse_exited" from="UI/Submit_Button/Button/Button" to="UI/Submit_Button" method="return_normal"]
+[connection signal="button_down" from="Ui/BackButton" to="Ui/BackButton" method="button_down"]
+[connection signal="button_up" from="Ui/BackButton" to="Ui/BackButton" method="return_normal"]
+[connection signal="mouse_entered" from="Ui/BackButton" to="Ui/BackButton" method="hovered"]
+[connection signal="mouse_exited" from="Ui/BackButton" to="Ui/BackButton" method="return_normal"]

@@ -1,91 +1,91 @@
 extends Node
  
 signal new_aspect_answered
-@onready var PROBLEM_NAME = self.name
-@onready var LANGUAGE = Config.get_language()
-@onready var INPUT = $Input/Input
-@export var ASPECT_GOAL: int
-@export var MAX_INPUT_LENGTH_EN: int
-@export var MAX_INPUT_LENGTH_ZH_CN: int
-var ASPECTS = []
-var INPUT_CORRECT_COLOR = Color.GREEN
-var INPUT_WRONG_COLOR = Color.RED
+const INPUT_CORRECT_COLOR = Color.GREEN
+const INPUT_WRONG_COLOR = Color.RED
+@export var points_goal: int
+@export var max_input_length_en: int
+@export var max_input_length_zh_cn: int
+var aspects = []
+@onready var problem_name = self.name
+@onready var language = Config.get_language()
+@onready var input = $Input/Input
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	for aspect in $Aspects/Good_Aspects/Good_Aspects.get_children():
-		ASPECTS.append(aspect)
-	for aspect in $Aspects/Bad_Aspects/Bad_Aspects.get_children():
-		ASPECTS.append(aspect)
-		
+	for aspect in $Aspects/GoodAspects/GoodAspects.get_children():
+		aspects.append(aspect)
+	for aspect in $Aspects/BadAspects/BadAspects.get_children():
+		aspects.append(aspect)
+
+
 func _input(event):
 	if event is InputEventKey and event.is_pressed():
 		var is_max_length
 		var inputed = false
 		# Character input
 		if event.unicode != 0:
-			match LANGUAGE:
+			match language:
 				"en":
-					is_max_length = INPUT.text.length() >= MAX_INPUT_LENGTH_EN
+					is_max_length = input.text.length() >= max_input_length_en
 					if not is_max_length and event.keycode >= KEY_A and event.keycode <= KEY_Z:
-						if INPUT.text.length() == 0:
-							INPUT.text += OS.get_keycode_string(event.keycode)
+						if input.text.length() == 0:
+							input.text += OS.get_keycode_string(event.keycode)
 						else:
-							INPUT.text += OS.get_keycode_string(event.keycode).to_lower()
+							input.text += OS.get_keycode_string(event.keycode).to_lower()
 						inputed = true
-						is_max_length = INPUT.text.length() == MAX_INPUT_LENGTH_EN
+						is_max_length = input.text.length() >= max_input_length_en
 				"zh_CN":
-					is_max_length = INPUT.text.length() == MAX_INPUT_LENGTH_ZH_CN
+					is_max_length = input.text.length() >= max_input_length_zh_cn
 					if not is_max_length and event.unicode >= 0x4E00 and event.unicode <= 0x9FFF:
-						INPUT.text += char(event.unicode)
+						input.text += char(event.unicode)
 						inputed = true
-						is_max_length = INPUT.text.length() == MAX_INPUT_LENGTH_ZH_CN
+						is_max_length = input.text.length() >= max_input_length_zh_cn
 		
 		# Backspace
 		elif event.keycode == KEY_BACKSPACE:
 			if Input.is_key_pressed(KEY_CTRL):
-				INPUT.text = ""
+				input.text = ""
 			else:
-				INPUT.text = INPUT.text.erase(INPUT.text.length() - 1, 1)
+				input.text = input.text.erase(input.text.length() - 1, 1)
 			inputed = true
 			
 		# Delete
 		elif event.keycode == KEY_DELETE:
-			INPUT.text = ""
+			input.text = ""
 			inputed = true
 			
 		if inputed:
 			check_match_aspects(is_max_length)
 
+
 func check_match_aspects(is_max_length):
 	var matched = false
 	
-	for aspect in ASPECTS:
-		if aspect.check_match(INPUT.text, LANGUAGE):
+	for aspect in aspects:
+		if aspect.check_match(input.text, language):
 			matched = true
 			aspect.solve()
 			
 	if matched:
 		new_aspect_answered.emit()
-		INPUT.modulate = INPUT_CORRECT_COLOR
+		input.modulate = INPUT_CORRECT_COLOR
 	else:
 		if is_max_length:
-			INPUT.modulate = INPUT_WRONG_COLOR
+			input.modulate = INPUT_WRONG_COLOR
 		else:
-			INPUT.modulate = Color.WHITE
+			input.modulate = Color.WHITE
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
+
 func save_answer(chapter, level_name):
 	var answers = []
-	for aspect in ASPECTS:
+	for aspect in aspects:
 		aspect.save_answer(answers)
-	Save.save_problem_answer(chapter, level_name, PROBLEM_NAME, answers)
-	
+	Save.save_problem_answer(chapter, level_name, problem_name, answers)
+
+
 func load_answer(chapter, level_name):
-	var answers = Save.get_problem_answer(chapter, level_name, PROBLEM_NAME)
+	var answers = Save.get_problem_answer(chapter, level_name, problem_name)
 	if answers != null:
-		for aspect in ASPECTS:
+		for aspect in aspects:
 			aspect.load_answer(answers)

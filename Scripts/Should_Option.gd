@@ -1,41 +1,44 @@
 extends Node
 
 signal answer_set_to_should(option_name)
-@onready var OPTION_NAME = self.name
-@onready var SHOULD_BUTTON = $Button/Button
-@export var REFERENCE_ANSWER: bool
+@export var reference_answer: bool
+@onready var option_name = self.name
+@onready var should_button = $Button/Button
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	SHOULD_BUTTON.answer_set_to_should.connect(emit_signal_answer_set_to_should)
+	should_button.answer_set_to_should.connect(emit_signal_answer_set_to_should)
 	set_answer(false)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
+
 func is_selected():
-	return SHOULD_BUTTON.should
-	
+	return should_button.should
+
+
 func is_correct():
-	return SHOULD_BUTTON.should == REFERENCE_ANSWER
+	return should_button.should == reference_answer
+
 
 func disable():
-	SHOULD_BUTTON.disabled = true
-	
+	should_button.disabled = true
+
+
 func save_answer(answers):
-	answers[OPTION_NAME] = SHOULD_BUTTON.get_answer()
-	
+	answers[option_name] = should_button.get_answer()
+
+
 func load_answer(answers):
-	if OPTION_NAME in answers:
-		SHOULD_BUTTON.switch_to(answers[OPTION_NAME])
-		
+	if option_name in answers:
+		should_button.switch_to(answers[option_name])
+
+
 func set_answer(answer):
-	SHOULD_BUTTON.switch_to(answer)
+	should_button.switch_to(answer)
+
 
 func connect_signal_update_submit_button_visibility(update_submit_button_visibility):
-	SHOULD_BUTTON.answer_changed.connect(update_submit_button_visibility) 
-	
+	should_button.answer_changed.connect(update_submit_button_visibility) 
+
+
 func emit_signal_answer_set_to_should():
-	answer_set_to_should.emit(OPTION_NAME)
-	 
+	answer_set_to_should.emit(option_name)

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://8pt4liq6xt27"
-path="res://.godot/imported/Unsolved_Level.png-ef8483c64f0b79585faa0d125cdbf4bf.ctex"
+path="res://.godot/imported/unsolved_level.png-30637834c75abcaaf54395b1fd16bd1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Resources/Images/Unsolved_Level.png"
-dest_files=["res://.godot/imported/Unsolved_Level.png-ef8483c64f0b79585faa0d125cdbf4bf.ctex"]
+source_file="res://resources/images/unsolved_level.png"
+dest_files=["res://.godot/imported/unsolved_level.png-30637834c75abcaaf54395b1fd16bd1d.ctex"]
 
 [params]
 

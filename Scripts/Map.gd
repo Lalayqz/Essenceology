@@ -1,43 +1,43 @@
 extends ReferenceRect
 
-@onready var CHAPTER_SIZE = self.size
-@onready var CHAPTER = Global_Variables.current_chapter
-@onready var BACKGROUND = $Background
-@onready var CHAINS = $Chains
-@onready var LEVELS = $Levels
-var VISIBLE_LEVELS = []
-@onready var FOCUS_POSITION = $Focus.position
-var LEVEL_CHAINS = {"POSSIBILITY":[["INTRO", "UNLIKELY"], ["UNLIKELY", "LOGIC"], ["LOGIC", "LOGIC_HARD"], ["LOGIC", "LIES_GENERALIZED"], ["LIES_GENERALIZED", "LIES_1"], ["LIES_1", "LIES_2"], ["LIES_2", "LIES_HARD"], ["LIES_2", "MEMORY_1"], ["MEMORY_1", "MEMORY_2"], ["MEMORY_2", "MEMORY_GENERALIZED"], ["MEMORY_GENERALIZED", "MEMORY_HARD"], ["MEMORY_GENERALIZED", "PATTERNS_1"], ["PATTERNS_1", "PATTERNS_2"], ["PATTERNS_2", "PATTERNS_3"], ["PATTERNS_3", "FINALE"]],
+const ENTER_LEVEL_DRAG_MAX = 18
+const LABEL_FONT_SIZE = 23
+const LABEL_OFFSET_Y = -3
+const LEVEL_CHAINS = {"POSSIBILITY":[["INTRO", "UNLIKELY"], ["UNLIKELY", "LOGIC"], ["LOGIC", "LOGIC_HARD"], ["LOGIC", "LIES_GENERALIZED"], ["LIES_GENERALIZED", "LIES_1"], ["LIES_1", "LIES_2"], ["LIES_2", "LIES_HARD"], ["LIES_2", "MEMORY_1"], ["MEMORY_1", "MEMORY_2"], ["MEMORY_2", "MEMORY_GENERALIZED"], ["MEMORY_GENERALIZED", "MEMORY_HARD"], ["MEMORY_GENERALIZED", "PATTERNS_1"], ["PATTERNS_1", "PATTERNS_2"], ["PATTERNS_2", "PATTERNS_3"], ["PATTERNS_3", "FINALE"]],
 "SHOULD":[["INTRO", "ALL_LIVES"], ["INTRO", "INDIVIDUAL"], ["INTRO", "CALCULATION"], ["CALCULATION", "PROBABILITY_1"], ["PROBABILITY_1", "PROBABILITY_2"], ["ALL_LIVES", "ANALYSIS_1"], ["INDIVIDUAL", "ANALYSIS_1"], ["CALCULATION", "ANALYSIS_1"], ["ANALYSIS_1", "ANALYSIS_2"], ["ANALYSIS_2", "MILITARY_TRAINING"]]}
-var UNSOLVED_LEVEL_TEXTURE = preload("res://Resources/Images/Unsolved_Level.png")
-var SOLVED_LEVEL_TEXTURE = preload("res://Resources/Images/Solved_Level.png")
-var UNSOLVED_FINALE_TEXTURE = preload("res://Resources/Images/Unsolved_Finale.png")
-var SOLVED_FINALE_TEXTURE = preload("res://Resources/Images/Solved_Finale.png")
-var LEVEL_LABEL_FONT = preload("res://Resources/Fonts/SourceHanSansSC-Normal.otf")
-var WINDOW_POS
+var visible_levels = []
+var unsolved_level_texture = preload("res://resources/images/unsolved_level.png")
+var solved_level_texture = preload("res://resources/images/solved_level.png")
+var unsolved_finale_texture = preload("res://resources/images/unsolved_finale.png")
+var solved_finale_texture = preload("res://resources/images/solved_finale.png")
+var LEVEL_LABEL_FONT = preload("res://resources/fonts/SourceHanSansSC-Normal.otf")
+var window_pos
 var WINDOW_SIZE
-var ENTER_LEVEL_DRAG_MAX = 18
-var LABEL_FONT_SIZE = 23
-var LABEL_OFFSET_Y = -3
 var drag_start = null
 var drag_start_last_frame = null
+@onready var chapter_size = self.size
+@onready var chapter = Global_Variables.current_chapter
+@onready var background = $Background
+@onready var chains = $Chains
+@onready var levels = $Levels
+@onready var focus_position = $Focus.position
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	# calculate levels_unlocked and chains_not_unlocked (only "key" of the dict is used)
 	var chains_unlocked = {}
 	var levels_not_unlocked = {}
 	var visible_level_names = []
 	
-	for chain in LEVEL_CHAINS[CHAPTER]:
-		if Save.get_level_solved(CHAPTER, chain[0]):
+	for chain in LEVEL_CHAINS[chapter]:
+		if Save.get_level_solved(chapter, chain[0]):
 			chains_unlocked[chain] = 1
 		levels_not_unlocked[chain[1]] = 1
 	var levels_unlocked_in_not_unlocked = []
 	for level in levels_not_unlocked:
 		var is_unlocked = true
-		for chain in LEVEL_CHAINS[CHAPTER]:
-			if chain[1] == level and not Save.get_level_solved(CHAPTER, chain[0]):
+		for chain in LEVEL_CHAINS[chapter]:
+			if chain[1] == level and not Save.get_level_solved(chapter, chain[0]):
 				is_unlocked = false
 				break
 		if is_unlocked:
@@ -45,39 +45,39 @@ func _ready():
 	for level in levels_unlocked_in_not_unlocked:
 		levels_not_unlocked.erase(level)
 	# hide not-unlocked levels
-	for level in LEVELS.get_children():
+	for level in levels.get_children():
 		if levels_not_unlocked.has(level.name):
 			level.visible = false
 		else:
-			VISIBLE_LEVELS.append(level)
+			visible_levels.append(level)
 			visible_level_names.append(level.name)
 		# LEVELS.remove_child(LEVELS.get_node(level))
 	# add chains
 	for chain in chains_unlocked:
-		var level_start = LEVELS.get_node(chain[0])
+		var level_start = levels.get_node(chain[0])
 		if level_start == null:
 			continue
-		var level_end = LEVELS.get_node(chain[1])
+		var level_end = levels.get_node(chain[1])
 		var points = PackedVector2Array([level_start.position, level_end.position])
 		var chain_node
 		
 		if visible_level_names.has(chain[1]):
-			chain_node = load("res://Scenes/Items/Chain.tscn").instantiate()
+			chain_node = load("res://scenes/items/chain.tscn").instantiate()
 		else:
-			chain_node = load("res://Scenes/Items/Dashed_Chain.tscn").instantiate()
+			chain_node = load("res://scenes/items/dashed_chain.tscn").instantiate()
 		
 		chain_node.points = points
-		CHAINS.add_child(chain_node)
+		chains.add_child(chain_node)
 	# add level icons
-	for level in VISIBLE_LEVELS:
+	for level in visible_levels:
 		var level_sprite = Sprite2D.new()
-		if level.name in Global_Variables.FINALES[CHAPTER]:
-			level_sprite.texture = SOLVED_FINALE_TEXTURE if Save.get_level_solved(CHAPTER, level.name) else UNSOLVED_FINALE_TEXTURE
+		if level.name in Global_Variables.FINALES[chapter]:
+			level_sprite.texture = solved_finale_texture if Save.get_level_solved(chapter, level.name) else unsolved_finale_texture
 		else:
-			level_sprite.texture = SOLVED_LEVEL_TEXTURE if Save.get_level_solved(CHAPTER, level.name) else UNSOLVED_LEVEL_TEXTURE
+			level_sprite.texture = solved_level_texture if Save.get_level_solved(chapter, level.name) else unsolved_level_texture
 		level.add_child(level_sprite)
 		var radius = level_sprite.texture.get_width() / 2
-		var level_label = load("res://Scenes/Items/UI_Text.tscn").instantiate()
+		var level_label = load("res://scenes/items/ui_text.tscn").instantiate()
 		var label_size = LEVEL_LABEL_FONT.get_string_size(level.name, 0, -1, LABEL_FONT_SIZE)
 		level_label.text = level.name
 		level_label.position.y -= (radius + label_size.y / 2 + LABEL_OFFSET_Y)
@@ -87,16 +87,14 @@ func _ready():
 		level.add_child(level_label)
 		level.set_meta("Radius", radius)
 	
-	BACKGROUND.color = Global_Variables.current_chapter_background_color
+	background.color = Global_Variables.current_chapter_background_color
+
 
 func set_window_info(pos, size):
-	WINDOW_POS = pos
+	window_pos = pos
 	WINDOW_SIZE = size
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
+
 func _unhandled_input(event):  # use "unhandled" because I want the chapter bar to block map interactions.
 	# Also, remember to set all control nodes' mouse filter (excluding charpter bar, but including the map itself) so the mouse action is unhandled when interacting with the map.
 	var is_motion = event is InputEventMouseMotion
@@ -116,23 +114,25 @@ func _unhandled_input(event):  # use "unhandled" because I want the chapter bar 
 			
 	# enter level
 	if (is_motion):
-		for level in VISIBLE_LEVELS:
+		for level in visible_levels:
 			if (event.position.distance_to(level.global_position) <= level.get_meta("Radius")):
 				level.get_child(0).modulate = Color.GRAY
 			else:
 				level.get_child(0).modulate = Color.WHITE
 	elif (is_release and event.position.distance_to(drag_start) <= ENTER_LEVEL_DRAG_MAX):
-		for level in VISIBLE_LEVELS:
+		for level in visible_levels:
 			if (event.position.distance_to(level.global_position) <= level.get_meta("Radius")):
-				get_tree().change_scene_to_file("res://Scenes/Levels/" + CHAPTER + "/" + level.get_name() + ".tscn")
+				get_tree().change_scene_to_file("res://scenes/levels/" + chapter + "/" + level.get_name() + ".tscn")
 	elif (is_press):
 		drag_start = event.position
-		
+
+
 func set_pos(pos):
-	self.position.x = max(pos.x, WINDOW_SIZE.x + WINDOW_POS.x - CHAPTER_SIZE.x)  # lower limit
-	self.position.x = min(self.position.x, WINDOW_POS.x)  # upper limit
-	self.position.y = max(pos.y, WINDOW_SIZE.y + WINDOW_POS.y - CHAPTER_SIZE.y)
-	self.position.y = min(self.position.y, WINDOW_POS.y)
-	
+	self.position.x = max(pos.x, WINDOW_SIZE.x + window_pos.x - chapter_size.x)  # lower limit
+	self.position.x = min(self.position.x, window_pos.x)  # upper limit
+	self.position.y = max(pos.y, WINDOW_SIZE.y + window_pos.y - chapter_size.y)
+	self.position.y = min(self.position.y, window_pos.y)
+
+
 func _exit_tree():
 	Global_Variables.set_map_drag_pos(self.position)

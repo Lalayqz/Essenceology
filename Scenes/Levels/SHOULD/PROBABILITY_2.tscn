@@ -1,16 +1,16 @@
 [gd_scene load_steps=7 format=3 uid="uid://d0ol8wyewpn7t"]
 
-[ext_resource type="Script" path="res://Scripts/Should_Level.gd" id="1_25nch"]
-[ext_resource type="PackedScene" uid="uid://cwqwiug01koat" path="res://Scenes/Items/Level_Structure.tscn" id="2_smh0q"]
-[ext_resource type="Script" path="res://Scripts/Should_Problem.gd" id="3_olwg1"]
-[ext_resource type="Theme" uid="uid://jcowhqm3oiam" path="res://Resources/Styles/Problem_Text_Small.tres" id="4_y6t40"]
-[ext_resource type="Script" path="res://Scripts/Should_Option.gd" id="5_724pf"]
-[ext_resource type="PackedScene" uid="uid://f0n60dmxi4ve" path="res://Scenes/Items/Should_Button.tscn" id="6_08cvs"]
+[ext_resource type="Script" path="res://scripts/should_level.gd" id="1_kk2sb"]
+[ext_resource type="PackedScene" uid="uid://dkv24d6g3wr2v" path="res://scenes/items/level_structure_with_submit_button.tscn" id="2_ucumc"]
+[ext_resource type="Script" path="res://scripts/should_problem.gd" id="3_40tum"]
+[ext_resource type="Theme" uid="uid://jcowhqm3oiam" path="res://resources/styles/problem_text_small.tres" id="4_hfmak"]
+[ext_resource type="Script" path="res://scripts/should_option.gd" id="5_wtoqd"]
+[ext_resource type="PackedScene" uid="uid://f0n60dmxi4ve" path="res://scenes/items/should_button.tscn" id="6_272qj"]
 
 [node name="PROBABILITY_2" type="Node2D"]
-script = ExtResource("1_25nch")
+script = ExtResource("1_kk2sb")
 
-[node name="Level_Structure" parent="." instance=ExtResource("2_smh0q")]
+[node name="LevelStructure" parent="." instance=ExtResource("2_ucumc")]
 
 [node name="Problems" type="CenterContainer" parent="."]
 offset_right = 1280.0
@@ -23,7 +23,7 @@ layout_mode = 2
 [node name="GOLF_1" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 25
-script = ExtResource("3_olwg1")
+script = ExtResource("3_40tum")
 
 [node name="Problem" type="VSplitContainer" parent="Problems/Problems/GOLF_1"]
 layout_mode = 2
@@ -38,7 +38,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/GOLF_1/Problem/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_y6t40")
+theme = ExtResource("4_hfmak")
 bbcode_enabled = true
 text = "SHOULD_PROBABILITY_2_GOLF_1"
 fit_content = true
@@ -53,8 +53,8 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
-script = ExtResource("5_724pf")
-REFERENCE_ANSWER = true
+script = ExtResource("5_wtoqd")
+reference_answer = true
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/GOLF_1/Problem/Options/PLAY_AT_A"]
 layout_mode = 2
@@ -65,7 +65,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/GOLF_1/Problem/Options/PLAY_AT_A/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_y6t40")
+theme = ExtResource("4_hfmak")
 bbcode_enabled = true
 text = "SHOULD_PLAY_AT_A"
 fit_content = true
@@ -75,14 +75,14 @@ autowrap_mode = 0
 [node name="Button" type="CenterContainer" parent="Problems/Problems/GOLF_1/Problem/Options/PLAY_AT_A"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/GOLF_1/Problem/Options/PLAY_AT_A/Button" instance=ExtResource("6_08cvs")]
+[node name="Button" parent="Problems/Problems/GOLF_1/Problem/Options/PLAY_AT_A/Button" instance=ExtResource("6_272qj")]
 layout_mode = 2
 
 [node name="PLAY_AT_B" type="VSplitContainer" parent="Problems/Problems/GOLF_1/Problem/Options"]
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
-script = ExtResource("5_724pf")
+script = ExtResource("5_wtoqd")
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/GOLF_1/Problem/Options/PLAY_AT_B"]
 layout_mode = 2
@@ -93,7 +93,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/GOLF_1/Problem/Options/PLAY_AT_B/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_y6t40")
+theme = ExtResource("4_hfmak")
 bbcode_enabled = true
 text = "SHOULD_PLAY_AT_B"
 fit_content = true
@@ -103,7 +103,7 @@ autowrap_mode = 0
 [node name="Button" type="CenterContainer" parent="Problems/Problems/GOLF_1/Problem/Options/PLAY_AT_B"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/GOLF_1/Problem/Options/PLAY_AT_B/Button" instance=ExtResource("6_08cvs")]
+[node name="Button" parent="Problems/Problems/GOLF_1/Problem/Options/PLAY_AT_B/Button" instance=ExtResource("6_272qj")]
 layout_mode = 2
 
 [node name="Line" type="CenterContainer" parent="Problems/Problems"]
@@ -116,7 +116,7 @@ layout_mode = 2
 [node name="GOLF_2" type="MarginContainer" parent="Problems/Problems"]
 layout_mode = 2
 theme_override_constants/margin_top = 25
-script = ExtResource("3_olwg1")
+script = ExtResource("3_40tum")
 
 [node name="Problem" type="VSplitContainer" parent="Problems/Problems/GOLF_2"]
 layout_mode = 2
@@ -131,7 +131,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/GOLF_2/Problem/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_y6t40")
+theme = ExtResource("4_hfmak")
 bbcode_enabled = true
 text = "SHOULD_PROBABILITY_2_GOLF_2"
 fit_content = true
@@ -146,8 +146,8 @@ alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
-script = ExtResource("5_724pf")
-REFERENCE_ANSWER = true
+script = ExtResource("5_wtoqd")
+reference_answer = true
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/GOLF_2/Problem/Options/PLAY_AT_A"]
 layout_mode = 2
@@ -158,7 +158,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/GOLF_2/Problem/Options/PLAY_AT_A/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_y6t40")
+theme = ExtResource("4_hfmak")
 bbcode_enabled = true
 text = "SHOULD_PLAY_AT_A"
 fit_content = true
@@ -168,14 +168,14 @@ autowrap_mode = 0
 [node name="Button" type="CenterContainer" parent="Problems/Problems/GOLF_2/Problem/Options/PLAY_AT_A"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/GOLF_2/Problem/Options/PLAY_AT_A/Button" instance=ExtResource("6_08cvs")]
+[node name="Button" parent="Problems/Problems/GOLF_2/Problem/Options/PLAY_AT_A/Button" instance=ExtResource("6_272qj")]
 layout_mode = 2
 
 [node name="PLAY_AT_B" type="VSplitContainer" parent="Problems/Problems/GOLF_2/Problem/Options"]
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
-script = ExtResource("5_724pf")
+script = ExtResource("5_wtoqd")
 
 [node name="Text" type="MarginContainer" parent="Problems/Problems/GOLF_2/Problem/Options/PLAY_AT_B"]
 layout_mode = 2
@@ -186,7 +186,7 @@ layout_mode = 2
 
 [node name="Text" type="RichTextLabel" parent="Problems/Problems/GOLF_2/Problem/Options/PLAY_AT_B/Text/Text"]
 layout_mode = 2
-theme = ExtResource("4_y6t40")
+theme = ExtResource("4_hfmak")
 bbcode_enabled = true
 text = "SHOULD_PLAY_AT_B"
 fit_content = true
@@ -196,5 +196,5 @@ autowrap_mode = 0
 [node name="Button" type="CenterContainer" parent="Problems/Problems/GOLF_2/Problem/Options/PLAY_AT_B"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/GOLF_2/Problem/Options/PLAY_AT_B/Button" instance=ExtResource("6_08cvs")]
+[node name="Button" parent="Problems/Problems/GOLF_2/Problem/Options/PLAY_AT_B/Button" instance=ExtResource("6_272qj")]
 layout_mode = 2

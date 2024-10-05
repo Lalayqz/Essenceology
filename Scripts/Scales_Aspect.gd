@@ -1,30 +1,28 @@
 extends ReferenceRect
 
-@onready var ASPECT_NAME = self.name
-@onready var COVER_MASK = $Cover_Mask
-@onready var COVER = $Cover_Mask/Cover
-@onready var BORDER = $Border
-# @onready var BORDER_INITIAL_COLOR = BORDER.modulate
-@export var REFERENCE_WORDS_EN: PackedStringArray
-@export var REFERENCE_WORDS_ZH_CN: PackedStringArray
-var UNCOVER_SPEED = 500
-var FULL_WIDTH
-# var BRIGHT_BORDER_COLOR = Color(0x80ff80ff)
-var BORDER_COLOR_SHIFT_SPEED = 10
-var MAX_BORDER_SHADOW_SIZE = 5
-var BORDER_ANIM_MAX_TIME = 0.2 # in seconds
+const UNCOVER_SPEED = 500
+const BORDER_COLOR_SHIFT_SPEED = 10
+const MAX_BORDER_SHADOW_SIZE = 5
+const BORDER_ANIM_MAX_TIME = 0.2 # in seconds
+@export var reference_words_en: PackedStringArray
+@export var reference_words_zh_cn: PackedStringArray
+var full_width
 var answered = false
 var ongoing_cover_anim = false
 var ongoing_border_anim = false
 var cover_anim_progress = 0.0
 var border_anim_progress = 0 # From 0 to BORDER_ANIM_MAX_TIME
 var cover_position = 0.0
+@onready var aspect_name = self.name
+@onready var cover_mask = $CoverMask
+@onready var cover = $CoverMask/Cover
+@onready var border = $Border
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
-	FULL_WIDTH = COVER_MASK.size.x
+	full_width = cover_mask.size.x
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta):
 	# Cover Removal
 	if ongoing_cover_anim:
@@ -38,12 +36,12 @@ func _process(delta):
 		var displacement = delta * UNCOVER_SPEED
 		cover_anim_progress += displacement
 		cover_position -= displacement
-		if cover_anim_progress < FULL_WIDTH:
-			COVER_MASK.position.x = cover_anim_progress
-			COVER.position.x = cover_position
+		if cover_anim_progress < full_width:
+			cover_mask.position.x = cover_anim_progress
+			cover.position.x = cover_position
 		else:
-			COVER_MASK.position.x = FULL_WIDTH
-			COVER.position.x = -FULL_WIDTH
+			cover_mask.position.x = full_width
+			cover.position.x = -full_width
 			ongoing_cover_anim = false
 			
 	# Border color shift & shadow grow
@@ -52,40 +50,41 @@ func _process(delta):
 		if border_anim_progress < BORDER_ANIM_MAX_TIME:
 			var progress_percentage = border_anim_progress / BORDER_ANIM_MAX_TIME
 			
-			# BORDER.get_theme_stylebox("panel").border_color.r = BORDER_INITIAL_COLOR.r + (BRIGHT_BORDER_COLOR.r - BORDER_INITIAL_COLOR.r) * progress_percentage
-			# BORDER.get_theme_stylebox("panel").border_color.g + (BRIGHT_BORDER_COLOR.g - BORDER_INITIAL_COLOR.g) * progress_percentage
-			# BORDER.get_theme_stylebox("panel").border_color.b + (BRIGHT_BORDER_COLOR.r - BORDER_INITIAL_COLOR.r) * progress_percentage
-			BORDER.get_theme_stylebox("panel").shadow_size = MAX_BORDER_SHADOW_SIZE * progress_percentage
+			border.get_theme_stylebox("panel").shadow_size = MAX_BORDER_SHADOW_SIZE * progress_percentage
 		else:
 			ongoing_border_anim = false
-			# BORDER.get_theme_stylebox("panel").border_color = BRIGHT_BORDER_COLOR
-			BORDER.get_theme_stylebox("panel").shadow_size = MAX_BORDER_SHADOW_SIZE
-	
+			border.get_theme_stylebox("panel").shadow_size = MAX_BORDER_SHADOW_SIZE
+
+
 func check_match(word, language):
 	var reference_words
 	match language:
 		"en":
-			reference_words = REFERENCE_WORDS_EN
+			reference_words = reference_words_en
 		"zh_CN":
-			reference_words = REFERENCE_WORDS_ZH_CN
+			reference_words = reference_words_zh_cn
 			
 	for reference_word in reference_words:
 		if word == reference_word:
 			return true
 	return false
 
+
 func switch_to(a):
 	answered = a
-	COVER.visible = not answered
-	
+	cover.visible = not answered
+
+
 func save_answer(answers):
 	if answered:
-		answers.append(ASPECT_NAME)
-	
+		answers.append(aspect_name)
+
+
 func load_answer(answers):
-	if ASPECT_NAME in answers:
+	if aspect_name in answers:
 		switch_to(true)
-		
+
+
 func solve():
 	ongoing_cover_anim = true
 	ongoing_border_anim = true
