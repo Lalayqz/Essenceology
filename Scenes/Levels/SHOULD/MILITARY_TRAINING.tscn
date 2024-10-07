@@ -13,6 +13,9 @@
 
 [node name="MILITARY_TRAINING" type="Node2D"]
 script = ExtResource("1_1v67a")
+max_input_length_en = 8
+max_input_length_zh_cn = 2
+points_goal = 1
 
 [node name="LevelStructure" parent="." instance=ExtResource("2_m7064")]
 
@@ -37,22 +40,27 @@ bbcode_enabled = true
 text = "SHOULD_MILITARY_TRAINING_NOTE"
 autowrap_mode = 2
 
-[node name="Problem" type="CenterContainer" parent="."]
-offset_top = 80.0
+[node name="Body" type="CenterContainer" parent="."]
+offset_top = 160.0
 offset_right = 1280.0
 offset_bottom = 720.0
 mouse_filter = 2
 
-[node name="MILITARY_TRAINING" type="VBoxContainer" parent="Problem"]
+[node name="Body" type="VSplitContainer" parent="Body"]
 layout_mode = 2
 mouse_filter = 2
-script = ExtResource("5_nqddl")
+collapsed = true
+dragger_visibility = 2
 
-[node name="Input" type="CenterContainer" parent="Problem/MILITARY_TRAINING"]
+[node name="Input" type="MarginContainer" parent="Body/Body"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 20
+
+[node name="Input" type="CenterContainer" parent="Body/Body/Input"]
 layout_mode = 2
 mouse_filter = 2
 
-[node name="Input" type="RichTextLabel" parent="Problem/MILITARY_TRAINING/Input"]
+[node name="Input" type="RichTextLabel" parent="Body/Body/Input/Input"]
 custom_minimum_size = Vector2(0, 73)
 layout_mode = 2
 mouse_filter = 2
@@ -65,10 +73,19 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="Text" type="CenterContainer" parent="Problem/MILITARY_TRAINING"]
+[node name="Problem" type="CenterContainer" parent="Body/Body"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MILITARY_TRAINING" type="VBoxContainer" parent="Body/Body/Problem"]
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("5_nqddl")
+
+[node name="Text" type="CenterContainer" parent="Body/Body/Problem/MILITARY_TRAINING"]
 layout_mode = 2
 
-[node name="Text" type="RichTextLabel" parent="Problem/MILITARY_TRAINING/Text"]
+[node name="Text" type="RichTextLabel" parent="Body/Body/Problem/MILITARY_TRAINING/Text"]
 layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("6_8jsop")
@@ -78,35 +95,44 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="Line" type="MarginContainer" parent="Problem/MILITARY_TRAINING"]
+[node name="Line" type="MarginContainer" parent="Body/Body/Problem/MILITARY_TRAINING"]
 layout_mode = 2
 theme_override_constants/margin_top = 20
 
-[node name="Line" type="CenterContainer" parent="Problem/MILITARY_TRAINING/Line"]
+[node name="Line" type="CenterContainer" parent="Body/Body/Problem/MILITARY_TRAINING/Line"]
 layout_mode = 2
 
-[node name="Line" type="ColorRect" parent="Problem/MILITARY_TRAINING/Line/Line"]
+[node name="Line" type="ColorRect" parent="Body/Body/Problem/MILITARY_TRAINING/Line/Line"]
 custom_minimum_size = Vector2(1100, 1)
 layout_mode = 2
 
-[node name="Aspects" type="HBoxContainer" parent="Problem/MILITARY_TRAINING"]
+[node name="Aspects" type="HBoxContainer" parent="Body/Body/Problem/MILITARY_TRAINING"]
 layout_mode = 2
 alignment = 1
 
-[node name="GoodAspects" type="VBoxContainer" parent="Problem/MILITARY_TRAINING/Aspects"]
+[node name="GoodAspects" type="VBoxContainer" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects"]
 layout_mode = 2
 
-[node name="GoodAspects" type="MarginContainer" parent="Problem/MILITARY_TRAINING/Aspects/GoodAspects"]
+[node name="GoodAspects" type="MarginContainer" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects/GoodAspects"]
 layout_mode = 2
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 
-[node name="Pain" type="ReferenceRect" parent="Problem/MILITARY_TRAINING/Aspects/GoodAspects/GoodAspects"]
+[node name="Pain" type="ReferenceRect" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects/GoodAspects/GoodAspects"]
 custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
 script = ExtResource("7_cvoka")
+points = 1
+reference_words_en = PackedStringArray("Pain")
+reference_words_zh_cn = PackedStringArray("痛苦")
 
-[node name="Text" type="CenterContainer" parent="Problem/MILITARY_TRAINING/Aspects/GoodAspects/GoodAspects/Pain"]
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects/GoodAspects/GoodAspects/Pain"]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 80.0
+color = Color(0.239216, 0.819608, 0.486275, 0.196078)
+
+[node name="Text" type="CenterContainer" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects/GoodAspects/GoodAspects/Pain"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -114,7 +140,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Text" type="RichTextLabel" parent="Problem/MILITARY_TRAINING/Aspects/GoodAspects/GoodAspects/Pain/Text"]
+[node name="Text" type="RichTextLabel" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects/GoodAspects/GoodAspects/Pain/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
@@ -126,7 +152,7 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="CoverMask" type="ReferenceRect" parent="Problem/MILITARY_TRAINING/Aspects/GoodAspects/GoodAspects/Pain"]
+[node name="CoverMask" type="ReferenceRect" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects/GoodAspects/GoodAspects/Pain"]
 clip_children = 1
 clip_contents = true
 layout_mode = 1
@@ -137,7 +163,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Cover" type="CenterContainer" parent="Problem/MILITARY_TRAINING/Aspects/GoodAspects/GoodAspects/Pain/CoverMask"]
+[node name="Cover" type="CenterContainer" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects/GoodAspects/GoodAspects/Pain/CoverMask"]
 custom_minimum_size = Vector2(250, 80)
 layout_mode = 1
 anchors_preset = 15
@@ -147,18 +173,18 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Background" type="ColorRect" parent="Problem/MILITARY_TRAINING/Aspects/GoodAspects/GoodAspects/Pain/CoverMask/Cover"]
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects/GoodAspects/GoodAspects/Pain/CoverMask/Cover"]
 custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="?" type="Label" parent="Problem/MILITARY_TRAINING/Aspects/GoodAspects/GoodAspects/Pain/CoverMask/Cover"]
+[node name="?" type="Label" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects/GoodAspects/GoodAspects/Pain/CoverMask/Cover"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_lawnh")
 theme_override_font_sizes/font_size = 80
 text = "?"
 
-[node name="Border" type="Panel" parent="Problem/MILITARY_TRAINING/Aspects/GoodAspects/GoodAspects/Pain"]
+[node name="Border" type="Panel" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects/GoodAspects/GoodAspects/Pain"]
 custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
 offset_right = 250.0
@@ -166,27 +192,27 @@ offset_bottom = 80.0
 mouse_filter = 2
 theme_override_styles/panel = ExtResource("9_rcufc")
 
-[node name="Line" type="CenterContainer" parent="Problem/MILITARY_TRAINING/Aspects"]
+[node name="Line" type="CenterContainer" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects"]
 layout_mode = 2
 
-[node name="Line" type="ColorRect" parent="Problem/MILITARY_TRAINING/Aspects/Line"]
+[node name="Line" type="ColorRect" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects/Line"]
 custom_minimum_size = Vector2(1, 250)
 layout_mode = 2
 
-[node name="BadAspects" type="VBoxContainer" parent="Problem/MILITARY_TRAINING/Aspects"]
+[node name="BadAspects" type="VBoxContainer" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects"]
 layout_mode = 2
 
-[node name="BadAspects" type="MarginContainer" parent="Problem/MILITARY_TRAINING/Aspects/BadAspects"]
+[node name="BadAspects" type="MarginContainer" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects/BadAspects"]
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 
-[node name="Exposed" type="ReferenceRect" parent="Problem/MILITARY_TRAINING/Aspects/BadAspects/BadAspects"]
+[node name="Exposed" type="ReferenceRect" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects/BadAspects/BadAspects"]
 custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
 script = ExtResource("7_cvoka")
 
-[node name="Text" type="CenterContainer" parent="Problem/MILITARY_TRAINING/Aspects/BadAspects/BadAspects/Exposed"]
+[node name="Text" type="CenterContainer" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects/BadAspects/BadAspects/Exposed"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -194,7 +220,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Text" type="RichTextLabel" parent="Problem/MILITARY_TRAINING/Aspects/BadAspects/BadAspects/Exposed/Text"]
+[node name="Text" type="RichTextLabel" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects/BadAspects/BadAspects/Exposed/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
@@ -206,12 +232,12 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="CoverMask" type="ReferenceRect" parent="Problem/MILITARY_TRAINING/Aspects/BadAspects/BadAspects/Exposed"]
+[node name="CoverMask" type="ReferenceRect" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects/BadAspects/BadAspects/Exposed"]
 layout_mode = 2
 offset_right = 250.0
 offset_bottom = 80.0
 
-[node name="Cover" type="CenterContainer" parent="Problem/MILITARY_TRAINING/Aspects/BadAspects/BadAspects/Exposed/CoverMask"]
+[node name="Cover" type="CenterContainer" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects/BadAspects/BadAspects/Exposed/CoverMask"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -220,18 +246,18 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Background" type="ColorRect" parent="Problem/MILITARY_TRAINING/Aspects/BadAspects/BadAspects/Exposed/CoverMask/Cover"]
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects/BadAspects/BadAspects/Exposed/CoverMask/Cover"]
 custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="?" type="Label" parent="Problem/MILITARY_TRAINING/Aspects/BadAspects/BadAspects/Exposed/CoverMask/Cover"]
+[node name="?" type="Label" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects/BadAspects/BadAspects/Exposed/CoverMask/Cover"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_lawnh")
 theme_override_font_sizes/font_size = 80
 text = "?"
 
-[node name="Border" type="Panel" parent="Problem/MILITARY_TRAINING/Aspects/BadAspects/BadAspects/Exposed"]
+[node name="Border" type="Panel" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects/BadAspects/BadAspects/Exposed"]
 custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
 offset_right = 250.0

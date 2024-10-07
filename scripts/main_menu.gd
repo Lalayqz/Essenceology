@@ -18,8 +18,8 @@ func input(event):
 		get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
 
 
-func _notification(notification):
-	if notification == NOTIFICATION_WM_CLOSE_REQUEST:
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		Save.save_game()
 		get_tree().quit()
 
@@ -32,9 +32,9 @@ func load_chapter(chapter):
 	Lights.update_color_to_chapter_color(chapter)
 	
 	map_node = load("res://scenes/maps/" + chapter + ".tscn").instantiate()
-	var window_pos = Vector2(chapter_bar_width, 0)
-	var window_size = Vector2(get_viewport().size) - window_pos
-	map_node.set_window_info(window_pos, window_size)
+	var map_window_pos = Vector2(chapter_bar_width, 0)
+	var map_window_size = Vector2(get_viewport().size) - map_window_pos
+	map_node.set_window_info(map_window_pos, map_window_size)
 	add_child(map_node)
 	move_child(map_node, 0)
 	Global_Variables.current_chapter = chapter
@@ -44,8 +44,6 @@ func load_chapter(chapter):
 	if drag_position != null:
 		map_node.position = drag_position
 	else: # set view to focus point
-		var map_window_size = window_size
-		map_window_size.x = map_window_size.x - chapter_bar_width
 		var pos = Vector2(map_window_size / 2) - map_node.focus_position + Vector2(chapter_bar_width, 0)
 		map_node.set_pos(pos)
 

@@ -1,29 +1,22 @@
 class_name PossibilityButton extends NeatButton
 
+signal answer_changed()
 enum Possibilities {
 	P,
 	NP,
 }
-
-signal answer_changed()
+@export var reference_answer: Possibilities
 var possibility = null
 var is_left_click
-@export var reference_answer: Possibilities
 @onready var p_sprite = $P
 @onready var np_sprite = $NP
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
 func button_down():
 	self.modulate = Color.WEB_GRAY
 	is_left_click = Input.is_action_pressed("left_click")
-	
+
+
 func pressed():
 	if is_left_click:
 		if possibility == Possibilities.P:
@@ -35,6 +28,7 @@ func pressed():
 			switch_to(null)
 		else:
 			switch_to(Possibilities.NP)
+
 
 func switch_to(p):
 	var p_old = possibility
@@ -50,4 +44,3 @@ func switch_to(p):
 	
 	if p != p_old:
 		answer_changed.emit()
-	

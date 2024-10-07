@@ -12,7 +12,7 @@ var unsolved_finale_texture = preload("res://resources/images/unsolved_finale.pn
 var solved_finale_texture = preload("res://resources/images/solved_finale.png")
 var LEVEL_LABEL_FONT = preload("res://resources/fonts/SourceHanSansSC-Normal.otf")
 var window_pos
-var WINDOW_SIZE
+var window_size
 var drag_start = null
 var drag_start_last_frame = null
 @onready var chapter_size = self.size
@@ -78,7 +78,7 @@ func _ready():
 		level.add_child(level_sprite)
 		var radius = level_sprite.texture.get_width() / 2
 		var level_label = load("res://scenes/items/ui_text.tscn").instantiate()
-		var label_size = LEVEL_LABEL_FONT.get_string_size(level.name, 0, -1, LABEL_FONT_SIZE)
+		var label_size = LEVEL_LABEL_FONT.get_string_size(level.name, HORIZONTAL_ALIGNMENT_LEFT, -1, LABEL_FONT_SIZE)
 		level_label.text = level.name
 		level_label.position.y -= (radius + label_size.y / 2 + LABEL_OFFSET_Y)
 		level_label.set("theme_override_font_sizes/font_size", LABEL_FONT_SIZE)
@@ -90,9 +90,9 @@ func _ready():
 	background.color = Global_Variables.current_chapter_background_color
 
 
-func set_window_info(pos, size):
+func set_window_info(pos, s):
 	window_pos = pos
-	WINDOW_SIZE = size
+	window_size = s
 
 
 func _unhandled_input(event):  # use "unhandled" because I want the chapter bar to block map interactions.
@@ -128,9 +128,9 @@ func _unhandled_input(event):  # use "unhandled" because I want the chapter bar 
 
 
 func set_pos(pos):
-	self.position.x = max(pos.x, WINDOW_SIZE.x + window_pos.x - chapter_size.x)  # lower limit
+	self.position.x = max(pos.x, window_size.x + window_pos.x - chapter_size.x)  # lower limit
 	self.position.x = min(self.position.x, window_pos.x)  # upper limit
-	self.position.y = max(pos.y, WINDOW_SIZE.y + window_pos.y - chapter_size.y)
+	self.position.y = max(pos.y, window_size.y + window_pos.y - chapter_size.y)
 	self.position.y = min(self.position.y, window_pos.y)
 
 

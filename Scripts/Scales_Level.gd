@@ -1,33 +1,75 @@
-class_name Scales_Level extends Level
+class_name ScalesLevel extends LevelWithProgressBar
 
 const MAX_PROBLEM_TEXT_WIDTH = 1000
-@onready var progress_bar = level_structure
+const INPUT_CORRECT_COLOR = Color.GREEN
+const INPUT_WRONG_COLOR = Color.RED
+@export var max_input_length_en: int
+@export var max_input_length_zh_cn: int
+@onready var input = $Body/Body/Input/Input/Input
+@onready var language = Config.get_language()
 
 
 func _ready():
-	# connect children's signals
-	var back_button =  level_structure.get_node("Ui/BackButton")
-	back_button.pressed.connect(exit_level)
-
-	problems = []
-	problems.append($Problem.get_child(0))
-	for problem in problems:
-		problem.new_aspect_answered.connect(save_answers)
-	load_answers()
+	super()
 	
-	# set level structure appearance according to current chapter
-	level_structure.get_node("Background").color = Global_Variables.current_chapter_background_color
-	level_structure.get_node("Ui/Title").set("theme_override_colors/font_shadow_color", Global_Variables.current_chapter_color)
-	
-	title.text = level_name
-	
-	# set solved
-	# It's possible that I update the problems and the inputs for an already solved level is not longer correct.
-	# If this happens, just make the content in level appear as unsolved. Don't remove this level from solved levels in save.
-	if Save.get_level_solved(chapter, level_name):
-		solve_level()
-		
 	update_word_warp()
+
+
+func _input(event):
+	if event is InputEventKey and event.is_pressed():
+		var is_max_length
+		var inputed = false
+		# Character input
+		if event.unicode != 0:
+			match language:
+				"en":
+					is_max_length = input.text.length() >= max_input_length_en
+					if not is_max_length and event.keycode >= KEY_A and event.keycode <= KEY_Z:
+						if input.text.length() == 0:
+							input.text += OS.get_keycode_string(event.keycode)
+						else:
+							input.text += OS.get_keycode_string(event.keycode).to_lower()
+						inputed = true
+						is_max_length = input.text.length() >= max_input_length_en
+				"zh_CN":
+					is_max_length = input.text.length() >= max_input_length_zh_cn
+					if not is_max_length and event.unicode >= 0x4E00 and event.unicode <= 0x9FFF:
+						input.text += char(event.unicode)
+						inputed = true
+						is_max_length = input.text.length() >= max_input_length_zh_cn
+		
+		# Backspace
+		elif event.keycode == KEY_BACKSPACE:
+			if Input.is_key_pressed(KEY_CTRL):
+				input.text = ""
+			else:
+				input.text = input.text.erase(input.text.length() - 1, 1)
+			inputed = true
+			
+		# Delete
+		elif event.keycode == KEY_DELETE:
+			input.text = ""
+			inputed = true
+			
+		if inputed:
+			check_match_aspects(is_max_length)
+
+
+func check_match_aspects(is_max_length):
+	var matched = false
+	
+	for problem in problems:
+		if problem.check_match_aspects(input.text, language):
+			matched = true # Don't break now! Other aspects still need to be checked.
+	
+	if matched:
+		input.modulate = INPUT_CORRECT_COLOR
+		update_progress_bar(true)
+	else:
+		if is_max_length:
+			input.modulate = INPUT_WRONG_COLOR
+		else:
+			input.modulate = Color.WHITE
 
 
 func update_word_warp():
@@ -36,32 +78,10 @@ func update_word_warp():
 
 		# bbcode like [hint=...] is not included when calculating text width
 		var string = strip_bbcode(TranslationServer.translate(problem_text.text))
-		if text_font.get_string_size(string, 0, -1, problem_text.get_theme_font_size("normal_font_size")).x > MAX_PROBLEM_TEXT_WIDTH:
+		if text_font.get_string_size(string, HORIZONTAL_ALIGNMENT_LEFT, -1, problem_text.get_theme_font_size("normal_font_size")).x > MAX_PROBLEM_TEXT_WIDTH:
 			# set text autowarp if its width exceeds MAX_TEXT_WIDTH
 			problem_text.set_autowrap_mode(TextServer.AUTOWRAP_WORD)
 			problem_text.set_custom_minimum_size(Vector2(MAX_PROBLEM_TEXT_WIDTH, 0))
 		else:
 			problem_text.set_autowrap_mode(TextServer.AUTOWRAP_OFF)
 			problem_text.set_custom_minimum_size(Vector2(0, 0))
-
-
-func solve_level():
-	Save.save_level_solved(chapter, level_name)
-	if Global_Variables.is_finale(chapter, level_name):
-		Save.save_chapter_solved(chapter)
-	save_answers()
-	#for problem in PROBLEMS:
-		#problem.disable()
-	solved_label.set("theme_override_colors/font_shadow_color", Global_Variables.current_chapter_color)
-	solved_label.visible = true
-
-
-func load_answers():
-	for problem in problems:
-		problem.load_answer(chapter, level_name)
-
-
-func save_answers():
-	for problem in problems:
-		problem.save_answer(chapter, level_name)
-	Save.save_game()

@@ -54,15 +54,13 @@ theme_override_fonts/font = ExtResource("6_0rqa6")
 theme_override_font_sizes/font_size = 33
 text = "Level Title"
 
-[node name="SolvedLabel" type="Node2D" parent="Ui"]
-position = Vector2(420, 600)
-
-[node name="Label" type="CenterContainer" parent="Ui/SolvedLabel"]
-offset_right = 440.0
-offset_bottom = 80.0
+[node name="SolvedLabel" type="CenterContainer" parent="Ui"]
+offset_top = 560.0
+offset_right = 1280.0
+offset_bottom = 720.0
 mouse_filter = 2
 
-[node name="Label" parent="Ui/SolvedLabel/Label" instance=ExtResource("7_qolxk")]
+[node name="Label" parent="Ui/SolvedLabel" instance=ExtResource("7_qolxk")]
 visible = false
 layout_mode = 2
 theme_override_constants/shadow_offset_x = 3
@@ -70,20 +68,13 @@ theme_override_constants/shadow_offset_y = 3
 theme_override_font_sizes/font_size = 50
 text = "LEVEL_SOLVED"
 
-[node name="SubmitButton" type="Node2D" parent="Ui"]
-position = Vector2(420, 600)
-script = ExtResource("2_8k3ue")
-
-[node name="Background" type="ColorRect" parent="Ui/SubmitButton"]
-offset_bottom = 80.0
+[node name="SubmitButton" type="CenterContainer" parent="Ui"]
+offset_top = 560.0
+offset_right = 1280.0
+offset_bottom = 720.0
 mouse_filter = 2
 
-[node name="Button" type="CenterContainer" parent="Ui/SubmitButton"]
-offset_right = 440.0
-offset_bottom = 80.0
-mouse_filter = 2
-
-[node name="Button" type="Button" parent="Ui/SubmitButton/Button"]
+[node name="SubmitButton" type="Button" parent="Ui/SubmitButton"]
 custom_minimum_size = Vector2(440, 80)
 layout_mode = 2
 focus_mode = 0
@@ -91,16 +82,18 @@ theme = ExtResource("3_1q4d8")
 theme_override_fonts/font = ExtResource("4_vqrfs")
 theme_override_font_sizes/font_size = 36
 text = "SUBMIT_HOLD"
-script = ExtResource("5_282xl")
+script = ExtResource("2_8k3ue")
 
-[node name="AudioPlayer" type="AudioStreamPlayer" parent="Ui/SubmitButton"]
-volume_db = -5.0
+[node name="Background" type="ColorRect" parent="Ui/SubmitButton/SubmitButton"]
+layout_mode = 0
+offset_bottom = 80.0
+mouse_filter = 2
 
 [connection signal="button_down" from="Ui/BackButton" to="Ui/BackButton" method="button_down"]
 [connection signal="button_up" from="Ui/BackButton" to="Ui/BackButton" method="return_normal"]
 [connection signal="mouse_entered" from="Ui/BackButton" to="Ui/BackButton" method="hovered"]
 [connection signal="mouse_exited" from="Ui/BackButton" to="Ui/BackButton" method="return_normal"]
-[connection signal="button_down" from="Ui/SubmitButton/Button/Button" to="Ui/SubmitButton" method="button_down"]
-[connection signal="button_up" from="Ui/SubmitButton/Button/Button" to="Ui/SubmitButton" method="return_normal"]
-[connection signal="mouse_entered" from="Ui/SubmitButton/Button/Button" to="Ui/SubmitButton/Button/Button" method="hovered"]
-[connection signal="mouse_exited" from="Ui/SubmitButton/Button/Button" to="Ui/SubmitButton" method="return_normal"]
+[connection signal="button_down" from="Ui/SubmitButton/SubmitButton" to="Ui/SubmitButton/SubmitButton" method="button_down"]
+[connection signal="button_up" from="Ui/SubmitButton/SubmitButton" to="Ui/SubmitButton/SubmitButton" method="released"]
+[connection signal="mouse_entered" from="Ui/SubmitButton/SubmitButton" to="Ui/SubmitButton/SubmitButton" method="hovered"]
+[connection signal="mouse_exited" from="Ui/SubmitButton/SubmitButton" to="Ui/SubmitButton/SubmitButton" method="return_normal"]

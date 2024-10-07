@@ -1,4 +1,4 @@
-extends Node2D
+class_name SubmitButton extends NeatButton
 
 signal submit
 const SUBMIT_TEXT = "SUBMIT_HOLD"
@@ -8,8 +8,7 @@ var background_width = 0
 var is_held_down = false
 @onready var chapter = Global_Variables.current_chapter
 @onready var background = get_node("Background")
-@onready var button = get_node("Button/Button")
-@onready var width = button.size.x
+@onready var width = size.x
 @onready var background_progress_speed = float(width) / HOLD_TIME
 
 
@@ -20,7 +19,7 @@ func _process(delta):
 			submit.emit()
 			return_normal()
 		background.custom_minimum_size.x = background_width
-	if button.disabled:
+	if disabled:
 		load_penalty_from_save()
 
 
@@ -32,28 +31,33 @@ func load_penalty_from_save():
 	var penalty = Save.get_level_penalty(chapter, level_name)
 	if penalty > 0:
 		var penalty_int = int(ceil(penalty))
-		button.disabled = true
-		button.text = "🔒   " + "%02d:%02d" % [penalty_int / 60, penalty_int % 60]
+		disabled = true
+		self.text = "🔒   " + "%02d:%02d" % [penalty_int / 60, penalty_int % 60]
 	else:
-		button.disabled = false
-		button.text = SUBMIT_TEXT
+		disabled = false
+		self.text = SUBMIT_TEXT
 
 
 func disable():
-	button.disabled = true
+	disabled = true
 
 
 func make_hidden():
-	button.visible = false
+	self.visible = false
+
+
+func released():
+	return_normal()
+	super()
 
 
 func return_normal():
-	button.modulate = Color.WHITE
+	super()
 	background_width = 0
 	background.custom_minimum_size.x = background_width
 	is_held_down = false
 
 
 func button_down():
-	button.modulate = Color.WEB_GRAY
+	super()
 	is_held_down = true

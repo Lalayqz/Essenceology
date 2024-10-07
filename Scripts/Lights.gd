@@ -85,29 +85,29 @@ func add_light(is_growing):
 
 
 func update_light(light, delta):
-	var scale = light.get_scale().x
+	var light_scale = light.get_scale().x
 	var alpha = light.modulate.a
 	var is_fading = light.get_meta("is_fading")
-	if (not is_fading):
+	if not is_fading:
 		var max_alpha = light.get_meta("max_alpha")
-		if (alpha < max_alpha):
-			scale += delta * SCALE_SHIFT_SPEED
-			light.scale = Vector2(scale, scale)
+		if alpha < max_alpha:
+			light_scale += delta * SCALE_SHIFT_SPEED
+			light.scale = Vector2(light_scale, light_scale)
 			light.modulate.a += delta * ALPHA_SHIFT_SPEED
 	else:
 		var countdown = light.get_meta("fading_countdown")
-		if (countdown > 0):
+		if countdown > 0:
 			light.set_meta("fading_countdown", countdown - delta)
 		else:
-			scale -= delta * SCALE_SHIFT_SPEED
-			light.scale = Vector2(scale, scale)
-			if (alpha > 0):
+			light_scale -= delta * SCALE_SHIFT_SPEED
+			light.scale = Vector2(light_scale, light_scale)
+			if alpha > 0:
 				light.modulate.a -= delta * ALPHA_SHIFT_SPEED
 			else:
 				light.queue_free()
 				
 	var speed = light.get_meta("speed")
-	if (speed > 0):
+	if speed > 0:
 		var direction =  light.get_meta("direction")
 		light.position += speed * direction
 
