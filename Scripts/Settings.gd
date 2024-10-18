@@ -34,7 +34,6 @@ func exit_settings():
 
 func update_language_en(is_on):
 	if is_on:
-		TranslationServer.set_locale("en")
 		Config.set_language("en")
 		for checkbox in language_checkboxes:
 			checkbox.set_pressed_no_signal(false)
@@ -43,7 +42,6 @@ func update_language_en(is_on):
 
 func update_language_zh(is_on):
 	if is_on:
-		TranslationServer.set_locale("zh_CN")
 		Config.set_language("zh_CN")
 		for checkbox in language_checkboxes:
 			checkbox.set_pressed_no_signal(false)

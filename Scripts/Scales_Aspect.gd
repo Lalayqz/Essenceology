@@ -10,7 +10,6 @@ const BORDER_ANIMATION_LENGTH = 0.2 # in seconds
 @export var reference_words_zh_cn: PackedStringArray
 var is_good_aspect
 var is_solved = false
-var cover_position = 0.0
 @onready var aspect_name = self.name
 @onready var cover_mask = $CoverMask
 @onready var cover = $CoverMask/Cover

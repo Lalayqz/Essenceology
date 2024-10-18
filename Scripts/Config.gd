@@ -14,7 +14,7 @@ func _ready():
 			TranslationServer.set_locale(language)
 			
 	get_window().set_ime_active(true)
-
+	update_window_title()
 
 func get_language():  # can be null
 	return config.get_value("Config", "language")
@@ -26,6 +26,8 @@ func get_disturbing_background():
 
 func set_language(language):
 	config.set_value("Config", "language", language)
+	TranslationServer.set_locale(language)
+	update_window_title()
 
 
 func set_disturbing_background(is_on):
@@ -34,3 +36,10 @@ func set_disturbing_background(is_on):
 
 func save_config():
 	config.save(CONFIG_PATH)
+
+
+func update_window_title():
+	if TranslationServer.get_locale() == 'zh_CN':
+		DisplayServer.window_set_title('本质学')
+	else:
+		DisplayServer.window_set_title('Essenceology')
