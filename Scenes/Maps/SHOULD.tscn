@@ -1,14 +1,17 @@
 [gd_scene load_steps=2 format=3 uid="uid://dldmlvpxe6dbk"]
 
-[ext_resource type="Script" path="res://scripts/map.gd" id="2_yamsi"]
+[ext_resource type="Script" path="res://scripts/map_window.gd" id="2_yamsi"]
 
-[node name="Should" type="ReferenceRect"]
-offset_right = 1837.0
-offset_bottom = 2665.0
+[node name="Window" type="ReferenceRect"]
 mouse_filter = 2
 script = ExtResource("2_yamsi")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Map" type="ReferenceRect" parent="."]
+offset_right = 1837.0
+offset_bottom = 2665.0
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="Map"]
 z_index = -10
 layout_mode = 0
 offset_right = 1837.0
@@ -16,69 +19,69 @@ offset_bottom = 2665.0
 mouse_filter = 2
 color = Color(0.0980392, 0.0588235, 0, 1)
 
-[node name="Chains" type="Node2D" parent="."]
+[node name="Chains" type="Node2D" parent="Map"]
 
-[node name="Levels" type="Node2D" parent="."]
+[node name="Levels" type="Node2D" parent="Map"]
 
-[node name="INTRO" type="Node2D" parent="Levels"]
+[node name="INTRO" type="Node2D" parent="Map/Levels"]
 position = Vector2(780, 130)
 
-[node name="ALL_LIVES" type="Node2D" parent="Levels"]
+[node name="ALL_LIVES" type="Node2D" parent="Map/Levels"]
 position = Vector2(515, 395)
 
-[node name="INDIVIDUAL" type="Node2D" parent="Levels"]
+[node name="INDIVIDUAL" type="Node2D" parent="Map/Levels"]
 position = Vector2(780, 395)
 
-[node name="CALCULATION" type="Node2D" parent="Levels"]
+[node name="CALCULATION" type="Node2D" parent="Map/Levels"]
 position = Vector2(1045, 395)
 
-[node name="PROBABILITY_1" type="Node2D" parent="Levels"]
+[node name="PROBABILITY_1" type="Node2D" parent="Map/Levels"]
 position = Vector2(1402, 232)
 
-[node name="PROBABILITY_2" type="Node2D" parent="Levels"]
+[node name="PROBABILITY_2" type="Node2D" parent="Map/Levels"]
 position = Vector2(1565, 130)
 
-[node name="ANALYSIS_1" type="Node2D" parent="Levels"]
+[node name="ANALYSIS_1" type="Node2D" parent="Map/Levels"]
 position = Vector2(780, 840)
 
-[node name="ANALYSIS_2" type="Node2D" parent="Levels"]
+[node name="ANALYSIS_2" type="Node2D" parent="Map/Levels"]
 position = Vector2(1057, 1000)
 
-[node name="ZERO_SUM" type="Node2D" parent="Levels"]
+[node name="ZERO_SUM" type="Node2D" parent="Map/Levels"]
 position = Vector2(503, 1000)
 
-[node name="ZERO_SUM_2" type="Node2D" parent="Levels"]
+[node name="ZERO_SUM_2" type="Node2D" parent="Map/Levels"]
 position = Vector2(226, 840)
 
-[node name="MILITARY_TRAINING" type="Node2D" parent="Levels"]
+[node name="MILITARY_TRAINING" type="Node2D" parent="Map/Levels"]
 position = Vector2(1057, 1320)
 
-[node name="SCALES_?" type="Node2D" parent="Levels"]
+[node name="SCALES_?" type="Node2D" parent="Map/Levels"]
 position = Vector2(1334, 1480)
 
-[node name="SCALES_?2" type="Node2D" parent="Levels"]
+[node name="SCALES_?2" type="Node2D" parent="Map/Levels"]
 position = Vector2(780, 1480)
 
-[node name="GAME" type="Node2D" parent="Levels"]
+[node name="GAME" type="Node2D" parent="Map/Levels"]
 position = Vector2(780, 1800)
 
-[node name="TIME_LIMIT" type="Node2D" parent="Levels"]
+[node name="TIME_LIMIT" type="Node2D" parent="Map/Levels"]
 position = Vector2(1334, 1800)
 
-[node name="SUICIDE" type="Node2D" parent="Levels"]
+[node name="SUICIDE" type="Node2D" parent="Map/Levels"]
 position = Vector2(1057, 1960)
 
-[node name="MOSQUITO" type="Node2D" parent="Levels"]
+[node name="MOSQUITO" type="Node2D" parent="Map/Levels"]
 position = Vector2(1611, 1960)
 
-[node name="CAKE_1" type="Node2D" parent="Levels"]
+[node name="CAKE_1" type="Node2D" parent="Map/Levels"]
 position = Vector2(1057, 2280)
 
-[node name="CAKE_2" type="Node2D" parent="Levels"]
+[node name="CAKE_2" type="Node2D" parent="Map/Levels"]
 position = Vector2(1611, 2280)
 
-[node name="FINALE" type="Node2D" parent="Levels"]
+[node name="FINALE" type="Node2D" parent="Map/Levels"]
 position = Vector2(1334, 2440)
 
-[node name="Focus" type="Node2D" parent="."]
+[node name="Focus" type="Node2D" parent="Map"]
 position = Vector2(780, 130)

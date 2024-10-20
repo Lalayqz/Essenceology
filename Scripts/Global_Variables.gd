@@ -3,6 +3,7 @@ extends Node
 const FINALES = {"POSSIBILITY":["FINALE"], "SHOULD":["FINALE"]}
 const CHAPTER_COLORS = {"POSSIBILITY": 0x55ff55ff, "SHOULD": 0xffaa00ff, "DEFINITION": 0x5555ffff}
 const CHAPTER_BACKGROUND_COLORS = {"POSSIBILITY": 0x081a08ff, "SHOULD": 0x190f00ff}
+#const CHAPTER_BACKGROUND_COLORS = {"POSSIBILITY": 0x081a08ff, "SHOULD": Color.WHITE}
 var current_chapter = "POSSIBILITY"
 var current_chapter_color
 var current_chapter_background_color

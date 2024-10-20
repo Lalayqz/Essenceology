@@ -2,7 +2,6 @@ extends Node2D
 
 var chapter_bar_width
 var map_node = null
-@onready var window_size = get_viewport().size
 @onready var chapter_bar = get_node("ChaptersBar")
 
 
@@ -13,15 +12,16 @@ func _ready():
 	load_chapter(Global_Variables.current_chapter)	
 
 
-func input(event):
-	if event.is_action_pressed("ui_cancel"):
-		get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
-
-
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		Save.save_game()
 		get_tree().quit()
+func _process(delta):
+	pass
+
+func input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().root.propagate_notification(NOTIFICATION_WM_CLOSE_REQUEST)
 
 
 func load_chapter(chapter):
@@ -32,19 +32,18 @@ func load_chapter(chapter):
 	Lights.update_color_to_chapter_color(chapter)
 	
 	map_node = load("res://scenes/maps/" + chapter + ".tscn").instantiate()
-	var map_window_pos = Vector2(chapter_bar_width, 0)
-	var map_window_size = Vector2(get_viewport().size) - map_window_pos
-	map_node.set_window_info(map_window_pos, map_window_size)
 	add_child(map_node)
 	move_child(map_node, 0)
-	Global_Variables.current_chapter = chapter
+	map_node.position = Vector2(chapter_bar_width, 0)
+	# NOT get_viewport().size! get_viewport().size is actially the window size, not viewport size.
+	map_node.size = Vector2(Vector2(get_viewport().content_scale_size) - map_node.position)
 	
 	# set map position
 	var drag_position = Global_Variables.get_map_drag_pos()
 	if drag_position != null:
-		map_node.position = drag_position
+		map_node.set_pos(drag_position)
 	else: # set view to focus point
-		var pos = Vector2(map_window_size / 2) - map_node.focus_position + Vector2(chapter_bar_width, 0)
+		var pos = Vector2(map_node.size / 2) - map_node.focus_position
 		map_node.set_pos(pos)
 
 

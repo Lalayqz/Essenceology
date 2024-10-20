@@ -6,21 +6,19 @@ const LABEL_OFFSET_Y = -3
 const LEVEL_CHAINS = {"POSSIBILITY":[["INTRO", "UNLIKELY"], ["UNLIKELY", "LOGIC"], ["LOGIC", "LOGIC_HARD"], ["LOGIC", "LIES_GENERALIZED"], ["LIES_GENERALIZED", "LIES_1"], ["LIES_1", "LIES_2"], ["LIES_2", "LIES_HARD"], ["LIES_2", "MEMORY_1"], ["MEMORY_1", "MEMORY_2"], ["MEMORY_2", "MEMORY_GENERALIZED"], ["MEMORY_GENERALIZED", "MEMORY_HARD"], ["MEMORY_GENERALIZED", "PATTERNS_1"], ["PATTERNS_1", "PATTERNS_2"], ["PATTERNS_2", "PATTERNS_3"], ["PATTERNS_3", "FINALE"]],
 "SHOULD":[["INTRO", "ALL_LIVES"], ["INTRO", "INDIVIDUAL"], ["INTRO", "CALCULATION"], ["CALCULATION", "PROBABILITY_1"], ["PROBABILITY_1", "PROBABILITY_2"], ["ALL_LIVES", "ANALYSIS_1"], ["INDIVIDUAL", "ANALYSIS_1"], ["CALCULATION", "ANALYSIS_1"], ["ANALYSIS_1", "ANALYSIS_2"], ["ANALYSIS_2", "MILITARY_TRAINING"]]}
 var visible_levels = []
+var level_label_font = preload("res://resources/fonts/SourceHanSansSC-Normal.otf")
 var unsolved_level_texture = preload("res://resources/images/unsolved_level.png")
-var solved_level_texture = preload("res://resources/images/solved_level.png")
 var unsolved_finale_texture = preload("res://resources/images/unsolved_finale.png")
-var solved_finale_texture = preload("res://resources/images/solved_finale.png")
-var LEVEL_LABEL_FONT = preload("res://resources/fonts/SourceHanSansSC-Normal.otf")
-var window_pos
-var window_size
 var drag_start = null
 var drag_start_last_frame = null
-@onready var chapter_size = self.size
 @onready var chapter = Global_Variables.current_chapter
-@onready var background = $Background
-@onready var chains = $Chains
-@onready var levels = $Levels
-@onready var focus_position = $Focus.position
+@onready var map = $Map
+@onready var background = map.get_node("Background")
+@onready var chains = map.get_node("Chains")
+@onready var levels = map.get_node("Levels")
+@onready var focus_position = map.get_node("Focus").position
+@onready var solved_level_texture = load("res://resources/images/solved_level_" + chapter + ".png")
+@onready var solved_finale_texture = load("res://resources/images/solved_finale_" + chapter + ".png")
 
 
 func _ready():
@@ -78,7 +76,7 @@ func _ready():
 		level.add_child(level_sprite)
 		var radius = level_sprite.texture.get_width() / 2
 		var level_label = load("res://scenes/items/ui_text.tscn").instantiate()
-		var label_size = LEVEL_LABEL_FONT.get_string_size(level.name, HORIZONTAL_ALIGNMENT_LEFT, -1, LABEL_FONT_SIZE)
+		var label_size = level_label_font.get_string_size(level.name, HORIZONTAL_ALIGNMENT_LEFT, -1, LABEL_FONT_SIZE)
 		level_label.text = level.name
 		level_label.position.y -= (radius + label_size.y / 2 + LABEL_OFFSET_Y)
 		level_label.set("theme_override_font_sizes/font_size", LABEL_FONT_SIZE)
@@ -88,11 +86,6 @@ func _ready():
 		level.set_meta("Radius", radius)
 	
 	background.color = Global_Variables.current_chapter_background_color
-
-
-func set_window_info(pos, s):
-	window_pos = pos
-	window_size = s
 
 
 func _unhandled_input(event):  # use "unhandled" because I want the chapter bar to block map interactions.
@@ -108,7 +101,7 @@ func _unhandled_input(event):  # use "unhandled" because I want the chapter bar 
 			drag_start_last_frame = null
 	elif (is_motion):
 		if (drag_start_last_frame != null):
-			var pos = self.position + event.position - drag_start_last_frame
+			var pos = map.position + event.position - drag_start_last_frame
 			set_pos(pos)
 			drag_start_last_frame = event.position
 			
@@ -128,11 +121,14 @@ func _unhandled_input(event):  # use "unhandled" because I want the chapter bar 
 
 
 func set_pos(pos):
-	self.position.x = max(pos.x, window_size.x + window_pos.x - chapter_size.x)  # lower limit
-	self.position.x = min(self.position.x, window_pos.x)  # upper limit
-	self.position.y = max(pos.y, window_size.y + window_pos.y - chapter_size.y)
-	self.position.y = min(self.position.y, window_pos.y)
+	print("self.size ", self.size.x)
+	print("map.size ", map.size.x)
+	print(">= ", self.size.x - map.size.x)
+	map.position.x = max(pos.x, self.size.x - map.size.x)  # lower limit
+	map.position.x = min(map.position.x, 0)  # upper limit
+	map.position.y = max(pos.y, self.size.y - map.size.y)
+	map.position.y = min(map.position.y, 0)
 
 
 func _exit_tree():
-	Global_Variables.set_map_drag_pos(self.position)
+	Global_Variables.set_map_drag_pos(map.position)

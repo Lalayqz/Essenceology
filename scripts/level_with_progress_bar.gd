@@ -12,9 +12,10 @@ func _ready():
 	problems.append(get_node("Body/Body/Problem").get_child(0))
 	load_answers()
 	
+	if Save.get_level_solved(chapter, level_name) and is_all_correct():
+		solve_level(false)
 	update_progress_bar(false)
-	if not show_progress_bar:
-		progress_bar.visible = false
+	progress_bar.visible = show_progress_bar
 
 
 func update_progress_bar(also_do_animation):

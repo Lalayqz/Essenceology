@@ -7,3 +7,9 @@
 答题按钮字母颜色：
 P：lost
 S：ffd500
+
+关卡圆圈：
+paint.NET，圆形，粗细5px，30x30
+FINALE圆圈：
+[外部]5px, 36x36
+[内部]2px, 22x22

@@ -18,13 +18,21 @@ func _ready():
 	for problem in problems:
 		problem.connect_signal_update_submit_button_visibility(update_submit_button_visibility)
 	
-	if not is_solved:
-		update_submit_button_visibility()
+	# set solved
+	# It's possible that I update the problems and the inputs for an already solved level is not longer correct.
+	# If this happens, just make the content in level appear as unsolved. Don't remove this level from solved levels in save.
+	if Save.get_level_solved(chapter, level_name) and is_all_correct():
+		solve_level(false)
+	
+	update_submit_button_visibility()
 	submit_button.load_penalty_from_save()
 
 
 func update_submit_button_visibility():
-	submit_button.visible = is_all_answered()
+	var v = false
+	if not is_solved:
+		v = is_all_answered()
+	submit_button.visible = v
 
 
 func update_submit_button_penalty():

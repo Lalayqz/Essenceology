@@ -1,14 +1,18 @@
 [gd_scene load_steps=2 format=3 uid="uid://dwfhsutpukx"]
 
-[ext_resource type="Script" path="res://scripts/map.gd" id="2_vlxkl"]
+[ext_resource type="Script" path="res://scripts/map_window.gd" id="2_vlxkl"]
 
-[node name="Possibility" type="ReferenceRect"]
-offset_right = 1500.0
-offset_bottom = 2189.0
+[node name="Window" type="ReferenceRect"]
 mouse_filter = 2
 script = ExtResource("2_vlxkl")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="Map" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_right = 1500.0
+offset_bottom = 2189.0
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="Map"]
 z_index = -10
 layout_mode = 0
 offset_right = 1500.0
@@ -16,57 +20,57 @@ offset_bottom = 2189.0
 mouse_filter = 2
 color = Color(0.0313726, 0.101961, 0.0313726, 1)
 
-[node name="Chains" type="Node2D" parent="."]
+[node name="Chains" type="Node2D" parent="Map"]
 
-[node name="Levels" type="Node2D" parent="."]
+[node name="Levels" type="Node2D" parent="Map"]
 
-[node name="INTRO" type="Node2D" parent="Levels"]
+[node name="INTRO" type="Node2D" parent="Map/Levels"]
 position = Vector2(640, 130)
 
-[node name="UNLIKELY" type="Node2D" parent="Levels"]
+[node name="UNLIKELY" type="Node2D" parent="Map/Levels"]
 position = Vector2(743, 394)
 
-[node name="LOGIC" type="Node2D" parent="Levels"]
+[node name="LOGIC" type="Node2D" parent="Map/Levels"]
 position = Vector2(646, 615)
 
-[node name="LOGIC_HARD" type="Node2D" parent="Levels"]
+[node name="LOGIC_HARD" type="Node2D" parent="Map/Levels"]
 position = Vector2(849, 581)
 
-[node name="LIES_GENERALIZED" type="Node2D" parent="Levels"]
+[node name="LIES_GENERALIZED" type="Node2D" parent="Map/Levels"]
 position = Vector2(449, 817)
 
-[node name="LIES_1" type="Node2D" parent="Levels"]
+[node name="LIES_1" type="Node2D" parent="Map/Levels"]
 position = Vector2(453, 939)
 
-[node name="LIES_2" type="Node2D" parent="Levels"]
+[node name="LIES_2" type="Node2D" parent="Map/Levels"]
 position = Vector2(530, 1021)
 
-[node name="LIES_HARD" type="Node2D" parent="Levels"]
+[node name="LIES_HARD" type="Node2D" parent="Map/Levels"]
 position = Vector2(321, 970)
 
-[node name="MEMORY_1" type="Node2D" parent="Levels"]
+[node name="MEMORY_1" type="Node2D" parent="Map/Levels"]
 position = Vector2(809, 1114)
 
-[node name="MEMORY_2" type="Node2D" parent="Levels"]
+[node name="MEMORY_2" type="Node2D" parent="Map/Levels"]
 position = Vector2(982, 1198)
 
-[node name="MEMORY_GENERALIZED" type="Node2D" parent="Levels"]
+[node name="MEMORY_GENERALIZED" type="Node2D" parent="Map/Levels"]
 position = Vector2(1071, 1352)
 
-[node name="MEMORY_HARD" type="Node2D" parent="Levels"]
+[node name="MEMORY_HARD" type="Node2D" parent="Map/Levels"]
 position = Vector2(1207, 1233)
 
-[node name="PATTERNS_1" type="Node2D" parent="Levels"]
+[node name="PATTERNS_1" type="Node2D" parent="Map/Levels"]
 position = Vector2(1055, 1638)
 
-[node name="PATTERNS_2" type="Node2D" parent="Levels"]
+[node name="PATTERNS_2" type="Node2D" parent="Map/Levels"]
 position = Vector2(905, 1696)
 
-[node name="PATTERNS_3" type="Node2D" parent="Levels"]
+[node name="PATTERNS_3" type="Node2D" parent="Map/Levels"]
 position = Vector2(775, 1852)
 
-[node name="FINALE" type="Node2D" parent="Levels"]
+[node name="FINALE" type="Node2D" parent="Map/Levels"]
 position = Vector2(775, 2118)
 
-[node name="Focus" type="Node2D" parent="."]
+[node name="Focus" type="Node2D" parent="Map"]
 position = Vector2(640, 353)

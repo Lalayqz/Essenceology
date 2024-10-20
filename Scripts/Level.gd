@@ -27,12 +27,6 @@ func _ready():
 	level_structure.get_node("Ui/Title").set("theme_override_colors/font_shadow_color", Global_Variables.current_chapter_color)
 	
 	title.text = level_name
-	
-	# set solved
-	# It's possible that I update the problems and the inputs for an already solved level is not longer correct.
-	# If this happens, just make the content in level appear as unsolved. Don't remove this level from solved levels in save.
-	if Save.get_level_solved(chapter, level_name) and is_all_correct():
-		solve_level(false)
 
 
 func _input(event):

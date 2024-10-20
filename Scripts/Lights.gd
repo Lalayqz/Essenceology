@@ -27,7 +27,7 @@ var small_light_counter = 0
 
 func _ready():
 	is_light_on = Config.get_disturbing_background()
-	view_size = get_viewport().size
+	view_size = get_viewport().content_scale_size
 	light_count = view_size.x * view_size.y / 130000
 	if is_light_on:
 		init_lights()
