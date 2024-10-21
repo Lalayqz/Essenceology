@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bm4f8t2kav2pp"]
+[gd_scene load_steps=10 format=3 uid="uid://nkiim8nj6o08"]
 
 [ext_resource type="Script" path="res://scripts/scales_level.gd" id="1_w1q6n"]
 [ext_resource type="PackedScene" uid="uid://dsc2bjdg18543" path="res://scenes/items/level_structure_with_progress_bar.tscn" id="2_ccmvs"]

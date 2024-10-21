@@ -3,15 +3,13 @@ extends ReferenceRect
 const ENTER_LEVEL_DRAG_MAX = 18
 const LABEL_FONT_SIZE = 23
 const LABEL_OFFSET_Y = -3
-const LEVEL_CHAINS = {"POSSIBILITY":[["INTRO", "UNLIKELY"], ["UNLIKELY", "LOGIC"], ["LOGIC", "LOGIC_HARD"], ["LOGIC", "LIES_GENERALIZED"], ["LIES_GENERALIZED", "LIES_1"], ["LIES_1", "LIES_2"], ["LIES_2", "LIES_HARD"], ["LIES_2", "MEMORY_1"], ["MEMORY_1", "MEMORY_2"], ["MEMORY_2", "MEMORY_GENERALIZED"], ["MEMORY_GENERALIZED", "MEMORY_HARD"], ["MEMORY_GENERALIZED", "PATTERNS_1"], ["PATTERNS_1", "PATTERNS_2"], ["PATTERNS_2", "PATTERNS_3"], ["PATTERNS_3", "FINALE"]],
-"SHOULD":[["INTRO", "ALL_LIVES"], ["INTRO", "INDIVIDUAL"], ["INTRO", "CALCULATION"], ["CALCULATION", "PROBABILITY_1"], ["PROBABILITY_1", "PROBABILITY_2"], ["ALL_LIVES", "ANALYSIS_1"], ["INDIVIDUAL", "ANALYSIS_1"], ["CALCULATION", "ANALYSIS_1"], ["ANALYSIS_1", "ANALYSIS_2"], ["ANALYSIS_2", "MILITARY_TRAINING"]]}
 var visible_levels = []
 var level_label_font = preload("res://resources/fonts/SourceHanSansSC-Normal.otf")
 var unsolved_level_texture = preload("res://resources/images/unsolved_level.png")
 var unsolved_finale_texture = preload("res://resources/images/unsolved_finale.png")
 var drag_start = null
 var drag_start_last_frame = null
-@onready var chapter = Global_Variables.current_chapter
+@onready var chapter = GlobalVariables.current_chapter
 @onready var map = $Map
 @onready var background = map.get_node("Background")
 @onready var chains = map.get_node("Chains")
@@ -27,14 +25,14 @@ func _ready():
 	var levels_not_unlocked = {}
 	var visible_level_names = []
 	
-	for chain in LEVEL_CHAINS[chapter]:
+	for chain in LevelInfos.LEVEL_CHAINS[chapter]:
 		if Save.get_level_solved(chapter, chain[0]):
 			chains_unlocked[chain] = 1
 		levels_not_unlocked[chain[1]] = 1
 	var levels_unlocked_in_not_unlocked = []
 	for level in levels_not_unlocked:
 		var is_unlocked = true
-		for chain in LEVEL_CHAINS[chapter]:
+		for chain in LevelInfos.LEVEL_CHAINS[chapter]:
 			if chain[1] == level and not Save.get_level_solved(chapter, chain[0]):
 				is_unlocked = false
 				break
@@ -68,24 +66,25 @@ func _ready():
 		chains.add_child(chain_node)
 	# add level icons
 	for level in visible_levels:
+		var is_solved = Save.get_level_solved(chapter, level.name)
 		var level_sprite = Sprite2D.new()
-		if level.name in Global_Variables.FINALES[chapter]:
-			level_sprite.texture = solved_finale_texture if Save.get_level_solved(chapter, level.name) else unsolved_finale_texture
+		if level.name in LevelInfos.FINALES[chapter]:
+			level_sprite.texture = solved_finale_texture if is_solved else unsolved_finale_texture
 		else:
-			level_sprite.texture = solved_level_texture if Save.get_level_solved(chapter, level.name) else unsolved_level_texture
+			level_sprite.texture = solved_level_texture if is_solved else unsolved_level_texture
 		level.add_child(level_sprite)
 		var radius = level_sprite.texture.get_width() / 2
 		var level_label = load("res://scenes/items/ui_text.tscn").instantiate()
 		var label_size = level_label_font.get_string_size(level.name, HORIZONTAL_ALIGNMENT_LEFT, -1, LABEL_FONT_SIZE)
-		level_label.text = level.name
+		level_label.text = '???' if level.name in LevelInfos.HIDDEN_NAME_LEVELS[chapter] and not is_solved else level.name
 		level_label.position.y -= (radius + label_size.y / 2 + LABEL_OFFSET_Y)
 		level_label.set("theme_override_font_sizes/font_size", LABEL_FONT_SIZE)
 		level_label.set("theme_override_colors/font_outline_color", Color.WHITE)
-		level_label.set("theme_override_colors/font_shadow_color", Global_Variables.current_chapter_color)
+		level_label.set("theme_override_colors/font_shadow_color", GlobalVariables.current_chapter_color)
 		level.add_child(level_label)
 		level.set_meta("Radius", radius)
 	
-	background.color = Global_Variables.current_chapter_background_color
+	background.color = GlobalVariables.current_chapter_background_color
 
 
 func _unhandled_input(event):  # use "unhandled" because I want the chapter bar to block map interactions.
@@ -121,9 +120,6 @@ func _unhandled_input(event):  # use "unhandled" because I want the chapter bar 
 
 
 func set_pos(pos):
-	print("self.size ", self.size.x)
-	print("map.size ", map.size.x)
-	print(">= ", self.size.x - map.size.x)
 	map.position.x = max(pos.x, self.size.x - map.size.x)  # lower limit
 	map.position.x = min(map.position.x, 0)  # upper limit
 	map.position.y = max(pos.y, self.size.y - map.size.y)
@@ -131,4 +127,4 @@ func set_pos(pos):
 
 
 func _exit_tree():
-	Global_Variables.set_map_drag_pos(map.position)
+	GlobalVariables.set_map_drag_pos(map.position)

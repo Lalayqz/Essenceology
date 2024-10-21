@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ddpe4yxdvdeqv"]
+
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://resources/fonts/SourceHanSansSC-Normal.otf" id="1_g8xml"]
+
+[resource]
+RichTextLabel/colors/font_outline_color = Color(1, 1, 1, 1)
+RichTextLabel/constants/outline_size = 1
+RichTextLabel/font_sizes/normal_font_size = 18
+RichTextLabel/fonts/normal_font = ExtResource("1_g8xml")

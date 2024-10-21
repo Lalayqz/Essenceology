@@ -19,8 +19,9 @@ config/icon="res://resources/images/icon.svg"
 
 Save="*res://scripts/save.gd"
 Config="*res://scripts/config.gd"
-Global_Variables="*res://scripts/global_variables.gd"
+GlobalVariables="*res://scripts/global_variables.gd"
 Lights="*res://scripts/lights.gd"
+LevelInfos="*res://scripts/level_infos.gd"
 
 [debug]
 

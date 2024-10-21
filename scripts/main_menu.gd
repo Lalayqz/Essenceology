@@ -9,7 +9,7 @@ func _ready():
 	if not Save.is_any_chapter_solved():
 		chapter_bar.visible = false
 	chapter_bar_width = chapter_bar.size.x if chapter_bar.visible else 0
-	load_chapter(Global_Variables.current_chapter)	
+	load_chapter(GlobalVariables.current_chapter)	
 
 
 func _notification(what):
@@ -28,7 +28,7 @@ func load_chapter(chapter):
 	if (map_node != null):
 		remove_child(map_node)
 	
-	Global_Variables.set_chapter(chapter)
+	GlobalVariables.set_chapter(chapter)
 	Lights.update_color_to_chapter_color(chapter)
 	
 	map_node = load("res://scenes/maps/" + chapter + ".tscn").instantiate()
@@ -39,7 +39,7 @@ func load_chapter(chapter):
 	map_node.size = Vector2(Vector2(get_viewport().content_scale_size) - map_node.position)
 	
 	# set map position
-	var drag_position = Global_Variables.get_map_drag_pos()
+	var drag_position = GlobalVariables.get_map_drag_pos()
 	if drag_position != null:
 		map_node.set_pos(drag_position)
 	else: # set view to focus point

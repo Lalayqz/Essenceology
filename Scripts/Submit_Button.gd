@@ -6,7 +6,7 @@ const HOLD_TIME = 1
 var level_name
 var background_width = 0
 var is_held_down = false
-@onready var chapter = Global_Variables.current_chapter
+@onready var chapter = GlobalVariables.current_chapter
 @onready var background = get_node("Background")
 @onready var width = size.x
 @onready var background_progress_speed = float(width) / HOLD_TIME

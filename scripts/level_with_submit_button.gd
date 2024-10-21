@@ -5,24 +5,17 @@ class_name LevelWithSubmitButton extends Level
 
 
 func _ready():
-	super()
-	
 	var problems_and_lines = get_node("Problems/Problems").get_children()
 	for problem_or_line in problems_and_lines:
 		if problem_or_line is MarginContainer:
 			problems.append(problem_or_line)
-	load_answers()
+	
+	super()
 	
 	submit_button.submit.connect(submit_answers)
 	submit_button.set_level_name(level_name)
 	for problem in problems:
 		problem.connect_signal_update_submit_button_visibility(update_submit_button_visibility)
-	
-	# set solved
-	# It's possible that I update the problems and the inputs for an already solved level is not longer correct.
-	# If this happens, just make the content in level appear as unsolved. Don't remove this level from solved levels in save.
-	if Save.get_level_solved(chapter, level_name) and is_all_correct():
-		solve_level(false)
 	
 	update_submit_button_visibility()
 	submit_button.load_penalty_from_save()

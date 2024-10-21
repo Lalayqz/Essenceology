@@ -2,8 +2,7 @@ extends LevelWithSubmitButton
 
 const MAX_TEXT_WIDTH = 1000
 const MAX_TEXT_HEIGHT = 500
-const TEXT_FONT_SIZE = 33
-const TEXT_FONT_SIZE_SMALL = 30
+var small_text_style = preload("res://resources/styles/problem_text_extra_small.tres")
 var TEXTS = []
 
 
@@ -34,5 +33,5 @@ func check_and_shrink_font():
 	var size = problems_container.get_minimum_size()
 	if size.y > MAX_TEXT_HEIGHT:
 		for text in TEXTS:
-			text.set("theme_override_font_sizes/normal_font_size", TEXT_FONT_SIZE_SMALL)
+			text.set_theme(small_text_style)
 		update_word_warp()

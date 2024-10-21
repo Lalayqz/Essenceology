@@ -84,7 +84,15 @@ ANALYSIS_2,Analysis 2,分析 2
 FIXED_SUM_1,Fixed Sum 1,定和 1
 FIXED_SUM_2,Fixed Sum 2,定和 2
 MILITARY_TRAINING,Military Training,军训
-
+RICE,Rice,米饭
+VEGETARIAN,Vegetarian,素食
+MATCH,Match,比赛
+COOPERATE,Cooperate,合作
+LIE,Lie,撒谎
+SUICIDE,Suicide,自杀
+MOSQUITO,Mosquito,蚊子
+CAKE_1,Cake 1,蛋糕 1
+CAKE_2,Cake 2,蛋糕 2
 
 SHOULD_INTRO_NOTE,"[center]ph[/center]","[center]在这一部分里，每一道题会给出某一情境下的多个选择，你需要选出其中[b]应该[/b]做出的选择。\n其中，“应该做出某选择”的[b]定义[/b]为：\n在这些选择中，做出该选择的条件下所有生物利益值的[color=yellow][hint=以发生概率为权重的平均值]期望[/hint][/color]最大。[/center]"
 SHOULD_INTRO_TROLLEY,"A runaway train is heading towards a switch track. Each of the two leading tracks has some people tied to it. Beside you is a level that controls the switch. If you do nothing, the train will enter a track with  5  people tied to it. If you pull the level, the train will enter the other track with  1  people tied to it(and this action will not be prosecuted by law). You should...","一辆失控的列车正冲向一个道岔，道岔通向的两个线路上都绑着人，而你手边有一个控制该道岔的拉杆。此时，若你什么都不做，那么列车将驶入绑有5人的轨道；若你拉下拉杆，那么列车会驶入另一条绑有1人的轨道（此行为不会受到法律审判）。你应该..."
@@ -110,7 +118,7 @@ SHOULD_ANALYSIS_1_WIPE,"You need to wipe some oil off your mouth and some sweat 
 SHOULD_ANALYSIS_1_WIPE_MOUTH_FIRST,"Wipe your mouth first, then fold the tissue and wipe your butt","先擦嘴，折一下抽纸，再擦屁股"
 SHOULD_ANALYSIS_1_WIPE_BUTT_FIRST,"Wipe your butt first, then fold the tissue and wipe your mouth","先擦屁股，折一下抽纸，再擦嘴"
 SHOULD_ANALYSIS_1_GRID,"You are on a platform. At the upper surface of the platform, there are 12 locations distributed in a [color=yellow][hint=3 rows, 4 columns]4x3 matrix[/hint][/color]. The distance between two horizontally adjacent locations is 200 meters, and the distance between two vertically adjacent locations is 100 meters. You are at the leftmost location in the first row, and you need to visit each location once. You should... (you move along the shortest path between locations)","你在一个平台上，平台上表面处有12个地点以[color=yellow][hint=3行4列]4x3的矩阵状[/hint][/color]分布，横向相邻两点间距200米，纵向相邻间距100米。你在第一行最左的地点处，你需要到达每个地点各一次。你应该...（在地点间移动时走最短路径）"
-SHOULD_ANALYSIS_1_GRID_HORIZONTAL_FIRST,"First traverse the first row from left to right, then traverse the second row from right to left, then traverse the third row from left to right","先从左至右遍历第1行，再从右至左遍历第2行，再从左至右遍历第3行"
+SHOULD_ANALYSIS_1_GRID_HORIZONTAL_FIRST,"First traverse the 1st row from left to right, then traverse the 2nd row from right to left, then traverse the 3rd row from left to right","先从左至右遍历第1行，再从右至左遍历第2行，再从左至右遍历第3行"
 SHOULD_ANALYSIS_1_GRID_VERTICAL_FIRST,"First traverse the 1st column from front to back, then traverse the 2nd column from back to front, then traverse the 3rd column from front to back, then traverse the 4th column from back to front","先从前至后遍历第1列，再从后至前遍历第2列，再从前至后遍历第3列，再从后至前遍历第4列"
 SHOULD_ANALYSIS_2_CLOTHES,"The 20 clothes on the drying rack are all dry, and you need to collect them. The process is: you take a piece of clothing with yout right hand and place it on your left hand, repeating this for each piece of clothing. Finally, you leave and place the stack of clothes in your left hand somewhere else. You should...","晾衣架上的二十件衣服都干了，你需要把它们收起来。你收衣服的流程是：右手取衣服，放到左手上，依次对每件衣服执行上述操作，最后离开，然后把左手上一叠衣服放到某处。你应该..."
 SHOULD_ANALYSIS_2_CLOTHES_LIGHT_FIRST,"Collect the clothes in order from lightest to heaviest","按从轻到重的顺序收衣服"
@@ -124,18 +132,18 @@ SHOULD_ANALYSIS_HARD_METRO_LONG_BUT_SPARSE,"Take the route which takes a long ti
 SHOULD_ANALYSIS_HARD_ESCALATOR,"Class is about to start, and you need to get to the classroom before the class begins. You are currently in an underground passage, and the route to the classroom from here involves an upward escalator followed by a flat path. You can't walk the entire route continuously, as you'll need to stop and rest for 10 seconds midway. You should...","快上课了，你需要在上课前走到教室。你当前在一条地下通道里，从这里到教室的路线是一段上升的自动扶梯加上一段平路。你无法全程一直行走，中途需要立定歇10秒。你应该..."
 SHOULD_ANALYSIS_HARD_ESCALATOR_REST_ON_ESCALATOR,"Rest for 10 seconds on the escalator","站在扶梯上歇10秒"
 SHOULD_ANALYSIS_HARD_ESCALATOR_REST_ON_ROAD,"Rest for 10 seconds on the flat path","站在平路上歇10秒"
-SHOULD_FIXED_SUM_1_FIGHT,"A crowd of people is scrambling for a free item. You should...","有一群人在争抢一个免费的东西，你应该..."
-SHOULD_FIXED_SUM_1_FIGHT_JOIN,"Join the scramble","加入这场争抢"
-SHOULD_FIXED_SUM_1_FIGHT_DONT_JOIN,"Don't join the scramble","不加入这场争抢"
+SHOULD_FIXED_SUM_1_SCRAMBLE,"A crowd of people is scrambling for a free item. You should...","有一群人在争抢一个免费的东西，你应该..."
+SHOULD_FIXED_SUM_1_SCRAMBLE_JOIN,"Join the scramble","加入这场争抢"
+SHOULD_FIXED_SUM_1_SCRAMBLE_DONT_JOIN,"Don't join the scramble","不加入这场争抢"
 SHOULD_FIXED_SUM_1_QUEUE,"You are sitting on a bench. You need to handle some business at a nearby window, but there are about 50 people standing in line at the window. You should...","你坐在座椅上。你需要在旁边某一窗口处办理事务，但是该窗口有约50个人在站着排队。你当前应该..."
 SHOULD_FIXED_SUM_1_QUEUE_GO,"Go stand in line","去排队"
 SHOULD_FIXED_SUM_1_QUEUE_STAY,"Keep sitting","继续坐着"
 SHOULD_FIXED_SUM_2_GAOKAO,"The college entrance examination may test the years of certain historical events. Someone is a candidate for this examination. They should...","高考可能会考某些历史事件的年份是多少。某人是一个高考考生，他应该..."
 SHOULD_FIXED_SUM_2_GAOKAO_MEMORIZE,"","花时间背这些东西"
 SHOULD_FIXED_SUM_2_GAOKAO_DONT_MEMORIZE,"","不花时间背这些东西"
-SHOULD_ANALYSIS_FIXED_SUM_2_CURRENCY,"A bag of candy and a stack of cash (100 one-hundred-dollar bills) are about to be destroyed, and you can only save one of the two.","一袋糖果和一叠钞票(100张百元人民币)要被销毁了，你只能挽救两者中的一个。你应该..."
-SHOULD_ANALYSIS_FIXED_SUM_2_CURRENCY_SAVE_CANDIES,"Save the candies","挽救这袋糖果"
-SHOULD_ANALYSIS_FIXED_SUM_2_CURRENCY_SAVE_CASH,"Save the cash","挽救这叠钞票"
+SHOULD_FIXED_SUM_2_CURRENCY,"A bag of candy and a stack of cash (100 one-hundred-dollar bills) are about to be destroyed, and you can only save one of the two.","一袋糖果和一叠钞票（100张百元人民币）要被销毁了，你只能挽救两者中的一个。你应该..."
+SHOULD_FIXED_SUM_2_CURRENCY_SAVE_CANDIES,"Save the candies","挽救这袋糖果"
+SHOULD_FIXED_SUM_2_CURRENCY_SAVE_CASH,"Save the cash","挽救这叠钞票"
 SHOULD_MILITARY_TRAINING_NOTE,"","[center]在接下来的这部分，你需要根据所给情境，回答做出所给选择的[color=yellow][hint=“好与坏”是相比于不做出该选择的]好与坏的方面[/hint][/color]。\n需回答的好的方面在左边一列；需回答的坏的方面（本题没有）在右边一列。\n回答时，意思正确的[color=yellow][hint=除非我在录入时有遗漏][b]任意[/b][/hint][/color]词语都会被接受。\n例如，在本题中，你需要切换到中文输入法，直接在本窗口输入任意一个含义为[b]痛苦[/b]的词语。\n但是，每道题目的输入框都有一个长度上限，且过于笼统的答案不会被接受。[/center]"
 SHOULD_MILITARY_TRAINING,"test","军训中的站军姿等折磨环节应该被废除吗？"
 SHOULD_MILITARY_TRAINING_PAIN,"[color=yellow][hint=]Pain[/hint][/color]","[color=yellow][hint=]痛苦[/hint][/color]"
