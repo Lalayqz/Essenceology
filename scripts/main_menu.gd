@@ -16,8 +16,6 @@ func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		Save.save_game()
 		get_tree().quit()
-func _process(delta):
-	pass
 
 func input(event):
 	if event.is_action_pressed("ui_cancel"):

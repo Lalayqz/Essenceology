@@ -1,0 +1,281 @@
+[gd_scene load_steps=11 format=3 uid="uid://bgfl4hly8lm0b"]
+
+[ext_resource type="Script" path="res://scripts/scales_level.gd" id="1_okqw4"]
+[ext_resource type="PackedScene" uid="uid://dsc2bjdg18543" path="res://scenes/items/level_structure_with_progress_bar.tscn" id="2_roqkc"]
+[ext_resource type="FontFile" uid="uid://dinddkudv7mfy" path="res://resources/fonts/SourceHanSansSC-Normal.otf" id="3_lws4m"]
+[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://resources/fonts/SourceHanSansSC-Bold.otf" id="4_jtcwo"]
+[ext_resource type="Script" path="res://scripts/scales_problem.gd" id="5_05l5a"]
+[ext_resource type="Theme" uid="uid://jcowhqm3oiam" path="res://resources/styles/problem_text_small.tres" id="6_yxtpp"]
+[ext_resource type="Script" path="res://scripts/scales_aspect.gd" id="7_d5rre"]
+[ext_resource type="FontVariation" uid="uid://dv35f3w6abrft" path="res://resources/styles/no_extra_spacing_font_variation.tres" id="8_ipxc7"]
+[ext_resource type="StyleBox" uid="uid://cygff77fpp05p" path="res://resources/styles/good_aspect_border.tres" id="9_2thuv"]
+[ext_resource type="StyleBox" uid="uid://dru1v2d435avn" path="res://resources/styles/bad_aspect_border.tres" id="10_wyowf"]
+
+[node name="VEGETARIAN" type="Node2D"]
+script = ExtResource("1_okqw4")
+max_input_length_en = 7
+max_input_length_zh_cn = 2
+points_goal = 2
+show_progress_bar = true
+
+[node name="LevelStructure" parent="." instance=ExtResource("2_roqkc")]
+
+[node name="Note" type="Label" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("3_lws4m")
+theme_override_font_sizes/font_size = 23
+text = "SHOULD_VEGETARIAN_NOTE"
+horizontal_alignment = 1
+autowrap_mode = 2
+clip_text = true
+
+[node name="Body" type="CenterContainer" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+
+[node name="Body" type="VSplitContainer" parent="Body"]
+layout_mode = 2
+mouse_filter = 2
+collapsed = true
+dragger_visibility = 2
+
+[node name="Input" type="MarginContainer" parent="Body/Body"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 20
+
+[node name="Input" type="CenterContainer" parent="Body/Body/Input"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Input" type="RichTextLabel" parent="Body/Body/Input/Input"]
+custom_minimum_size = Vector2(0, 73)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_jtcwo")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Problem" type="CenterContainer" parent="Body/Body"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="RICE" type="VBoxContainer" parent="Body/Body/Problem"]
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("5_05l5a")
+
+[node name="Text" type="CenterContainer" parent="Body/Body/Problem/RICE"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Body/Body/Problem/RICE/Text"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("6_yxtpp")
+bbcode_enabled = true
+text = "SHOULD_VEGETARIAN"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Line" type="MarginContainer" parent="Body/Body/Problem/RICE"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Line" type="CenterContainer" parent="Body/Body/Problem/RICE/Line"]
+layout_mode = 2
+
+[node name="Line" type="ColorRect" parent="Body/Body/Problem/RICE/Line/Line"]
+custom_minimum_size = Vector2(1100, 1)
+layout_mode = 2
+
+[node name="Aspects" type="HBoxContainer" parent="Body/Body/Problem/RICE"]
+layout_mode = 2
+alignment = 1
+
+[node name="GoodAspects" type="VBoxContainer" parent="Body/Body/Problem/RICE/Aspects"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="TASTY" type="MarginContainer" parent="Body/Body/Problem/RICE/Aspects/GoodAspects"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+script = ExtResource("7_d5rre")
+points = 1
+reference_words_en = PackedStringArray("Tasty")
+reference_words_zh_cn = PackedStringArray("好吃")
+
+[node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/RICE/Aspects/GoodAspects/TASTY"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/RICE/Aspects/GoodAspects/TASTY/Aspect"]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 80.0
+color = Color(0.239216, 0.819608, 0.486275, 0.196078)
+
+[node name="Text" type="CenterContainer" parent="Body/Body/Problem/RICE/Aspects/GoodAspects/TASTY/Aspect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="RichTextLabel" parent="Body/Body/Problem/RICE/Aspects/GoodAspects/TASTY/Aspect/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/normal_font = ExtResource("4_jtcwo")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "SHOULD_VEGETARIAN_TASTY"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="CoverMask" type="ReferenceRect" parent="Body/Body/Problem/RICE/Aspects/GoodAspects/TASTY/Aspect"]
+clip_children = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Cover" type="CenterContainer" parent="Body/Body/Problem/RICE/Aspects/GoodAspects/TASTY/Aspect/CoverMask"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/RICE/Aspects/GoodAspects/TASTY/Aspect/CoverMask/Cover"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="?" type="Label" parent="Body/Body/Problem/RICE/Aspects/GoodAspects/TASTY/Aspect/CoverMask/Cover"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_ipxc7")
+theme_override_font_sizes/font_size = 80
+text = "?"
+
+[node name="Border" type="Panel" parent="Body/Body/Problem/RICE/Aspects/GoodAspects/TASTY/Aspect"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+offset_right = 250.0
+offset_bottom = 80.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("9_2thuv")
+
+[node name="Line" type="CenterContainer" parent="Body/Body/Problem/RICE/Aspects"]
+layout_mode = 2
+
+[node name="Line" type="ColorRect" parent="Body/Body/Problem/RICE/Aspects/Line"]
+custom_minimum_size = Vector2(1, 300)
+layout_mode = 2
+
+[node name="BadAspects" type="VBoxContainer" parent="Body/Body/Problem/RICE/Aspects"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="PAIN" type="MarginContainer" parent="Body/Body/Problem/RICE/Aspects/BadAspects"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+script = ExtResource("7_d5rre")
+points = 1
+reference_words_en = PackedStringArray("Pain", "Painful", "Torture")
+reference_words_zh_cn = PackedStringArray("疼", "痛", "苦", "痛苦", "疼痛", "折磨")
+
+[node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/RICE/Aspects/BadAspects/PAIN"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/RICE/Aspects/BadAspects/PAIN/Aspect"]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 80.0
+color = Color(0.929412, 0, 0.25098, 0.196078)
+
+[node name="Text" type="CenterContainer" parent="Body/Body/Problem/RICE/Aspects/BadAspects/PAIN/Aspect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="RichTextLabel" parent="Body/Body/Problem/RICE/Aspects/BadAspects/PAIN/Aspect/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/normal_font = ExtResource("4_jtcwo")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "SHOULD_VEGETARIAN_PAIN"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="CoverMask" type="ReferenceRect" parent="Body/Body/Problem/RICE/Aspects/BadAspects/PAIN/Aspect"]
+clip_children = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Cover" type="CenterContainer" parent="Body/Body/Problem/RICE/Aspects/BadAspects/PAIN/Aspect/CoverMask"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/RICE/Aspects/BadAspects/PAIN/Aspect/CoverMask/Cover"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="?" type="Label" parent="Body/Body/Problem/RICE/Aspects/BadAspects/PAIN/Aspect/CoverMask/Cover"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_ipxc7")
+theme_override_font_sizes/font_size = 80
+text = "?"
+
+[node name="Border" type="Panel" parent="Body/Body/Problem/RICE/Aspects/BadAspects/PAIN/Aspect"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 80.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("10_wyowf")

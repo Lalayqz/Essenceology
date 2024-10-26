@@ -31,11 +31,19 @@ func _ready():
 		levels_not_unlocked[chain[1]] = 1
 	var levels_unlocked_in_not_unlocked = []
 	for level in levels_not_unlocked:
-		var is_unlocked = true
-		for chain in LevelInfos.LEVEL_CHAINS[chapter]:
-			if chain[1] == level and not Save.get_level_solved(chapter, chain[0]):
-				is_unlocked = false
-				break
+		var is_unlocked
+		if level in LevelInfos.LEVELS_UNLOCKED_BY_ALL_CHAINS[chapter]:
+			is_unlocked = true
+			for chain in LevelInfos.LEVEL_CHAINS[chapter]:
+				if chain[1] == level and not Save.get_level_solved(chapter, chain[0]):
+					is_unlocked = false
+					break
+		else:
+			is_unlocked = false
+			for chain in LevelInfos.LEVEL_CHAINS[chapter]:
+				if chain[1] == level and Save.get_level_solved(chapter, chain[0]):
+					is_unlocked = true
+					break
 		if is_unlocked:
 			levels_unlocked_in_not_unlocked.append(level)
 	for level in levels_unlocked_in_not_unlocked:
@@ -76,7 +84,7 @@ func _ready():
 		var radius = level_sprite.texture.get_width() / 2
 		var level_label = load("res://scenes/items/ui_text.tscn").instantiate()
 		var label_size = level_label_font.get_string_size(level.name, HORIZONTAL_ALIGNMENT_LEFT, -1, LABEL_FONT_SIZE)
-		level_label.text = '???' if level.name in LevelInfos.HIDDEN_NAME_LEVELS[chapter] and not is_solved else level.name
+		level_label.text = '?  ?  ?' if level.name in LevelInfos.HIDDEN_NAME_LEVELS[chapter] and not is_solved else level.name
 		level_label.position.y -= (radius + label_size.y / 2 + LABEL_OFFSET_Y)
 		level_label.set("theme_override_font_sizes/font_size", LABEL_FONT_SIZE)
 		level_label.set("theme_override_colors/font_outline_color", Color.WHITE)

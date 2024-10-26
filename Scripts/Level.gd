@@ -31,10 +31,10 @@ func _ready():
 	# set solved
 	# It's possible that I update the problems and the inputs for an already solved level is not longer correct.
 	# If this happens, just make the content in level appear as unsolved. Don't remove this level from solved levels in save.
-	if Save.get_level_solved(chapter, level_name) and is_all_correct():
+	if Save.get_level_solved(chapter, level_name) and should_be_solved():
 		solve_level(false)
 	
-	title.text = '???' if level_name in LevelInfos.HIDDEN_NAME_LEVELS[chapter] and not is_solved else level_name
+	title.text = '?  ?  ?' if level_name in LevelInfos.HIDDEN_NAME_LEVELS[chapter] and not is_solved else level_name
 
 
 func _input(event):
@@ -77,11 +77,8 @@ func is_all_answered():
 
 
 # Just check. Doesn't trigger anything.
-func is_all_correct():
-	for problem in problems:
-		if not problem.is_correct():
-			return false
-	return true
+func should_be_solved():
+	pass
 
 
 func load_answers():

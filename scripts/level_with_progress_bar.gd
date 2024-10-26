@@ -11,26 +11,36 @@ func _ready():
 	
 	super()
 	
-	update_progress_bar(false)
 	progress_bar.visible = show_progress_bar
+	update_progress_bar(false)
 
 
-func update_progress_bar(also_do_animation):
+func get_points():
 	var points = 0
 	for problem in problems:
 		points += problem.get_points()
+	return points
+
+
+func update_progress_bar(also_do_animation_and_save):
+	var points = get_points()
 		
 	if points >= points_goal:
 		progress_bar.visible = false
+		solve_level(also_do_animation_and_save)
 	else:
 		var full_width = progress_bar.get_node("Border").size.x
 		var target_width = full_width * points / points_goal
 		var bar = progress_bar.get_node("Border/Bar")
-		if also_do_animation:
+		if also_do_animation_and_save:
 			var tween = create_tween()
 			tween.tween_property(bar, "size:x", target_width, PROGRESS_BAR_UPDATE_DUARTION)
 		else:
 			bar.size.x = target_width
+
+
+func should_be_solved():
+	return get_points() >= points_goal
 
 
 func solve_level(also_save):

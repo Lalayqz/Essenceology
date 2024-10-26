@@ -34,7 +34,7 @@ func update_submit_button_penalty():
 
 # Check and trigger corresponding things.
 func submit_answers():
-	if is_all_correct():
+	if should_be_solved():
 		# correct answer!
 		solve_level(true)
 		
@@ -60,6 +60,13 @@ func submit_answers():
 
 func on_sound_finished(audio_player):
 	audio_player.queue_free()
+
+
+func should_be_solved():
+	for problem in problems:
+		if not problem.is_correct():
+			return false
+	return true
 
 
 func solve_level(also_save):

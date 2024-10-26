@@ -5,10 +5,10 @@ var aspects = []
 
 
 func _ready():
-	for aspect in $Aspects/GoodAspects/GoodAspects.get_children():
+	for aspect in $Aspects/GoodAspects.get_children():
 		aspects.append(aspect)
 		aspect.is_good_aspect = true
-	for aspect in $Aspects/BadAspects/BadAspects.get_children():
+	for aspect in $Aspects/BadAspects.get_children():
 		aspects.append(aspect)
 		aspect.is_good_aspect = false
 
@@ -17,7 +17,7 @@ func check_match_aspects(text, language):
 	var matched = false
 	
 	for aspect in aspects:
-		if aspect.check_match(text, language, true):
+		if aspect.check_match(text, language):
 			matched = true
 			
 	return matched
