@@ -1,0 +1,263 @@
+[gd_scene load_steps=10 format=3 uid="uid://cy2tolvelys01"]
+
+[ext_resource type="Script" path="res://scripts/scales_level.gd" id="1_34kxr"]
+[ext_resource type="PackedScene" uid="uid://dsc2bjdg18543" path="res://scenes/items/level_structure_with_progress_bar.tscn" id="2_b7bj6"]
+[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://resources/fonts/SourceHanSansSC-Bold.otf" id="4_7mnh5"]
+[ext_resource type="Script" path="res://scripts/scales_problem.gd" id="5_ticbn"]
+[ext_resource type="Theme" uid="uid://jcowhqm3oiam" path="res://resources/styles/problem_text_small.tres" id="6_f0i4t"]
+[ext_resource type="Script" path="res://scripts/scales_aspect.gd" id="7_w8bdw"]
+[ext_resource type="FontVariation" uid="uid://dv35f3w6abrft" path="res://resources/styles/no_extra_spacing_font_variation.tres" id="8_dq3gg"]
+[ext_resource type="StyleBox" uid="uid://cygff77fpp05p" path="res://resources/styles/good_aspect_border.tres" id="9_e2nad"]
+[ext_resource type="StyleBox" uid="uid://dru1v2d435avn" path="res://resources/styles/bad_aspect_border.tres" id="10_tr4u5"]
+
+[node name="LIE" type="Node2D"]
+script = ExtResource("1_34kxr")
+max_input_length_en = 7
+max_input_length_zh_cn = 2
+points_goal = 3
+show_progress_bar = true
+
+[node name="LevelStructure" parent="." instance=ExtResource("2_b7bj6")]
+
+[node name="Body" type="CenterContainer" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+
+[node name="Body" type="VSplitContainer" parent="Body"]
+layout_mode = 2
+mouse_filter = 2
+collapsed = true
+dragger_visibility = 2
+
+[node name="Input" type="MarginContainer" parent="Body/Body"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 20
+
+[node name="Input" type="CenterContainer" parent="Body/Body/Input"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Input" type="RichTextLabel" parent="Body/Body/Input/Input"]
+custom_minimum_size = Vector2(0, 73)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_7mnh5")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Problem" type="CenterContainer" parent="Body/Body"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="LIE" type="VBoxContainer" parent="Body/Body/Problem"]
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("5_ticbn")
+
+[node name="Text" type="CenterContainer" parent="Body/Body/Problem/LIE"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Body/Body/Problem/LIE/Text"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("6_f0i4t")
+bbcode_enabled = true
+text = "SHOULD_LIE"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Line" type="MarginContainer" parent="Body/Body/Problem/LIE"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Line" type="CenterContainer" parent="Body/Body/Problem/LIE/Line"]
+layout_mode = 2
+
+[node name="Line" type="ColorRect" parent="Body/Body/Problem/LIE/Line/Line"]
+custom_minimum_size = Vector2(1100, 1)
+layout_mode = 2
+
+[node name="Aspects" type="HBoxContainer" parent="Body/Body/Problem/LIE"]
+layout_mode = 2
+alignment = 1
+
+[node name="GoodAspects" type="VBoxContainer" parent="Body/Body/Problem/LIE/Aspects"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="ANGER" type="MarginContainer" parent="Body/Body/Problem/LIE/Aspects/GoodAspects"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 60
+script = ExtResource("7_w8bdw")
+points = 1
+reference_words_en = PackedStringArray("Anger", "Angry", "Mad", "Rage", "Raging", "Enrage", "Enrages", "Enraged", "Outrage", "Fury", "Furious", "Annoy", "Annoys", "Annoyed", "Scold", "Scolds", "Scolded", "Berate", "Berates", "Berated")
+reference_words_zh_cn = PackedStringArray("气", "怒", "生气", "气愤", "发火", "发怒", "愤怒", "怒气", "怒火", "动怒", "不满", "骂", "责骂", "批评", "指责")
+
+[node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/LIE/Aspects/GoodAspects/ANGER"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/LIE/Aspects/GoodAspects/ANGER/Aspect"]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 80.0
+color = Color(0.239216, 0.819608, 0.486275, 0.196078)
+
+[node name="Text" type="CenterContainer" parent="Body/Body/Problem/LIE/Aspects/GoodAspects/ANGER/Aspect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="RichTextLabel" parent="Body/Body/Problem/LIE/Aspects/GoodAspects/ANGER/Aspect/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/normal_font = ExtResource("4_7mnh5")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "SHOULD_LIE_ANGER"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="CoverMask" type="ReferenceRect" parent="Body/Body/Problem/LIE/Aspects/GoodAspects/ANGER/Aspect"]
+clip_children = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Cover" type="CenterContainer" parent="Body/Body/Problem/LIE/Aspects/GoodAspects/ANGER/Aspect/CoverMask"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/LIE/Aspects/GoodAspects/ANGER/Aspect/CoverMask/Cover"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="?" type="Label" parent="Body/Body/Problem/LIE/Aspects/GoodAspects/ANGER/Aspect/CoverMask/Cover"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_dq3gg")
+theme_override_font_sizes/font_size = 80
+text = "?"
+
+[node name="Border" type="Panel" parent="Body/Body/Problem/LIE/Aspects/GoodAspects/ANGER/Aspect"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+offset_right = 250.0
+offset_bottom = 80.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("9_e2nad")
+
+[node name="Line" type="CenterContainer" parent="Body/Body/Problem/LIE/Aspects"]
+layout_mode = 2
+
+[node name="Line" type="ColorRect" parent="Body/Body/Problem/LIE/Aspects/Line"]
+custom_minimum_size = Vector2(1, 350)
+layout_mode = 2
+
+[node name="BadAspects" type="VBoxContainer" parent="Body/Body/Problem/LIE/Aspects"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="EXPOSED" type="MarginContainer" parent="Body/Body/Problem/LIE/Aspects/BadAspects"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+script = ExtResource("7_w8bdw")
+points = 2
+reference_words_en = PackedStringArray("Time")
+reference_words_zh_cn = PackedStringArray("耗时", "时间")
+
+[node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/LIE/Aspects/BadAspects/EXPOSED"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/LIE/Aspects/BadAspects/EXPOSED/Aspect"]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 80.0
+color = Color(0.929412, 0, 0.25098, 0.196078)
+
+[node name="Text" type="CenterContainer" parent="Body/Body/Problem/LIE/Aspects/BadAspects/EXPOSED/Aspect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="RichTextLabel" parent="Body/Body/Problem/LIE/Aspects/BadAspects/EXPOSED/Aspect/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/normal_font = ExtResource("4_7mnh5")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "SHOULD_LIE_EXPOSED"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="CoverMask" type="ReferenceRect" parent="Body/Body/Problem/LIE/Aspects/BadAspects/EXPOSED/Aspect"]
+clip_children = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Cover" type="CenterContainer" parent="Body/Body/Problem/LIE/Aspects/BadAspects/EXPOSED/Aspect/CoverMask"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/LIE/Aspects/BadAspects/EXPOSED/Aspect/CoverMask/Cover"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="?" type="Label" parent="Body/Body/Problem/LIE/Aspects/BadAspects/EXPOSED/Aspect/CoverMask/Cover"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_dq3gg")
+theme_override_font_sizes/font_size = 80
+text = "?"
+
+[node name="Border" type="Panel" parent="Body/Body/Problem/LIE/Aspects/BadAspects/EXPOSED/Aspect"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 80.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("10_tr4u5")

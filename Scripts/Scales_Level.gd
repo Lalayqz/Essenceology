@@ -34,7 +34,8 @@ func _input(event):
 			if Input.is_key_pressed(KEY_CTRL):
 				input.text = ""
 			else:
-				input.text = input.text.erase(input.text.length() - 1, 1)
+				if len(input.text) > 0:
+					input.text = input.text.erase(input.text.length() - 1, 1)
 			inputed = true
 			
 		# Delete
@@ -50,7 +51,7 @@ func _input(event):
 				inputed = append_to_input_box(DisplayServer.clipboard_get())
 		
 		if inputed:
-			check_match_aspects()
+			call_deferred('check_match_aspects')
 
 
 # Returns false if nothing is appended.

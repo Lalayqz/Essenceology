@@ -118,8 +118,8 @@ layout_mode = 2
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 script = ExtResource("7_cvoka")
-reference_words_en = PackedStringArray("Pain", "Painful", "Torture", "Tire", "Tired", "Tiring")
-reference_words_zh_cn = PackedStringArray("疼", "痛", "苦", "累", "痛苦", "疼痛", "折磨", "累死")
+reference_words_en = PackedStringArray("Pain", "Pains", "Painful", "Effort", "Efforts", "Tire", "Tires", "Tired", "Tiring", "Ache", "Aches", "Aching", "Exhaust", "Fatigue")
+reference_words_zh_cn = PackedStringArray("疼", "痛", "苦", "累", "酸", "痛苦", "苦痛", "疼痛", "累死", "累屎", "很累", "辛苦", "辛劳", "劳累", "吃苦", "酸疼", "酸痛")
 
 [node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects/GoodAspects/PAIN"]
 custom_minimum_size = Vector2(250, 80)

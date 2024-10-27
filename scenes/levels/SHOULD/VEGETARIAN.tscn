@@ -74,15 +74,15 @@ autowrap_mode = 0
 layout_mode = 2
 mouse_filter = 2
 
-[node name="RICE" type="VBoxContainer" parent="Body/Body/Problem"]
+[node name="VEGETARIAN" type="VBoxContainer" parent="Body/Body/Problem"]
 layout_mode = 2
 mouse_filter = 2
 script = ExtResource("5_05l5a")
 
-[node name="Text" type="CenterContainer" parent="Body/Body/Problem/RICE"]
+[node name="Text" type="CenterContainer" parent="Body/Body/Problem/VEGETARIAN"]
 layout_mode = 2
 
-[node name="Text" type="RichTextLabel" parent="Body/Body/Problem/RICE/Text"]
+[node name="Text" type="RichTextLabel" parent="Body/Body/Problem/VEGETARIAN/Text"]
 layout_mode = 2
 mouse_filter = 2
 theme = ExtResource("6_yxtpp")
@@ -92,45 +92,45 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="Line" type="MarginContainer" parent="Body/Body/Problem/RICE"]
+[node name="Line" type="MarginContainer" parent="Body/Body/Problem/VEGETARIAN"]
 layout_mode = 2
 theme_override_constants/margin_top = 20
 
-[node name="Line" type="CenterContainer" parent="Body/Body/Problem/RICE/Line"]
+[node name="Line" type="CenterContainer" parent="Body/Body/Problem/VEGETARIAN/Line"]
 layout_mode = 2
 
-[node name="Line" type="ColorRect" parent="Body/Body/Problem/RICE/Line/Line"]
+[node name="Line" type="ColorRect" parent="Body/Body/Problem/VEGETARIAN/Line/Line"]
 custom_minimum_size = Vector2(1100, 1)
 layout_mode = 2
 
-[node name="Aspects" type="HBoxContainer" parent="Body/Body/Problem/RICE"]
+[node name="Aspects" type="HBoxContainer" parent="Body/Body/Problem/VEGETARIAN"]
 layout_mode = 2
 alignment = 1
 
-[node name="GoodAspects" type="VBoxContainer" parent="Body/Body/Problem/RICE/Aspects"]
+[node name="GoodAspects" type="VBoxContainer" parent="Body/Body/Problem/VEGETARIAN/Aspects"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
-[node name="TASTY" type="MarginContainer" parent="Body/Body/Problem/RICE/Aspects/GoodAspects"]
+[node name="TASTY" type="MarginContainer" parent="Body/Body/Problem/VEGETARIAN/Aspects/GoodAspects"]
 layout_mode = 2
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 script = ExtResource("7_d5rre")
 points = 1
 reference_words_en = PackedStringArray("Tasty")
-reference_words_zh_cn = PackedStringArray("好吃")
+reference_words_zh_cn = PackedStringArray("好吃", "美味")
 
-[node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/RICE/Aspects/GoodAspects/TASTY"]
+[node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/VEGETARIAN/Aspects/GoodAspects/TASTY"]
 custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
 
-[node name="Background" type="ColorRect" parent="Body/Body/Problem/RICE/Aspects/GoodAspects/TASTY/Aspect"]
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/VEGETARIAN/Aspects/GoodAspects/TASTY/Aspect"]
 layout_mode = 0
 offset_right = 250.0
 offset_bottom = 80.0
 color = Color(0.239216, 0.819608, 0.486275, 0.196078)
 
-[node name="Text" type="CenterContainer" parent="Body/Body/Problem/RICE/Aspects/GoodAspects/TASTY/Aspect"]
+[node name="Text" type="CenterContainer" parent="Body/Body/Problem/VEGETARIAN/Aspects/GoodAspects/TASTY/Aspect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -138,7 +138,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Text" type="RichTextLabel" parent="Body/Body/Problem/RICE/Aspects/GoodAspects/TASTY/Aspect/Text"]
+[node name="Text" type="RichTextLabel" parent="Body/Body/Problem/VEGETARIAN/Aspects/GoodAspects/TASTY/Aspect/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
@@ -150,7 +150,7 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="CoverMask" type="ReferenceRect" parent="Body/Body/Problem/RICE/Aspects/GoodAspects/TASTY/Aspect"]
+[node name="CoverMask" type="ReferenceRect" parent="Body/Body/Problem/VEGETARIAN/Aspects/GoodAspects/TASTY/Aspect"]
 clip_children = 1
 clip_contents = true
 layout_mode = 1
@@ -161,7 +161,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Cover" type="CenterContainer" parent="Body/Body/Problem/RICE/Aspects/GoodAspects/TASTY/Aspect/CoverMask"]
+[node name="Cover" type="CenterContainer" parent="Body/Body/Problem/VEGETARIAN/Aspects/GoodAspects/TASTY/Aspect/CoverMask"]
 custom_minimum_size = Vector2(250, 80)
 layout_mode = 1
 anchors_preset = 15
@@ -171,18 +171,18 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Background" type="ColorRect" parent="Body/Body/Problem/RICE/Aspects/GoodAspects/TASTY/Aspect/CoverMask/Cover"]
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/VEGETARIAN/Aspects/GoodAspects/TASTY/Aspect/CoverMask/Cover"]
 custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="?" type="Label" parent="Body/Body/Problem/RICE/Aspects/GoodAspects/TASTY/Aspect/CoverMask/Cover"]
+[node name="?" type="Label" parent="Body/Body/Problem/VEGETARIAN/Aspects/GoodAspects/TASTY/Aspect/CoverMask/Cover"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_ipxc7")
 theme_override_font_sizes/font_size = 80
 text = "?"
 
-[node name="Border" type="Panel" parent="Body/Body/Problem/RICE/Aspects/GoodAspects/TASTY/Aspect"]
+[node name="Border" type="Panel" parent="Body/Body/Problem/VEGETARIAN/Aspects/GoodAspects/TASTY/Aspect"]
 custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
 offset_right = 250.0
@@ -190,37 +190,37 @@ offset_bottom = 80.0
 mouse_filter = 2
 theme_override_styles/panel = ExtResource("9_2thuv")
 
-[node name="Line" type="CenterContainer" parent="Body/Body/Problem/RICE/Aspects"]
+[node name="Line" type="CenterContainer" parent="Body/Body/Problem/VEGETARIAN/Aspects"]
 layout_mode = 2
 
-[node name="Line" type="ColorRect" parent="Body/Body/Problem/RICE/Aspects/Line"]
+[node name="Line" type="ColorRect" parent="Body/Body/Problem/VEGETARIAN/Aspects/Line"]
 custom_minimum_size = Vector2(1, 300)
 layout_mode = 2
 
-[node name="BadAspects" type="VBoxContainer" parent="Body/Body/Problem/RICE/Aspects"]
+[node name="BadAspects" type="VBoxContainer" parent="Body/Body/Problem/VEGETARIAN/Aspects"]
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 
-[node name="PAIN" type="MarginContainer" parent="Body/Body/Problem/RICE/Aspects/BadAspects"]
+[node name="PAIN" type="MarginContainer" parent="Body/Body/Problem/VEGETARIAN/Aspects/BadAspects"]
 layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 script = ExtResource("7_d5rre")
 points = 1
-reference_words_en = PackedStringArray("Pain", "Painful", "Torture")
-reference_words_zh_cn = PackedStringArray("疼", "痛", "苦", "痛苦", "疼痛", "折磨")
+reference_words_en = PackedStringArray("Pain", "Pains", "Painful", "Effort", "Efforts", "Tire", "Tires", "Tired", "Tiring", "Ache", "Aches", "Aching", "Exhaust", "Fatigue")
+reference_words_zh_cn = PackedStringArray("疼", "痛", "苦", "累", "酸", "痛苦", "苦痛", "疼痛", "累死", "累屎", "很累", "辛苦", "辛劳", "劳累", "吃苦", "酸疼", "酸痛")
 
-[node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/RICE/Aspects/BadAspects/PAIN"]
+[node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/VEGETARIAN/Aspects/BadAspects/PAIN"]
 custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
 
-[node name="Background" type="ColorRect" parent="Body/Body/Problem/RICE/Aspects/BadAspects/PAIN/Aspect"]
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/VEGETARIAN/Aspects/BadAspects/PAIN/Aspect"]
 layout_mode = 0
 offset_right = 250.0
 offset_bottom = 80.0
 color = Color(0.929412, 0, 0.25098, 0.196078)
 
-[node name="Text" type="CenterContainer" parent="Body/Body/Problem/RICE/Aspects/BadAspects/PAIN/Aspect"]
+[node name="Text" type="CenterContainer" parent="Body/Body/Problem/VEGETARIAN/Aspects/BadAspects/PAIN/Aspect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -228,7 +228,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Text" type="RichTextLabel" parent="Body/Body/Problem/RICE/Aspects/BadAspects/PAIN/Aspect/Text"]
+[node name="Text" type="RichTextLabel" parent="Body/Body/Problem/VEGETARIAN/Aspects/BadAspects/PAIN/Aspect/Text"]
 layout_mode = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
@@ -240,7 +240,7 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="CoverMask" type="ReferenceRect" parent="Body/Body/Problem/RICE/Aspects/BadAspects/PAIN/Aspect"]
+[node name="CoverMask" type="ReferenceRect" parent="Body/Body/Problem/VEGETARIAN/Aspects/BadAspects/PAIN/Aspect"]
 clip_children = 1
 clip_contents = true
 layout_mode = 1
@@ -251,7 +251,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Cover" type="CenterContainer" parent="Body/Body/Problem/RICE/Aspects/BadAspects/PAIN/Aspect/CoverMask"]
+[node name="Cover" type="CenterContainer" parent="Body/Body/Problem/VEGETARIAN/Aspects/BadAspects/PAIN/Aspect/CoverMask"]
 custom_minimum_size = Vector2(250, 80)
 layout_mode = 1
 anchors_preset = 15
@@ -261,18 +261,18 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Background" type="ColorRect" parent="Body/Body/Problem/RICE/Aspects/BadAspects/PAIN/Aspect/CoverMask/Cover"]
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/VEGETARIAN/Aspects/BadAspects/PAIN/Aspect/CoverMask/Cover"]
 custom_minimum_size = Vector2(250, 80)
 layout_mode = 2
 color = Color(0, 0, 0, 1)
 
-[node name="?" type="Label" parent="Body/Body/Problem/RICE/Aspects/BadAspects/PAIN/Aspect/CoverMask/Cover"]
+[node name="?" type="Label" parent="Body/Body/Problem/VEGETARIAN/Aspects/BadAspects/PAIN/Aspect/CoverMask/Cover"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("8_ipxc7")
 theme_override_font_sizes/font_size = 80
 text = "?"
 
-[node name="Border" type="Panel" parent="Body/Body/Problem/RICE/Aspects/BadAspects/PAIN/Aspect"]
+[node name="Border" type="Panel" parent="Body/Body/Problem/VEGETARIAN/Aspects/BadAspects/PAIN/Aspect"]
 custom_minimum_size = Vector2(250, 80)
 layout_mode = 0
 offset_right = 250.0

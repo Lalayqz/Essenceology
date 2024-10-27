@@ -9,14 +9,14 @@ script = ExtResource("2_yamsi")
 [node name="Map" type="ReferenceRect" parent="."]
 layout_mode = 0
 offset_right = 1837.0
-offset_bottom = 2560.0
+offset_bottom = 2090.0
 mouse_filter = 2
 
 [node name="Background" type="ColorRect" parent="Map"]
 z_index = -10
 layout_mode = 0
 offset_right = 1837.0
-offset_bottom = 2560.0
+offset_bottom = 2090.0
 mouse_filter = 2
 color = Color(0.0980392, 0.0588235, 0, 1)
 
@@ -28,13 +28,13 @@ color = Color(0.0980392, 0.0588235, 0, 1)
 position = Vector2(780, 130)
 
 [node name="ALL_LIVES" type="Node2D" parent="Map/Levels"]
-position = Vector2(515, 395)
+position = Vector2(610, 300)
 
 [node name="INDIVIDUAL" type="Node2D" parent="Map/Levels"]
-position = Vector2(780, 395)
+position = Vector2(780, 300)
 
 [node name="CALCULATION" type="Node2D" parent="Map/Levels"]
-position = Vector2(1045, 395)
+position = Vector2(950, 300)
 
 [node name="PROBABILITY_1" type="Node2D" parent="Map/Levels"]
 position = Vector2(1402, 232)
@@ -43,49 +43,49 @@ position = Vector2(1402, 232)
 position = Vector2(1565, 130)
 
 [node name="ANALYSIS_1" type="Node2D" parent="Map/Levels"]
-position = Vector2(780, 660)
+position = Vector2(780, 594)
 
 [node name="ANALYSIS_2" type="Node2D" parent="Map/Levels"]
-position = Vector2(1057, 820)
+position = Vector2(988, 643)
 
 [node name="FIXED_SUM_1" type="Node2D" parent="Map/Levels"]
-position = Vector2(503, 820)
+position = Vector2(515, 740)
 
 [node name="FIXED_SUM_2" type="Node2D" parent="Map/Levels"]
-position = Vector2(226, 660)
+position = Vector2(342, 640)
 
 [node name="MILITARY_TRAINING" type="Node2D" parent="Map/Levels"]
-position = Vector2(1057, 1140)
+position = Vector2(988, 950)
 
 [node name="VEGETARIAN" type="Node2D" parent="Map/Levels"]
-position = Vector2(1334, 1300)
+position = Vector2(1205, 1075)
 
 [node name="RICE" type="Node2D" parent="Map/Levels"]
-position = Vector2(780, 1300)
+position = Vector2(771, 1075)
 
 [node name="MATCH" type="Node2D" parent="Map/Levels"]
-position = Vector2(780, 1620)
+position = Vector2(771, 1325)
 
 [node name="COOPERATE" type="Node2D" parent="Map/Levels"]
-position = Vector2(1334, 1620)
+position = Vector2(1205, 1325)
 
 [node name="LIE" type="Node2D" parent="Map/Levels"]
-position = Vector2(1057, 1780)
+position = Vector2(988, 1450)
 
 [node name="SUICIDE" type="Node2D" parent="Map/Levels"]
-position = Vector2(780, 1940)
+position = Vector2(771, 1575)
 
 [node name="MOSQUITO" type="Node2D" parent="Map/Levels"]
-position = Vector2(1334, 1940)
+position = Vector2(1205, 1575)
 
 [node name="CAKE_1" type="Node2D" parent="Map/Levels"]
-position = Vector2(780, 2260)
+position = Vector2(771, 1825)
 
 [node name="CAKE_2" type="Node2D" parent="Map/Levels"]
-position = Vector2(1334, 2260)
+position = Vector2(1205, 1825)
 
 [node name="FINALE" type="Node2D" parent="Map/Levels"]
-position = Vector2(1057, 2420)
+position = Vector2(988, 1950)
 
 [node name="Focus" type="Node2D" parent="Map"]
 position = Vector2(780, 130)

@@ -5,7 +5,7 @@ const ANSWERED_BORDER_SHADOW_SIZE = 2
 const GOOD_ASPECT_SOLVED_BORDER_COLOR = Color.GREEN
 const BAD_ASPECT_SOLVED_BORDER_COLOR = Color.RED
 const UNCOVER_ANIMATION_LENGTH = 0.35
-const BORDER_GROW_ANIMATION_LENGTH = 0.3
+const BORDER_GROW_ANIMATION_LENGTH = 0.4
 const BORDER_KEEP_ANIMATION_LENGTH = 1
 const BORDER_SHRINK_ANIMATION_LENGTH = 0.8
 @export var points : int
@@ -83,7 +83,7 @@ func shine():
 
 func save_answer(answers):
 	if is_solved:
-		#answers.append(aspect_name)
+		answers.append(aspect_name)
 		pass
 
 
