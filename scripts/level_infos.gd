@@ -49,9 +49,9 @@ const LEVEL_CHAINS = {
 		["COOPERATE", "LIE"],
 		["LIE", "SUICIDE"],
 		["LIE", "MOSQUITO"],
-		["SUICIDE", "CAKE_1"],
-		["SUICIDE", "CAKE_2"],
-		["MOSQUITO", "CAKE_1"],
-		["MOSQUITO", "CAKE_2"],
-		["CAKE_1", "FINALE"],
-		["CAKE_2", "FINALE"]]}
+		["SUICIDE", "CAKE_A"],
+		["SUICIDE", "CAKE_B"],
+		["MOSQUITO", "CAKE_A"],
+		["MOSQUITO", "CAKE_B"],
+		["CAKE_A", "FINALE"],
+		["CAKE_B", "FINALE"]]}

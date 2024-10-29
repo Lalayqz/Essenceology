@@ -13,10 +13,9 @@
 
 [node name="VEGETARIAN" type="Node2D"]
 script = ExtResource("1_okqw4")
-max_input_length_en = 7
+max_input_length_en = 10
 max_input_length_zh_cn = 2
 points_goal = 2
-show_progress_bar = true
 
 [node name="LevelStructure" parent="." instance=ExtResource("2_roqkc")]
 
@@ -117,8 +116,8 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 script = ExtResource("7_d5rre")
 points = 1
-reference_words_en = PackedStringArray("Tasty")
-reference_words_zh_cn = PackedStringArray("好吃", "美味")
+reference_words_en = PackedStringArray("Taste", "Tasty", "Delicious", "Complement", "Compensate", "Sick", "Tired")
+reference_words_zh_cn = PackedStringArray("好吃", "美味", "可口", "补", "弥补", "互补", "补充", "补偿", "相辅", "腻", "吃腻")
 
 [node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/VEGETARIAN/Aspects/GoodAspects/TASTY"]
 custom_minimum_size = Vector2(250, 80)
@@ -207,7 +206,7 @@ theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 script = ExtResource("7_d5rre")
 points = 1
-reference_words_en = PackedStringArray("Pain", "Pains", "Painful", "Effort", "Efforts", "Tire", "Tires", "Tired", "Tiring", "Ache", "Aches", "Aching", "Exhaust", "Fatigue")
+reference_words_en = PackedStringArray("Pain", "Pains", "Painful", "Painfully", "Effort", "Efforts", "Tire", "Tires", "Tired", "Tiring", "Ache", "Aches", "Aching", "Exhaust", "Fatigue")
 reference_words_zh_cn = PackedStringArray("疼", "痛", "苦", "累", "酸", "痛苦", "苦痛", "疼痛", "累死", "累屎", "很累", "辛苦", "辛劳", "劳累", "吃苦", "酸疼", "酸痛")
 
 [node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/VEGETARIAN/Aspects/BadAspects/PAIN"]

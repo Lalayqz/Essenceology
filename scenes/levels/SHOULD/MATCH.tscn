@@ -15,7 +15,6 @@ script = ExtResource("1_ocn3u")
 max_input_length_en = 7
 max_input_length_zh_cn = 2
 points_goal = 2
-show_progress_bar = true
 
 [node name="LevelStructure" parent="." instance=ExtResource("2_83n3i")]
 

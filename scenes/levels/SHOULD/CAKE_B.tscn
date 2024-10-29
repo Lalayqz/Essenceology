@@ -1,0 +1,181 @@
+[gd_scene load_steps=9 format=3 uid="uid://xnax8ufkuc11"]
+
+[ext_resource type="Script" path="res://scripts/scales_level.gd" id="1_wdrtm"]
+[ext_resource type="PackedScene" uid="uid://dsc2bjdg18543" path="res://scenes/items/level_structure_with_progress_bar.tscn" id="2_sur60"]
+[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://resources/fonts/SourceHanSansSC-Bold.otf" id="4_4ou0u"]
+[ext_resource type="Script" path="res://scripts/scales_problem.gd" id="5_r5sk0"]
+[ext_resource type="Theme" uid="uid://jcowhqm3oiam" path="res://resources/styles/problem_text_small.tres" id="6_7ngsk"]
+[ext_resource type="Script" path="res://scripts/scales_aspect.gd" id="7_crlv1"]
+[ext_resource type="FontVariation" uid="uid://dv35f3w6abrft" path="res://resources/styles/no_extra_spacing_font_variation.tres" id="8_8rmc3"]
+[ext_resource type="StyleBox" uid="uid://cygff77fpp05p" path="res://resources/styles/good_aspect_border.tres" id="9_sq8km"]
+
+[node name="CAKE_B" type="Node2D"]
+script = ExtResource("1_wdrtm")
+max_input_length_en = 10
+max_input_length_zh_cn = 2
+points_goal = 1
+
+[node name="LevelStructure" parent="." instance=ExtResource("2_sur60")]
+
+[node name="Body" type="CenterContainer" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+
+[node name="Body" type="VSplitContainer" parent="Body"]
+layout_mode = 2
+mouse_filter = 2
+collapsed = true
+dragger_visibility = 2
+
+[node name="Input" type="MarginContainer" parent="Body/Body"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 20
+
+[node name="Input" type="CenterContainer" parent="Body/Body/Input"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Input" type="RichTextLabel" parent="Body/Body/Input/Input"]
+custom_minimum_size = Vector2(0, 73)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("4_4ou0u")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Problem" type="CenterContainer" parent="Body/Body"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CAKE_B" type="VBoxContainer" parent="Body/Body/Problem"]
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("5_r5sk0")
+
+[node name="Text" type="CenterContainer" parent="Body/Body/Problem/CAKE_B"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Body/Body/Problem/CAKE_B/Text"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("6_7ngsk")
+bbcode_enabled = true
+text = "SHOULD_CAKE_B"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Line" type="MarginContainer" parent="Body/Body/Problem/CAKE_B"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Line" type="CenterContainer" parent="Body/Body/Problem/CAKE_B/Line"]
+layout_mode = 2
+
+[node name="Line" type="ColorRect" parent="Body/Body/Problem/CAKE_B/Line/Line"]
+custom_minimum_size = Vector2(1100, 1)
+layout_mode = 2
+
+[node name="Aspects" type="HBoxContainer" parent="Body/Body/Problem/CAKE_B"]
+layout_mode = 2
+alignment = 1
+
+[node name="GoodAspects" type="VBoxContainer" parent="Body/Body/Problem/CAKE_B/Aspects"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="SENTIENT" type="MarginContainer" parent="Body/Body/Problem/CAKE_B/Aspects/GoodAspects"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+script = ExtResource("7_crlv1")
+points = 1
+reference_words_en = PackedStringArray("Sentient", "Sentiently", "Sentience", "Perceive", "Perceives", "Perceived", "Perceiving", "Perceptual", "Perception", "Sense", "Senses", "Sensed", "Sensing", "Taste")
+reference_words_zh_cn = PackedStringArray("感知", "认知", "知觉", "感觉", "五感", "味觉", "味蕾", "无感")
+
+[node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/CAKE_B/Aspects/GoodAspects/SENTIENT"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/CAKE_B/Aspects/GoodAspects/SENTIENT/Aspect"]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 80.0
+color = Color(0.239216, 0.819608, 0.486275, 0.196078)
+
+[node name="Text" type="CenterContainer" parent="Body/Body/Problem/CAKE_B/Aspects/GoodAspects/SENTIENT/Aspect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="RichTextLabel" parent="Body/Body/Problem/CAKE_B/Aspects/GoodAspects/SENTIENT/Aspect/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/normal_font = ExtResource("4_4ou0u")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "SHOULD_CAKE_B_SENTIENT"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="CoverMask" type="ReferenceRect" parent="Body/Body/Problem/CAKE_B/Aspects/GoodAspects/SENTIENT/Aspect"]
+clip_children = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Cover" type="CenterContainer" parent="Body/Body/Problem/CAKE_B/Aspects/GoodAspects/SENTIENT/Aspect/CoverMask"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/CAKE_B/Aspects/GoodAspects/SENTIENT/Aspect/CoverMask/Cover"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="?" type="Label" parent="Body/Body/Problem/CAKE_B/Aspects/GoodAspects/SENTIENT/Aspect/CoverMask/Cover"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("8_8rmc3")
+theme_override_font_sizes/font_size = 80
+text = "?"
+
+[node name="Border" type="Panel" parent="Body/Body/Problem/CAKE_B/Aspects/GoodAspects/SENTIENT/Aspect"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+offset_right = 250.0
+offset_bottom = 80.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("9_sq8km")
+
+[node name="Line" type="CenterContainer" parent="Body/Body/Problem/CAKE_B/Aspects"]
+layout_mode = 2
+
+[node name="Line" type="ColorRect" parent="Body/Body/Problem/CAKE_B/Aspects/Line"]
+custom_minimum_size = Vector2(1, 300)
+layout_mode = 2
+
+[node name="BadAspects" type="VBoxContainer" parent="Body/Body/Problem/CAKE_B/Aspects"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2

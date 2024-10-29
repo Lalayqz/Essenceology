@@ -14,8 +14,7 @@
 script = ExtResource("1_34kxr")
 max_input_length_en = 7
 max_input_length_zh_cn = 2
-points_goal = 3
-show_progress_bar = true
+points_goal = 2
 
 [node name="LevelStructure" parent="." instance=ExtResource("2_b7bj6")]
 
@@ -188,9 +187,9 @@ layout_mode = 2
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 script = ExtResource("7_w8bdw")
-points = 2
-reference_words_en = PackedStringArray("Time")
-reference_words_zh_cn = PackedStringArray("耗时", "时间")
+points = 1
+reference_words_en = PackedStringArray("Expose", "Exposes", "Exposed", "Reveal", "Reveals", "Uncover", "Find", "Finds", "Found", "Finding", "Know", "Knows", "Knew", "Known", "Knowing")
+reference_words_zh_cn = PackedStringArray("揭穿", "揭破", "揭露", "揭发", "暴露", "拆穿", "戳穿", "戳破", "识破", "发现", "知道", "知晓", "知悉", "获知", "了解")
 
 [node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/LIE/Aspects/BadAspects/EXPOSED"]
 custom_minimum_size = Vector2(250, 80)

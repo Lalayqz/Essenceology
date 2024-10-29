@@ -1,7 +1,7 @@
 class_name Level extends Node2D
 
-#const PENALTIES = [1, 3, 6, 10]
-const PENALTIES = [0.1]
+const PENALTIES = [1, 3, 6, 10]
+#const PENALTIES = [0.1]
 var problems = []
 var wrong_answer_sound = preload("res://resources/sounds/wrong_answer.mp3")
 var text_font = preload("res://resources/fonts/SourceHanSansSC-Normal.otf")
@@ -32,7 +32,7 @@ func _ready():
 	# It's possible that I update the problems and the inputs for an already solved level is not longer correct.
 	# If this happens, just make the content in level appear as unsolved. Don't remove this level from solved levels in save.
 	if Save.get_level_solved(chapter, level_name) and should_be_solved():
-		solve_level(false)
+		solve_level(false) # ???Also save, in case I have updated the game and changed completion requirements for the level. 
 	
 	title.text = '?  ?  ?' if level_name in LevelInfos.HIDDEN_NAME_LEVELS[chapter] and not is_solved else level_name
 

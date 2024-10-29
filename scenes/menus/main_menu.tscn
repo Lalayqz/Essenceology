@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://x6p37p0j7jpe"]
+[gd_scene load_steps=10 format=3 uid="uid://x6p37p0j7jpe"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_brfxt"]
 [ext_resource type="Theme" uid="uid://l0jnr6n2irgg" path="res://resources/styles/chapters_bar.tres" id="2_r4k4w"]
@@ -6,6 +6,7 @@
 [ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://resources/fonts/SourceHanSansSC-Bold.otf" id="4_3bend"]
 [ext_resource type="Script" path="res://scripts/chapter_button.gd" id="5_3n7nk"]
 [ext_resource type="Theme" uid="uid://b00jlw57ckgn7" path="res://resources/styles/should_chapter_button.tres" id="6_hmsdk"]
+[ext_resource type="Theme" uid="uid://ch1laa0h0y6lj" path="res://resources/styles/definition_chapter_button.tres" id="7_ehpad"]
 [ext_resource type="Theme" uid="uid://cel18xkchmafq" path="res://resources/styles/ui_button.tres" id="7_hrki6"]
 [ext_resource type="Script" path="res://scripts/neat_button.gd" id="8_3h0jg"]
 
@@ -25,7 +26,7 @@ focus_mode = 0
 theme = ExtResource("3_fkxul")
 theme_override_fonts/font = ExtResource("4_3bend")
 theme_override_font_sizes/font_size = 22
-text = "POSSIBILITY"
+text = "CHAPTER_1_POSSIBILITY"
 script = ExtResource("5_3n7nk")
 chapter = "POSSIBILITY"
 
@@ -38,7 +39,7 @@ focus_mode = 0
 theme = ExtResource("6_hmsdk")
 theme_override_fonts/font = ExtResource("4_3bend")
 theme_override_font_sizes/font_size = 22
-text = "SHOULD"
+text = "CHAPTER_2_SHOULD"
 script = ExtResource("5_3n7nk")
 chapter = "SHOULD"
 
@@ -49,10 +50,10 @@ offset_top = 200.0
 offset_right = 200.0
 offset_bottom = 300.0
 focus_mode = 0
-theme = ExtResource("3_fkxul")
+theme = ExtResource("7_ehpad")
 theme_override_fonts/font = ExtResource("4_3bend")
 theme_override_font_sizes/font_size = 22
-text = "第三章   定义"
+text = "CHAPTER_3_DEFINITION"
 script = ExtResource("5_3n7nk")
 chapter = "DEFINITION"
 

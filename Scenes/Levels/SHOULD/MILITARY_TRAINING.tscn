@@ -33,8 +33,8 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 1
 theme_override_fonts/normal_font = ExtResource("3_uonar")
 theme_override_fonts/bold_font = ExtResource("4_l47h8")
-theme_override_font_sizes/normal_font_size = 23
-theme_override_font_sizes/bold_font_size = 23
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
 bbcode_enabled = true
 text = "SHOULD_MILITARY_TRAINING_NOTE"
 autowrap_mode = 2
@@ -118,8 +118,9 @@ layout_mode = 2
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 script = ExtResource("7_cvoka")
+points = 1
 reference_words_en = PackedStringArray("Pain", "Pains", "Painful", "Effort", "Efforts", "Tire", "Tires", "Tired", "Tiring", "Ache", "Aches", "Aching", "Exhaust", "Fatigue")
-reference_words_zh_cn = PackedStringArray("疼", "痛", "苦", "累", "酸", "痛苦", "苦痛", "疼痛", "累死", "累屎", "很累", "辛苦", "辛劳", "劳累", "吃苦", "酸疼", "酸痛")
+reference_words_zh_cn = PackedStringArray("疼", "痛", "苦", "累", "酸", "痛苦", "苦痛", "疼痛", "累死", "累屎", "很累", "辛苦", "辛劳", "疲劳", "劳累", "吃苦", "酸疼", "酸痛", "费力")
 
 [node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/MILITARY_TRAINING/Aspects/GoodAspects/PAIN"]
 custom_minimum_size = Vector2(250, 80)

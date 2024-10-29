@@ -1,0 +1,341 @@
+[gd_scene load_steps=10 format=3 uid="uid://d142cchxtteqd"]
+
+[ext_resource type="Script" path="res://scripts/scales_level.gd" id="1_q15ak"]
+[ext_resource type="PackedScene" uid="uid://dsc2bjdg18543" path="res://scenes/items/level_structure_with_progress_bar.tscn" id="2_vh5u1"]
+[ext_resource type="FontFile" uid="uid://b6d5w7yj7b525" path="res://resources/fonts/SourceHanSansSC-Bold.otf" id="3_tiy5f"]
+[ext_resource type="Script" path="res://scripts/scales_problem.gd" id="4_n63g6"]
+[ext_resource type="Theme" uid="uid://jcowhqm3oiam" path="res://resources/styles/problem_text_small.tres" id="5_e4krh"]
+[ext_resource type="Script" path="res://scripts/scales_aspect.gd" id="6_uomy1"]
+[ext_resource type="FontVariation" uid="uid://dv35f3w6abrft" path="res://resources/styles/no_extra_spacing_font_variation.tres" id="7_e6k8p"]
+[ext_resource type="StyleBox" uid="uid://cygff77fpp05p" path="res://resources/styles/good_aspect_border.tres" id="8_x36ne"]
+[ext_resource type="StyleBox" uid="uid://dru1v2d435avn" path="res://resources/styles/bad_aspect_border.tres" id="9_bd8yi"]
+
+[node name="SUICIDE" type="Node2D"]
+script = ExtResource("1_q15ak")
+max_input_length_en = 11
+max_input_length_zh_cn = 2
+points_goal = 3
+show_progress_bar = true
+
+[node name="LevelStructure" parent="." instance=ExtResource("2_vh5u1")]
+
+[node name="Body" type="CenterContainer" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+mouse_filter = 2
+
+[node name="Body" type="VSplitContainer" parent="Body"]
+layout_mode = 2
+mouse_filter = 2
+collapsed = true
+dragger_visibility = 2
+
+[node name="Input" type="MarginContainer" parent="Body/Body"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 20
+
+[node name="Input" type="CenterContainer" parent="Body/Body/Input"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Input" type="RichTextLabel" parent="Body/Body/Input/Input"]
+custom_minimum_size = Vector2(0, 73)
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("3_tiy5f")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Problem" type="CenterContainer" parent="Body/Body"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="SUICIDE" type="VBoxContainer" parent="Body/Body/Problem"]
+layout_mode = 2
+mouse_filter = 2
+script = ExtResource("4_n63g6")
+
+[node name="Text" type="CenterContainer" parent="Body/Body/Problem/SUICIDE"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Body/Body/Problem/SUICIDE/Text"]
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("5_e4krh")
+bbcode_enabled = true
+text = "SHOULD_SUICIDE"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Line" type="MarginContainer" parent="Body/Body/Problem/SUICIDE"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Line" type="CenterContainer" parent="Body/Body/Problem/SUICIDE/Line"]
+layout_mode = 2
+
+[node name="Line" type="ColorRect" parent="Body/Body/Problem/SUICIDE/Line/Line"]
+custom_minimum_size = Vector2(1100, 1)
+layout_mode = 2
+
+[node name="Aspects" type="HBoxContainer" parent="Body/Body/Problem/SUICIDE"]
+layout_mode = 2
+alignment = 1
+
+[node name="GoodAspects" type="VBoxContainer" parent="Body/Body/Problem/SUICIDE/Aspects"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="PAIN" type="MarginContainer" parent="Body/Body/Problem/SUICIDE/Aspects/GoodAspects"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 60
+script = ExtResource("6_uomy1")
+points = 1
+reference_words_en = PackedStringArray("Pain", "Pains", "Painful")
+reference_words_zh_cn = PackedStringArray("疼", "痛", "痛苦", "苦痛", "疼痛", "剧痛")
+
+[node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/SUICIDE/Aspects/GoodAspects/PAIN"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/SUICIDE/Aspects/GoodAspects/PAIN/Aspect"]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 80.0
+color = Color(0.239216, 0.819608, 0.486275, 0.196078)
+
+[node name="Text" type="CenterContainer" parent="Body/Body/Problem/SUICIDE/Aspects/GoodAspects/PAIN/Aspect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="RichTextLabel" parent="Body/Body/Problem/SUICIDE/Aspects/GoodAspects/PAIN/Aspect/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/normal_font = ExtResource("3_tiy5f")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "SHOULD_SUICIDE_PAIN"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="CoverMask" type="ReferenceRect" parent="Body/Body/Problem/SUICIDE/Aspects/GoodAspects/PAIN/Aspect"]
+clip_children = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Cover" type="CenterContainer" parent="Body/Body/Problem/SUICIDE/Aspects/GoodAspects/PAIN/Aspect/CoverMask"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/SUICIDE/Aspects/GoodAspects/PAIN/Aspect/CoverMask/Cover"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="?" type="Label" parent="Body/Body/Problem/SUICIDE/Aspects/GoodAspects/PAIN/Aspect/CoverMask/Cover"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_e6k8p")
+theme_override_font_sizes/font_size = 80
+text = "?"
+
+[node name="Border" type="Panel" parent="Body/Body/Problem/SUICIDE/Aspects/GoodAspects/PAIN/Aspect"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+offset_right = 250.0
+offset_bottom = 80.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("8_x36ne")
+
+[node name="FAMILY" type="MarginContainer" parent="Body/Body/Problem/SUICIDE/Aspects/GoodAspects"]
+layout_mode = 2
+theme_override_constants/margin_right = 50
+script = ExtResource("6_uomy1")
+points = 1
+reference_words_en = PackedStringArray("Family", "Families", "Relative", "Relatives", "Father", "Fathers", "Dad", "Dads", "Mother", "Mothers", "Mom", "Moms", "Child", "Children", "Kid", "Kids", "Son", "Sons", "Daughter", "Daughters", "Couple", "Couples", "Lover", "Lovers", "Partner", "Partners", "Beloved", "Boyfriend", "Boyfriends", "Girlfriend", "Girlfriends", "Husband", "Husbands", "Wife", "Wifes", "Friend", "Friends", "Sad", "Sadness", "Sadden", "Saddens", "Saddened", "Saddening", "Sorrow", "Sorrowful", "Depress", "Depresses", "Depressed", "Depression", "Unhappy", "Unhappiness", "Blue")
+reference_words_zh_cn = PackedStringArray("家", "家人", "家庭", "家族", "亲戚", "亲人", "亲属", "父母", "爹妈", "父子", "父女", "母子", "母女", "父", "爸", "爹", "父亲", "爸爸", "老爸", "母", "妈", "母亲", "妈妈", "老妈", "孩子", "小孩", "儿", "儿女", "儿子", "女儿", "夫妻", "爱人", "恋人", "情人", "配偶", "伴侣", "情侣", "男友", "女友", "丈夫", "老公", "妻子", "老婆", "夫人", "朋友", "好友", "挚友", "悲", "哀", "伤心", "悲伤", "忧伤", "难过", "痛心", "心痛", "心酸", "心碎", "悲哀", "哀伤", "哀痛")
+
+[node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/SUICIDE/Aspects/GoodAspects/FAMILY"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/SUICIDE/Aspects/GoodAspects/FAMILY/Aspect"]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 80.0
+color = Color(0.239216, 0.819608, 0.486275, 0.196078)
+
+[node name="Text" type="CenterContainer" parent="Body/Body/Problem/SUICIDE/Aspects/GoodAspects/FAMILY/Aspect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="RichTextLabel" parent="Body/Body/Problem/SUICIDE/Aspects/GoodAspects/FAMILY/Aspect/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/normal_font = ExtResource("3_tiy5f")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "SHOULD_SUICIDE_FAMILY"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="CoverMask" type="ReferenceRect" parent="Body/Body/Problem/SUICIDE/Aspects/GoodAspects/FAMILY/Aspect"]
+clip_children = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Cover" type="CenterContainer" parent="Body/Body/Problem/SUICIDE/Aspects/GoodAspects/FAMILY/Aspect/CoverMask"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/SUICIDE/Aspects/GoodAspects/FAMILY/Aspect/CoverMask/Cover"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="?" type="Label" parent="Body/Body/Problem/SUICIDE/Aspects/GoodAspects/FAMILY/Aspect/CoverMask/Cover"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_e6k8p")
+theme_override_font_sizes/font_size = 80
+text = "?"
+
+[node name="Border" type="Panel" parent="Body/Body/Problem/SUICIDE/Aspects/GoodAspects/FAMILY/Aspect"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+offset_right = 250.0
+offset_bottom = 80.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("8_x36ne")
+
+[node name="Line" type="CenterContainer" parent="Body/Body/Problem/SUICIDE/Aspects"]
+layout_mode = 2
+
+[node name="Line" type="ColorRect" parent="Body/Body/Problem/SUICIDE/Aspects/Line"]
+custom_minimum_size = Vector2(1, 350)
+layout_mode = 2
+
+[node name="BadAspects" type="VBoxContainer" parent="Body/Body/Problem/SUICIDE/Aspects"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="KNOWLEDGE" type="MarginContainer" parent="Body/Body/Problem/SUICIDE/Aspects/BadAspects"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 50
+script = ExtResource("6_uomy1")
+points = 2
+reference_words_en = PackedStringArray("Knowledge", "Know", "Knows", "Knew", "Known", "Knowing", "Information", "Info", "Self", "Themselves", "Personal", "Personally")
+reference_words_zh_cn = PackedStringArray("自知", "信息", "知道", "知晓", "知悉", "通晓", "晓得", "清楚", "了解", "自己", "自我", "自身", "本身", "本人")
+
+[node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/SUICIDE/Aspects/BadAspects/KNOWLEDGE"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/SUICIDE/Aspects/BadAspects/KNOWLEDGE/Aspect"]
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 80.0
+color = Color(0.929412, 0, 0.25098, 0.196078)
+
+[node name="Text" type="CenterContainer" parent="Body/Body/Problem/SUICIDE/Aspects/BadAspects/KNOWLEDGE/Aspect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Text" type="RichTextLabel" parent="Body/Body/Problem/SUICIDE/Aspects/BadAspects/KNOWLEDGE/Aspect/Text"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/normal_font = ExtResource("3_tiy5f")
+theme_override_font_sizes/normal_font_size = 45
+bbcode_enabled = true
+text = "SHOULD_SUICIDE_KNOWLEDGE"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="CoverMask" type="ReferenceRect" parent="Body/Body/Problem/SUICIDE/Aspects/BadAspects/KNOWLEDGE/Aspect"]
+clip_children = 1
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Cover" type="CenterContainer" parent="Body/Body/Problem/SUICIDE/Aspects/BadAspects/KNOWLEDGE/Aspect/CoverMask"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Background" type="ColorRect" parent="Body/Body/Problem/SUICIDE/Aspects/BadAspects/KNOWLEDGE/Aspect/CoverMask/Cover"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+
+[node name="?" type="Label" parent="Body/Body/Problem/SUICIDE/Aspects/BadAspects/KNOWLEDGE/Aspect/CoverMask/Cover"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_e6k8p")
+theme_override_font_sizes/font_size = 80
+text = "?"
+
+[node name="Border" type="Panel" parent="Body/Body/Problem/SUICIDE/Aspects/BadAspects/KNOWLEDGE/Aspect"]
+custom_minimum_size = Vector2(250, 80)
+layout_mode = 0
+offset_right = 250.0
+offset_bottom = 80.0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("9_bd8yi")

@@ -1,0 +1,192 @@
+,en,zh
+
+DISTURBING_BACKGROUND,disturbing background,让人分心的背景
+SUBMIT_HOLD,SUBMIT (HOLD),提交 (长按)
+LEVEL_SOLVED,LEVEL SOLVED!,已解决！
+
+POSSIBILITY,Chapter 1\nPossibility,第一章   可能性
+SHOULD,Chapter 2\nShould,第二章   应该
+DEFINITION,Chapter 3 Definition,第三章   定义
+
+INTRO,Intro,引言
+UNLIKELY,Unlikely,小概率
+LOGIC,Logic,逻辑
+LOGIC_HARD,Logic - HARD🚨,逻辑 · 难🚨
+LIES_GENERALIZED,Lies - Generalized,谎言 · 归纳
+LIES,Lies,谎言
+LIES_1,Lies 1,谎言 1
+LIES_2,Lies 2,谎言 2
+LIES_HARD,Lies - HARD🚨,谎言 · 难🚨
+MEMORY_1,Memory 1,记忆 1
+MEMORY_2,Memory 2,记忆 2
+MEMORY_GENERALIZED,Memory - Generalized,记忆 · 归纳
+MEMORY_HARD,Memory - HARD🚨,记忆 · 难🚨
+PATTERNS_1,Patterns 1,规律 1
+PATTERNS_2,Patterns 2,规律 2
+PATTERNS_3,Patterns 3,规律 3
+FINALE,Finale,章终
+
+POSSIBILITY_INTRO_NOTE,"[center]The topic of Chapter 1 is possibility.\nIf the event described below is [b]possible[/b] (including events that are bound to happen)\n[b]according to your knowledge[/b],\nthen left click the green box to answer ""P"" (Possible);\notherwise, right click to answer ""NP"" (Not Possible).[/center]","[center]第一章的主题是可能性。\n如果题目描述的事件[b]据你所知[/b]是[b]可能[/b]发生的（一定发生的也算可能发生），\n则鼠标左键点击绿色框，以回答 ""P""（Possible）；\n否则右键点击绿色框，以回答 ""NP""（Not Possible）。[/center]"
+POSSIBILITY_INTRO_TOSS,"1. A standard coin is tossed. After it lands, its head faces up (it's still a standard coin).","1. 掷出一标准硬币，其落地后正面朝上（落地后仍为标准硬币）。"
+POSSIBILITY_INTRO_TOSS_OR,"2. A standard coin is tossed. After it lands, its head or tail faces up (it's still a standard coin).","2. 掷出一标准硬币，其落地后正面或背面朝上（落地后仍为标准硬币）。"
+POSSIBILITY_INTRO_TOSS_BOTH,"3. A standard coin is tossed. After it lands, its head and tail face up simultaneously (it's still a standard coin).","3. 掷出一标准硬币，其落地后正面和背面同时朝上（落地后仍为标准硬币）。"
+POSSIBILITY_UNLIKELY_NOTE,"You will receive a penalty when you submit a wrong answer,\nwhich prevents you from answering this problem for a while.\nSubmitting a wrong answer multiple times makes the penalty for this problem longer.","若你回答错误，则会受到惩罚，一段时间内无法再次回答此题。\n多次回答错误会使本题惩罚时间加长。"
+POSSIBILITY_UNLIKELY_WORM,"1. The worm that you find in restaurant food was dropped out of your own mouth.","1. 你在饭店的菜里吃到的虫子是从自己嘴里掉进去的。"
+POSSIBILITY_UNLIKELY_MURDER,"2. The one that matches the fingerprint on the murder weapon is not the murderer.","2. 与凶器上指纹相匹配的人不是凶手。"
+POSSIBILITY_UNLIKELY_STRANGER,"3. You return home, and then find a stranger in your bathroom.","3. 你回家后发现厕所里有个陌生人。"
+POSSIBILITY_LOGIC_NOTE,"Hover over a piece of yellow text and don't move your cursor\nfor extra clarifications for the text.","鼠标移动到黄色文字上保持不动，以显示对这段文字的进一步阐释。"
+POSSIBILITY_LOGIC_APPLE,"1. Someone is holding a red apple that is not red.","1. 有人拿着一个非红色的红苹果。"
+POSSIBILITY_LOGIC_KISS,"2. Someone has experienced their first kiss without ever touching anyone.","2. 有人经历过初吻但是从没碰过别人。"
+POSSIBILITY_LOGIC_PETAGON_CONVEX,"3. A [color=yellow][hint=extremely thin]line segment[/hint][/color] is added inside a convex pentagon, which divides the pentagon into two triangles.","3. 在一个凸五边形里添加一条[color=yellow][hint=极细]线段[/hint][/color]，此操作使得此五边形被分成两个三角形。"
+POSSIBILITY_LOGIC_PETAGON_CONCONCAVE,"4. A [color=yellow][hint=extremely thin]line segment[/hint][/color] is added inside a concave pentagon, which divides the pentagon into two triangles.","4. 在一个凹五边形里添加一条[color=yellow][hint=极细]线段[/hint][/color]，此操作使得此五边形被分成两个三角形。"
+POSSIBILITY_LOGIC_HARD_BAG_SQUIRREL,"1. A total of 5 objects are in a bag. Among the 5 objects, there are a total of 3 squirrels, and a total of 4 pieces of wood.","1. 一个袋子里共有5个物体，这5个物体中共有3只松鼠，共有4块木头。"
+POSSIBILITY_LOGIC_HARD_BAG_WOOD,"2. A total of 5 objects are in a bag. Among the 5 objects, there are a total of 3 pieces of wood, and a total of 4 balls.","2. 一个袋子里共有5个物体，这5个物体中共有3块木头，共有4个球体。"
+POSSIBILITY_LOGIC_HARD_BAG_MARBLE,"3. A total of 5 objects are in a bag. Among the 5 objects, there are a total of 3 balls, and a total of 4 marbles.","3. 一个袋子里共有5个物体，这5个物体中共有3个球体，共有4个弹珠。"
+POSSIBILITY_LOGIC_HARD_GIRLFRIEND,"","我的女朋友的男朋友不是我本人。"
+POSSIBILITY_LIES_GENERALIZED_SPEECH,"1. An event that someone else claimed to have happened didn't actually happen.","1. 别人说发生了的某件事情其实没有发生。"
+POSSIBILITY_LIES_GENERALIZED_BOOK,"2. An event that a book claimed to have happened didn't actually happen.","2. 书上说发生了的某件事情其实没有发生。"
+POSSIBILITY_LIES_GENERALIZED_IMAGE,"3. The scene depicted in an image didn't actually happen.","3. 某张图片里描绘的场景其实没有发生。"
+POSSIBILITY_LIES_1_DINOSAUR,"1. Dinosaurs did not exist.","1. 恐龙不存在。"
+POSSIBILITY_LIES_1_WORLD_WAR,"2. World War I was fought against aliens.","2. 第一次世界大战是跟外星人打的。"
+POSSIBILITY_LIES_1_SUN_TZU,"3. The so-called ""Newton's laws of motion"" were discovered by Galileo Galilei.","3. 《孙子兵法》是孔子写的。"
+POSSIBILITY_LIES_2_MATH,"1. 1 + 1 = 3.","1. 1 + 1 = 3。"
+POSSIBILITY_LIES_2_MOTHER,"2. You have never met your biological mother.","2. 你未曾见过你的生母。"
+POSSIBILITY_LIES_2_NUCLEAR_WAR,"3. The day before yesterday, a nuclear war erupted on earth, with a death toll of over a hundred million people.","3. 前天地球上发生了一次核战争，死亡人数上亿。"
+POSSIBILITY_LIES_HARD_WEDDING,"1. Your biological father's [color=yellow][hint=could be more than one date due to divorce]wedding date(s)[/hint][/color] and your biological mother's wedding date(s) do not share a same date.","1. [color=yellow][hint=由于存在离婚，可以是多个日期]你生父的结婚日期[/hint][/color]与你生母的结婚日期不包含同一天。"
+POSSIBILITY_MEMORY_1_PIGEON_BIRTH,"1. When you were born, you saw a blue pigeon flying by.","1. 你出生时看见了一只蓝鸽子飞过。"
+POSSIBILITY_MEMORY_1_PIGEON_LAST_MONTH,"2. Last month, you saw a blue pigeon flying by.","2. 你上个月看见了一只蓝鸽子飞过。"
+POSSIBILITY_MEMORY_1_PIGEON_DREAM,"3. Last time you slept, you dreamed of a blue pigeon flying by.","3. 你上次睡觉时梦见了一只蓝鸽子飞过。"
+POSSIBILITY_MEMORY_2_NOTE,"[center]More specifically, the rule for answering ""P"" is:\n[b]When you are reading the problem[/b],\nthe event described below is possible according to your knowledge.[/center]","[center]详细来说，回答""P""的规则是：\n[b]当你阅读题目时[/b]，题目描述的事件据你所知是可能发生的。[/center]"
+POSSIBILITY_MEMORY_2_PUNCH,"1. I just gave you a punch within the past 10 minutes.","1. 你在刚刚的十分钟内被我打了一拳。"
+POSSIBILITY_MEMORY_2_TITLE,"2. Before you entered this level this time, the title of this level shown in the map was not ""Memory 2"". It was your name and your ID number instead.","2. 你这次点进本关之前，本关在地图上的标题不是“记忆 2”，而是你的姓名和你的身份证号。"
+POSSIBILITY_MEMORY_2_INPUT_OLD,"3. ","3. 本关里一个[color=yellow][hint=选择P或NP的那种框]输入框[/hint][/color]都没有。"
+POSSIBILITY_MEMORY_2_WORD,"3. This page does not contain a single word.","3. 本页面里一个字都没有。"
+POSSIBILITY_MEMORY_GENERALIZED_FORGET,"1. When you try to recall a perception that you experienced in the past, you couldn't recall the same perception.","1. 当你尝试回忆自己曾经历的某一感知时，却无法回忆起同样的感知。"
+POSSIBILITY_MEMORY_GENERALIZED_FORGET_OLD,"1. ","1. 你对以前某个时间的你的感知的记忆不存在，或与你那时的感知不一致。"
+POSSIBILITY_MEMORY_GENERALIZED_CURRENT,"2. Your current perception does not exist.","2. 你当前的感知不存在。"
+POSSIBILITY_MEMORY_HARD_WIPE,"1. You once went to a toilet to poop and then walked away and forgot to wipe.","1. 你曾经有一次去厕所拉完屎忘记擦就走了。"
+POSSIBILITY_MEMORY_HARD_TIME_DIMENSION,"2. The time dimension does not exist.","2. 时间维度不存在。"
+POSSIBILITY_PATTERNS_1_SPACE_MATTER,"1. A cloud of matter is floating in space. It has flashed a hundred million times of green light consecutively. However, for the next time, it will flash red light.","1. 宇宙中漂浮着一团物质，它已经连续闪烁了一亿次绿光。但是它下一次将闪烁红光。"
+POSSIBILITY_PATTERNS_2_NEWTON,"1. [color=yellow][hint=as known as F=ma, a law that describes the motion of objects]Newton's Second Law of Motion[/hint][/color] does not hold true for some situations.","1. [color=yellow][hint=即F=ma，是描述物体运动规律的定律]牛顿第二运动定律[/hint][/color]对某些情况不成立。"
+POSSIBILITY_PATTERNS_2_TELEPORT,"2. A substance appears out of nowhere.","2. 一个物质凭空出现了。"
+POSSIBILITY_PATTERNS_2_NOT_OBJECT,"3. There is a thing that looks the same as an opaque solid cube, but when an object moves into it, the object clips through it, and neither receives resistance from the other.","3. 有一个东西，它看上去和一个不透明固体立方体一样，但另一物体向它移动时将穿过它，且双方不受对方给的阻力。"
+POSSIBILITY_PATTERNS_3_DEATH,"1. After your body dies, you will continue to perceive indefinitely.","1. 在你的身体死亡后，你仍会继续感知，永无止境。"
+POSSIBILITY_PATTERNS_3_SENTIMENTAL,"2. All the people in the world other than you [color=yellow][hint=like you are playing a single-player game]do not have perception[/hint][/color] all along.","2. 世界上除你以外的其他人一直都是[color=yellow][hint=就像你在玩单机游戏]没有感知[/hint][/color]的。"
+POSSIBILITY_FINALE_REFERENCE_ANSWER,"1. Among the Essenceology problems that I released or will release, one or more of the [color=yellow][hint=the answer against which your submitted answer is compared by the program]reference answers[/hint][/color] that I set are wrong.","1. 在我公布的本质学题目中，我设置的[color=yellow][hint=指你的答案提交后，程序与之进行对比的答案]参考答案[/hint][/color]有错。"
+
+ALL_LIVES,All Lives,全体
+CALCULATION,Calculation,计算
+PROBABILITY_1,Probability 1,概率 1
+PROBABILITY_2,Probability 2,概率 2
+INDIVIDUAL,Individual,个体
+ANALYSIS_1,Analysis 1,分析 1
+ANALYSIS_2,Analysis 2,分析 2
+FIXED_SUM_1,Fixed Sum 1,定和 1
+FIXED_SUM_2,Fixed Sum 2,定和 2
+MILITARY_TRAINING,Military Training,军训
+RICE,Rice,米饭
+VEGETARIAN,Vegetarian,素食
+MATCH,Match,比赛
+COOPERATE,Cooperate,合作
+LIE,Lie,撒谎
+SUICIDE,Suicide,自杀
+MOSQUITO,Mosquito,蚊子
+CAKE_1,Cake 1,蛋糕 1
+CAKE_2,Cake 2,蛋糕 2
+
+SHOULD_INTRO_NOTE,"[center]ph[/center]","[center]在这一部分里，每一道题会给出某一情境下的多个选择，你需要选出其中[b]应该[/b]做出的选择。\n其中，“应该做出某选择”的[b]定义[/b]为：\n在这些选择中，做出该选择的条件下所有生物利益值的[color=yellow][hint=以发生概率为权重的平均值]期望[/hint][/color]最大。[/center]"
+SHOULD_INTRO_TROLLEY,"A runaway train is heading towards a switch track. Each of the two leading tracks has some people tied to it. Beside you is a level that controls the switch. If you do nothing, the train will enter a track with  5  people tied to it. If you pull the level, the train will enter the other track with  1  people tied to it(and this action will not be prosecuted by law). You should...","一辆失控的列车正冲向一个道岔，道岔通向的两个线路上都绑着人，而你手边有一个控制该道岔的拉杆。此时，若你什么都不做，那么列车将驶入绑有5人的轨道；若你拉下拉杆，那么列车会驶入另一条绑有1人的轨道（此行为不会受到法律审判）。你应该..."
+SHOULD_DO_NOTHING,"Do nothing","什么也不做"
+SHOULD_PULL_LEVEL,"Pull the level","拉下拉杆"
+SHOULD_ALL_LIVES_PUNCH_1,"You are quarrelling with another person. If you punch them, compared to doing nothing, you will gain an additional pleasure of value 5, and they will suffer an additional pain of value 10. You should...","你和另一个人在吵架。如果你打他一拳，那么相比于什么也不做，之后你会额外获得值为5的愉悦，他会额外获得值为10的痛苦。你应该..."
+SHOULD_ALL_LIVES_PUNCH,"Punch them","打他一拳"
+SHOULD_ALL_LIVES_PUNCH_2,"You are quarrelling with another person. If you punch them, compared to doing nothing, you will gain an additional pleasure of value 50, and they will suffer an additional pain of value 10. You should...","你和另一个人在吵架。如果你打他一拳，那么相比于什么也不做，之后你会额外获得值为50的愉悦，他会额外获得值为10的痛苦。你应该..."
+SHOULD_CALCULATION_BUTTON,"In front of you is a red button. If you press it, you have a 60% chance to experience a pleasure with a  value of 5, and another 40% chance to experience a pain with a value of 10. You should...","你面前有一个红色按钮。若你按下它，那么你有60%的概率获得值为5的愉悦，以及另外40%的概率获得值为10的痛苦。你应该..."
+SHOULD_CALCULATION_BUTTON_PRESS,"Press the button"," 按下此按钮"
+SHOULD_CALCULATION_CARDS,"There is a stack of three poker cards with values of 5, 7, and 9 respectively. After some time, someone will randomly draw one card from this stack, and you will gain a pleasure equal to the value of the drawn card. Now you should...","有一叠扑克牌，共3张，其点数分别为5、7、9。一段时间后，将会有一个人从这叠扑克牌中随机抽取一张，然后你会获得与所抽点数等值的愉悦。你现在应该..."
+SHOULD_CALCULATION_CARDS_REMOVE,"Remove the card with a value of 5 from the stack","从这叠扑克牌中移除点数为5的一张"
+SHOULD_CALCULATION_CARDS_ADD,"Add a card with a value of 3 to the stack","向这叠扑克牌中加入点数为3的一张"
+SHOULD_PROBABILITY_1_GOLF_1,"In the last 8 days, the rainfall situation in location A, in chronological order, has been: [color=yellow][hint=None]N[/hint][/color]NN[color=yellow][hint=Yes]Y[/hint][/color]YYYY. In the last 8 days, the rainfall situation in location B, in chronological order, has been: NNYNNNNY. Today, you need to play outdoor golf. You should...","A地前8天的下雨情况以时间先后顺序排列是：无无无有有有有有；B地前8天的下雨情况以时间先后顺序排列是：无无有无无无无有。今天你需要去打露天高尔夫，你应该..."
+SHOULD_PLAY_AT_A,"Play outdoor golf at A","去A地打露天高尔夫"
+SHOULD_PLAY_AT_B,"Play outdoor golf at B","去B地打露天高尔夫"
+SHOULD_PROBABILITY_1_GOLF_2,"In the last 8 days, the rainfall situation in location A, in chronological order, has been: NNNYYYYY. In the last 8 days, the rainfall situation in location B, in chronological order, has been: YYYNYNNY. Today, you need to play outdoor golf. You should...","A地前8天的下雨情况以时间先后顺序排列是：无无无有有有有有；B地前8天的下雨情况以时间先后顺序排列是：有有有无有无无有。今天你需要去打露天高尔夫，你应该..."
+SHOULD_PROBABILITY_2_GOLF_1,"In the last 8 days, the rainfall situation in location A, in chronological order, has been: YYYYYYYY. The probability of having a rainfall in location B is 100%. Today, you need to play outdoor golf. You should...","A地前8天的下雨情况以时间先后顺序排列是：有有有有有有有有；B地今天下雨概率为100%。今天你需要去打露天高尔夫，你应该..."
+SHOULD_PROBABILITY_2_GOLF_2,"In the last 8 days, the rainfall situation in location A, in chronological order, has been: NNYYYYYY. The probability of having a rainfall in location B is 75%. Today, you need to play outdoor golf. You should...","A地前8天的下雨情况以时间先后顺序排列是：无无有有有有有有；B地今天下雨概率为75%。今天你需要去打露天高尔夫，你应该..."
+SHOULD_INDIVIDUAL_TROLLEY_1,"In the scenario of the intro problem, a passerby A approaches. A does not know that there are 5 people tied to the first track, but aside of that, A knows everything given in the intro problem. Based on the information A knows, A should...","在引言题目的情境下，旁边又来了一个路人A。A不知道第一条线路上绑着5个人，除此之外A知晓引言题目中所给的一切信息。在A已知晓的信息下，A应该..."
+SHOULD_INDIVIDUAL_TROLLEY_2,"In the scenario of the intro problem, a passerby B approaches. B knows everything given in the intro problem, and B also knows that there isn't just 1 people tied on the second track, but an extra 9 people as well. Based on the information B knows, B should...","在引言题目的情境下，旁边又来了一个路人B。B知晓引言题目中所给的一切信息，且B知道第二条线路上不仅仅绑了1个人，还绑了额外9个人。在B已知晓的信息下，B应该..."
+SHOULD_ANALYSIS_1_WIPE,"You need to wipe some oil off your mouth and some sweat off your butt, but you only have one tissue. You should...","你需要擦嘴上的油和屁股上的汗，但你只有一张抽纸。你应该..."
+SHOULD_ANALYSIS_1_WIPE_MOUTH_FIRST,"Wipe your mouth first, then fold the tissue and wipe your butt","先擦嘴，折一下抽纸，再擦屁股"
+SHOULD_ANALYSIS_1_WIPE_BUTT_FIRST,"Wipe your butt first, then fold the tissue and wipe your mouth","先擦屁股，折一下抽纸，再擦嘴"
+SHOULD_ANALYSIS_1_GRID,"You are on a platform. At the upper surface of the platform, there are 12 locations distributed in a [color=yellow][hint=3 rows, 4 columns]4x3 matrix[/hint][/color]. The distance between two horizontally adjacent locations is 200 meters, and the distance between two vertically adjacent locations is 100 meters. You are at the leftmost location in the first row, and you need to visit each location once. You should... (you move along the shortest path between locations)","你在一个平台上，平台上表面处有12个地点以[color=yellow][hint=3行4列]4x3的矩阵状[/hint][/color]分布，横向相邻两点间距200米，纵向相邻间距100米。你在第一行最左的地点处，你需要到达每个地点各一次。你应该...（在地点间移动时走最短路径）"
+SHOULD_ANALYSIS_1_GRID_HORIZONTAL_FIRST,"First traverse the 1st row from left to right, then traverse the 2nd row from right to left, then traverse the 3rd row from left to right","先从左至右遍历第1行，再从右至左遍历第2行，再从左至右遍历第3行"
+SHOULD_ANALYSIS_1_GRID_VERTICAL_FIRST,"First traverse the 1st column from front to back, then traverse the 2nd column from back to front, then traverse the 3rd column from front to back, then traverse the 4th column from back to front","先从前至后遍历第1列，再从后至前遍历第2列，再从前至后遍历第3列，再从后至前遍历第4列"
+SHOULD_ANALYSIS_2_CLOTHES,"The 20 clothes on the drying rack are all dry, and you need to collect them. The process is: you take a piece of clothing with yout right hand and place it on your left hand, repeating this for each piece of clothing. Finally, you leave and place the stack of clothes in your left hand somewhere else. You should...","晾衣架上的二十件衣服都干了，你需要把它们收起来。你收衣服的流程是：右手取衣服，放到左手上，依次对每件衣服执行上述操作，最后离开，然后把左手上一叠衣服放到某处。你应该..."
+SHOULD_ANALYSIS_2_CLOTHES_LIGHT_FIRST,"Collect the clothes in order from lightest to heaviest","按从轻到重的顺序收衣服"
+SHOULD_ANALYSIS_2_CLOTHES_HEAVY_FIRST,"Collect the clothes in order from heaviest to lightest","按从重到轻的顺序收衣服"
+SHOULD_ANALYSIS_2_,"","..."
+SHOULD_ANALYSIS_2_,"",""
+SHOULD_ANALYSIS_2_,"",""
+SHOULD_ANALYSIS_HARD_METRO,"You need to take the subway to a certain place. There are two subway routes that go from here to there: one takes a long time but is very crowded, and the other takes a short time but is not crowded at all. It is known that regardless of which route you choose, the expected value of your benefit is the same. You should...","你需要坐地铁去某地。有两条地铁路线从这里通过去，一种耗时短但很挤，另一种耗时长但一点也不挤。已知无论选择哪条路线，你的利益值的期望都一样。你应该..."
+SHOULD_ANALYSIS_HARD_METRO_SHORT_BUT_CROWDED,"Take the route which takes a short time but is very crowded","乘坐耗时短但很挤的路线"
+SHOULD_ANALYSIS_HARD_METRO_LONG_BUT_SPARSE,"Take the route which takes a long time but is not crowded at all","乘坐耗时长但一点也不挤的路线"
+SHOULD_ANALYSIS_HARD_ESCALATOR,"Class is about to start, and you need to get to the classroom before the class begins. You are currently in an underground passage, and the route to the classroom from here involves an upward escalator followed by a flat path. You can't walk the entire route continuously, as you'll need to stop and rest for 10 seconds midway. You should...","快上课了，你需要在上课前走到教室。你当前在一条地下通道里，从这里到教室的路线是一段上升的自动扶梯加上一段平路。你无法全程一直行走，中途需要立定歇10秒。你应该..."
+SHOULD_ANALYSIS_HARD_ESCALATOR_REST_ON_ESCALATOR,"Rest for 10 seconds on the escalator","站在扶梯上歇10秒"
+SHOULD_ANALYSIS_HARD_ESCALATOR_REST_ON_ROAD,"Rest for 10 seconds on the flat path","站在平路上歇10秒"
+SHOULD_FIXED_SUM_1_SCRAMBLE,"A crowd of people is scrambling for a free item. You should...","有一群人在争抢一个免费的东西，你应该..."
+SHOULD_FIXED_SUM_1_SCRAMBLE_JOIN,"Join the scramble","加入这场争抢"
+SHOULD_FIXED_SUM_1_SCRAMBLE_DONT_JOIN,"Don't join the scramble","不加入这场争抢"
+SHOULD_FIXED_SUM_1_QUEUE,"You are sitting on a bench. You need to handle some business at a nearby window, but there are about 50 people standing in line at the window. You should...","你坐在座椅上。你需要在旁边某一窗口处办理事务，但是该窗口有约50个人在站着排队。你当前应该..."
+SHOULD_FIXED_SUM_1_QUEUE_GO,"Go stand in line","去排队"
+SHOULD_FIXED_SUM_1_QUEUE_STAY,"Keep sitting","继续坐着"
+SHOULD_FIXED_SUM_2_GAOKAO,"The college entrance examination may test the years of certain historical events. Someone is a candidate for this examination. They should...","高考可能会考某些历史事件的年份是多少。某人是一个高考考生，他应该..."
+SHOULD_FIXED_SUM_2_GAOKAO_MEMORIZE,"","花时间背这些东西"
+SHOULD_FIXED_SUM_2_GAOKAO_DONT_MEMORIZE,"","不花时间背这些东西"
+SHOULD_FIXED_SUM_2_CURRENCY,"A bag of candy and a stack of cash (100 one-hundred-dollar bills) are about to be destroyed, and you can only save one of the two.","一袋糖果和一叠钞票（100张百元人民币）要被销毁了，你只能挽救两者中的一个。你应该..."
+SHOULD_FIXED_SUM_2_CURRENCY_SAVE_CANDIES,"Save the candies","挽救这袋糖果"
+SHOULD_FIXED_SUM_2_CURRENCY_SAVE_CASH,"Save the cash","挽救这叠钞票"
+SHOULD_MILITARY_TRAINING_NOTE,"[center]In the following section, you need to answer the [color=yellow][hint=relative to not making the choice]good and bad[/hint][/color] aspects of making the given choice under the given scenario.\nThe good aspects to be answered are in the left column, and the bad aspects to be answered (none in this question) are in the right column.\nWhen answering, [color=yellow][hint=unless I missed one or more when setting them][b]any[/b][/hint][/color] commonly used word with the right meaning will be automatically accepted.\nFor example, in this problem, you need to type in this window any word that means [b]pain[/b].\nHowever, the input field for each problem has a character limit, and words that are too vague will not be accepted.[/center]","[center]在接下来的这部分，你需要根据所给情境，回答做出所给选择的[color=yellow][hint=相比于不做出该选择]好与坏[/hint][/color]的方面。\n需回答的好的方面在左边一列；需回答的坏的方面（本题没有）在右边一列。\n回答时，意思正确的[color=yellow][hint=除非我在录入时有遗漏][b]任意[/b][/hint][/color]常用词语都会被自动接受。\n例如，在本题中，你需要切换到中文输入法，直接在本窗口输入任意一个含义约为[b]痛苦[/b]的词语。\n但是，每道题目目的输入框都有一个长度上限，且过于笼统的词语不会被接受。[/center]"
+SHOULD_MILITARY_TRAINING,"Should the torturous activities in military training, such as standing at attention, be abolished?","军训中的站军姿等折磨环节应该被废除吗？"
+SHOULD_MILITARY_TRAINING_PAIN,"[color=yellow][hint=When standing at attention or going through other torturous exercises, the body usually feels very sore and painful.]Pain[/hint][/color]","[color=yellow][hint=站军姿或是进行别的折磨环节时，身体一般会很酸痛。]痛苦[/hint][/color]"
+SHOULD_RICE_NOTE,"Some questions do not require you to answer all the given aspects.\nThe more important your answered aspect is, the more the progress bar will increase.","某些问题不需要你回答出所给的全部方面。\n回答的方面越主要，进度条增加量越大。"
+SHOULD_RICE,"After you have finished eating your bowl of rice, a few grains of rice remain stuck to the bowl. Should you eat them up using chopsticks?","你吃完一碗饭后，碗里还粘着零星的几粒米粒。你应该用筷子把这些米粒吃掉吗？"
+SHOULD_RICE_CONSERVE,"[color=yellow][hint=After eating these rice, your need for food will slightly decrease, so less food will need to be prepared for you later, saving the effort of food preparation.]Conserve[/hint][/color]","[color=yellow][hint=吃了这些米后，你对食物的需求就少了一点，之后就少一点需要制作食物给你吃，节省了制作食物的功夫。]节约[/hint][/color]"
+SHOULD_RICE_WASH,"[color=yellow][hint=After finishing these few grains of rice, if the dishes are washed by hand, the person washing the dishes might find it easier.]Wash[/hint][/color]","[color=yellow][hint=吃完这几粒米后，如果是人工洗碗，那么洗碗的人估计轻松一些。]清洗[/hint][/color]"
+SHOULD_RICE_TIME,"[color=yellow][hint=It takes some time to pick up these rice.]Time[/hint][/color]","[color=yellow][hint=夹这几粒米要花一段时间。]费时[/hint][/color]"
+SHOULD_VEGETARIAN_NOTE,"The aspects given are just some major ones and do not necessarily cover all aspects.","所给出的方面只是一些主要方面，并不一定是全部方面。"
+SHOULD_VEGETARIAN,"You are preparing a feast. Should you make it entirely consist of vegetarian dishes with no meat?","几天后会有一场盛宴，你现在需要从农场订购其食材。你要么只订购素菜，要么既订购素菜又订购荤菜。你应该只订购素菜吗？"
+SHOULD_VEGETARIAN_PAIN,"[color=yellow][hint=]Pain[/hint][/color]","[color=yellow][hint=若你订购荤菜，那么农场平均要屠杀更多的动物，给动物造成更多痛苦（若没有采用安乐死）。]痛苦[/hint][/color]"
+SHOULD_VEGETARIAN_TASTY,"[color=yellow][hint=]Tasty[/hint][/color]","[color=yellow][hint=]好吃[/hint][/color]"
+SHOULD_MATCH,"Your team is playing a soccer match against another team, and it's very hot. Should you do your best to play the match?","你所在的队伍正在和另一支队伍踢足球比赛，且这里环境很热。你应该尽力踢吗？"
+SHOULD_MATCH_FUN,"[color=yellow][hint=Generally, a match is more interesting when both sides do their best to compete against each other.]Fun[/hint][/color]","[color=yellow][hint=一般来说，双方尽力对抗，比赛才有趣。]趣味[/hint][/color]"
+SHOULD_MATCH_EFFORT,"[color=yellow][hint=Doing your best is usually very tiring.]Effort[/hint][/color]","[color=yellow][hint=尽力会累。]费力[/hint][/color]"
+SHOULD_COOPERATE,"A game software needs to be made. The game can either be created by one person alone or multiple people cooperating together. Should multiple people cooperate together to make this game?","现在需要制作一个游戏软件。这个游戏要么仅由一个人制作，要么由多个人合作制作。应该合作制作这个游戏吗？"
+SHOULD_COOPERATE_COMPLEMENT,"[color=yellow][hint=When cooperating, a part that one person is not good at can be assigned to another person, allowing their skills to complement each other.]Complement[/hint][/color]","[color=yellow][hint=合作时，一人不擅长的部分工作可以分配给另一人干，两人技能相互弥补。]互补[/hint][/color]"
+SHOULD_COOPERATE_COMMUNICATE,"[color=yellow][hint=]Communicate[/hint][/color]","[color=yellow][hint=合作时若不交流，那么各人难以知道其他人制作的怎么样]交流[/hint][/color]"
+SHOULD_LIE,"In high school, the teacher is asking you why you haven't submitted your homework. You didn't do the assignment last night. Should you lie and say you forgot to bring it, or should you tell the truth that you didn't do it?","在高中，老师正问你为什么没交作业。你昨晚并没有做这门作业。你要么如实回答没做，要么撒谎作业忘带了。你应该撒谎吗？"
+SHOULD_LIE_ANGER,"[color=yellow][hint=If the teacher finds out that you didn't do your homework, they are likely to get angry, and you may get scolded.]Anger[/hint][/color]","[color=yellow][hint=若老师知道了你没做作业，老师很可能会生气，而你很可能会挨骂。]生气[/hint][/color]"
+SHOULD_LIE_EXPOSED,"[color=yellow][hint=If the lie is exposed, the teacher is likely to get very angry, and their level of trust in you is likely to decrease.]Exposed[/hint][/color]","[color=yellow][hint=若谎言被揭穿，那么老师很可能会很生气；老师对你的信任程度也很可能会下降。]揭穿[/hint][/color]"
+SHOULD_SUICIDE,"There is a person standing at the edge of a high-rise building wanting to commit suicide. Should you pull them back?","有个人站在高楼楼顶边缘想要自杀，你应该把他拉回来吗？"
+SHOULD_SUICIDE_PAIN,"[color=yellow][hint=]Pain[/hint][/color]","[color=yellow][hint=]痛苦[/hint][/color]"
+SHOULD_SUICIDE_FAMILY,"[color=yellow][hint=]Family[/hint][/color]","[color=yellow][hint=]家庭[/hint][/color]"
+SHOULD_SUICIDE_KNOWLEDGE,"[color=yellow][hint=He knows his own experiences better than you do, so his choice is more likely to be the right one.]Knowledge[/hint][/color]","[color=yellow][hint=他比你更清楚他自己的经历，因此他的选择更可能是正确的]自知[/hint][/color]。"
+SHOULD_MOSQUITO,"You were just bitten by a mosquito. The mosquito is now flying near you. Should you swat and kill it?","刚才有只蚊子叮了你一口。它现在在你身旁飞，你应该打死它吗？"
+SHOULD_MOSQUITO_ITCH,"[color=yellow][hint=If you don't kill it, it might bite you again and make you itchy.]Itch[/hint][/color]","[color=yellow][hint=如果不打死它，它可能还会叮你，让你痒]痒[/hint][/color]"
+SHOULD_MOSQUITO_EXTINCT,"[color=yellow][hint=Killing it contributes to the eradication of mosquitoes, and once they are extinct, no one will be bitten by mosquitoes anymore.]Extinct[/hint][/color]","[color=yellow][hint=打死它有助于蚊子的灭绝，而蚊子灭绝后就没有人会被蚊子叮了]灭绝[/hint][/color]"
+SHOULD_MOSQUITO_PAIN,"[color=yellow][hint=When you kill the mosquito, it may feel pain.]Pain[/hint][/color]","[color=yellow][hint=打死蚊子时，蚊子可能会感到疼痛]疼痛[/hint][/color]"
+SHOULD_MOSQUITO_EFFORT,"[color=yellow][hint=Killing the mosquito might be a bit challenging and could take time and effort.]Effort[/hint][/color]","[color=yellow][hint=打死蚊子有点难度，需要耗时耗力]耗时耗力[/hint][/color]"
+SHOULD_CAKE_A,"You have a delicious piece of cake. You can either eat it right now or wait and plan to eat it later. Should you eat it right now?","你拥有一块好吃的蛋糕。你当前要么立刻吃掉它，要么现在不吃，计划等会再吃。你当前应该立刻吃掉它吗？"
+SHOULD_CAKE_A_CHANCE,"[color=yellow][hint=If you don't eat it now, there's a possibility that unforeseen events may occur later, preventing you from enjoying it (for example, if you were to die).]Chance[/hint][/color]","[color=yellow][hint=现在不吃，等会发生意外事件后可能会想吃也吃不了（例如：你死了）]时机[/hint][/color]"
+SHOULD_CAKE_B,"You see a piece of cake that would be delicious for any perceiving being to eat, and there’s another person nearby. It is known that this cake will either be entirely eaten by you or entirely eaten by him. Should you eat the cake?","你看见面前有一块[color=yellow][hint=任何感知体在吃它时都会感到好吃]好吃的[/hint][/color]蛋糕，而且旁边还有一个人。已知此蛋糕要么被你全部吃掉，要么被他全部吃掉。你应该吃掉此蛋糕吗？"
+SHOULD_CAKE_B_SENTIMENTAL,"[color=yellow][hint=The other person may not necessarily have perception.]Sentimental[/hint][/color]","[color=yellow][hint=那个人不一定有感知]感知[/hint][/color]"
+SHOULD_LIE_2,"In high school, the teacher is asking you why you haven't submitted your homework. You didn't do the assignment last night. You can either honestly say you didn't do it or lie and say you forgot to bring it. Right now, you should either choose one of the two responses immediately or take some time to think about whether to lie. Should you take some time to think it over?","在高中，老师正问你为什么没交作业。你昨晚并没有做这门作业。你可以如实回答没做，也可以撒谎作业忘带了。当前，你要么立刻在两种回答中选择一个回答，要么再考虑一下要不要撒谎。你应该再考虑一下吗？"
+SHOULD_LIE_2_POLISH,"[color=yellow][hint=]Polish[/hint][/color]","[color=yellow][hint=]斟酌[/hint][/color]"
+SHOULD_LIE_2_EXPOSED,"[color=yellow][hint=]Exposed[/hint][/color]","[color=yellow][hint=]暴露[/hint][/color]"
+
+
+
+
+
+
+SHOULD_RULE,"",""
+SHOULD_RULE,"","[color=yellow][hint=尽力会累]费力[/hint][/color]"
+SHOULD_RULE,"","[color=yellow][hint=尽力会累]费力[/hint][/color]"

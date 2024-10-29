@@ -133,7 +133,7 @@ layout_mode = 2
 layout_mode = 2
 theme = ExtResource("4_kqfgr")
 bbcode_enabled = true
-text = "SHOULD_ANALYSIS_2_MILITARY_TRAINING"
+text = "SHOULD_ANALYSIS_2_SPECIALIZATION"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -142,59 +142,59 @@ autowrap_mode = 0
 layout_mode = 2
 alignment = 1
 
-[node name="ABOLISH" type="VSplitContainer" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options"]
+[node name="LIBERAL_ARTS" type="VSplitContainer" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options"]
+layout_mode = 2
+size_flags_horizontal = 3
+dragger_visibility = 2
+script = ExtResource("5_lhprc")
+
+[node name="Text" type="MarginContainer" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/LIBERAL_ARTS"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="Text" type="CenterContainer" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/LIBERAL_ARTS/Text"]
+layout_mode = 2
+
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/LIBERAL_ARTS/Text/Text"]
+layout_mode = 2
+theme = ExtResource("4_kqfgr")
+bbcode_enabled = true
+text = "SHOULD_ANALYSIS_2_SPECIALIZATION_LIBERAL_ARTS"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Button" type="CenterContainer" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/LIBERAL_ARTS"]
+layout_mode = 2
+
+[node name="Button" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/LIBERAL_ARTS/Button" instance=ExtResource("6_b3e4n")]
+layout_mode = 2
+
+[node name="SCIENCE" type="VSplitContainer" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options"]
 layout_mode = 2
 size_flags_horizontal = 3
 dragger_visibility = 2
 script = ExtResource("5_lhprc")
 reference_answer = true
 
-[node name="Text" type="MarginContainer" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/ABOLISH"]
+[node name="Text" type="MarginContainer" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/SCIENCE"]
 layout_mode = 2
 theme_override_constants/margin_bottom = 5
 
-[node name="Text" type="CenterContainer" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/ABOLISH/Text"]
+[node name="Text" type="CenterContainer" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/SCIENCE/Text"]
 layout_mode = 2
 
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/ABOLISH/Text/Text"]
+[node name="Text" type="RichTextLabel" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/SCIENCE/Text/Text"]
 layout_mode = 2
 theme = ExtResource("4_kqfgr")
 bbcode_enabled = true
-text = "SHOULD_ANALYSIS_2_MILITARY_TRAINING_ABOLISH"
+text = "SHOULD_ANALYSIS_2_SPECIALIZATION_SCIENCE"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="Button" type="CenterContainer" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/ABOLISH"]
+[node name="Button" type="CenterContainer" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/SCIENCE"]
 layout_mode = 2
 
-[node name="Button" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/ABOLISH/Button" instance=ExtResource("6_b3e4n")]
-layout_mode = 2
-
-[node name="KEEP" type="VSplitContainer" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options"]
-layout_mode = 2
-size_flags_horizontal = 3
-dragger_visibility = 2
-script = ExtResource("5_lhprc")
-
-[node name="Text" type="MarginContainer" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/KEEP"]
-layout_mode = 2
-theme_override_constants/margin_bottom = 5
-
-[node name="Text" type="CenterContainer" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/KEEP/Text"]
-layout_mode = 2
-
-[node name="Text" type="RichTextLabel" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/KEEP/Text/Text"]
-layout_mode = 2
-theme = ExtResource("4_kqfgr")
-bbcode_enabled = true
-text = "SHOULD_ANALYSIS_2_MILITARY_TRAINING_KEEP"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
-[node name="Button" type="CenterContainer" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/KEEP"]
-layout_mode = 2
-
-[node name="Button" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/KEEP/Button" instance=ExtResource("6_b3e4n")]
+[node name="Button" parent="Problems/Problems/MILITARY_TRAINING/Problem/Options/SCIENCE/Button" instance=ExtResource("6_b3e4n")]
 layout_mode = 2
