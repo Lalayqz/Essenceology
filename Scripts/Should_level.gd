@@ -33,7 +33,7 @@ func update_word_warp():
 		var string = strip_bbcode(TranslationServer.translate(text.text))
 		if text_font.get_string_size(string, HORIZONTAL_ALIGNMENT_LEFT, -1, text.get_theme_font_size("normal_font_size")).x > MAX_PROBLEM_TEXT_WIDTH:
 			# set text autowarp if its width exceeds MAX_TEXT_WIDTH
-			text.set_autowrap_mode(TextServer.AUTOWRAP_WORD)
+			text.set_autowrap_mode(TextServer.AUTOWRAP_WORD_SMART)
 			text.set_custom_minimum_size(Vector2(MAX_PROBLEM_TEXT_WIDTH, 0))
 		else:
 			text.set_autowrap_mode(TextServer.AUTOWRAP_OFF)
@@ -41,7 +41,7 @@ func update_word_warp():
 	for text in option_texts:
 		var string = strip_bbcode(TranslationServer.translate(text.text))
 		if text_font.get_string_size(string, HORIZONTAL_ALIGNMENT_LEFT, -1, text.get_theme_font_size("normal_font_size")).x > MAX_OPTION_TEXT_WIDTH:
-			text.set_autowrap_mode(TextServer.AUTOWRAP_WORD)
+			text.set_autowrap_mode(TextServer.AUTOWRAP_WORD_SMART)
 			text.set_custom_minimum_size(Vector2(MAX_OPTION_TEXT_WIDTH, 0))
 		else:
 			text.set_autowrap_mode(TextServer.AUTOWRAP_OFF)

@@ -97,8 +97,8 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 script = ExtResource("7_3hssn")
 points = 1
-reference_words_en = PackedStringArray("Complement", "Complements", "Compensate", "Compensates", "Compensated", "Skill", "Skills", "Skilled", "Expertise", "Expertises", "Expertised")
-reference_words_zh_cn = PackedStringArray("补", "弥补", "互补", "补充", "补偿", "相辅", "技能", "技巧", "特长", "技术", "技艺", "特化", "专长", "专业", "擅长", "拿手", "行家")
+reference_words_en = PackedStringArray("Complement", "Complements", "Compensate", "Compensates", "Compensated", "Skill", "Skills", "Skilled", "Expertise", "Expertises", "Expertised", "Area", "Areas", "Field", "Fields", "Domain", "Domains", "Realm", "Realms")
+reference_words_zh_cn = PackedStringArray("补", "弥补", "互补", "补充", "补偿", "相辅", "技能", "技巧", "特长", "技术", "技艺", "特化", "专长", "专业", "领域", "擅长", "拿手", "行家")
 
 [node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/COOPERATE/Aspects/GoodAspects/COMPLEMENT"]
 custom_minimum_size = Vector2(320, 80)

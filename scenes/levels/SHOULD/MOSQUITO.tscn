@@ -100,7 +100,7 @@ theme_override_constants/margin_bottom = 60
 script = ExtResource("6_jvnqb")
 points = 1
 reference_words_en = PackedStringArray("Itch", "Itches", "Itched", "Itching", "Itchy", "Itchiness", "Scratch", "Scratches", "Scratched", "Rub", "Rubs", "Rubbed", "Rubbing")
-reference_words_zh_cn = PackedStringArray("痒", "很痒", "瘙痒", "挠", "抓", "挠痒", "抓痒", "搔痒", "抓挠")
+reference_words_zh_cn = PackedStringArray("痒", "很痒", "瘙痒", "痒痒", "挠", "抓", "挠痒", "抓痒", "搔痒", "抓挠")
 
 [node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/MOSQUITO/Aspects/GoodAspects/ITCH"]
 custom_minimum_size = Vector2(250, 80)
@@ -347,7 +347,7 @@ theme_override_constants/margin_left = 50
 script = ExtResource("6_jvnqb")
 points = 1
 reference_words_en = PackedStringArray("Effort", "Efforts", "Time", "Long", "Duration", "Tire", "Tires", "Tired", "Tiring", "Fatigue")
-reference_words_zh_cn = PackedStringArray("费时", "耗时", "用时", "时间", "时长", "长", "久", "工夫", "费力", "累", "酸", "累死", "很累", "劳累", "酸疼", "酸痛")
+reference_words_zh_cn = PackedStringArray("耗时", "费时", "用时", "时间", "时长", "长", "久", "工夫", "耗力", "费力", "累", "酸", "累死", "很累", "劳累", "酸疼", "酸痛", "麻烦")
 
 [node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/MOSQUITO/Aspects/BadAspects/EFFORT"]
 custom_minimum_size = Vector2(250, 80)

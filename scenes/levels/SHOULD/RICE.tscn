@@ -287,7 +287,7 @@ theme_override_constants/margin_top = 50
 script = ExtResource("7_mcwi1")
 points = 2
 reference_words_en = PackedStringArray("Time", "Long", "Duration")
-reference_words_zh_cn = PackedStringArray("耗时", "费时", "用时", "时间", "时长", "长", "久", "工夫")
+reference_words_zh_cn = PackedStringArray("耗时", "费时", "用时", "时间", "时长", "长", "久", "工夫", "耗力", "费力", "累", "酸", "酸疼", "酸痛", "麻烦")
 
 [node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/RICE/Aspects/BadAspects/TIME"]
 custom_minimum_size = Vector2(250, 80)

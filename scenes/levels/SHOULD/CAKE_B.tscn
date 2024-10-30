@@ -96,8 +96,8 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 script = ExtResource("7_crlv1")
 points = 1
-reference_words_en = PackedStringArray("Sentient", "Sentiently", "Sentience", "Perceive", "Perceives", "Perceived", "Perceiving", "Perceptual", "Perception", "Sense", "Senses", "Sensed", "Sensing", "Taste")
-reference_words_zh_cn = PackedStringArray("感知", "认知", "知觉", "感觉", "五感", "味觉", "味蕾", "无感")
+reference_words_en = PackedStringArray("Sentient", "Sentiently", "Sentience", "Perceive", "Perceives", "Perceived", "Perceiving", "Perceptual", "Perception", "Conscious", "Sense", "Senses", "Sensed", "Sensing", "Taste")
+reference_words_zh_cn = PackedStringArray("感知", "认知", "知觉", "感觉", "意识", "五感", "味觉", "味蕾", "无感")
 
 [node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/CAKE_B/Aspects/GoodAspects/SENTIENT"]
 custom_minimum_size = Vector2(250, 80)

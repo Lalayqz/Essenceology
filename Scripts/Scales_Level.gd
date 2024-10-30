@@ -108,7 +108,7 @@ func update_word_warp():
 		var string = strip_bbcode(TranslationServer.translate(problem_text.text))
 		if text_font.get_string_size(string, HORIZONTAL_ALIGNMENT_LEFT, -1, problem_text.get_theme_font_size("normal_font_size")).x > MAX_PROBLEM_TEXT_WIDTH:
 			# set text autowarp if its width exceeds MAX_TEXT_WIDTH
-			problem_text.set_autowrap_mode(TextServer.AUTOWRAP_WORD)
+			problem_text.set_autowrap_mode(TextServer.AUTOWRAP_WORD_SMART)
 			problem_text.set_custom_minimum_size(Vector2(MAX_PROBLEM_TEXT_WIDTH, 0))
 		else:
 			problem_text.set_autowrap_mode(TextServer.AUTOWRAP_OFF)

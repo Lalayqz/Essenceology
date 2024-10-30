@@ -6,16 +6,33 @@ var map_node = null
 
 
 func _ready():
-	if not Save.is_any_chapter_solved():
+	# Chapters that are at the end of a chain appears in this dictionary.
+	# A value of True means the chapter is unlocked.
+	var chapters_to_be_unlocked = {}
+	for chain in LevelInfos.CHAPTER_CHAINS:
+		var level = chain[1]
+		if level not in chapters_to_be_unlocked or chapters_to_be_unlocked[level] == false:
+			chapters_to_be_unlocked[level] = Save.get_chapter_solved(chain[0])
+	
+	var unlocked_chapter_count = 0
+	for chapter_button in chapter_bar.get_children():
+		var ch = chapter_button.chapter
+		if ch in chapters_to_be_unlocked and chapters_to_be_unlocked[ch] == false:
+			chapter_button.visible = false
+		else:
+			unlocked_chapter_count += 1
+	
+	if unlocked_chapter_count <= 1:
 		chapter_bar.visible = false
 	chapter_bar_width = chapter_bar.size.x if chapter_bar.visible else 0
-	load_chapter(GlobalVariables.current_chapter)	
+	load_chapter(GlobalVariables.current_chapter)
 
 
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		Save.save_game()
 		get_tree().quit()
+
 
 func input(event):
 	if event.is_action_pressed("ui_cancel"):

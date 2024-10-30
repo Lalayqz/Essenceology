@@ -96,8 +96,8 @@ theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 script = ExtResource("7_d6aoi")
 points = 1
-reference_words_en = PackedStringArray("Opportunity", "Chance", "Accident", "Accidents", "Unexpected", "Unforeseen", "Fail", "Failure", "Unable", "Incapable", "Incapably")
-reference_words_zh_cn = PackedStringArray("时机", "机会", "机遇", "意外", "不测", "变故", "预料", "意料", "料想", "料到", "失败", "无法", "不能", "不可", "不行")
+reference_words_en = PackedStringArray("Opportunity", "Chance", "Accident", "Accidents", "Change", "Changes", "Changed", "Changing", "Unexpected", "Unforeseen", "Fail", "Failure", "Unable", "Incapable", "Incapably")
+reference_words_zh_cn = PackedStringArray("时机", "机会", "机遇", "意外", "不测", "变故", "变化", "预料", "意料", "料想", "料到", "失败", "无法", "不能", "不可", "不行")
 
 [node name="Aspect" type="ReferenceRect" parent="Body/Body/Problem/CAKE_A/Aspects/GoodAspects/OPPORTUNITY"]
 custom_minimum_size = Vector2(300, 80)

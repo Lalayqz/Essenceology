@@ -20,42 +20,32 @@ var drag_start_last_frame = null
 
 
 func _ready():
-	# calculate levels_unlocked and chains_not_unlocked (only "key" of the dict is used)
-	var chains_unlocked = {}
-	var levels_not_unlocked = {}
+	# Levels that are at the end of a chain appears in this dictionary.
+	# A value of True means the level is unlocked.
+	var levels_to_be_unlocked = {}
 	var visible_level_names = []
-	
+	var chains_unlocked = []
 	for chain in LevelInfos.LEVEL_CHAINS[chapter]:
-		if Save.get_level_solved(chapter, chain[0]):
-			chains_unlocked[chain] = 1
-		levels_not_unlocked[chain[1]] = 1
-	var levels_unlocked_in_not_unlocked = []
-	for level in levels_not_unlocked:
-		var is_unlocked
+		var level = chain[1]
+		var is_chain_unlocked = Save.get_level_solved(chapter, chain[0])
+		
 		if level in LevelInfos.LEVELS_UNLOCKED_BY_ALL_CHAINS[chapter]:
-			is_unlocked = true
-			for chain in LevelInfos.LEVEL_CHAINS[chapter]:
-				if chain[1] == level and not Save.get_level_solved(chapter, chain[0]):
-					is_unlocked = false
-					break
+			if level not in levels_to_be_unlocked or levels_to_be_unlocked[level] == true:
+				levels_to_be_unlocked[level] = is_chain_unlocked
 		else:
-			is_unlocked = false
-			for chain in LevelInfos.LEVEL_CHAINS[chapter]:
-				if chain[1] == level and Save.get_level_solved(chapter, chain[0]):
-					is_unlocked = true
-					break
-		if is_unlocked:
-			levels_unlocked_in_not_unlocked.append(level)
-	for level in levels_unlocked_in_not_unlocked:
-		levels_not_unlocked.erase(level)
+			if level not in levels_to_be_unlocked or levels_to_be_unlocked[level] == false:
+				levels_to_be_unlocked[level] = is_chain_unlocked
+		
+		if is_chain_unlocked:
+			chains_unlocked.append(chain)
+	
 	# hide not-unlocked levels
 	for level in levels.get_children():
-		if levels_not_unlocked.has(level.name):
+		if level.name in levels_to_be_unlocked and levels_to_be_unlocked[level.name] == false:
 			level.visible = false
 		else:
 			visible_levels.append(level)
 			visible_level_names.append(level.name)
-		# LEVELS.remove_child(LEVELS.get_node(level))
 	# add chains
 	for chain in chains_unlocked:
 		var level_start = levels.get_node(chain[0])

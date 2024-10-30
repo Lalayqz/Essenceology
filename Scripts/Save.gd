@@ -16,7 +16,7 @@ func _ready():
 		json.parse(file.get_as_text())
 		save = json.get_data()
 	else:
-		save = {"version":0.1, "chapter_solved":[], "level_solved":{}, "problem_answer":{}, "level_fail":{}, "level_penalty":{}}
+		save = {"version":0.2, "chapter_solved":[], "level_solved":{}, "problem_answer":{}, "level_fail":{}, "level_penalty":{}}
 	chapter_solved = save["chapter_solved"]
 	level_solved = save["level_solved"]
 	problem_answer = save["problem_answer"]
